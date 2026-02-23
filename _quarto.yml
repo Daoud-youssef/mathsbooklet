@@ -1,10 +1,13 @@
 project:
   type: book
+  output-dir: docs
 
 book:
   title: "Math-Booklet"
   author: "Maths Department"
   date: "2/2/2026"
+  site-url: https://daoud-youssef.github.io/mathsbooklet/
+  repo-url: https://github.com/Daoud-youssef/mathsbooklet.git
   chapters:
     - index.qmd
     - part: "Algebra"
