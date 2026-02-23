@@ -1,0 +1,10 @@
+:::: lt-card
+::: lt-item
+```         
+<div class="lt-number">1</div>
+<div>
+  <strong>Test Target:</strong> This is a static test to see if Quarto finds the component.
+</div>
+```
+:::
+::::

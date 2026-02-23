@@ -1,0 +1,29 @@
+::: {.callout-important .difficulty-easy icon="false"}
+## Guidance
+
+1.  Read each question carefully before you begin answering it.
+2.  Check your answers seem right.
+3.  Always show your workings.
+:::
+
+::::: {#exr-u1-conv-table}
+### Conversion Table
+
+Complete the following table:
+
+| Fraction      | Decimal | Percentage |
+|:--------------|:--------|:-----------|
+| $\frac{1}{2}$ | ...     | ...        |
+| ...           | 0.75    | 75%        |
+
+::: {.callout-tip collapse="true"}
+## 🔍 View Solution
+
+-   **Row 1:** $\frac{1}{2} = 0.5 = \mathbf{50\%}$
+-   **Row 2:** $\mathbf{\frac{3}{4}} = 0.75 = 75\%$
+:::
+
+::: exercise-meta
+[Topic: Conversion Table]{.badge .topic-badge} [Skills: Basic Conversions]{.badge .skill-badge}
+:::
+:::::

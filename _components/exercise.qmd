@@ -1,0 +1,55 @@
+::: {.exercise
+```         
+ data-id="{{id}}"
+ data-title="{{title}}"
+ data-unit="{{unit}}"
+ data-chapter="{{chapter}}"
+ data-objective="{{objective}}"
+ data-difficulty="{{difficulty}}"
+ data-topic="{{topic}}"
+ data-skills="{{skills}}"
+ data-blooms="{{blooms}}"
+ data-prerequisites="{{prerequisites}}"
+ data-common-mistakes="{{mistakes}}"
+ data-representation="{{representation}}"
+ data-estimated-time="{{time}}"
+ data-ai-level="{{ai_level}}"
+ data-ai-style="{{ai_style}}"
+```
+:::
+
+### {{title}}
+
+\`\`\`{python} #\| echo: false #\| output: asis import random
+
+# 1️⃣ Setup Randomness
+
+seed_val = {{seed \| default("None")}} if seed_val != "None": random.seed(seed_val)
+
+# 2️⃣ Number Generation
+
+a = random.randint({{a_min}}, {{a_max}}) b = random.randint({{b_min}}, {{b_max}}) c = random.randint({{c_min}}, {{c_max}})
+
+# 3️⃣ Display Problem
+
+print(f"**Problem:** {{prompt}}")
+
+# 4️⃣ Answer Logic
+
+# (Make sure answer_logic defines 'correct_answer')
+
+{{answer_logic}}
+
+# 5️⃣ Render Hints & Answer
+
+print(f""" ::: {{.callout-note collapse="true"}} \## Hint 1 { {hint1} } :::
+
+::: {{.callout-note collapse="true"}} \## Hint 2 { {hint2} } :::
+
+::: {{.callout-tip collapse="true"}} \## Reveal Answer { {answer_display} } ::: """) <!-- AI Button for Flint --> <button class="ai-button" onclick="openFlintActivity(this)" style="margin-top: 10px; padding: 0.4em 0.8em; cursor: pointer; background-color: #4f46e5; color: white; border: none; border-radius: 0.25rem; font-weight: bold;"> 🤖 AI Help </button>
+
+```{=html}
+<script> // Collect metadata and open Flint activity function openFlintActivity(button) { const exercise = button.closest('.exercise'); const metadata = {}; // Collect all data-* attributes Array.from(exercise.attributes).forEach(attr => { if (attr.name.startsWith('data-')) { metadata[attr.name.replace('data-', '')] = attr.value; } }); // Encode as URL parameters const params = new URLSearchParams(metadata).toString(); // Open Flint activity in new tab const flintURL = `https://flint.ai/activity?${params}`; // <-- replace with your Flint URL window.open(flintURL, '_blank'); } </script>
+```
+
+<!-- Try Again Button --> <button class="try-again" onclick="location.reload()" style="margin-top: 20px; padding: 10px 20px; cursor: pointer;"> 🔄 Try another version </button> \`\`\`

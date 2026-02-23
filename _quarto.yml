@@ -1,0 +1,40 @@
+project:
+  type: book
+
+book:
+  title: "Math-Booklet"
+  author: "Maths Department"
+  date: "2/2/2026"
+  chapters:
+    - index.qmd
+    - part: "Algebra"
+      chapters: 
+        - algebra/unit1-operations/01-operations.qmd
+  page-navigation: true
+bibliography: references.bib
+crossref:
+  exr-title: "Exercise"
+  exr-prefix: "Exercise"
+  chapters: true
+params:
+  show_solutions: false
+number-sections: true
+number-depth: 2
+format:
+  html:
+    theme: cosmo
+    css: assets/custom.css
+  pdf:
+    engine: lualatex
+    mainfont: "DejaVu Sans"
+    keep-tex: true
+    css: assets/custom.css
+    include-in-header:  
+      - text: |
+          \usepackage{cancel}
+          \usepackage{fontspec}
+execute:
+  echo: true
+  warning: false
+  error: false
+  freeze: auto

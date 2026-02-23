@@ -1,0 +1,18 @@
+:::: {#exr-u1-exact-conv}
+### Exact Conversions
+
+Write **0.124** as a fraction. Give your answer in its simplest form.
+
+::: {.callout-tip collapse="true"}
+### 🔍 View Solution
+
+$0.124 = \frac{124}{1000}$  
+Divide by 4: $\mathbf{\frac{31}{250}}$
+:::
+
+::: {.exercise-meta}
+[Topic: Exact Conversions]{.badge .topic-badge}
+[Skills: Simplifying Fractions]{.badge .skill-badge}
+
+:::
+::::

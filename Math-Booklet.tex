@@ -1,0 +1,576 @@
+% Options for packages loaded elsewhere
+% Options for packages loaded elsewhere
+\PassOptionsToPackage{unicode}{hyperref}
+\PassOptionsToPackage{hyphens}{url}
+\PassOptionsToPackage{dvipsnames,svgnames,x11names}{xcolor}
+%
+\documentclass[
+  letterpaper,
+  DIV=11,
+  numbers=noendperiod]{scrreprt}
+\usepackage{xcolor}
+\usepackage{amsmath,amssymb}
+\setcounter{secnumdepth}{-\maxdimen} % remove section numbering
+\usepackage{iftex}
+\ifPDFTeX
+  \usepackage[T1]{fontenc}
+  \usepackage[utf8]{inputenc}
+  \usepackage{textcomp} % provide euro and other symbols
+\else % if luatex or xetex
+  \usepackage{unicode-math} % this also loads fontspec
+  \defaultfontfeatures{Scale=MatchLowercase}
+  \defaultfontfeatures[\rmfamily]{Ligatures=TeX,Scale=1}
+\fi
+\usepackage{lmodern}
+\ifPDFTeX\else
+  % xetex/luatex font selection
+  \setmainfont[]{DejaVu Sans}
+\fi
+% Use upquote if available, for straight quotes in verbatim environments
+\IfFileExists{upquote.sty}{\usepackage{upquote}}{}
+\IfFileExists{microtype.sty}{% use microtype if available
+  \usepackage[]{microtype}
+  \UseMicrotypeSet[protrusion]{basicmath} % disable protrusion for tt fonts
+}{}
+\makeatletter
+\@ifundefined{KOMAClassName}{% if non-KOMA class
+  \IfFileExists{parskip.sty}{%
+    \usepackage{parskip}
+  }{% else
+    \setlength{\parindent}{0pt}
+    \setlength{\parskip}{6pt plus 2pt minus 1pt}}
+}{% if KOMA class
+  \KOMAoptions{parskip=half}}
+\makeatother
+% Make \paragraph and \subparagraph free-standing
+\makeatletter
+\ifx\paragraph\undefined\else
+  \let\oldparagraph\paragraph
+  \renewcommand{\paragraph}{
+    \@ifstar
+      \xxxParagraphStar
+      \xxxParagraphNoStar
+  }
+  \newcommand{\xxxParagraphStar}[1]{\oldparagraph*{#1}\mbox{}}
+  \newcommand{\xxxParagraphNoStar}[1]{\oldparagraph{#1}\mbox{}}
+\fi
+\ifx\subparagraph\undefined\else
+  \let\oldsubparagraph\subparagraph
+  \renewcommand{\subparagraph}{
+    \@ifstar
+      \xxxSubParagraphStar
+      \xxxSubParagraphNoStar
+  }
+  \newcommand{\xxxSubParagraphStar}[1]{\oldsubparagraph*{#1}\mbox{}}
+  \newcommand{\xxxSubParagraphNoStar}[1]{\oldsubparagraph{#1}\mbox{}}
+\fi
+\makeatother
+
+
+\usepackage{longtable,booktabs,array}
+\usepackage{calc} % for calculating minipage widths
+% Correct order of tables after \paragraph or \subparagraph
+\usepackage{etoolbox}
+\makeatletter
+\patchcmd\longtable{\par}{\if@noskipsec\mbox{}\fi\par}{}{}
+\makeatother
+% Allow footnotes in longtable head/foot
+\IfFileExists{footnotehyper.sty}{\usepackage{footnotehyper}}{\usepackage{footnote}}
+\makesavenoteenv{longtable}
+\usepackage{graphicx}
+\makeatletter
+\newsavebox\pandoc@box
+\newcommand*\pandocbounded[1]{% scales image to fit in text height/width
+  \sbox\pandoc@box{#1}%
+  \Gscale@div\@tempa{\textheight}{\dimexpr\ht\pandoc@box+\dp\pandoc@box\relax}%
+  \Gscale@div\@tempb{\linewidth}{\wd\pandoc@box}%
+  \ifdim\@tempb\p@<\@tempa\p@\let\@tempa\@tempb\fi% select the smaller of both
+  \ifdim\@tempa\p@<\p@\scalebox{\@tempa}{\usebox\pandoc@box}%
+  \else\usebox{\pandoc@box}%
+  \fi%
+}
+% Set default figure placement to htbp
+\def\fps@figure{htbp}
+\makeatother
+
+
+
+
+
+\setlength{\emergencystretch}{3em} % prevent overfull lines
+
+\providecommand{\tightlist}{%
+  \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
+
+
+
+ 
+
+
+\usepackage{cancel}
+\usepackage{fontspec}
+\KOMAoption{captions}{tableheading}
+\makeatletter
+\@ifpackageloaded{tcolorbox}{}{\usepackage[skins,breakable]{tcolorbox}}
+\@ifpackageloaded{fontawesome5}{}{\usepackage{fontawesome5}}
+\definecolor{quarto-callout-color}{HTML}{909090}
+\definecolor{quarto-callout-note-color}{HTML}{0758E5}
+\definecolor{quarto-callout-important-color}{HTML}{CC1914}
+\definecolor{quarto-callout-warning-color}{HTML}{EB9113}
+\definecolor{quarto-callout-tip-color}{HTML}{00A047}
+\definecolor{quarto-callout-caution-color}{HTML}{FC5300}
+\definecolor{quarto-callout-color-frame}{HTML}{acacac}
+\definecolor{quarto-callout-note-color-frame}{HTML}{4582ec}
+\definecolor{quarto-callout-important-color-frame}{HTML}{d9534f}
+\definecolor{quarto-callout-warning-color-frame}{HTML}{f0ad4e}
+\definecolor{quarto-callout-tip-color-frame}{HTML}{02b875}
+\definecolor{quarto-callout-caution-color-frame}{HTML}{fd7e14}
+\makeatother
+\makeatletter
+\@ifpackageloaded{bookmark}{}{\usepackage{bookmark}}
+\makeatother
+\makeatletter
+\@ifpackageloaded{caption}{}{\usepackage{caption}}
+\AtBeginDocument{%
+\ifdefined\contentsname
+  \renewcommand*\contentsname{Table of contents}
+\else
+  \newcommand\contentsname{Table of contents}
+\fi
+\ifdefined\listfigurename
+  \renewcommand*\listfigurename{List of Figures}
+\else
+  \newcommand\listfigurename{List of Figures}
+\fi
+\ifdefined\listtablename
+  \renewcommand*\listtablename{List of Tables}
+\else
+  \newcommand\listtablename{List of Tables}
+\fi
+\ifdefined\figurename
+  \renewcommand*\figurename{Figure}
+\else
+  \newcommand\figurename{Figure}
+\fi
+\ifdefined\tablename
+  \renewcommand*\tablename{Table}
+\else
+  \newcommand\tablename{Table}
+\fi
+}
+\@ifpackageloaded{float}{}{\usepackage{float}}
+\floatstyle{ruled}
+\@ifundefined{c@chapter}{\newfloat{codelisting}{h}{lop}}{\newfloat{codelisting}{h}{lop}[chapter]}
+\floatname{codelisting}{Listing}
+\newcommand*\listoflistings{\listof{codelisting}{List of Listings}}
+\usepackage{amsthm}
+\theoremstyle{definition}
+\newtheorem{exercise}{Exercise}[chapter]
+\theoremstyle{remark}
+\AtBeginDocument{\renewcommand*{\proofname}{Proof}}
+\newtheorem*{remark}{Remark}
+\newtheorem*{solution}{Solution}
+\newtheorem{refremark}{Remark}[chapter]
+\newtheorem{refsolution}{Solution}[chapter]
+\makeatother
+\makeatletter
+\makeatother
+\makeatletter
+\@ifpackageloaded{caption}{}{\usepackage{caption}}
+\@ifpackageloaded{subcaption}{}{\usepackage{subcaption}}
+\makeatother
+\usepackage{bookmark}
+\IfFileExists{xurl.sty}{\usepackage{xurl}}{} % add URL line breaks if available
+\urlstyle{same}
+\hypersetup{
+  pdftitle={Math-Booklet},
+  pdfauthor={Maths Department},
+  colorlinks=true,
+  linkcolor={blue},
+  filecolor={Maroon},
+  citecolor={Blue},
+  urlcolor={Blue},
+  pdfcreator={LaTeX via pandoc}}
+
+
+\title{Math-Booklet}
+\usepackage{etoolbox}
+\makeatletter
+\providecommand{\subtitle}[1]{% add subtitle to \maketitle
+  \apptocmd{\@title}{\par {\large #1 \par}}{}{}
+}
+\makeatother
+\subtitle{Your Roadmap to Final Exam Success}
+\author{Maths Department}
+\date{2026-02-02}
+\begin{document}
+\maketitle
+
+\renewcommand*\contentsname{Table of contents}
+{
+\hypersetup{linkcolor=}
+\setcounter{tocdepth}{2}
+\tableofcontents
+}
+
+\bookmarksetup{startatroot}
+
+\chapter{Welcome to MYP 5
+Mathematics}\label{welcome-to-myp-5-mathematics}
+
+Your Roadmap to Final Exam Success
+
+\hfill\break
+
+Welcome to your comprehensive revision hub. This isn't just a textbook;
+it's a \textbf{living document} designed to evolve with you as we move
+toward your final MYP 5 assessments.
+
+\begin{tcolorbox}[enhanced jigsaw, left=2mm, opacityback=0, rightrule=.15mm, bottomtitle=1mm, toprule=.15mm, colback=white, bottomrule=.15mm, colbacktitle=quarto-callout-note-color!10!white, titlerule=0mm, arc=.35mm, title={🚀 A Growing Resource}, toptitle=1mm, coltitle=black, colframe=quarto-callout-note-color-frame, breakable, opacitybacktitle=0.6, leftrule=.75mm]
+
+This booklet is updated \textbf{ongoingly}. New chapters and advanced
+units will appear as we cover them in class, ensuring your revision
+material is always synchronized with your learning.
+
+\end{tcolorbox}
+
+\section*{How to use this Booklet}\label{how-to-use-this-booklet}
+\addcontentsline{toc}{section}{How to use this Booklet}
+
+\markright{How to use this Booklet}
+
+\begin{figure}
+
+\begin{minipage}{0.50\linewidth}
+
+\subsection*{🎯 Mastery Tracking}\label{mastery-tracking}
+\addcontentsline{toc}{subsection}{🎯 Mastery Tracking}
+
+Every unit starts with clear \textbf{Learning Targets}. Use these as
+your personal checklist. If you can't tick it off, you aren't ready for
+the test!\end{minipage}%
+%
+\begin{minipage}{0.50\linewidth}
+
+\subsection*{🗂️ Formula Cards}\label{formula-cards}
+\addcontentsline{toc}{subsection}{🗂️ Formula Cards}
+
+No more hunting through notebooks. Quick-access digital cards provide
+the identities and rules you need at a glance.\end{minipage}%
+\newline
+\begin{minipage}{0.50\linewidth}
+
+\subsection*{⚡ Dynamic Practice}\label{dynamic-practice}
+\addcontentsline{toc}{subsection}{⚡ Dynamic Practice}
+
+Our \textbf{``Test Your Knowledge''} sections feature a ``Try Again''
+button that generates new numbers for the same problem type. Practice
+the \emph{method}, not the memory.\end{minipage}%
+%
+\begin{minipage}{0.50\linewidth}
+
+\subsection*{🔍 Instant Feedback}\label{instant-feedback}
+\addcontentsline{toc}{subsection}{🔍 Instant Feedback}
+
+Every exercise includes a hidden solution. Toggle it only after you've
+put pen to paper.\end{minipage}%
+
+\end{figure}%
+
+\section*{📈 The Journey: Tiered
+Practice}\label{the-journey-tiered-practice}
+\addcontentsline{toc}{section}{📈 The Journey: Tiered Practice}
+
+\markright{📈 The Journey: Tiered Practice}
+
+We use a color-coded system to help you scale your skills from
+foundational to exam-ready:
+
+\begin{longtable}[]{@{}cll@{}}
+\toprule\noalign{}
+Level & Focus & Goal \\
+\midrule\noalign{}
+\endhead
+\bottomrule\noalign{}
+\endlastfoot
+🟢 & \textbf{Easy} & Building fluency and basic recall. \\
+🟡 & \textbf{Medium} & Multi-step processing and application. \\
+🔴 & \textbf{Challenging} & Exam-style logic and complex problem
+solving. \\
+\end{longtable}
+
+\begin{tcolorbox}[enhanced jigsaw, left=2mm, opacityback=0, rightrule=.15mm, bottomtitle=1mm, toprule=.15mm, colback=white, bottomrule=.15mm, colbacktitle=quarto-callout-tip-color!10!white, titlerule=0mm, arc=.35mm, title=\textcolor{quarto-callout-tip-color}{\faLightbulb}\hspace{0.5em}{Pro Tip for Success}, toptitle=1mm, coltitle=black, colframe=quarto-callout-tip-color-frame, breakable, opacitybacktitle=0.6, leftrule=.75mm]
+
+Don't just read the solutions. Mathematics is a ``doing'' subject. Use
+the \textbf{Interactive Testing} feature until you can solve the 🔴
+Challenging problems without looking at the hints!
+
+\end{tcolorbox}
+
+\part{Algebra}
+
+\chapter{Unit 1: Operations}\label{unit-1-operations}
+
+\section{🎯 Learning Targets}\label{learning-targets}
+
+1
+
+\textbf{Calculate with Integers} -- Add, subtract, multiply, and divide
+positive and negative numbers accurately.
+
+2
+
+\textbf{Apply Order of Operations} -- Evaluate numerical expressions
+using PEMDAS/BODMAS, including brackets and exponents.
+
+3
+
+\textbf{Operate with Fractions} -- Add, subtract, multiply, and divide
+fractions and mixed numbers fluently.
+
+4
+
+\textbf{Work with Decimals} -- Perform calculations involving decimals
+and convert between fractions, decimals, and percentages.
+
+5
+
+\textbf{Simplify Complex Calculations} -- Combine integers, fractions,
+and decimals in multi-step numerical problems.
+
+\section{🗂️ Recall: Formula Card}\label{recall-formula-card}
+
+\subsection*{Essential Operation Rules}\label{essential-operation-rules}
+\addcontentsline{toc}{subsection}{Essential Operation Rules}
+
+\subsubsection*{Simplifying Fractions}\label{simplifying-fractions}
+\addcontentsline{toc}{subsubsection}{Simplifying Fractions}
+
+\textbf{💡 Pro Tip} A fraction is fully simplified when GCF = 1
+
+\textbf{How to Simplify}
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  Find the Greatest Common Factor (GCF) of numerator and denominator
+\item
+  Divide both top and bottom by the GCF
+\end{enumerate}
+
+\[\frac{a}{b} = \frac{a \div \text{GCF}}{b \div \text{GCF}}\]
+
+\textbf{Examples}: -
+\(\frac{12}{18} = \frac{12 \div 6}{18 \div 6} = \frac{2}{3}\) -
+\(\frac{15}{25} = \frac{15 \div 5}{25 \div 5} = \frac{3}{5}\)
+
+\subsubsection*{Rules of Signs (Multiplication \&
+Division)}\label{rules-of-signs-multiplication-division}
+\addcontentsline{toc}{subsubsection}{Rules of Signs (Multiplication \&
+Division)}
+
+\textbf{🎯 Memory Trick} Same signs = Happy (+)\\
+Different signs = Sad (-)
+
+\textbf{Same Signs → Positive} - \((+) \times (+) = (+)\) -
+\((-) \times (-) = (+)\)
+
+\textbf{Different Signs → Negative} - \((+) \times (-) = (-)\) -
+\((-) \times (+) = (-)\)
+
+\subsubsection*{Adding/Subtracting
+Fractions}\label{addingsubtracting-fractions}
+\addcontentsline{toc}{subsubsection}{Adding/Subtracting Fractions}
+
+\textbf{⚠️ Common Mistake} Don't add denominators!\\
+WRONG: \(\frac{1}{2} + \frac{1}{3} = \frac{2}{5}\)
+
+\textbf{Same Denominator}: Keep denominator, add/subtract numerators
+\[\frac{a}{c} + \frac{b}{c} = \frac{a + b}{c}\]
+
+\subsubsection*{Multiplying \& Dividing
+Fractions}\label{multiplying-dividing-fractions}
+\addcontentsline{toc}{subsubsection}{Multiplying \& Dividing Fractions}
+
+\textbf{📝 Quick Method} Cancel BEFORE you multiply - saves time!
+
+\textbf{Multiply}:
+\(\frac{a}{b} \times \frac{c}{d} = \frac{a \times c}{b \times d}\)
+
+\textbf{Divide (Keep-Change-Flip)}:
+\(\frac{a}{b} \div \frac{c}{d} = \frac{a}{b} \times \frac{d}{c}\)
+
+\subsubsection*{Order of Operations
+(PEMDAS/BODMAS)}\label{order-of-operations-pemdasbodmas}
+\addcontentsline{toc}{subsubsection}{Order of Operations
+(PEMDAS/BODMAS)}
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  \textbf{P}arentheses / \textbf{B}rackets
+\item
+  \textbf{E}xponents / \textbf{O}rders
+\item
+  \textbf{M/D} Multiplication \& Division (Left to Right)
+\item
+  \textbf{A/S} Addition \& Subtraction (Left to Right)
+\end{enumerate}
+
+\section{📝 Practice Problems}\label{practice-problems}
+
+\subsection{🟢 Easy}
+
+\begin{tcolorbox}[enhanced jigsaw, left=2mm, opacityback=0, rightrule=.15mm, bottomtitle=1mm, toprule=.15mm, colback=white, bottomrule=.15mm, colbacktitle=quarto-callout-important-color!10!white, titlerule=0mm, arc=.35mm, title={Guidance}, toptitle=1mm, coltitle=black, colframe=quarto-callout-important-color-frame, breakable, opacitybacktitle=0.6, leftrule=.75mm]
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  Read each question carefully before you begin answering it.
+\item
+  Check your answers seem right.
+\item
+  Always show your workings.
+\end{enumerate}
+
+\end{tcolorbox}
+
+\begin{exercise}[Conversion
+Table]\protect\hypertarget{exr-u1-conv-table}{}\label{exr-u1-conv-table}
+
+Complete the following table:
+
+\begin{longtable}[]{@{}lll@{}}
+\toprule\noalign{}
+Fraction & Decimal & Percentage \\
+\midrule\noalign{}
+\endhead
+\bottomrule\noalign{}
+\endlastfoot
+\(\frac{1}{2}\) & \ldots{} & \ldots{} \\
+\ldots{} & 0.75 & 75\% \\
+\end{longtable}
+
+\begin{tcolorbox}[enhanced jigsaw, left=2mm, opacityback=0, rightrule=.15mm, bottomtitle=1mm, toprule=.15mm, colback=white, bottomrule=.15mm, colbacktitle=quarto-callout-tip-color!10!white, titlerule=0mm, arc=.35mm, title=\textcolor{quarto-callout-tip-color}{\faLightbulb}\hspace{0.5em}{🔍 View Solution}, toptitle=1mm, coltitle=black, colframe=quarto-callout-tip-color-frame, breakable, opacitybacktitle=0.6, leftrule=.75mm]
+
+\begin{itemize}
+\tightlist
+\item
+  \textbf{Row 1:} \(\frac{1}{2} = 0.5 = \mathbf{50\%}\)
+\item
+  \textbf{Row 2:} \(\mathbf{\frac{3}{4}} = 0.75 = 75\%\)
+\end{itemize}
+
+\end{tcolorbox}
+
+{Topic: Conversion Table} {Skills: Basic Conversions}
+
+\end{exercise}
+
+∑ × π ÷ √ ◆ ∞ ± ∫ ≠ Δ
+
+\begin{exercise}[Basic
+Conversions]\protect\hypertarget{exr-u1-basic-conv}{}\label{exr-u1-basic-conv}
+
+~
+
+\begin{enumerate}
+\def\labelenumi{\alph{enumi})}
+\tightlist
+\item
+  Write 20\% as a decimal.\\
+\item
+  Write 9\% as a fraction.
+\end{enumerate}
+
+\begin{tcolorbox}[enhanced jigsaw, left=2mm, opacityback=0, rightrule=.15mm, bottomtitle=1mm, toprule=.15mm, colback=white, bottomrule=.15mm, colbacktitle=quarto-callout-tip-color!10!white, titlerule=0mm, arc=.35mm, title=\textcolor{quarto-callout-tip-color}{\faLightbulb}\hspace{0.5em}{🔍 View Solution}, toptitle=1mm, coltitle=black, colframe=quarto-callout-tip-color-frame, breakable, opacitybacktitle=0.6, leftrule=.75mm]
+
+\begin{enumerate}
+\def\labelenumi{\alph{enumi})}
+\tightlist
+\item
+  \(20 \div 100 = \mathbf{0.2}\)\\
+\item
+  \(\mathbf{\frac{9}{100}}\)
+\end{enumerate}
+
+\end{tcolorbox}
+
+{Topic: Basic Conversions} {Skills: Percentage-to-Decimal/Fraction}
+
+\end{exercise}
+
+\subsection{🟡 Medium}
+
+\begin{exercise}[Time and
+Fractions]\protect\hypertarget{exr-u1-time-frac}{}\label{exr-u1-time-frac}
+
+A train is late. It should arrive at 5 pm but arrives at 5:15 pm.
+
+\begin{enumerate}
+\def\labelenumi{\alph{enumi})}
+\tightlist
+\item
+  How many minutes late is the train?\\
+\item
+  Write your answer as a fraction of an hour.
+\end{enumerate}
+
+\begin{tcolorbox}[enhanced jigsaw, left=2mm, opacityback=0, rightrule=.15mm, bottomtitle=1mm, toprule=.15mm, colback=white, bottomrule=.15mm, colbacktitle=quarto-callout-tip-color!10!white, titlerule=0mm, arc=.35mm, title=\textcolor{quarto-callout-tip-color}{\faLightbulb}\hspace{0.5em}{🔍 View Solution}, toptitle=1mm, coltitle=black, colframe=quarto-callout-tip-color-frame, breakable, opacitybacktitle=0.6, leftrule=.75mm]
+
+\begin{enumerate}
+\def\labelenumi{\alph{enumi})}
+\tightlist
+\item
+  \textbf{15 minutes} b) \(\frac{15}{60} = \mathbf{\frac{1}{4}}\) of an
+  hour
+\end{enumerate}
+
+\end{tcolorbox}
+
+{Topic: Time and Fractions} {Skills: Fraction Simplification}
+
+\end{exercise}
+
+\begin{exercise}[Savings and
+Values]\protect\hypertarget{exr-u1-savings-perc}{}\label{exr-u1-savings-perc}
+
+For every £200 Mrs.~Joy earns, she saves £34.
+
+\begin{enumerate}
+\def\labelenumi{\alph{enumi})}
+\tightlist
+\item
+  Work out £34 as a percentage of £200.\\
+\item
+  Last month she earned £1000. How much does she save?
+\end{enumerate}
+
+\begin{tcolorbox}[enhanced jigsaw, left=2mm, opacityback=0, rightrule=.15mm, bottomtitle=1mm, toprule=.15mm, colback=white, bottomrule=.15mm, colbacktitle=quarto-callout-tip-color!10!white, titlerule=0mm, arc=.35mm, title=\textcolor{quarto-callout-tip-color}{\faLightbulb}\hspace{0.5em}{🔍 View Solution}, toptitle=1mm, coltitle=black, colframe=quarto-callout-tip-color-frame, breakable, opacitybacktitle=0.6, leftrule=.75mm]
+
+\begin{enumerate}
+\def\labelenumi{\alph{enumi})}
+\tightlist
+\item
+  \(\frac{34}{200} \times 100 = \mathbf{17\%}\)\\
+\item
+  \(17\%\) of \(£1000 = 0.17 \times 1000 = \mathbf{£170}\)
+\end{enumerate}
+
+\end{tcolorbox}
+
+{Topic: Savings} {Skills: Values as Percentages}
+
+\end{exercise}
+
+\subsection{🔴 Challenging}
+
+\section{⚡ Test Your Knowledge}\label{test-your-knowledge}
+
+
+
+
+\end{document}

@@ -1,0 +1,24 @@
+::: {.callout-important .difficulty-easy icon="false"}
+### Level 1: Basic Operations
+
+Calculate
+
+| a | b | c | d |
+|:---:|:---:|:---:|:---:|
+| $\frac{3}{4}$ of 36 | $\frac{1}{3}$ of 24 | $\frac{2}{5}$ of 35 | $\frac{4}{9}$ of 72 |
+:::
+
+::: {.callout-tip collapse="true"}
+### 🔍 Solutions
+
+a) $(36 \div 4) \times 3 = 27$  
+b) $(24 \div 3) \times 1 = 8$  
+c) $(35 \div 5) \times 2 = 14$  
+d) $(72 \div 9) \times 4 = 32$
+:::
+
+::: exercise-meta
+[Topic: Fractions of Amounts]{.badge .topic-badge}  
+[Skills: Multiplicative Reasoning]{.badge .skill-badge}  
+
+:::

@@ -1,0 +1,31 @@
+::: {.callout-important .difficulty-easy icon="false"}
+### Level 2: Applied Context
+
+**Calculate:**  
+a) Zaid earns 800 QAR a month. He spends $\frac{1}{4}$ on rent and $\frac{2}{5}$ on food. How much money does he have left?  
+b) Fatima is buying shoes that normally cost 200 QAR. They are $\frac{1}{5}$ off. What is the sale price?  
+c) Amir has 300 marbles. He gives $\frac{1}{2}$ to his brother and $\frac{1}{3}$ of the remaining marbles to his friend. How many does he keep?
+:::
+
+::: {.callout-tip collapse="true"}
+### 🔍 Solutions
+
+a) Rent: $(800 \div 4) \times 1 = 200$  
+   Food: $(800 \div 5) \times 2 = 320$  
+   Total spent: $200 + 320 = 520$  
+   Left: $800 - 520 = 280$ QAR  
+
+b) Discount: $(200 \div 5) \times 1 = 40$  
+   Sale Price: $200 - 40 = 160$ QAR  
+
+c) To brother: $300 \times \frac{1}{2} = 150$  
+   Remaining: $150$  
+   To friend: $150 \times \frac{1}{3} = 50$  
+   Kept: $150 - 50 = 100$
+:::
+
+::: exercise-meta
+[Topic: Fractions of Amounts]{.badge .topic-badge}  
+[Skills: Word Problems]{.badge .skill-badge}  
+
+:::

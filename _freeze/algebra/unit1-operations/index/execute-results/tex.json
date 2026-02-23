@@ -1,0 +1,11 @@
+{
+  "hash": "ecf558e7a2914481e5f1f412acea92a9",
+  "result": {
+    "engine": "jupyter",
+    "markdown": "# Unit 1: The Algrebraic Foundation\n\n## 🎯 Learning Targets\n\n\n\n<div class=\"lt-card\">\n\n{{#each data.items}}\n  <div class=\"lt-item\" style=\"display: flex; align-items: flex-start; gap: 0.75rem; margin-bottom: 0.75rem;\">\n    <div class=\"lt-number\">{{number}}</div>\n    <div>\n      <strong>{{title}}:</strong> {{description}}\n    </div>\n  </div>\n{{/each}}\n\n</div>\n\n\n\n## 🗂️ Recall: Formula Card\n\n(Your formulas here...)\n\n## 📝 Practice Problems\n\n::: {.cell execution_count=1}\n\n::: {.cell-output .cell-output-display}\n![Polar plot](index_files/figure-pdf/cell-2-output-1.pdf){}\n:::\n:::\n\n\n## 📝 Practice Gallery\n\n::: panel-tabset\n### 🟢 Easy\n\n::: {.cell execution_count=2}\n\n::: {.cell-output .cell-output-display}\n![Polar plot](index_files/figure-pdf/cell-3-output-1.pdf){}\n:::\n:::\n\n\n### 🟡 Hard\n\n### 🔴 Challenging\n\n::: {.callout-important .difficulty-challenging icon=\"false\"}\n## [CHALLENGING]{.badge} Exercise\n\nProve that if $a + b = c$, then $(a+b)^2 = c^2$.\n\n---\n\n**Solution:** Since $a+b$ is identical to $c$, squaring both sides of the equality $a+b = c$ directly yields $(a+b)^2 = c^2$ by the substitution property.\n:::\n\n:::\n\n",
+    "supporting": [
+      "index_files"
+    ],
+    "filters": []
+  }
+}

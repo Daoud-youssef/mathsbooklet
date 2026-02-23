@@ -1,0 +1,269 @@
+/* ============================================================
+   CSS VARIABLES
+   ============================================================ */
+:root {
+  --ink:         #1a1a2e;
+  --paper:       #faf9f6;
+  --accent:      #c0392b;
+  --gold:        #d4a017;
+  --muted:       #8a8a9a;
+  --rule:        #d0cec8;
+  --indigo:      #6366f1;
+  --indigo-dark: #4f46e5;
+}
+
+/* ============================================================
+   DIFFICULTY CALLOUTS
+   ============================================================ */
+.difficulty-easy        { border-left-color: #28a745 !important; }
+.difficulty-hard        { border-left-color: #ffc107 !important; }
+.difficulty-challenging { border-left-color: #dc3545 !important; }
+
+/* ============================================================
+   LEARNING TARGETS CARD
+   ============================================================ */
+.lt-card {
+  border: 1px solid #e2e8f0;
+  border-radius: 12px;
+  padding: 1.5rem;
+  background: linear-gradient(to right, #ffffff, #f1f5f9);
+  box-shadow: 0 4px 6px -1px rgba(0,0,0,0.1);
+  margin: 2rem 0;
+}
+
+.lt-item {
+  display: flex;
+  align-items: flex-start;
+  margin-bottom: 1.5rem;
+}
+.lt-item:last-child { margin-bottom: 0; }
+
+.lt-number {
+  background: var(--indigo);
+  color: white;
+  font-weight: bold;
+  border-radius: 50%;
+  width: 32px;
+  height: 32px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-right: 15px;
+  margin-top: 2px;
+  flex-shrink: 0;
+  font-size: 1rem;
+  line-height: 1;
+  transition: all 0.2s ease;
+}
+.lt-number p { margin: 0; padding: 0; line-height: 1; }
+
+.lt-item:hover .lt-number {
+  background: var(--indigo-dark);
+  transform: scale(1.1);
+}
+
+.lt-content        { flex: 1; line-height: 1.6; }
+.lt-content strong { color: #1e293b; font-size: 1.05rem; }
+
+@media (max-width: 768px) {
+  .lt-card   { padding: 1rem; }
+  .lt-number { width: 28px; height: 28px; font-size: 0.9rem; }
+}
+
+/* ============================================================
+   FORMULA CARD
+   ============================================================ */
+.formula-card {
+  border: 1px solid #cbd5e1;
+  background: #fffef0;
+  background-image: repeating-linear-gradient(
+    transparent, transparent 31px,
+    #e2e8f0 31px, #e2e8f0 32px
+  );
+  padding: 2rem;
+  margin: 2rem 0;
+  box-shadow: 3px 3px 8px rgba(0,0,0,0.1);
+  font-family: 'Comic Sans MS', 'Marker Felt', cursive;
+}
+
+.rule-group {
+  background: rgba(255,255,255,0.6);
+  border-left: 4px solid #f59e0b;
+  padding: 1rem 1.5rem;
+  margin-bottom: 1.5rem;
+  border-radius: 4px;
+}
+
+/* ============================================================
+   STICKY NOTES
+   ============================================================ */
+.sticky-note-yellow,
+.sticky-note-pink,
+.sticky-note-blue,
+.sticky-note-green,
+.sticky-note-orange {
+  width: 180px;
+  padding: 0.875rem;
+  margin: 0.5rem 0 1.5rem 1.5rem;
+  border-radius: 2px;
+  box-shadow: 2px 2px 4px rgba(0,0,0,0.1), 4px 4px 8px rgba(0,0,0,0.08);
+  font-family: 'Comic Sans MS', 'Marker Felt', cursive;
+  position: relative;
+  font-size: 0.8rem;
+  line-height: 1.4;
+  float: right;
+  clear: right;
+  transform: rotate(1.5deg);
+  margin-top: -0.5rem;
+}
+
+.sticky-note-yellow::before, .sticky-note-pink::before,
+.sticky-note-blue::before,   .sticky-note-green::before,
+.sticky-note-orange::before {
+  content: '';
+  position: absolute;
+  top: -6px; left: 50%;
+  transform: translateX(-50%) rotate(-2deg);
+  width: 70px; height: 16px;
+  background: linear-gradient(to bottom, rgba(255,255,255,0.5), rgba(255,255,255,0.3));
+  border: 1px solid rgba(200,200,200,0.3);
+  border-radius: 1px;
+}
+
+.sticky-note-yellow::after, .sticky-note-pink::after,
+.sticky-note-blue::after,   .sticky-note-green::after,
+.sticky-note-orange::after {
+  content: '';
+  position: absolute;
+  bottom: 0; right: 0;
+  border-style: solid;
+  border-width: 0 0 15px 15px;
+  border-color: transparent transparent rgba(0,0,0,0.05) transparent;
+}
+
+.sticky-note-yellow { background: linear-gradient(135deg,#fef9c3,#fef08a); border: 1px solid #fde047; }
+.sticky-note-pink   { background: linear-gradient(135deg,#fce7f3,#fecdd3); border: 1px solid #fda4af; transform: rotate(-1deg); }
+.sticky-note-blue   { background: linear-gradient(135deg,#dbeafe,#bfdbfe); border: 1px solid #93c5fd; transform: rotate(2deg); }
+.sticky-note-green  { background: linear-gradient(135deg,#d1fae5,#bbf7d0); border: 1px solid #86efac; transform: rotate(-1.5deg); }
+.sticky-note-orange { background: linear-gradient(135deg,#ffedd5,#fed7aa); border: 1px solid #fdba74; transform: rotate(1deg); }
+
+.sticky-note-yellow:hover, .sticky-note-pink:hover,
+.sticky-note-blue:hover,   .sticky-note-green:hover,
+.sticky-note-orange:hover {
+  transform: rotate(0deg) translateY(-2px);
+  transition: all 0.15s ease;
+  box-shadow: 3px 3px 6px rgba(0,0,0,0.15), 6px 6px 12px rgba(0,0,0,0.1);
+  z-index: 10;
+}
+
+@media (max-width: 968px) {
+  .sticky-note-yellow, .sticky-note-pink, .sticky-note-blue,
+  .sticky-note-green,  .sticky-note-orange {
+    float: none;
+    width: calc(100% - 2rem);
+    max-width: 280px;
+    margin: 1rem auto;
+    transform: rotate(0deg);
+  }
+}
+
+/* ============================================================
+   EXERCISE BLOCKS
+   ============================================================ */
+.theorem-style {
+  padding: 1.5rem 1.75rem !important;
+  margin: 1.5rem 0 !important;
+  border-radius: 10px !important;
+  background: linear-gradient(135deg, #fefefe 0%, #f8f7ff 100%) !important;
+  border: 1px solid #e0deff !important;
+  border-left: 5px solid var(--indigo) !important;
+  box-shadow: 0 2px 8px rgba(99,102,241,0.08) !important;
+  font-size: 1rem !important;
+}
+
+.theorem-style p,
+.theorem-style ol,
+.theorem-style ul,
+.theorem-style li,
+.theorem-style td,
+.theorem-style th {
+  font-size: 1rem !important;
+  line-height: 1.7 !important;
+}
+
+/* ============================================================
+   EXERCISE META BADGES
+   ============================================================ */
+.exercise-meta {
+  margin-top: 1.25rem;
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+.badge {
+  display: inline-block;
+  padding: 3px 10px;
+  border-radius: 6px;
+  font-size: 0.72rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.3px;
+}
+
+.topic-badge { background-color: #f0f2f5; color: #495057; border: 1px solid #dee2e6; }
+.skill-badge { background-color: #e7f1ff; color: #0d6efd; border: 1px solid #cfe2ff; }
+.level-badge { background-color: #e6fcf5; color: #0ca678; border: 1px solid #c3fae8; }
+
+/* ============================================================
+   MATH SEPARATOR  — simple, no extensions needed
+   Usage in .qmd:
+     ::: math-sep
+     ∑ × π ÷ √ ◆ ∞ ± ∫ ≠ Δ
+     :::
+   ============================================================ */
+.math-sep {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin: 1.75rem 0;
+  color: #a0a0b8;
+  font-family: 'Courier New', monospace;
+  font-size: 0.85rem;
+  letter-spacing: 0.3rem;
+  user-select: none;
+}
+
+.math-sep::before,
+.math-sep::after {
+  content: "";
+  flex: 1;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, var(--rule), transparent);
+}
+
+.math-sep p {
+  margin: 0 !important;
+  line-height: 1 !important;
+  font-size: 0.85rem !important;
+}
+
+/* ============================================================
+   PRINT
+   ============================================================ */
+@media print {
+  .sticky-note-yellow, .sticky-note-pink, .sticky-note-blue,
+  .sticky-note-green,  .sticky-note-orange {
+    float: right; width: 140px; transform: rotate(0deg);
+    box-shadow: none; border: 1px solid #999;
+    page-break-inside: avoid; font-size: 0.7rem;
+  }
+  .sticky-note-yellow::before, .sticky-note-pink::before,
+  .sticky-note-blue::before,   .sticky-note-green::before,
+  .sticky-note-orange::before,
+  .sticky-note-yellow::after,  .sticky-note-pink::after,
+  .sticky-note-blue::after,    .sticky-note-green::after,
+  .sticky-note-orange::after   { display: none; }
+
+  .math-sep { display: none; }
+}

@@ -1,0 +1,23 @@
+::: {.callout-important .difficulty-easy icon="false"}
+###  Multi-Step Reasoning
+
+a) Maryam works 8 hours a week and earns 50 QAR per hour. She decides to save $\frac{2}{5}$ of her total weekly earnings. How many weeks will it take her to save 640 QAR?  
+
+b) There are 40 students in a class. $\frac{3}{5}$ are girls. $\frac{1}{4}$ of the girls wear glasses. How many girls in the class wear glasses?
+:::
+
+::: {.callout-tip collapse="true"}
+### 🔍 Solutions
+
+a) Weekly Pay: $8 \times 50 = 400$  
+   Weekly Savings: $(400 \div 5) \times 2 = 160$  
+   Weeks needed: $640 \div 160 = 4$ weeks  
+
+b) Total Girls: $(40 \div 5) \times 3 = 24$  
+   Girls with glasses: $(24 \div 4) \times 1 = 6$
+:::
+
+::: exercise-meta
+[Topic: Fractions of Amounts]{.badge .topic-badge}  
+[Skills: Logic & Savings]{.badge .skill-badge}  
+:::

@@ -1,0 +1,17 @@
+::::: {#exr-u1-ordering}
+### Ordering Numbers
+
+Put these numbers in order from smallest to largest: $$\frac{3}{5}, \quad 0.5, \quad 115\%, \quad 1.094, \quad \frac{7}{20}$$
+
+::: {.callout-tip collapse="true"}
+## 🔍 View Solution
+
+**Step 1: Convert all to decimals:** $0.6, \quad 0.5, \quad 1.15, \quad 1.094, \quad 0.35$
+
+**Final Order:** $\frac{7}{20}$ (0.35), $0.5$, $\frac{3}{5}$ (0.6), $1.094$, $115\%$ (1.15)
+:::
+
+::: exercise-meta
+[Topic: Ordering Numbers]{.badge .topic-badge} [Skills: Comparing Formats]{.badge .skill-badge}
+:::
+:::::

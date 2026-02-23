@@ -1,0 +1,44 @@
+---
+title: "Welcome to MYP 5 Mathematics"
+subtitle: "Your Roadmap to Final Exam Success"
+number-sections: false
+appendix: true
+---
+
+Welcome to your comprehensive revision hub. This isn't just a textbook; it's a **living document** designed to evolve with you as we move toward your final MYP 5 assessments.
+
+::: {.callout-note icon="false"}
+## 🚀 A Growing Resource {.unnumbered}
+This booklet is updated **ongoingly**. New chapters and advanced units will appear as we cover them in class, ensuring your revision material is always synchronized with your learning.
+:::
+
+## How to use this Booklet {.unnumbered}
+
+::: {layout="[[1,1], [1,1]]"}
+### 🎯 Mastery Tracking {.unnumbered}
+Every unit starts with clear **Learning Targets**. Use these as your personal checklist. If you can't tick it off, you aren't ready for the test!
+
+### 🗂️ Formula Cards {.unnumbered}
+No more hunting through notebooks. Quick-access digital cards provide the identities and rules you need at a glance.
+
+### ⚡ Dynamic Practice {.unnumbered}
+Our **"Test Your Knowledge"** sections feature a "Try Again" button that generates new numbers for the same problem type. Practice the *method*, not the memory.
+
+### 🔍 Instant Feedback {.unnumbered}
+Every exercise includes a hidden solution. Toggle it only after you've put pen to paper.
+:::
+
+## 📈 The Journey: Tiered Practice {.unnumbered}
+
+We use a color-coded system to help you scale your skills from foundational to exam-ready:
+
+| Level | Focus | Goal |
+|:---:|:---|:---|
+| 🟢 | **Easy** | Building fluency and basic recall. |
+| 🟡 | **Medium** | Multi-step processing and application. |
+| 🔴 | **Challenging** | Exam-style logic and complex problem solving. |
+
+::: {.callout-tip}
+## Pro Tip for Success {.unnumbered}
+Don't just read the solutions. Mathematics is a "doing" subject. Use the **Interactive Testing** feature until you can solve the 🔴 Challenging problems without looking at the hints!
+:::

@@ -1,0 +1,16 @@
+::::: {#exr-u1-basic-conv}
+### Basic Conversions
+a)  Write 20% as a decimal.\
+b)  Write 9% as a fraction.
+
+::: {.callout-tip collapse="true"}
+## 🔍 View Solution
+
+a)  $20 \div 100 = \mathbf{0.2}$\
+b)  $\mathbf{\frac{9}{100}}$
+:::
+
+::: exercise-meta
+[Topic: Basic Conversions]{.badge .topic-badge} [Skills: Percentage-to-Decimal/Fraction]{.badge .skill-badge}
+:::
+:::::

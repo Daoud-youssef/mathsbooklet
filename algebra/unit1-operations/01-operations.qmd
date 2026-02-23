@@ -1,0 +1,50 @@
+---
+title: "Unit 1: Operations"
+number-sections: true
+number-offset: [0]
+---
+
+## 🎯 Learning Targets
+{{< include alg-u1-ope-learning-targets.qmd >}}
+
+## 🗂️ Recall: Formula Card
+{{< include Alg-u1-ope-formulas.qmd >}}
+
+## 📝 Practice Problems
+
+::: panel-tabset
+
+### 🟢 Easy
+
+{{< include alg-u1-ope-ex/alg-u1-ope-easy-ex-01.qmd >}}
+
+::: math-sep
+∑ × π ÷ √ ◆ ∞ ± ∫ ≠ Δ
+:::
+
+{{< include alg-u1-ope-ex/alg-u1-ope-easy-ex-02.qmd >}}
+::: math-sep
+∑ × π ÷ √ ◆ ∞ ± ∫ ≠ Δ
+:::
+{{< include alg-u1-ope-ex/alg-u1-ope-easy-ex-03.qmd >}}
+::: math-sep
+∑ × π ÷ √ ◆ ∞ ± ∫ ≠ Δ
+:::
+{{< include alg-u1-ope-ex/alg-u1-ope-easy-ex-04.qmd >}}
+
+### 🟡 Medium
+
+{{< include alg-u1-ope-ex/alg-u1-ope-hard-ex-01.qmd >}}
+::: math-sep
+∑ × π ÷ √ ◆ ∞ ± ∫ ≠ Δ
+:::
+{{< include alg-u1-ope-ex/alg-u1-ope-hard-ex-02.qmd >}}
+::: math-sep
+∑ × π ÷ √ ◆ ∞ ± ∫ ≠ Δ
+:::
+### 🔴 Challenging
+
+{{< include alg-u1-ope-ex/alg-u1-ope-adv-ex-01.qmd >}}
+:::
+
+## ⚡ Test Your Knowledge

@@ -1,0 +1,20 @@
+:::: {#exr-u1-time-frac}
+### Time and Fractions
+
+A train is late. It should arrive at 5 pm but arrives at 5:15 pm.
+
+a) How many minutes late is the train?  
+b) Write your answer as a fraction of an hour.
+
+::: {.callout-tip collapse="true"}
+## 🔍 View Solution
+
+a) **15 minutes** b) $\frac{15}{60} = \mathbf{\frac{1}{4}}$ of an hour
+:::
+
+::: {.exercise-meta}
+[Topic: Time and Fractions]{.badge .topic-badge}
+[Skills: Fraction Simplification]{.badge .skill-badge}
+
+:::
+::::

@@ -1,0 +1,51 @@
+:::::::::::::::::: lt-card
+::::: lt-item
+::: lt-number
+1
+:::
+
+::: lt-content
+**Calculate with Integers** – Add, subtract, multiply, and divide positive and negative numbers accurately.
+:::
+:::::
+
+::::: lt-item
+::: lt-number
+2
+:::
+
+::: lt-content
+**Apply Order of Operations** – Evaluate numerical expressions using PEMDAS/BODMAS, including brackets and exponents.
+:::
+:::::
+
+::::: lt-item
+::: lt-number
+3
+:::
+
+::: lt-content
+**Operate with Fractions** – Add, subtract, multiply, and divide fractions and mixed numbers fluently.
+:::
+:::::
+
+::::: lt-item
+::: lt-number
+4
+:::
+
+::: lt-content
+**Work with Decimals** – Perform calculations involving decimals and convert between fractions, decimals, and percentages.
+:::
+:::::
+
+::::: lt-item
+::: lt-number
+5
+:::
+
+::: lt-content
+**Simplify Complex Calculations** – Combine integers, fractions, and decimals in multi-step numerical problems.
+:::
+:::::
+::::::::::::::::::
