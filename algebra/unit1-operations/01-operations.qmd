@@ -1,7 +1,7 @@
 ---
 title: "Unit 1: Operations"
 number-sections: true
-number-offset: [0]
+number-depth: 2
 ---
 
 ## 🎯 Learning Targets
@@ -48,3 +48,5 @@ number-offset: [0]
 :::
 
 ## ⚡ Test Your Knowledge
+
+{{< include dynamic_exercises_qmd/fractions_additions.qmd >}}

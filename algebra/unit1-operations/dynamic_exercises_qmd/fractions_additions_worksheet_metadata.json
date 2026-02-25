@@ -1,0 +1,92 @@
+{
+  "id": "alg-u1-fractions-worksheet",
+  "version": "1.0",
+  "created": "2026-02-25",
+  "updated": "2026-02-25",
+
+  "document": {
+    "title": "Fraction Operations",
+    "subtitle": "Addition, Simplification & Word Problems",
+    "file": "algebra/unit1-operations/dynamic_exercises_qmd/alg-u1-fractions-worksheet.qmd",
+    "type": "worksheet",
+    "format": "dynamic",
+    "engine": "pyodide"
+  },
+
+  "curriculum": {
+    "programme":  "MYP",
+    "year":       5,
+    "subject":    "Mathematics",
+    "strand":     "Number",
+    "unit":       "Unit 1: Operations",
+    "chapter":    1
+  },
+
+  "learning_targets": [
+    "Add fractions with different denominators using LCD",
+    "Simplify fractions to lowest terms using GCF",
+    "Apply fraction operations to real-world problems"
+  ],
+
+  "exercises": [
+    {
+      "number":     1,
+      "title":      "Fraction Addition",
+      "type":       "add_different_denominator",
+      "skill":      "fraction_addition",
+      "difficulty": "medium",
+      "topic":      "Fractions",
+      "subtopic":   "Addition with different denominators",
+      "parts":      6,
+      "marks":      6,
+      "instruction": "Find the LCD then add. Simplify your answer."
+    },
+    {
+      "number":     2,
+      "title":      "Simplifying Fractions",
+      "type":       "simplify_fraction",
+      "skill":      "simplification",
+      "difficulty": "easy",
+      "topic":      "Fractions",
+      "subtopic":   "Simplification to lowest terms",
+      "parts":      6,
+      "marks":      6,
+      "instruction": "Simplify each fraction to its lowest terms."
+    },
+    {
+      "number":     3,
+      "title":      "Word Problems",
+      "type":       "word_problem_add",
+      "skill":      "fraction_application",
+      "difficulty": "medium",
+      "topic":      "Fractions",
+      "subtopic":   "Real-world fraction problems",
+      "parts":      6,
+      "marks":      6,
+      "instruction": "Read carefully and show your working."
+    }
+  ],
+
+  "summary": {
+    "total_exercises": 3,
+    "total_parts":     18,
+    "total_marks":     18,
+    "difficulties":    ["easy", "medium"],
+    "skills":          ["fraction_addition", "simplification", "fraction_application"],
+    "topics":          ["Fractions"]
+  },
+
+  "flint": {
+    "assign_to":       "class",
+    "suggested_time":  "30 minutes",
+    "allow_retry":     true,
+    "show_solutions":  false,
+    "ai_feedback":     true,
+    "tags":            ["fractions", "MYP5", "unit1", "operations", "algebra"]
+  }
+}
+
+
+https://app.flintk12.com/activities/adding-fraction-ce6f67/sessions/new
+https://app.flintk12.com/activities/simplifying-fra-96b82a/sessions/new
+https://app.flintk12.com/activities/fraction-word-p-3a8c9f/sessions/new

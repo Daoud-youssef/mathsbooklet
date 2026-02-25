@@ -168,7 +168,7 @@
 }
 
 /* ============================================================
-   EXERCISE BLOCKS
+   EXERCISE BLOCKS  (Quarto .theorem-style override)
    ============================================================ */
 .theorem-style {
   padding: 1.5rem 1.75rem !important;
@@ -216,7 +216,7 @@
 .level-badge { background-color: #e6fcf5; color: #0ca678; border: 1px solid #c3fae8; }
 
 /* ============================================================
-   MATH SEPARATOR  — simple, no extensions needed
+   MATH SEPARATOR
    Usage in .qmd:
      ::: math-sep
      ∑ × π ÷ √ ◆ ∞ ± ∫ ≠ Δ
@@ -249,9 +249,66 @@
 }
 
 /* ============================================================
-   PRINT
+   SHARED WORKSHEET TOOLBAR
+   Used by all worksheet .qmd files
+   ============================================================ */
+.ws-toolbar {
+  display: flex;
+  gap: 0.75rem;
+  align-items: center;
+  margin-bottom: 2rem;
+  flex-wrap: wrap;
+}
+
+.ws-btn {
+  border: none;
+  padding: 0.5rem 1.1rem;
+  border-radius: 8px;
+  font-size: 0.88rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s;
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+}
+.ws-btn.primary          { background: var(--indigo); color: white; }
+.ws-btn.primary:hover    { background: var(--indigo-dark); transform: translateY(-1px); }
+.ws-btn.primary:disabled { background: #a5b4fc; cursor: not-allowed; transform: none; }
+.ws-btn.outline          { background: none; border: 1.5px solid var(--indigo); color: var(--indigo); }
+.ws-btn.outline:hover    { background: var(--indigo); color: white; }
+
+.ws-loading {
+  font-size: 0.82rem;
+  color: var(--indigo);
+  font-style: italic;
+  margin-left: 0.25rem;
+}
+
+/* ============================================================
+   SHARED EXERCISE SECTION TITLES
+   Used by all worksheet .qmd files
+   ============================================================ */
+.ex-section-title {
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  padding: 0.2rem 0.7rem;
+  border-radius: 4px;
+  display: inline-block;
+  margin: 1.5rem 0 0.5rem;
+}
+.ex-section-title.easy   { background: #e8f5e9; color: #2e7d32; }
+.ex-section-title.medium { background: #fff8e1; color: #f57f17; }
+.ex-section-title.word   { background: #e3f2fd; color: #1565c0; }
+
+/* ============================================================
+   PRINT  (global rules)
    ============================================================ */
 @media print {
+  .no-print { display: none !important; }
+
   .sticky-note-yellow, .sticky-note-pink, .sticky-note-blue,
   .sticky-note-green,  .sticky-note-orange {
     float: right; width: 140px; transform: rotate(0deg);
@@ -265,5 +322,6 @@
   .sticky-note-blue::after,    .sticky-note-green::after,
   .sticky-note-orange::after   { display: none; }
 
-  .math-sep { display: none; }
+  .math-sep    { display: none; }
+  .ws-toolbar  { display: none; }
 }

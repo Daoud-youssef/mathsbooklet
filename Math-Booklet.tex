@@ -10,7 +10,7 @@
   numbers=noendperiod]{scrreprt}
 \usepackage{xcolor}
 \usepackage{amsmath,amssymb}
-\setcounter{secnumdepth}{-\maxdimen} % remove section numbering
+\setcounter{secnumdepth}{5}
 \usepackage{iftex}
 \ifPDFTeX
   \usepackage[T1]{fontenc}
@@ -194,13 +194,6 @@
 
 
 \title{Math-Booklet}
-\usepackage{etoolbox}
-\makeatletter
-\providecommand{\subtitle}[1]{% add subtitle to \maketitle
-  \apptocmd{\@title}{\par {\large #1 \par}}{}{}
-}
-\makeatother
-\subtitle{Your Roadmap to Final Exam Success}
 \author{Maths Department}
 \date{2026-02-02}
 \begin{document}
@@ -215,18 +208,17 @@
 
 \bookmarksetup{startatroot}
 
-\chapter{Welcome to MYP 5
+\chapter*{Welcome to MYP 5
 Mathematics}\label{welcome-to-myp-5-mathematics}
+\addcontentsline{toc}{chapter}{Welcome to MYP 5 Mathematics}
 
-Your Roadmap to Final Exam Success
-
-\hfill\break
+\markboth{Welcome to MYP 5 Mathematics}{Welcome to MYP 5 Mathematics}
 
 Welcome to your comprehensive revision hub. This isn't just a textbook;
 it's a \textbf{living document} designed to evolve with you as we move
 toward your final MYP 5 assessments.
 
-\begin{tcolorbox}[enhanced jigsaw, titlerule=0mm, coltitle=black, arc=.35mm, leftrule=.75mm, bottomrule=.15mm, opacityback=0, bottomtitle=1mm, colback=white, colbacktitle=quarto-callout-note-color!10!white, toptitle=1mm, title={🚀 A Growing Resource}, rightrule=.15mm, left=2mm, colframe=quarto-callout-note-color-frame, toprule=.15mm, breakable, opacitybacktitle=0.6]
+\begin{tcolorbox}[enhanced jigsaw, bottomrule=.15mm, opacitybacktitle=0.6, colbacktitle=quarto-callout-note-color!10!white, toprule=.15mm, colframe=quarto-callout-note-color-frame, coltitle=black, colback=white, bottomtitle=1mm, title={🚀 A Growing Resource}, leftrule=.75mm, rightrule=.15mm, breakable, titlerule=0mm, left=2mm, opacityback=0, toptitle=1mm, arc=.35mm]
 
 This booklet is updated \textbf{ongoingly}. New chapters and advanced
 units will appear as we cover them in class, ensuring your revision
@@ -286,9 +278,18 @@ Practice}\label{the-journey-tiered-practice}
 We use a color-coded system to help you scale your skills from
 foundational to exam-ready:
 
-\begin{longtable}[]{@{}cll@{}}
+\begin{longtable}[]{@{}
+  >{\centering\arraybackslash}p{(\linewidth - 4\tabcolsep) * \real{0.0986}}
+  >{\raggedright\arraybackslash}p{(\linewidth - 4\tabcolsep) * \real{0.2394}}
+  >{\raggedright\arraybackslash}p{(\linewidth - 4\tabcolsep) * \real{0.6620}}@{}}
 \toprule\noalign{}
-Level & Focus & Goal \\
+\begin{minipage}[b]{\linewidth}\centering
+Level
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+Focus
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+Goal
+\end{minipage} \\
 \midrule\noalign{}
 \endhead
 \bottomrule\noalign{}
@@ -299,7 +300,7 @@ Level & Focus & Goal \\
 solving. \\
 \end{longtable}
 
-\begin{tcolorbox}[enhanced jigsaw, titlerule=0mm, coltitle=black, arc=.35mm, leftrule=.75mm, bottomrule=.15mm, opacityback=0, bottomtitle=1mm, colback=white, colbacktitle=quarto-callout-tip-color!10!white, toptitle=1mm, title=\textcolor{quarto-callout-tip-color}{\faLightbulb}\hspace{0.5em}{Pro Tip for Success}, rightrule=.15mm, left=2mm, colframe=quarto-callout-tip-color-frame, toprule=.15mm, breakable, opacitybacktitle=0.6]
+\begin{tcolorbox}[enhanced jigsaw, bottomrule=.15mm, opacitybacktitle=0.6, colbacktitle=quarto-callout-tip-color!10!white, toprule=.15mm, colframe=quarto-callout-tip-color-frame, coltitle=black, colback=white, bottomtitle=1mm, title=\textcolor{quarto-callout-tip-color}{\faLightbulb}\hspace{0.5em}{Pro Tip for Success}, leftrule=.75mm, rightrule=.15mm, breakable, titlerule=0mm, left=2mm, opacityback=0, toptitle=1mm, arc=.35mm]
 
 Don't just read the solutions. Mathematics is a ``doing'' subject. Use
 the \textbf{Interactive Testing} feature until you can solve the 🔴
@@ -423,7 +424,7 @@ Fractions}\label{multiplying-dividing-fractions}
 
 \subsection{🟢 Easy}
 
-\begin{tcolorbox}[enhanced jigsaw, titlerule=0mm, coltitle=black, arc=.35mm, leftrule=.75mm, bottomrule=.15mm, opacityback=0, bottomtitle=1mm, colback=white, colbacktitle=quarto-callout-important-color!10!white, toptitle=1mm, title={Guidance}, rightrule=.15mm, left=2mm, colframe=quarto-callout-important-color-frame, toprule=.15mm, breakable, opacitybacktitle=0.6]
+\begin{tcolorbox}[enhanced jigsaw, bottomrule=.15mm, opacitybacktitle=0.6, colbacktitle=quarto-callout-important-color!10!white, toprule=.15mm, colframe=quarto-callout-important-color-frame, coltitle=black, colback=white, bottomtitle=1mm, title={Guidance}, leftrule=.75mm, rightrule=.15mm, breakable, titlerule=0mm, left=2mm, opacityback=0, toptitle=1mm, arc=.35mm]
 
 \begin{enumerate}
 \def\labelenumi{\arabic{enumi}.}
@@ -454,7 +455,7 @@ Fraction & Decimal & Percentage \\
 \ldots{} & 0.75 & 75\% \\
 \end{longtable}
 
-\begin{tcolorbox}[enhanced jigsaw, titlerule=0mm, coltitle=black, arc=.35mm, leftrule=.75mm, bottomrule=.15mm, opacityback=0, bottomtitle=1mm, colback=white, colbacktitle=quarto-callout-tip-color!10!white, toptitle=1mm, title=\textcolor{quarto-callout-tip-color}{\faLightbulb}\hspace{0.5em}{🔍 View Solution}, rightrule=.15mm, left=2mm, colframe=quarto-callout-tip-color-frame, toprule=.15mm, breakable, opacitybacktitle=0.6]
+\begin{tcolorbox}[enhanced jigsaw, bottomrule=.15mm, opacitybacktitle=0.6, colbacktitle=quarto-callout-tip-color!10!white, toprule=.15mm, colframe=quarto-callout-tip-color-frame, coltitle=black, colback=white, bottomtitle=1mm, title=\textcolor{quarto-callout-tip-color}{\faLightbulb}\hspace{0.5em}{🔍 View Solution}, leftrule=.75mm, rightrule=.15mm, breakable, titlerule=0mm, left=2mm, opacityback=0, toptitle=1mm, arc=.35mm]
 
 \begin{itemize}
 \tightlist
@@ -486,7 +487,7 @@ Conversions]\protect\hypertarget{exr-u1-basic-conv}{}\label{exr-u1-basic-conv}
   Write 9\% as a fraction.
 \end{enumerate}
 
-\begin{tcolorbox}[enhanced jigsaw, titlerule=0mm, coltitle=black, arc=.35mm, leftrule=.75mm, bottomrule=.15mm, opacityback=0, bottomtitle=1mm, colback=white, colbacktitle=quarto-callout-tip-color!10!white, toptitle=1mm, title=\textcolor{quarto-callout-tip-color}{\faLightbulb}\hspace{0.5em}{🔍 View Solution}, rightrule=.15mm, left=2mm, colframe=quarto-callout-tip-color-frame, toprule=.15mm, breakable, opacitybacktitle=0.6]
+\begin{tcolorbox}[enhanced jigsaw, bottomrule=.15mm, opacitybacktitle=0.6, colbacktitle=quarto-callout-tip-color!10!white, toprule=.15mm, colframe=quarto-callout-tip-color-frame, coltitle=black, colback=white, bottomtitle=1mm, title=\textcolor{quarto-callout-tip-color}{\faLightbulb}\hspace{0.5em}{🔍 View Solution}, leftrule=.75mm, rightrule=.15mm, breakable, titlerule=0mm, left=2mm, opacityback=0, toptitle=1mm, arc=.35mm]
 
 \begin{enumerate}
 \def\labelenumi{\alph{enumi})}
@@ -505,7 +506,7 @@ Conversions]\protect\hypertarget{exr-u1-basic-conv}{}\label{exr-u1-basic-conv}
 
 ∑ × π ÷ √ ◆ ∞ ± ∫ ≠ Δ
 
-\begin{tcolorbox}[enhanced jigsaw, titlerule=0mm, coltitle=black, arc=.35mm, leftrule=.75mm, bottomrule=.15mm, opacityback=0, bottomtitle=1mm, colback=white, colbacktitle=quarto-callout-important-color!10!white, toptitle=1mm, title={Level 1: Basic Operations}, rightrule=.15mm, left=2mm, colframe=quarto-callout-important-color-frame, toprule=.15mm, breakable, opacitybacktitle=0.6]
+\begin{tcolorbox}[enhanced jigsaw, bottomrule=.15mm, opacitybacktitle=0.6, colbacktitle=quarto-callout-important-color!10!white, toprule=.15mm, colframe=quarto-callout-important-color-frame, coltitle=black, colback=white, bottomtitle=1mm, title={Level 1: Basic Operations}, leftrule=.75mm, rightrule=.15mm, breakable, titlerule=0mm, left=2mm, opacityback=0, toptitle=1mm, arc=.35mm]
 
 Calculate
 
@@ -534,7 +535,7 @@ d
 
 \end{tcolorbox}
 
-\begin{tcolorbox}[enhanced jigsaw, titlerule=0mm, coltitle=black, arc=.35mm, leftrule=.75mm, bottomrule=.15mm, opacityback=0, bottomtitle=1mm, colback=white, colbacktitle=quarto-callout-tip-color!10!white, toptitle=1mm, title=\textcolor{quarto-callout-tip-color}{\faLightbulb}\hspace{0.5em}{🔍 Solutions}, rightrule=.15mm, left=2mm, colframe=quarto-callout-tip-color-frame, toprule=.15mm, breakable, opacitybacktitle=0.6]
+\begin{tcolorbox}[enhanced jigsaw, bottomrule=.15mm, opacitybacktitle=0.6, colbacktitle=quarto-callout-tip-color!10!white, toprule=.15mm, colframe=quarto-callout-tip-color-frame, coltitle=black, colback=white, bottomtitle=1mm, title=\textcolor{quarto-callout-tip-color}{\faLightbulb}\hspace{0.5em}{🔍 Solutions}, leftrule=.75mm, rightrule=.15mm, breakable, titlerule=0mm, left=2mm, opacityback=0, toptitle=1mm, arc=.35mm]
 
 \begin{enumerate}
 \def\labelenumi{\alph{enumi})}
@@ -556,7 +557,7 @@ d
 
 ∑ × π ÷ √ ◆ ∞ ± ∫ ≠ Δ
 
-\begin{tcolorbox}[enhanced jigsaw, titlerule=0mm, coltitle=black, arc=.35mm, leftrule=.75mm, bottomrule=.15mm, opacityback=0, bottomtitle=1mm, colback=white, colbacktitle=quarto-callout-important-color!10!white, toptitle=1mm, title={Level 2: Applied Context}, rightrule=.15mm, left=2mm, colframe=quarto-callout-important-color-frame, toprule=.15mm, breakable, opacitybacktitle=0.6]
+\begin{tcolorbox}[enhanced jigsaw, bottomrule=.15mm, opacitybacktitle=0.6, colbacktitle=quarto-callout-important-color!10!white, toprule=.15mm, colframe=quarto-callout-important-color-frame, coltitle=black, colback=white, bottomtitle=1mm, title={Level 2: Applied Context}, leftrule=.75mm, rightrule=.15mm, breakable, titlerule=0mm, left=2mm, opacityback=0, toptitle=1mm, arc=.35mm]
 
 \textbf{Calculate:}\\
 a) Zaid earns 800 QAR a month. He spends \(\frac{1}{4}\) on rent and
@@ -569,7 +570,7 @@ keep?
 
 \end{tcolorbox}
 
-\begin{tcolorbox}[enhanced jigsaw, titlerule=0mm, coltitle=black, arc=.35mm, leftrule=.75mm, bottomrule=.15mm, opacityback=0, bottomtitle=1mm, colback=white, colbacktitle=quarto-callout-tip-color!10!white, toptitle=1mm, title=\textcolor{quarto-callout-tip-color}{\faLightbulb}\hspace{0.5em}{🔍 Solutions}, rightrule=.15mm, left=2mm, colframe=quarto-callout-tip-color-frame, toprule=.15mm, breakable, opacitybacktitle=0.6]
+\begin{tcolorbox}[enhanced jigsaw, bottomrule=.15mm, opacitybacktitle=0.6, colbacktitle=quarto-callout-tip-color!10!white, toprule=.15mm, colframe=quarto-callout-tip-color-frame, coltitle=black, colback=white, bottomtitle=1mm, title=\textcolor{quarto-callout-tip-color}{\faLightbulb}\hspace{0.5em}{🔍 Solutions}, leftrule=.75mm, rightrule=.15mm, breakable, titlerule=0mm, left=2mm, opacityback=0, toptitle=1mm, arc=.35mm]
 
 \begin{enumerate}
 \def\labelenumi{\alph{enumi})}
@@ -609,7 +610,7 @@ A train is late. It should arrive at 5 pm but arrives at 5:15 pm.
   Write your answer as a fraction of an hour.
 \end{enumerate}
 
-\begin{tcolorbox}[enhanced jigsaw, titlerule=0mm, coltitle=black, arc=.35mm, leftrule=.75mm, bottomrule=.15mm, opacityback=0, bottomtitle=1mm, colback=white, colbacktitle=quarto-callout-tip-color!10!white, toptitle=1mm, title=\textcolor{quarto-callout-tip-color}{\faLightbulb}\hspace{0.5em}{🔍 View Solution}, rightrule=.15mm, left=2mm, colframe=quarto-callout-tip-color-frame, toprule=.15mm, breakable, opacitybacktitle=0.6]
+\begin{tcolorbox}[enhanced jigsaw, bottomrule=.15mm, opacitybacktitle=0.6, colbacktitle=quarto-callout-tip-color!10!white, toprule=.15mm, colframe=quarto-callout-tip-color-frame, coltitle=black, colback=white, bottomtitle=1mm, title=\textcolor{quarto-callout-tip-color}{\faLightbulb}\hspace{0.5em}{🔍 View Solution}, leftrule=.75mm, rightrule=.15mm, breakable, titlerule=0mm, left=2mm, opacityback=0, toptitle=1mm, arc=.35mm]
 
 \begin{enumerate}
 \def\labelenumi{\alph{enumi})}
@@ -641,7 +642,7 @@ For every £200 Mrs.~Joy earns, she saves £34.
   Last month she earned £1000. How much does she save?
 \end{enumerate}
 
-\begin{tcolorbox}[enhanced jigsaw, titlerule=0mm, coltitle=black, arc=.35mm, leftrule=.75mm, bottomrule=.15mm, opacityback=0, bottomtitle=1mm, colback=white, colbacktitle=quarto-callout-tip-color!10!white, toptitle=1mm, title=\textcolor{quarto-callout-tip-color}{\faLightbulb}\hspace{0.5em}{🔍 View Solution}, rightrule=.15mm, left=2mm, colframe=quarto-callout-tip-color-frame, toprule=.15mm, breakable, opacitybacktitle=0.6]
+\begin{tcolorbox}[enhanced jigsaw, bottomrule=.15mm, opacitybacktitle=0.6, colbacktitle=quarto-callout-tip-color!10!white, toprule=.15mm, colframe=quarto-callout-tip-color-frame, coltitle=black, colback=white, bottomtitle=1mm, title=\textcolor{quarto-callout-tip-color}{\faLightbulb}\hspace{0.5em}{🔍 View Solution}, leftrule=.75mm, rightrule=.15mm, breakable, titlerule=0mm, left=2mm, opacityback=0, toptitle=1mm, arc=.35mm]
 
 \begin{enumerate}
 \def\labelenumi{\alph{enumi})}
@@ -662,7 +663,7 @@ For every £200 Mrs.~Joy earns, she saves £34.
 
 \subsection{🔴 Challenging}
 
-\begin{tcolorbox}[enhanced jigsaw, titlerule=0mm, coltitle=black, arc=.35mm, leftrule=.75mm, bottomrule=.15mm, opacityback=0, bottomtitle=1mm, colback=white, colbacktitle=quarto-callout-important-color!10!white, toptitle=1mm, title={Multi-Step Reasoning}, rightrule=.15mm, left=2mm, colframe=quarto-callout-important-color-frame, toprule=.15mm, breakable, opacitybacktitle=0.6]
+\begin{tcolorbox}[enhanced jigsaw, bottomrule=.15mm, opacitybacktitle=0.6, colbacktitle=quarto-callout-important-color!10!white, toprule=.15mm, colframe=quarto-callout-important-color-frame, coltitle=black, colback=white, bottomtitle=1mm, title={Multi-Step Reasoning}, leftrule=.75mm, rightrule=.15mm, breakable, titlerule=0mm, left=2mm, opacityback=0, toptitle=1mm, arc=.35mm]
 
 \begin{enumerate}
 \def\labelenumi{\alph{enumi})}
@@ -678,7 +679,7 @@ For every £200 Mrs.~Joy earns, she saves £34.
 
 \end{tcolorbox}
 
-\begin{tcolorbox}[enhanced jigsaw, titlerule=0mm, coltitle=black, arc=.35mm, leftrule=.75mm, bottomrule=.15mm, opacityback=0, bottomtitle=1mm, colback=white, colbacktitle=quarto-callout-tip-color!10!white, toptitle=1mm, title=\textcolor{quarto-callout-tip-color}{\faLightbulb}\hspace{0.5em}{🔍 Solutions}, rightrule=.15mm, left=2mm, colframe=quarto-callout-tip-color-frame, toprule=.15mm, breakable, opacitybacktitle=0.6]
+\begin{tcolorbox}[enhanced jigsaw, bottomrule=.15mm, opacitybacktitle=0.6, colbacktitle=quarto-callout-tip-color!10!white, toprule=.15mm, colframe=quarto-callout-tip-color-frame, coltitle=black, colback=white, bottomtitle=1mm, title=\textcolor{quarto-callout-tip-color}{\faLightbulb}\hspace{0.5em}{🔍 Solutions}, leftrule=.75mm, rightrule=.15mm, breakable, titlerule=0mm, left=2mm, opacityback=0, toptitle=1mm, arc=.35mm]
 
 \begin{enumerate}
 \def\labelenumi{\alph{enumi})}

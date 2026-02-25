@@ -1,6 +1,8 @@
 project:
   type: book
   output-dir: docs
+  resources:
+    - algebra/unit1-operations/dynamic_exercises_codes/
 
 book:
   title: "Math-Booklet"
@@ -9,33 +11,38 @@ book:
   site-url: https://daoud-youssef.github.io/mathsbooklet/
   repo-url: https://github.com/Daoud-youssef/mathsbooklet.git
   chapters:
+    - text: "---"
     - index.qmd
     - part: "Algebra"
-      chapters: 
+      chapters:
         - algebra/unit1-operations/01-operations.qmd
   page-navigation: true
+
 bibliography: references.bib
+
 crossref:
   exr-title: "Exercise"
   exr-prefix: "Exercise"
   chapters: true
+
 params:
   show_solutions: false
-number-sections: true
-number-depth: 2
+
 format:
   html:
     theme: cosmo
     css: assets/custom.css
+    mathjax: true
+
   pdf:
     engine: lualatex
     mainfont: "DejaVu Sans"
     keep-tex: true
-    css: assets/custom.css
-    include-in-header:  
+    include-in-header:
       - text: |
           \usepackage{cancel}
           \usepackage{fontspec}
+
 execute:
   echo: true
   warning: false
