@@ -47,6 +47,6 @@ number-depth: 2
 {{< include alg-u1-ope-ex/alg-u1-ope-adv-ex-01.qmd >}}
 :::
 
-## ⚡ Test Your Knowledge
+## ⚡ Test Your Knowledge {#sec-ope-worksheet}
 
 {{< include dynamic_exercises_qmd/fractions_additions.qmd >}}

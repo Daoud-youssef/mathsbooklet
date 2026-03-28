@@ -1,12 +1,10 @@
 ---
 number-sections: false
 ---
-
 ```{=html}
 <script src="https://cdn.jsdelivr.net/pyodide/v0.25.0/full/pyodide.js"></script>
 
 <style>
-
 /* ══════════════════════════════════════════
    WORKSHEET PAPER
 ══════════════════════════════════════════ */
@@ -22,8 +20,6 @@ number-sections: false
   box-sizing: border-box;
   overflow: hidden;
 }
-
-/* ── Header ── */
 .ws-header {
   display: flex;
   justify-content: space-between;
@@ -52,8 +48,6 @@ number-sections: false
   color: #64748b;
   line-height: 2;
 }
-
-/* ── Student info ── */
 .ws-info-row {
   display: flex;
   gap: 1.5rem;
@@ -78,10 +72,6 @@ number-sections: false
   border-bottom: 1.5px solid #cbd5e1;
   min-width: 60px;
 }
-
-/* ══════════════════════════════════════════
-   EXERCISE BLOCK
-══════════════════════════════════════════ */
 .ws-exercise {
   margin-bottom: 2.5rem;
   page-break-inside: avoid;
@@ -96,54 +86,14 @@ number-sections: false
   border-radius: 0 6px 6px 0;
   margin-bottom: 0.4rem;
 }
-.ws-exercise-num {
-  font-size: 1rem;
-  font-weight: 800;
-  color: #4f46e5;
-}
-.ws-exercise-title {
-  font-size: 0.95rem;
-  font-weight: 700;
-  color: #1a1a2e;
-  flex: 1;
-}
+.ws-exercise-num   { font-size: 1rem;  font-weight: 800; color: #4f46e5; }
+.ws-exercise-title { font-size: 0.95rem; font-weight: 700; color: #1a1a2e; flex: 1; }
 .ws-instruction {
   font-size: 0.78rem;
   color: #64748b;
   font-style: italic;
   margin: 0.3rem 0 1rem 0.5rem;
 }
-
-/* ══════════════════════════════════════════
-   FLINT HELP BUTTON
-══════════════════════════════════════════ */
-.flint-btn {
-  margin-left: auto;
-  background: #7c3aed;
-  color: white !important;
-  border: none;
-  padding: 0.3rem 0.85rem;
-  border-radius: 6px;
-  font-size: 0.75rem;
-  font-weight: 600;
-  cursor: pointer;
-  text-decoration: none !important;
-  display: inline-flex;
-  align-items: center;
-  gap: 0.3rem;
-  transition: all 0.2s;
-  white-space: nowrap;
-  flex-shrink: 0;
-}
-.flint-btn:hover {
-  background: #6d28d9;
-  transform: translateY(-1px);
-  box-shadow: 0 4px 12px rgba(124,58,237,0.3);
-}
-
-/* ══════════════════════════════════════════
-   PARTS GRID — 3 columns
-══════════════════════════════════════════ */
 .ws-parts-grid {
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
@@ -153,12 +103,7 @@ number-sections: false
   box-sizing: border-box;
   align-items: start;
 }
-
-/* Word problem parts span full row */
-.ws-part.word {
-  grid-column: 1 / -1;
-}
-
+.ws-part.word { grid-column: 1 / -1; }
 .ws-part {
   border: 1px solid #e2e8f0;
   border-radius: 8px;
@@ -172,7 +117,6 @@ number-sections: false
   transition: border-color 0.2s;
 }
 .ws-part:hover { border-color: #c7d2fe; }
-
 .ws-part-label {
   font-family: 'Courier New', monospace;
   font-size: 0.68rem;
@@ -181,7 +125,6 @@ number-sections: false
   letter-spacing: 0.1em;
   margin-bottom: 0.4rem;
 }
-
 .ws-part-question {
   width: 100%;
   font-size: 1.1rem;
@@ -194,21 +137,8 @@ number-sections: false
   overflow: hidden;
   min-width: 0;
 }
-
-/* word problems — full row, left align */
-.ws-part.word .ws-part-question {
-  font-size: 0.88rem;
-  text-align: left;
-  line-height: 1.7;
-}
-
-/* MathJax scaling */
-.ws-part-question mjx-container {
-  max-width: 100% !important;
-  overflow-x: auto !important;
-  overflow-y: hidden !important;
-}
-
+.ws-part.word .ws-part-question { font-size: 0.88rem; text-align: left; line-height: 1.7; }
+.ws-part-question mjx-container { max-width: 100% !important; overflow-x: auto !important; overflow-y: hidden !important; }
 .ws-part-answer {
   display: flex;
   align-items: center;
@@ -222,15 +152,7 @@ number-sections: false
   text-transform: uppercase;
   letter-spacing: 0.05em;
 }
-.ws-part-answer-line {
-  flex: 1;
-  border-bottom: 1.5px solid #cbd5e1;
-  height: 1rem;
-}
-
-/* ══════════════════════════════════════════
-   ANSWER KEY
-══════════════════════════════════════════ */
+.ws-part-answer-line { flex: 1; border-bottom: 1.5px solid #cbd5e1; height: 1rem; }
 .ws-answer-key {
   margin-top: 2.5rem;
   padding-top: 1.25rem;
@@ -253,190 +175,51 @@ number-sections: false
 .ws-ans-item { display: flex; align-items: baseline; gap: 0.25rem; }
 .ws-ans-num  { font-weight: 700; color: #6366f1; font-size: 0.7rem; }
 
-/* ══════════════════════════════════════════
-   PRINT
-══════════════════════════════════════════ */
 @media print {
-  .no-print, .ws-toolbar, .flint-btn { display: none !important; }
-  .ws-paper {
-    box-shadow: none;
-    border: none;
-    padding: 1rem 1.5rem;
-    max-width: 100%;
-  }
+  .no-print, .ws-toolbar { display: none !important; }
+  .ws-paper { box-shadow: none; border: none; padding: 1rem 1.5rem; max-width: 100%; }
   .ws-part  { background: white; border: 1px solid #bbb; break-inside: avoid; }
   .ws-exercise { break-inside: avoid; }
   .ws-part:hover { border-color: #bbb; }
 }
-
 @media (max-width: 640px) {
   .ws-paper { padding: 1.25rem; }
   .ws-parts-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
   .ws-answer-key-grid { grid-template-columns: repeat(3, 1fr); }
 }
-
-@media (max-width: 420px) {
-  .ws-parts-grid { grid-template-columns: repeat(1, 1fr); }
-}
-
-/* ══════════════════════════════════════════
-   PRINT PREVIEW MODAL
-══════════════════════════════════════════ */
-.preview-overlay {
-  display: none;
-  position: fixed;
-  inset: 0;
-  background: rgba(15, 23, 42, 0.75);
-  z-index: 1000;
-  backdrop-filter: blur(4px);
-  animation: fadeIn 0.2s ease;
-}
-.preview-overlay.open { display: flex; flex-direction: column; }
-
-@keyframes fadeIn {
-  from { opacity: 0; }
-  to   { opacity: 1; }
-}
-
-.preview-toolbar {
-  background: #1e293b;
-  color: white;
-  display: flex;
-  align-items: center;
-  gap: 1rem;
-  padding: 0.75rem 1.5rem;
-  flex-shrink: 0;
-}
-.preview-toolbar-title {
-  font-size: 0.85rem;
-  font-weight: 600;
-  flex: 1;
-  color: #e2e8f0;
-}
-.preview-btn {
-  border: none;
-  border-radius: 6px;
-  padding: 0.4rem 1rem;
-  font-size: 0.82rem;
-  font-weight: 600;
-  cursor: pointer;
-  transition: all 0.15s;
-}
-.preview-btn.print       { background: #6366f1; color: white; }
-.preview-btn.print:hover { background: #4f46e5; }
-.preview-btn.close       { background: #475569; color: white; }
-.preview-btn.close:hover { background: #334155; }
-
-.preview-scroll {
-  flex: 1;
-  overflow-y: auto;
-  background: #e2e8f0;
-  padding: 2rem;
-  display: flex;
-  justify-content: center;
-}
-
-.preview-page {
-  background: white;
-  width: 210mm;
-  min-height: 297mm;
-  padding: 18mm 20mm;
-  box-shadow: 0 8px 32px rgba(0,0,0,0.25);
-  border-radius: 2px;
-  box-sizing: border-box;
-  font-size: 11pt;
-  overflow: hidden;
-  animation: slideUp 0.25s ease;
-}
-
-.preview-page .ws-parts-grid {
-  grid-template-columns: repeat(3, minmax(0, 1fr));
-}
-.preview-page .ws-paper {
-  box-shadow: none;
-  border: none;
-  padding: 0;
-  max-width: 100%;
-}
-
-@keyframes slideUp {
-  from { transform: translateY(20px); opacity: 0; }
-  to   { transform: translateY(0);    opacity: 1; }
-}
-
-.preview-page-label {
-  text-align: center;
-  font-size: 0.7rem;
-  color: #94a3b8;
-  margin-bottom: 0.75rem;
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
-}
-
-@media (max-width: 768px) {
-  .preview-page { width: 100%; min-height: auto; padding: 1rem; }
-  .preview-scroll { padding: 1rem; }
-}
-
+@media (max-width: 420px) { .ws-parts-grid { grid-template-columns: 1fr; } }
 </style>
 
-<!-- ══════════════════════════════════════════
-     TOOLBAR
-══════════════════════════════════════════ -->
+<!-- ══ TOOLBAR ══ -->
 <div class="ws-toolbar no-print">
-  <button class="ws-btn primary" id="btn-new" onclick="newSession()" disabled>
-    🔄 New Session
-  </button>
-  <button class="ws-btn outline" onclick="window.print()">
-    🖨️ Print
-  </button>
-  <button class="ws-btn outline" onclick="openPreview()">
-    👁️ Preview
-  </button>
-  <span class="ws-loading" id="ws-loading">⏳ Loading Python...</span>
+  <div class="ws-controls">
+    <button class="ws-btn primary" id="btn-ws-new" onclick="newSession()" disabled>🔄 New Session</button>
+    <button class="ws-btn outline" onclick="openPreview()">👁️ Preview & Print</button>
+    <a href="https://app.flintk12.com/activities/arithmetic-mast-9558eb/sessions/new"
+       target="_blank" class="ws-btn flint">🤖 Get Help</a>
+  </div>
+  <div id="ws-loading" class="ws-status">⏳ Loading Python...</div>
 </div>
 
-<!-- ══════════════════════════════════════════
-     PRINT PREVIEW MODAL
-══════════════════════════════════════════ -->
-<div class="preview-overlay" id="preview-overlay">
-  <div class="preview-toolbar">
-    <span class="preview-toolbar-title">🖨️ Print Preview — Fraction Operations Worksheet</span>
-    <button class="preview-btn print" onclick="printFromPreview()">Print</button>
-    <button class="preview-btn close" onclick="closePreview()">✕ Close</button>
-  </div>
-  <div class="preview-scroll">
-    <div>
-      <div class="preview-page-label">A4 — 210 × 297 mm</div>
-      <div class="preview-page" id="preview-content"></div>
+<!-- ══ WORKSHEET CONTAINER ══ -->
+<div id="ws-container">
+  <p style="color:#94a3b8;text-align:center;padding:3rem 0">Generating worksheet...</p>
+</div>
+
+<!-- ══ PREVIEW MODAL ══ -->
+<div id="ws-preview-overlay" class="ws-modal no-print">
+  <div class="ws-modal-header">
+    <span id="ws-preview-title-text">Worksheet Preview</span>
+    <div class="ws-modal-btns">
+      <button class="ws-btn-small print" onclick="wsPrint()">🖨️ Print PDF</button>
+      <button class="ws-btn-small close" onclick="wsClosePreview()">✕ Close</button>
     </div>
   </div>
-</div>
-
-<!-- ══════════════════════════════════════════
-     WORKSHEET CONTAINER
-══════════════════════════════════════════ -->
-<div id="ws-container">
-  <p style="color:#94a3b8;text-align:center;padding:3rem 0">
-    Generating worksheet...
-  </p>
+  <div id="ws-preview-scroll" class="ws-modal-body"></div>
 </div>
 
 <script>
-// ══════════════════════════════════════════════════════════════════
-// FLINT LINKS — one activity per exercise type
-// Replace YOUR-ACTIVITY-ID with your actual Flint activity URLs
-// ══════════════════════════════════════════════════════════════════
-const FLINT_LINKS = {
-  "add_different_denominator": "https://app.flintk12.com/activities/adding-fraction-ce6f67/sessions/new",
-  "simplify_fraction":         "https://app.flintk12.com/activities/simplifying-fra-96b82a/sessions/new",
-  "word_problem_add":          "https://app.flintk12.com/activities/fraction-word-p-3a8c9f/sessions/new",
-};
-
-// ══════════════════════════════════════════════════════════════════
-// PYTHON SOURCE — mirrors generators/fractions.py
-// To update: edit generators/fractions.py then copy here
-// ══════════════════════════════════════════════════════════════════
+// ══ Python code ══
 const PYTHON_CODE = `
 import random, math, json
 from datetime import date
@@ -507,7 +290,7 @@ def generate_session():
                "medium","Real-world fraction problems"),
     ]
     return json.dumps({
-        "worksheet":{"title":"Fraction Operations","unit":"Unit 1: Operations",
+        "worksheet":{"title":"Fraction Operations","unit":"Unit 1 · Operations",
                      "topic":"Fractions","date":str(date.today()),
                      "total_parts":sum(len(e["parts"]) for e in exercises)},
         "exercises":exercises
@@ -516,18 +299,12 @@ def generate_session():
 generate_session()
 `;
 
-// ══════════════════════════════════════════════════════════════════
-// RENDER
-// ══════════════════════════════════════════════════════════════════
+// ══ Render ══
 function render(data) {
   const ws  = data.worksheet;
   const exs = data.exercises;
-  let html  = "";
+  let html  = `<div class="ws-paper">`;
 
-  // ── Paper wrapper
-  html += `<div class="ws-paper">`;
-
-  // ── Header
   html += `
     <div class="ws-header">
       <div class="ws-header-left">
@@ -539,157 +316,98 @@ function render(data) {
         <div>Topic &nbsp; ${ws.topic}</div>
         <div>Total &nbsp; ${ws.total_parts} marks</div>
       </div>
-    </div>`;
-
-  // ── Student info
-  html += `
+    </div>
     <div class="ws-info-row">
-      <div class="ws-field">
-        <span class="ws-field-label">Name</span>
-        <div class="ws-field-line"></div>
-      </div>
-      <div class="ws-field">
-        <span class="ws-field-label">Class</span>
-        <div class="ws-field-line"></div>
-      </div>
+      <div class="ws-field"><span class="ws-field-label">Name</span><div class="ws-field-line"></div></div>
+      <div class="ws-field"><span class="ws-field-label">Class</span><div class="ws-field-line"></div></div>
       <div class="ws-field" style="max-width:140px">
         <span class="ws-field-label">Score</span>
         <div class="ws-field-line"></div>
-        <span style="font-size:0.72rem;color:#94a3b8;white-space:nowrap">
-          / ${ws.total_parts}
-        </span>
+        <span style="font-size:0.72rem;color:#94a3b8;white-space:nowrap">/ ${ws.total_parts}</span>
       </div>
     </div>`;
 
-  // ── Exercises
   exs.forEach(ex => {
-    // Look up Flint link by exercise type from meta
-    const flintUrl = FLINT_LINKS[ex.meta.type] || "https://app.flintk12.com";
-
     html += `
       <div class="ws-exercise">
         <div class="ws-exercise-header">
-          <span class="ws-exercise-num">Exercise ${ex.number}.</span>
+          <span class="ws-exercise-num">Ex ${ex.number}.</span>
           <span class="ws-exercise-title">${ex.title}</span>
-          <a href="${flintUrl}" target="_blank" class="flint-btn no-print"
-             title="Get AI help on ${ex.title}">
-            🤖 Get Help
-          </a>
         </div>
-        <div class="ws-instruction">${ex.instruction}</div>
+        ${ex.instruction ? `<div class="ws-instruction">${ex.instruction}</div>` : ""}
         <div class="ws-parts-grid">`;
 
     ex.parts.forEach(part => {
       const isWord = part.is_word || false;
       html += `
-          <div class="ws-part ${isWord ? 'word' : ''}">
+          <div class="ws-part${isWord ? ' word' : ''}">
             <div class="ws-part-label">${part.label} )</div>
             <div class="ws-part-question">\\(${part.question_latex}\\)</div>
-            <div class="ws-part-answer">
-              <span>Ans</span>
-              <div class="ws-part-answer-line"></div>
-            </div>
+            <div class="ws-part-answer"><span>Ans</span><div class="ws-part-answer-line"></div></div>
           </div>`;
     });
 
     html += `</div></div>`;
   });
 
-  // ── Answer key
   html += `
     <div class="ws-answer-key">
-      <div class="ws-answer-key-title">✦ Answer Key</div>
+      <div class="ws-answer-key-title">✅ Answer Key</div>
       <div class="ws-answer-key-grid">`;
-
   exs.forEach(ex => {
     ex.parts.forEach(part => {
-      html += `
-        <div class="ws-ans-item">
-          <span class="ws-ans-num">${ex.number}${part.label})</span>
-          \\(${part.answer_latex}\\)
-        </div>`;
+      html += `<div class="ws-ans-item"><span class="ws-ans-num">${ex.number}${part.label})</span>\\(${part.answer_latex}\\)</div>`;
     });
   });
-
-  html += `</div></div>`;
-  html += `</div>`; // close ws-paper
+  html += `</div></div></div>`;
 
   document.getElementById("ws-container").innerHTML = html;
-
-  // Re-render MathJax
-  if (window.MathJax) {
-    MathJax.typesetPromise([document.getElementById("ws-container")]);
-  }
+  if (window.MathJax) MathJax.typesetPromise([document.getElementById("ws-container")]);
 }
 
-// ══════════════════════════════════════════════════════════════════
-// PYODIDE
-// ══════════════════════════════════════════════════════════════════
+// ══ Pyodide ══
 let pyodide = null;
 
 async function init() {
-  pyodide = await loadPyodide({
-    indexURL: "https://cdn.jsdelivr.net/pyodide/v0.25.0/full/"
-  });
+  pyodide = await loadPyodide({ indexURL: "https://cdn.jsdelivr.net/pyodide/v0.25.0/full/" });
   const raw = pyodide.runPython(PYTHON_CODE);
   render(JSON.parse(raw));
-
-  document.getElementById("btn-new").disabled = false;
-  document.getElementById("ws-loading").textContent = "✅ Python ready";
-  setTimeout(() => {
-    document.getElementById("ws-loading").style.display = "none";
-  }, 2000);
+  document.getElementById("btn-ws-new").disabled = false;
+  const loading = document.getElementById("ws-loading");
+  loading.textContent = "✅ Ready";
+  setTimeout(() => loading.style.display = "none", 2000);
 }
 
 async function newSession() {
   document.getElementById("ws-container").innerHTML =
-    '<p style="color:#94a3b8;text-align:center;padding:3rem 0">Generating new worksheet...</p>';
+    '<p style="color:#94a3b8;text-align:center;padding:3rem 0">Generating...</p>';
   const raw = await pyodide.runPythonAsync("generate_session()");
   render(JSON.parse(raw));
 }
 
-init();
-
-// ══════════════════════════════════════════════════════════════════
-// PRINT PREVIEW
-// ══════════════════════════════════════════════════════════════════
+// ══ Preview & Print ══
 function openPreview() {
-  const source  = document.getElementById("ws-container");
-  const preview = document.getElementById("preview-content");
-
-  if (!source || source.innerHTML.trim() === "") {
-    alert("Please wait for the worksheet to generate first.");
-    return;
-  }
-
-  preview.innerHTML = source.innerHTML;
-
-  if (window.MathJax) {
-    MathJax.typesetPromise([preview]);
-  }
-
-  const overlay = document.getElementById("preview-overlay");
-  overlay.classList.add("open");
+  const src = document.getElementById("ws-container");
+  if (!src || !src.innerHTML.trim()) { alert("Please wait for the worksheet to load."); return; }
+  const preview = document.getElementById("ws-preview-scroll");
+  preview.innerHTML = `<div class="ws-preview-page">${src.innerHTML}</div>`;
+  if (window.MathJax) MathJax.typesetPromise([preview]);
+  document.getElementById("ws-preview-overlay").classList.add("open");
   document.body.style.overflow = "hidden";
 }
 
-function closePreview() {
-  const overlay = document.getElementById("preview-overlay");
-  overlay.classList.remove("open");
+function wsClosePreview() {
+  document.getElementById("ws-preview-overlay").classList.remove("open");
   document.body.style.overflow = "";
 }
 
-function printFromPreview() {
-  window.print();
-}
+function wsPrint() { window.print(); }
 
-document.getElementById("preview-overlay")?.addEventListener("click", function(e) {
-  if (e.target === this) closePreview();
+document.getElementById("ws-preview-overlay")?.addEventListener("click", e => {
+  if (e.target === e.currentTarget) wsClosePreview();
 });
+document.addEventListener("keydown", e => { if (e.key === "Escape") wsClosePreview(); });
 
-document.addEventListener("keydown", function(e) {
-  if (e.key === "Escape") closePreview();
-});
-
+init();
 </script>
 ```

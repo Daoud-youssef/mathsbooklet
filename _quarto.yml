@@ -3,6 +3,13 @@ project:
   output-dir: docs
   resources:
     - algebra/unit1-operations/dynamic_exercises_codes/
+    - algebra/unit2-Indices/Indices.py
+    - algebra/unit3-mensuration/Mensuration.py
+    - algebra/unit4-statistics/Statistics.py
+    - algebra/unit5-equations/LinearEquations.py
+    - algebra/unit6-quadratics/Quadratics.py
+    - algebra/unit7-functions/Functions.py
+    - assets/
 
 book:
   title: "Math-Booklet"
@@ -16,6 +23,12 @@ book:
     - part: "Algebra"
       chapters:
         - algebra/unit1-operations/01-operations.qmd
+        - algebra/unit2-Indices/Indices.qmd
+        - algebra/unit3-mensuration/Mensuration.qmd
+        - algebra/unit4-statistics/Statistics.qmd
+        - algebra/unit5-equations/LinearEquations.qmd
+        - algebra/unit6-quadratics/Quadratics.qmd
+        - algebra/unit7-functions/Functions.qmd
   page-navigation: true
 
 bibliography: references.bib
@@ -31,8 +44,21 @@ params:
 format:
   html:
     theme: cosmo
-    css: assets/custom.css
+    css: 
+      - assets/custom.css
+    
     mathjax: true
+    include-in-header:
+      - text: |
+          <script>
+          MathJax = {
+            tex: {
+              inlineMath: [['\\(', '\\)']],
+              displayMath: [['\\[', '\\]']],
+              packages: {'[+]': ['cancel', 'color']}
+            }
+          };
+          </script>
 
   pdf:
     engine: lualatex

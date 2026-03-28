@@ -1,0 +1,15 @@
+| **#** | **Learning Target** | **I can…** |
+|---|---|---|
+| **LT1** | Relations & Functions | Represent relations as sets, tables, and arrow diagrams, and determine whether a relation is a function |
+| **LT2** | Representations | Move fluently between tables, graphs, and equations for linear functions |
+| **LT3** | Domain & Range | Identify the domain and range of a relation from a set, table, or graph |
+| **LT4** | Linear Functions | Identify, evaluate, and interpret linear functions in context |
+| **LT5** | Slope & Rate of Change | Calculate slope from two points or a table and interpret it as a rate of change |
+| **LT6** | Linear Equations & Graphs | Write and graph linear equations; find equations of parallel and perpendicular lines |
+| **LT7** | Linear Modeling | Form, solve, and interpret linear models for real-world situations |
+| **LT8** | Quadratic Functions | Identify quadratic functions; evaluate them; convert between vertex, standard, and factored forms |
+| **LT9** | Key Features of Graphs | Determine the vertex, roots, and axis of symmetry of a parabola from its equation or graph |
+| **LT10** | Algebraic Manipulation | *(Covered in Unit 6 — Quadratic Equations)* |
+| **LT11** | Solving Quadratics | *(Covered in Unit 6 — Quadratic Equations)* |
+| **LT12** | Domain & Range (Quadratic) | Determine and interpret the domain and range of a quadratic function from its equation or graph |
+| **LT13** | Quadratic Modeling | Model and interpret real-world situations using quadratic functions (projectile motion, revenue) |

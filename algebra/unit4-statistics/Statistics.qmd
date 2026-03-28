@@ -1,0 +1,468 @@
+---
+title: "Unit 4: Statistics"
+number-sections: true
+number-depth: 2
+execute:
+  echo: false
+---
+
+```{python}
+#| output: false
+import sys
+sys.path.insert(0, '../unit4-Statistics')
+from Statistics import generate
+from collections import defaultdict
+
+# LT1 drill exercises: count=4 (4 parts per exercise)
+sec_averages = generate(
+    types=[
+        "mean_simple","median_simple","mode_simple","range_simple",
+        "averages_combined","mean_find_missing",
+    ],
+    seed=10, show_solutions=True, count=4,
+)
+# Stem & leaf: 3 separate exercises, each with own diagram + 3 parts
+sec_stemleaf = generate(
+    types=["stem_leaf_averages","stem_leaf_averages","stem_leaf_averages"],
+    seed=11, show_solutions=True, count=1,
+)
+# Merge into one list
+sec_averages["exercises"] = sec_averages["exercises"] + sec_stemleaf["exercises"]
+
+sec_freq = generate(
+    types=[
+        "freq_table_mean","freq_table_median","freq_table_mode",
+        "freq_table_full","freq_table_median_find_x",
+    ],
+    seed=20, show_solutions=True, count=4,
+)
+
+sec_grouped = generate(
+    types=[
+        "grouped_mean","grouped_modal_class","grouped_median_class",
+        "grouped_full","grouped_combined_mean","grouped_find_missing_freq",
+    ],
+    seed=30, show_solutions=True, count=4,
+)
+
+sec_cumfreq = generate(
+    types=[
+        "cumfreq_table","cumfreq_read","cumfreq_iqr",
+        "cumfreq_above_value","cumfreq_find_ab","cumfreq_full",
+    ],
+    seed=40, show_solutions=True, count=1,
+)
+
+sec_boxplot = generate(
+    types=[
+        "boxplot_iqr","boxplot_draw","boxplot_outlier",
+        "boxplot_find_unknowns","boxplot_read",
+    ],
+    seed=50, show_solutions=True, count=1,
+)
+
+def by_diff(exercises):
+    g = defaultdict(list)
+    for ex in exercises:
+        g[ex["meta"]["difficulty"]].append(ex)
+    return g
+
+gavg  = by_diff(sec_averages["exercises"])
+gfreq = by_diff(sec_freq["exercises"])
+ggrp  = by_diff(sec_grouped["exercises"])
+gcf   = by_diff(sec_cumfreq["exercises"])
+gbp   = by_diff(sec_boxplot["exercises"])
+
+# ── Render helpers ────────────────────────────────────────────────
+def render_part_q(p):
+    if p.get("is_wide") or p.get("is_word"):
+        return f"\n{p['label']})\n\n$${p['question_latex']}$$\n"
+    return f"\n{p['label']})  ${p['question_latex']}$\n"
+
+def render_part_a(p):
+    ans = p["answer_latex"]
+    sol = p.get("solution_latex", "")
+    wide = p.get("is_wide") or p.get("is_word")
+    if wide:
+        out = f"\n**{p['label']})** $${ans}$$\n"
+    else:
+        out = f"\n**{p['label']})** ${ans}$\n"
+    if sol:
+        out += f"\n$$\\quad {sol}$$\n"
+    return out
+
+def _html_svg(svg, margin="12px 0 8px"):
+    print("```{=html}")
+    print(f'<div style="display:flex;justify-content:center;margin:{margin};">')
+    print(svg)
+    print('</div>')
+    print("```\n")
+
+def _math_table(tbl):
+    """Render a LaTeX array table correctly — as raw HTML math block."""
+    print("```{=html}")
+    print('<div style="display:flex;justify-content:center;margin:10px 0 6px;">')
+    print(f'<span class="math display">\\[{tbl}\\]</span>')
+    print('</div>')
+    print("```\n")
+
+def render_exercises(exercises, prefix):
+    for ex in exercises:
+        print(f"::::: {{#exr-{prefix}-{ex['number']}}}\n")
+        print(f"### {ex['title']}\n")
+        print(f"{ex['instruction']}\n")
+
+        ex_type = ex["meta"].get("type","")
+
+        # ── Shared table shown ONCE above all parts ──
+        # Uses raw HTML math so \renewcommand renders correctly
+        if ex.get("ex_tbl"):
+            _math_table(ex["ex_tbl"])
+
+        # ── Exercise-level SVG ──
+        # stem & leaf: above parts
+        # boxplot_read: above parts (students read from it)
+        # cumfreq: after parts (students use curve to answer)
+        if ex.get("ex_svg") and ex_type in ("stem_leaf_averages", "boxplot_read"):
+            _html_svg(ex["ex_svg"])
+
+        # ── Parts ──
+        for p in ex["parts"]:
+            print(render_part_q(p))
+            if p.get("svg"):
+                _html_svg(p["svg"], "4px 0 10px")
+            print()
+
+        # ── CF curve shown AFTER all parts ──
+        if ex.get("ex_svg") and ex_type in (
+                "cumfreq_iqr", "cumfreq_table", "cumfreq_full"):
+            _html_svg(ex["ex_svg"], "16px 0 8px")
+
+        # ── Solution ──
+        print('\n::: {.callout-tip collapse="true"}')
+        print("## 🔍 View Solution\n")
+        for p in ex["parts"]:
+            print(render_part_a(p))
+            if p.get("sol_svg"):
+                _html_svg(p["sol_svg"], "6px 0 12px")
+        print(":::")
+        print("::: exercise-meta")
+        print('<div class="skill-container">')
+        for skill in ex["meta"]["skills"]:
+            print(f'  <span class="skill-badge">{skill}</span>')
+        print('</div>')
+        print(":::")
+        print(":::::\n")
+```
+
+## 🎯 Learning Targets
+
+{{< include Statistics-Learning-Targets.qmd >}}
+
+---
+
+## 🗂️ Formula Cards
+
+{{< include Statistics-Formulas.qmd >}}
+
+---
+
+## 📊 Part A — Averages and Range {#sec-averages}
+
+::: {.callout-note icon=false}
+## 🔑 Key Formulas
+
+$$\bar{x} = \frac{\sum x}{n} \qquad \text{Median} = \text{middle value (sorted)} \qquad \text{Range} = \text{max} - \text{min}$$
+:::
+
+:::::::::: panel-tabset
+
+### 🟢 Easy
+
+```{python}
+#| output: asis
+render_exercises(gavg.get("easy",[]), "avg")
+```
+
+::: math-sep
+∑ × π ÷ √ ◆ ∞ ± ∫ ≠ Δ
+:::
+
+### 🟡 Medium
+
+```{python}
+#| output: asis
+render_exercises(gavg.get("medium",[]), "avg")
+```
+
+::: math-sep
+∑ × π ÷ √ ◆ ∞ ± ∫ ≠ Δ
+:::
+
+### 🔴 Challenging
+
+```{python}
+#| output: asis
+render_exercises(gavg.get("hard",[]), "avg")
+```
+
+::: math-sep
+∑ × π ÷ √ ◆ ∞ ± ∫ ≠ Δ
+:::
+
+::::::::::
+
+---
+
+## 📋 Part B — Frequency Tables {#sec-freq}
+
+::: {.callout-note icon=false}
+## 🔑 Key Formula
+
+$$\bar{x} = \frac{\sum fx}{\sum f}$$
+:::
+
+:::::::::: panel-tabset
+
+### 🟢 Easy
+
+```{python}
+#| output: asis
+render_exercises(gfreq.get("easy",[]), "freq")
+```
+
+::: math-sep
+∑ × π ÷ √ ◆ ∞ ± ∫ ≠ Δ
+:::
+
+### 🟡 Medium
+
+```{python}
+#| output: asis
+render_exercises(gfreq.get("medium",[]), "freq")
+```
+
+::: math-sep
+∑ × π ÷ √ ◆ ∞ ± ∫ ≠ Δ
+:::
+
+### 🔴 Challenging
+
+```{python}
+#| output: asis
+render_exercises(gfreq.get("hard",[]), "freq")
+```
+
+::: math-sep
+∑ × π ÷ √ ◆ ∞ ± ∫ ≠ Δ
+:::
+
+::::::::::
+
+---
+
+## 📦 Part C — Grouped Frequency Tables {#sec-grouped}
+
+::: {.callout-note icon=false}
+## 🔑 Key Points
+
+Use the **midpoint** of each class interval for estimated mean: $\bar{x} \approx \dfrac{\sum fx}{\sum f}$
+
+**Modal class** = class with highest frequency. **Median class** = class containing the $\frac{n}{2}$th value.
+:::
+
+:::::::::: panel-tabset
+
+### 🟢 Easy
+
+```{python}
+#| output: asis
+render_exercises(ggrp.get("easy",[]), "grp")
+```
+
+::: math-sep
+∑ × π ÷ √ ◆ ∞ ± ∫ ≠ Δ
+:::
+
+### 🟡 Medium
+
+```{python}
+#| output: asis
+render_exercises(ggrp.get("medium",[]), "grp")
+```
+
+::: math-sep
+∑ × π ÷ √ ◆ ∞ ± ∫ ≠ Δ
+:::
+
+### 🔴 Challenging
+
+```{python}
+#| output: asis
+render_exercises(ggrp.get("hard",[]), "grp")
+```
+
+::: math-sep
+∑ × π ÷ √ ◆ ∞ ± ∫ ≠ Δ
+:::
+
+::::::::::
+
+---
+
+## 📈 Part D — Cumulative Frequency {#sec-cumfreq}
+
+::: {.callout-note icon=false}
+## 🔑 Key Points
+
+| Measure | Position on CF axis |
+|---------|-------------------|
+| Median ($Q_2$) | $\frac{n}{2}$ |
+| Lower quartile ($Q_1$) | $\frac{n}{4}$ |
+| Upper quartile ($Q_3$) | $\frac{3n}{4}$ |
+
+$\text{IQR} = Q_3 - Q_1$
+:::
+
+:::::::::: panel-tabset
+
+### 🟢 Easy
+
+```{python}
+#| output: asis
+render_exercises(gcf.get("easy",[]), "cf")
+```
+
+::: math-sep
+∑ × π ÷ √ ◆ ∞ ± ∫ ≠ Δ
+:::
+
+### 🟡 Medium
+
+```{python}
+#| output: asis
+render_exercises(gcf.get("medium",[]), "cf")
+```
+
+::: math-sep
+∑ × π ÷ √ ◆ ∞ ± ∫ ≠ Δ
+:::
+
+### 🔴 Challenging
+
+```{python}
+#| output: asis
+render_exercises(gcf.get("hard",[]), "cf")
+```
+
+::: math-sep
+∑ × π ÷ √ ◆ ∞ ± ∫ ≠ Δ
+:::
+
+::::::::::
+
+---
+
+## 🎯 Part E — Box Plots and IQR {#sec-boxplot}
+
+::: {.callout-note icon=false}
+## 🔑 Key Points
+
+$$\text{IQR} = Q_3 - Q_1$$
+
+**Outlier rule:** A value is an outlier if it is $> Q_3 + 1.5 \times \text{IQR}$ or $< Q_1 - 1.5 \times \text{IQR}$
+:::
+
+:::::::::: panel-tabset
+
+### 🟢 Easy
+
+```{python}
+#| output: asis
+render_exercises(gbp.get("easy",[]), "bp")
+```
+
+::: math-sep
+∑ × π ÷ √ ◆ ∞ ± ∫ ≠ Δ
+:::
+
+### 🟡 Medium
+
+```{python}
+#| output: asis
+render_exercises(gbp.get("medium",[]), "bp")
+```
+
+::: math-sep
+∑ × π ÷ √ ◆ ∞ ± ∫ ≠ Δ
+:::
+
+### 🔴 Challenging
+
+```{python}
+#| output: asis
+render_exercises(gbp.get("hard",[]), "bp")
+```
+
+::: math-sep
+∑ × π ÷ √ ◆ ∞ ± ∫ ≠ Δ
+:::
+
+::::::::::
+
+---
+
+## ⚡ Test Your Knowledge {#sec-worksheet}
+
+```{=html}
+<link rel="stylesheet" href="../../assets/worksheet.css">
+<script src="https://cdn.jsdelivr.net/pyodide/v0.25.0/full/pyodide.js"></script>
+<script src="../../assets/worksheet.js"></script>
+
+<div class="ws-toolbar no-print">
+  <div class="ws-controls">
+    <button class="ws-btn primary" id="btn-ws-new" onclick="wsGenerate()" disabled>🔄 New Session</button>
+    <button class="ws-btn outline" onclick="wsOpenPreview()">👁️ Preview & Print</button>
+    <a href="https://app.flintk12.com/activities/statistics-mast-8f4ceb/sessions/new" target="_blank" class="ws-btn flint">🤖 Get Help</a>
+  </div>
+  <div id="ws-loading" class="ws-status">⏳ Loading Python...</div>
+</div>
+
+<div id="ws-container"></div>
+
+<div id="ws-preview-overlay" class="ws-modal no-print">
+  <div class="ws-modal-header">
+    <span id="ws-preview-title-text">Worksheet Preview</span>
+    <div class="ws-modal-btns">
+      <button class="ws-btn-small print" onclick="wsPrint()">🖨️ Print PDF</button>
+      <button class="ws-btn-small close" onclick="wsClosePreview()">✕ Close</button>
+    </div>
+  </div>
+  <div id="ws-preview-scroll" class="ws-modal-body"></div>
+</div>
+
+
+<script>
+window.WS_CONFIG = {
+  title:    "Unit 4: Statistics",
+  unit:     "Unit 4 · Statistics",
+  pyPath:   "Statistics.py",
+  template: "word",
+  count:    4,
+  types: [
+    "mean_simple",
+    "median_simple",
+    "averages_combined",
+    "mean_find_missing",
+    "freq_table_mean",
+    "freq_table_median",
+    "grouped_mean",
+    "grouped_modal_class",
+    "cumfreq_table",
+    "cumfreq_read",
+    "boxplot_iqr",
+    "boxplot_draw"
+  ]
+};
+</script>
+```

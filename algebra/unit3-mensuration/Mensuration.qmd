@@ -1,0 +1,428 @@
+---
+title: "Unit 3: Mensuration"
+number-sections: true
+number-depth: 2
+execute:
+  echo: false
+---
+
+```{python}
+#| output: false
+import sys
+sys.path.insert(0, '../unit3-Mensuration')
+from Mensuration import generate
+from collections import defaultdict
+
+sec_conversions = generate(
+    types=["convert_length","convert_area","convert_volume","convert_mixed"],
+    seed=10, count=6,
+)
+
+sec_volume = generate(
+    types=[
+        "prism_rectangle","prism_given_area","prism_triangle",
+        "prism_trapezoid","prism_parallelogram",
+        "cylinder_radius","cylinder_diameter",
+        "half_cylinder","quarter_cylinder","sector_cylinder",
+    ],
+    seed=20, count=6,
+)
+
+sec_composite_vol = generate(
+    types=[
+        "composite_prism_cylinder","composite_two_prisms",
+        "composite_l_prism","composite_cylinder_subtract","composite_tunnel",
+        "composite_t_cuboids",
+        "find_missing_prism","find_missing_cylinder","find_missing_tri_prism",
+        "context_tank","context_shed",
+        "similar_cylinders",
+    ],
+    seed=30, count=6,
+)
+
+sec_sa = generate(
+    types=[
+        "sa_cuboid","sa_open_box","sa_triangular_prism","sa_trapezoidal_prism",
+        "sa_l_prism",
+        "sa_cylinder_closed","sa_cylinder_open","sa_cylinder_tube","sa_half_cylinder",
+        "sa_composite_prism_halfcyl","sa_composite_subtract","sa_cylinder_cone",
+    ],
+    seed=40, count=6,
+)
+
+sec_curved = generate(
+    types=[
+        "pyramid_rect","pyramid_square","pyramid_given_area","pyramid_missing",
+        "cone_radius","cone_pythagoras",
+        "sphere_radius","sphere_diameter","hemisphere",
+        "composite_cone_hemisphere",
+        "sa_sphere","sa_sphere_diameter","sa_hemisphere",
+        "sa_cone","sa_cone_slant",
+    ],
+    seed=50, count=6,
+)
+
+sec_algebra = generate(
+    types=[
+        "algebraic_prism_rectangle","algebraic_prism_triangle",
+        "algebraic_cylinder","algebraic_find_x",
+    ],
+    seed=60, count=6,
+)
+
+def by_diff(exercises):
+    g = defaultdict(list)
+    for ex in exercises:
+        g[ex["meta"]["difficulty"]].append(ex)
+    return g
+
+gconv   = by_diff(sec_conversions["exercises"])
+gvol    = by_diff(sec_volume["exercises"])
+gcvol   = by_diff(sec_composite_vol["exercises"])
+gsa     = by_diff(sec_sa["exercises"])
+gcurved = by_diff(sec_curved["exercises"])
+galg    = by_diff(sec_algebra["exercises"])
+
+# ── Shared render helpers ─────────────────────────────────────────
+def render_part_q(p):
+    if p.get("is_wide") or p.get("is_word"):
+        return f"{p['label']})  $${p['question_latex']}$$\n"
+    return f"{p['label']})  ${p['question_latex']}$  \n"
+
+def render_part_a(p):
+    if p.get("is_wide") or p.get("is_word"):
+        return f"{p['label']})  $${p['answer_latex']}$$\n"
+    return f"{p['label']})  ${p['answer_latex']}$  \n"
+
+def render_exercises(exercises, prefix):
+    for ex in exercises:
+        print(f"::::: {{#exr-{prefix}-{ex['number']}}}\n")
+        print(f"### {ex['title']}\n")
+        print(f"{ex['instruction']}\n")
+
+        # SA exercises: one diagram with letter labels for the whole exercise
+        if ex.get("ex_svg"):
+            print("```{=html}")
+            print('<div style="display:flex;justify-content:center;margin:8px 0;">')
+            print(ex["ex_svg"])
+            print('</div>')
+            print("```\n")
+
+        # Volume exercises: one diagram per part with actual numbers
+        elif any(p.get("svg") for p in ex["parts"]):
+            print("```{=html}")
+            print('<div style="display:flex;flex-wrap:wrap;gap:8px;'
+                  'justify-content:center;margin:8px 0;">')
+            for p in ex["parts"]:
+                if p.get("svg"):
+                    print('<div style="text-align:center;">')
+                    print(f'<div style="font-size:11px;color:#555;'
+                          f'margin-bottom:2px;font-style:italic;">({p["label"]})</div>')
+                    print(p["svg"])
+                    print('</div>')
+            print('</div>')
+            print("```\n")
+
+        for p in ex["parts"]:
+            print(render_part_q(p))
+        print('\n::: {.callout-tip collapse="true"}')
+        print("## 🔍 View Solution\n")
+        for p in ex["parts"]:
+            print(render_part_a(p))
+        print(":::")
+        print("::: exercise-meta")
+        print('<div class="skill-container">')
+        for skill in ex["meta"]["skills"]:
+            print(f'  <span class="skill-badge">{skill}</span>')
+        print('</div>')
+        print(":::")
+        print(":::::\n")
+```
+
+## 🎯 Learning Targets
+
+{{< include Mensuration-Learning-Targets.qmd >}}
+
+---
+
+## 🗂️ Formula Cards
+
+{{< include Mensuration-Formulas.qmd >}}
+
+---
+
+## 📏 Part A — Unit Conversions {#sec-conversions}
+
+::: {.callout-note icon=false}
+## 🔑 Key Conversion Facts
+
+| Dimension | Conversion |
+|-----------|-----------|
+| **Length** | $\times10$: cm→mm · $\times100$: m→cm · $\times1000$: km→m |
+| **Area** | $\times100$: cm²→mm² · $\times10{,}000$: m²→cm² · $\times10^6$: km²→m² |
+| **Volume** | $\times1000$: cm³→mm³ · $\times10^6$: m³→cm³ · $1\text{ m}^3=1000\text{ L}$ |
+
+*To go the other way: divide by the same factor.*
+:::
+
+:::::::::: panel-tabset
+
+### 🟢 Easy
+
+```{python}
+#| output: asis
+render_exercises(gconv.get("easy", []), "conv")
+```
+
+::: math-sep
+∑ × π ÷ √ ◆ ∞ ± ∫ ≠ Δ
+:::
+
+### 🟡 Medium
+
+```{python}
+#| output: asis
+render_exercises(gconv.get("medium", []), "conv")
+```
+
+::: math-sep
+∑ × π ÷ √ ◆ ∞ ± ∫ ≠ Δ
+:::
+
+::::::::::
+
+---
+
+## 📦 Part B — Volume of Prisms and Cylinders {#sec-volume}
+
+:::::::::: panel-tabset
+
+### 🟢 Easy
+
+```{python}
+#| output: asis
+render_exercises(gvol.get("easy", []), "vol")
+```
+
+::: math-sep
+∑ × π ÷ √ ◆ ∞ ± ∫ ≠ Δ
+:::
+
+### 🟡 Medium
+
+```{python}
+#| output: asis
+render_exercises(gvol.get("medium", []), "vol")
+```
+
+::: math-sep
+∑ × π ÷ √ ◆ ∞ ± ∫ ≠ Δ
+:::
+
+### 🔴 Challenging
+
+```{python}
+#| output: asis
+render_exercises(gvol.get("hard", []), "vol")
+```
+
+::: math-sep
+∑ × π ÷ √ ◆ ∞ ± ∫ ≠ Δ
+:::
+
+::::::::::
+
+---
+
+## 🧩 Part C — Composite Solids & Missing Dimensions {#sec-composite}
+
+:::::::::: panel-tabset
+
+### 🟡 Medium
+
+```{python}
+#| output: asis
+render_exercises(gcvol.get("medium", []), "comp")
+```
+
+::: math-sep
+∑ × π ÷ √ ◆ ∞ ± ∫ ≠ Δ
+:::
+
+### 🔴 Challenging
+
+```{python}
+#| output: asis
+render_exercises(gcvol.get("hard", []), "comp")
+```
+
+::: math-sep
+∑ × π ÷ √ ◆ ∞ ± ∫ ≠ Δ
+:::
+
+::::::::::
+
+---
+
+## 🎨 Part D — Surface Area {#sec-sa}
+
+:::::::::: panel-tabset
+
+### 🟢 Easy
+
+```{python}
+#| output: asis
+render_exercises(gsa.get("easy", []), "sa")
+```
+
+::: math-sep
+∑ × π ÷ √ ◆ ∞ ± ∫ ≠ Δ
+:::
+
+### 🟡 Medium
+
+```{python}
+#| output: asis
+render_exercises(gsa.get("medium", []), "sa")
+```
+
+::: math-sep
+∑ × π ÷ √ ◆ ∞ ± ∫ ≠ Δ
+:::
+
+### 🔴 Challenging
+
+```{python}
+#| output: asis
+render_exercises(gsa.get("hard", []), "sa")
+```
+
+::: math-sep
+∑ × π ÷ √ ◆ ∞ ± ∫ ≠ Δ
+:::
+
+::::::::::
+
+---
+
+## 🔺 Part E — Pyramids, Cones and Spheres {#sec-curved}
+
+:::::::::: panel-tabset
+
+### 🟢 Easy
+
+```{python}
+#| output: asis
+render_exercises(gcurved.get("easy", []), "cur")
+```
+
+::: math-sep
+∑ × π ÷ √ ◆ ∞ ± ∫ ≠ Δ
+:::
+
+### 🟡 Medium
+
+```{python}
+#| output: asis
+render_exercises(gcurved.get("medium", []), "cur")
+```
+
+::: math-sep
+∑ × π ÷ √ ◆ ∞ ± ∫ ≠ Δ
+:::
+
+### 🔴 Challenging
+
+```{python}
+#| output: asis
+render_exercises(gcurved.get("hard", []), "cur")
+```
+
+::: math-sep
+∑ × π ÷ √ ◆ ∞ ± ∫ ≠ Δ
+:::
+
+::::::::::
+
+---
+
+## 🔣 Part F — Algebraic Volume {#sec-algebra}
+
+::: {.callout-note icon=false}
+## 📌 What to expect
+These questions give dimensions as algebraic expressions (e.g. $2x$, $x+3$). Apply the volume formula, expand brackets, and simplify using index laws.
+:::
+
+:::::::::: panel-tabset
+
+### 🔴 Challenging
+
+```{python}
+#| output: asis
+render_exercises(galg.get("hard", []), "alg")
+```
+
+::: math-sep
+∑ × π ÷ √ ◆ ∞ ± ∫ ≠ Δ
+:::
+
+::::::::::
+
+---
+
+## ⚡ Test Your Knowledge {#sec-mensuration-worksheet}
+
+```{=html}
+<link rel="stylesheet" href="../../assets/worksheet.css">
+<script src="https://cdn.jsdelivr.net/pyodide/v0.25.0/full/pyodide.js"></script>
+<script src="../../assets/worksheet.js"></script>
+
+<div class="ws-toolbar no-print">
+  <div class="ws-controls">
+    <button class="ws-btn primary" id="btn-ws-new" onclick="wsGenerate()" disabled>🔄 New Session</button>
+    <button class="ws-btn outline" onclick="wsOpenPreview()">👁️ Preview & Print</button>
+    <a href="https://app.flintk12.com/activities/volume-and-surf-19b9e1/sessions/new" target="_blank" class="ws-btn flint">🤖 Get Help</a>
+  </div>
+  <div id="ws-loading" class="ws-status">⏳ Loading Python...</div>
+</div>
+
+<div id="ws-container"></div>
+
+<div id="ws-preview-overlay" class="ws-modal no-print">
+  <div class="ws-modal-header">
+    <span id="ws-preview-title-text">Worksheet Preview</span>
+    <div class="ws-modal-btns">
+      <button class="ws-btn-small print" onclick="wsPrint()">🖨️ Print PDF</button>
+      <button class="ws-btn-small close" onclick="wsClosePreview()">✕ Close</button>
+    </div>
+  </div>
+  <div id="ws-preview-scroll" class="ws-modal-body"></div>
+</div>
+
+
+<script>
+window.WS_CONFIG = {
+  title:    "Unit 3: Mensuration",
+  unit:     "Unit 3 · Mensuration",
+  pyPath:   "Mensuration.py",
+  template: "word",
+  count:    5,
+  types: [
+    "convert_length",
+    "convert_area",
+    "convert_volume",
+    "prism_rectangle",
+    "prism_triangle",
+    "cylinder_radius",
+    "sa_cuboid",
+    "sa_cylinder_closed",
+    "composite_l_prism",
+    "pyramid_rect",
+    "cone_radius",
+    "sphere_radius",
+    "find_missing_prism",
+    "algebraic_prism_rectangle"
+  ]
+};
+</script>
+```

@@ -1,0 +1,185 @@
+---
+title: "Unit 7: Linear & Quadratic Functions"
+number-sections: true
+number-depth: 2
+execute:
+  echo: false
+---
+
+```{python}
+#| output: false
+import sys
+sys.path.insert(0, '../unit7-functions')
+from Functions import generate
+from collections import defaultdict
+
+data = generate(
+    types=[
+        # LT1 — Relations & Functions
+        "relation_mapping",
+        "relation_ordered_pairs",
+        # LT2 — Representations
+        "repr_table_to_eq",
+        "repr_eq_to_table",
+        # LT3 — Domain & Range
+        "domain_range_set",
+        "domain_range_linear",
+        # LT4 — Linear Functions
+        "linear_identify",
+        "linear_evaluate",
+        "linear_interpret",
+        # LT5 — Slope & Rate of Change
+        "slope_two_points",
+        "slope_from_table",
+        "slope_interpret",
+        # LT6 — Linear Equations & Graphs
+        "linear_graph_plot",
+        "linear_write_from_graph",
+        "linear_parallel",
+        "linear_perpendicular",
+        # LT7 — Linear Modeling
+        "linear_model_word",
+        # LT8 — Quadratic Functions & Conversions
+        "quadratic_identify",
+        "quadratic_evaluate",
+        "quadratic_graph",
+        "vertex_to_standard",
+        "vertex_to_factored",
+        "standard_to_vertex",
+        "factored_to_standard",
+        # LT9 — Key Features of Graphs
+        "quadratic_vertex_formula",
+        "quadratic_axis_symmetry",
+        "quadratic_roots_graph",
+        # LT12 — Domain & Range (Quadratic)
+        "quadratic_domain_range",
+        "quadratic_dr_from_graph",
+        # LT13 — Quadratic Modeling
+        "quadratic_model_projectile",
+        "quadratic_model_revenue",
+        # LT9 ext — read graph + find equation
+        "quadratic_read_graph",
+        # Intersection of linear and quadratic
+        "linear_quadratic_intersection",
+        # Vertical line test
+        "vertical_line_test",
+    ],
+    seed           = 42,
+    show_solutions = True,
+)
+
+exercises = data["_exercises_qmd"]
+
+# Group by difficulty
+grouped = defaultdict(list)
+for ex in exercises:
+    grouped[ex["difficulty"]].append(ex)
+```
+
+## 🎯 Learning Targets
+
+{{< include Functions-Learning-Targets.qmd >}}
+
+
+## 🗂️ Formula Card
+
+{{< include Functions-Formulas.qmd >}}
+
+
+## 📝 Practice Problems
+
+:::::::::: panel-tabset
+
+### 🟢 Easy
+
+```{python}
+#| output: asis
+for ex in grouped.get("easy", []):
+    print(ex["rendered"])
+```
+
+::: math-sep
+∑ × π ÷ √ ◆ ∞ ± ∫ ≠ Δ
+:::
+
+### 🟡 Medium
+
+```{python}
+#| output: asis
+for ex in grouped.get("medium", []):
+    print(ex["rendered"])
+```
+
+::: math-sep
+∑ × π ÷ √ ◆ ∞ ± ∫ ≠ Δ
+:::
+
+### 🔴 Challenging
+
+```{python}
+#| output: asis
+for ex in grouped.get("hard", []):
+    print(ex["rendered"])
+```
+
+::: math-sep
+∑ × π ÷ √ ◆ ∞ ± ∫ ≠ Δ
+:::
+
+::::::::::
+
+## ⚡ Test Your Knowledge
+
+```{=html}
+<link rel="stylesheet" href="../../assets/worksheet.css">
+<script src="https://cdn.jsdelivr.net/pyodide/v0.25.0/full/pyodide.js"></script>
+<script src="../../assets/worksheet.js"></script>
+
+<div class="ws-toolbar no-print">
+  <div class="ws-controls">
+    <button class="ws-btn primary" id="btn-ws-new" onclick="wsGenerate()" disabled>🔄 New Session</button>
+    <button class="ws-btn outline" onclick="wsOpenPreview()">👁️ Preview & Print</button>
+    <a href="https://app.flintk12.com/activities/functions-algeb-61cc72/sessions/new" target="_blank" class="ws-btn flint">🤖 Get Help</a>
+  </div>
+  <div id="ws-loading" class="ws-status">⏳ Loading Python...</div>
+</div>
+
+<div id="ws-container"></div>
+
+<div id="ws-preview-overlay" class="ws-modal no-print">
+  <div class="ws-modal-header">
+    <span id="ws-preview-title-text">Worksheet Preview</span>
+    <div class="ws-modal-btns">
+      <button class="ws-btn-small print" onclick="wsPrint()">🖨️ Print PDF</button>
+      <button class="ws-btn-small close" onclick="wsClosePreview()">✕ Close</button>
+    </div>
+  </div>
+  <div id="ws-preview-scroll" class="ws-modal-body"></div>
+</div>
+
+<script>
+window.WS_CONFIG = {
+  title: "Linear & Quadratic Functions",
+  unit: "Unit 7 · Functions",
+  pyPath: "Functions.py",
+  template: "word",
+  count: 4,
+  types: [
+    "slope_two_points",
+    "slope_from_table",
+    "repr_table_to_eq",
+    "linear_evaluate",
+    "linear_identify",
+    "linear_parallel",
+    "linear_perpendicular",
+    "vertex_to_standard",
+    "factored_to_standard",
+    "standard_to_vertex",
+    "quadratic_vertex_formula",
+    "quadratic_axis_symmetry",
+    "quadratic_evaluate",
+    "quadratic_domain_range"
+  ]
+};
+</script>
+```

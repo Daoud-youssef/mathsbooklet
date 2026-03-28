@@ -1,0 +1,40 @@
+By the end of this unit, you should be able to:
+
+**LT1 — Averages and Range from a List**
+
+- Calculate the **mean**, **median**, **mode** and **range** from a list of values
+- Find a **missing value** given the mean of a dataset
+- Find the **new mean** when a value is added to a dataset
+- Find two unknown values given their **ratio** and the overall mean
+- Read and interpret a **stem and leaf diagram** to find averages and range
+
+**LT2 — Frequency Tables (Ungrouped)**
+
+- Calculate the **mean** from a frequency table using $\bar{x} = \dfrac{\sum fx}{\sum f}$
+- Find the **median** from a frequency table using cumulative frequencies
+- Identify the **mode** from a frequency table
+- Find the largest and smallest possible value of an unknown frequency $x$ given a target **median**
+
+**LT3 — Grouped Frequency Tables**
+
+- Identify the **modal class** from a grouped frequency table
+- Identify the **median class** from a grouped frequency table
+- **Estimate the mean** using midpoints: $\bar{x} \approx \dfrac{\sum fx}{\sum f}$
+- Calculate a **combined mean** when two groups with different sizes are merged
+- Find **missing frequencies** $a$ and $b$ given total frequency and estimated mean
+
+**LT4 — Cumulative Frequency**
+
+- Build a **cumulative frequency table** from a frequency table
+- Read values from a cumulative frequency table (how many below / above a value)
+- Use a **cumulative frequency graph** to estimate $Q_1$, $Q_2$ (median) and $Q_3$
+- Estimate the **IQR** from a cumulative frequency graph
+- Estimate the number of items **above a given value**
+- Find missing values **A** and **B** in a cumulative frequency table
+
+**LT5 — Box Plots and IQR**
+
+- Calculate the **IQR** from raw data: $\text{IQR} = Q_3 - Q_1$
+- Draw a **box-and-whisker plot** from a five-number summary
+- Identify **outliers** using the rule: value $> Q_3 + 1.5 \times \text{IQR}$ or $< Q_1 - 1.5 \times \text{IQR}$
+- Find unknown values in an ordered list given conditions on median, mode and range

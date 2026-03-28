@@ -1,0 +1,87 @@
+:::::::::::: formula-card
+### Linear & Quadratic Functions — Key Facts {.unnumbered}
+
+#### Relations & Functions {.unnumbered}
+
+::: sticky-note-blue
+**💡 Key Test** A relation is a **function** if every input ($x$-value) maps to **exactly one** output ($y$-value). Use the vertical line test on a graph.
+:::
+
+::: rule-group
+**Function notation**: $f(x) = mx + c$ means "the output when the input is $x$"
+
+**Domain**: the set of all valid **inputs** ($x$-values)
+
+**Range**: the set of all valid **outputs** ($y$-values)
+
+**Examples**:
+$$f(x) = 2x + 1 \quad \Rightarrow \quad f(3) = 2(3)+1 = 7$$
+:::
+
+#### Linear Functions {.unnumbered}
+
+::: sticky-note-yellow
+**📝 Slope Formula** $$m = \frac{y_2 - y_1}{x_2 - x_1} = \frac{\Delta y}{\Delta x}$$
+:::
+
+::: rule-group
+**Slope-intercept form**: $y = mx + c$, where $m$ = slope, $c$ = $y$-intercept
+
+**Parallel lines** share the **same slope**: $m_1 = m_2$
+
+**Perpendicular lines**: slopes are **negative reciprocals**: $m_1 \times m_2 = -1$
+
+**Examples**:
+$$\text{Through }(2,5)\text{ with slope }3: \quad y - 5 = 3(x-2) \quad \Rightarrow \quad y = 3x - 1$$
+$$\text{Perpendicular to }y=2x+1: \quad m_\perp = -\tfrac{1}{2}$$
+:::
+
+#### Quadratic Functions — Three Forms {.unnumbered}
+
+::: sticky-note-pink
+**⚠️ Conversion Tip** Each form reveals different information. Convert using expansion or completing the square.
+:::
+
+::: rule-group
+| Form | Equation | Reveals |
+|---|---|---|
+| **Standard** | $f(x) = ax^2 + bx + c$ | $y$-intercept $(0, c)$ |
+| **Vertex** | $f(x) = a(x-h)^2 + k$ | Vertex $(h, k)$ |
+| **Factored** | $f(x) = a(x-r_1)(x-r_2)$ | Roots $x = r_1, r_2$ |
+
+**Vertex formula** (from standard form): $$x_{\text{vertex}} = \frac{-b}{2a}$$
+
+**Axis of symmetry**: $x = \dfrac{-b}{2a} = h$
+:::
+
+#### Converting Between Forms {.unnumbered}
+
+::: rule-group
+**Vertex → Standard** (expand):
+$$2(x-3)^2 + 1 = 2(x^2-6x+9)+1 = 2x^2 - 12x + 19$$
+
+**Vertex → Factored** (find roots first):
+$$\textstyle(x-3)^2 - 4 = 0 \Rightarrow x = 3\pm2 \Rightarrow f(x)=(x-1)(x-5)$$
+
+**Standard → Vertex** (complete the square):
+$$x^2 - 6x + 5 = (x-3)^2 - 9 + 5 = (x-3)^2 - 4$$
+
+**Factored → Standard** (expand):
+$$(x-1)(x-5) = x^2 - 6x + 5$$
+:::
+
+#### Domain & Range {.unnumbered}
+
+::: sticky-note-orange
+**🎯 Quick Rule** Every quadratic has domain $x \in \mathbb{R}$. The range depends on whether the parabola opens up or down.
+:::
+
+::: rule-group
+| Function type | Domain | Range |
+|---|---|---|
+| Linear $f(x) = mx+c$ | $x \in \mathbb{R}$ | $y \in \mathbb{R}$ |
+| Quadratic, $a > 0$ (opens up) | $x \in \mathbb{R}$ | $y \geq k$ |
+| Quadratic, $a < 0$ (opens down) | $x \in \mathbb{R}$ | $y \leq k$ |
+:::
+
+::::::::::::

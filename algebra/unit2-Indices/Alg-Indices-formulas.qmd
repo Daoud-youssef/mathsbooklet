@@ -1,0 +1,83 @@
+:::::::::::: formula-card
+### Algebraic Indices & Expansion Rules {.unnumbered}
+
+#### Laws of Indices (The Core Rules) {.unnumbered}
+
+::: sticky-note-yellow
+**💡 Pro Tip** These rules ONLY apply when the **base** (the big letter)
+is the same.
+:::
+
+::: rule-group
+**Multiplication & Division** 1. **Multiplication**: Add the powers
+$\rightarrow$ $$x^a \times x^b = x^{a+b}$$ 2. **Division**: Subtract the
+powers $\rightarrow$ $$\frac{x^a}{x^b} = x^{a-b}$$
+
+**Examples**: $$y^5 \times y^3 = y^{5+3} = y^8$$
+$$10w^7 \div 2w^3 = (10 \div 2)w^{7-3} = 5w^4$$
+:::
+
+#### Power of a Power & Zero {.unnumbered}
+
+::: sticky-note-blue
+**🎯 Memory Trick** Brackets mean multiply!\
+Anything to the power of $0$ is a hero (it becomes $1$).
+:::
+
+::: rule-group
+**The Bracket Rule**: $$(x^a)^b = x^{a \times b} = x^{ab}$$
+
+**Examples**: $$(k^3)^4 = k^{3 \times 4} = k^{12}$$ 
+$$(5x^2)^3 = 5^3 \times x^{2 \times 3} = 125x^6$$
+
+**The Zero Rule**: $$x^0 = 1$$
+:::
+
+#### Negative & Fractional Indices {.unnumbered}
+
+::: sticky-note-pink
+**⚠️ Common Mistake** A negative power does NOT make the number
+negative; it makes it a reciprocal (fraction)!
+:::
+
+::: rule-group
+**Negative Powers**: $$x^{-a} = \frac{1}{x^a}$$\
+**Fractional Powers**: $$x^{\frac{1}{n}} = \sqrt[n]{x}$$
+
+**Examples**:  $$4^{-2} = \frac{1}{4^2} = \frac{1}{16}$$ 
+$$9^{\frac{1}{2}} = \sqrt{9} = 3$$
+:::
+
+#### Expanding Brackets with Indices {.unnumbered}
+
+::: sticky-note-orange
+**📝 Quick Method** Multiply the "Big" numbers (coefficients), add the
+"Small" numbers (indices).
+:::
+
+::: rule-group
+**Single Brackets**: $$a(b + c) = ab + ac$$
+
+**Examples**: 
+$$3x^2(2x^3 + 4) = (3 \times 2)x^{2+3} + (3 \times 4)x^2 = 6x^5 + 12x^2$$ 
+$$x^5(x^2 - x^{-3}) = x^{5+2} - x^{5-3} = x^7 - x^2$$
+:::
+
+#### Algebraic Fractions with Indices {.unnumbered}
+
+::: rule-group
+**Simplifying Fractions**: 
+
+1. Simplify the numerator (top) first using multiplication laws. 
+
+2. Simplify the denominator (bottom). 
+
+3. Use the division law (subtract) to find the final result.
+
+**Example**:
+$$\frac{a^5 \times a^4}{a^2} = \frac{a^{5+4}}{a^2} = \frac{a^9}{a^2} = a^{9-2} = a^7$$
+
+**Example with Coefficients**:
+$$\frac{(2x^3)^2}{4x^4} = \frac{4x^6}{4x^4} = 1x^{6-4} = x^2$$
+:::
+::::::::::::

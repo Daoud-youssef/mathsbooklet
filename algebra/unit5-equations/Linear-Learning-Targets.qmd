@@ -1,0 +1,12 @@
+::: {.learning-targets}
+
+| # | I can… | Key Skill |
+|---|--------|-----------|
+| LT1 | Solve one-step equations using inverse operations | Addition, subtraction, multiplication, division |
+| LT2 | Solve two-step equations, including brackets and fractions | Two inverse operations in sequence |
+| LT3 | Solve equations with unknowns on both sides | Collecting like terms |
+| LT4 | Expand brackets and solve the resulting equation | Single and double brackets |
+| LT5 | Solve equations involving algebraic fractions | Clearing fractions, cross-multiplication |
+| LT6 | Form and solve equations from word problems | Number riddles, ages, geometry, formulas |
+
+:::

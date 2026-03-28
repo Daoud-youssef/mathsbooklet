@@ -1,0 +1,3330 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.8.25">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+
+<title>6&nbsp; Unit 6: Quadratic Equations – Math-Booklet</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+</style>
+
+
+<script src="../../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../../">
+<link href="../../algebra/unit7-functions/Functions.html" rel="next">
+<link href="../../algebra/unit5-equations/LinearEquations.html" rel="prev">
+<script src="../../site_libs/quarto-html/quarto.js" type="module"></script>
+<script src="../../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="../../site_libs/quarto-html/axe/axe-check.js" type="module"></script>
+<script src="../../site_libs/quarto-html/popper.min.js"></script>
+<script src="../../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-7b89279ff1a6dce999919e0e67d4d9ec.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="../../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../../site_libs/bootstrap/bootstrap-27c261d06b905028a18691de25d09dde.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "sidebar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "start",
+  "type": "textbox",
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "show-item-context": false,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-text-placeholder": "",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
+  }
+}</script>
+<script>
+MathJax = {
+  tex: {
+    inlineMath: [['\\(', '\\)']],
+    displayMath: [['\\[', '\\]']],
+    packages: {'[+]': ['cancel', 'color']}
+  }
+};
+</script>
+
+  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN" && texText && texText.data) {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
+
+<link rel="stylesheet" href="../../assets/custom.css">
+</head>
+
+<body class="nav-sidebar floating quarto-light">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+  <nav class="quarto-secondary-nav">
+    <div class="container-fluid d-flex">
+      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+        <i class="bi bi-layout-text-sidebar-reverse"></i>
+      </button>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../algebra/unit1-operations/01-operations.html">Algebra</a></li><li class="breadcrumb-item"><a href="../../algebra/unit6-quadratics/Quadratics.html"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Unit 6: Quadratic Equations</span></a></li></ol></nav>
+        <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+        </a>
+      <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
+        <i class="bi bi-search"></i>
+      </button>
+    </div>
+  </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article">
+<!-- sidebar -->
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation floating overflow-auto">
+    <div class="pt-lg-2 mt-2 text-left sidebar-header sidebar-header-stacked">
+      <a href="../../index.html" class="sidebar-logo-link">
+      </a>
+    <div class="sidebar-title mb-0 py-0">
+      <a href="../../">Math-Booklet</a> 
+        <div class="sidebar-tools-main">
+    <a href="https://github.com/Daoud-youssef/mathsbooklet.git" title="Source Code" class="quarto-navigation-tool px-1" aria-label="Source Code"><i class="bi bi-github"></i></a>
+</div>
+    </div>
+      </div>
+        <div class="mt-2 flex-shrink-0 align-items-center">
+        <div class="sidebar-search">
+        <div id="quarto-search" class="" title="Search"></div>
+        </div>
+        </div>
+    <div class="sidebar-menu-container"> 
+    <ul class="list-unstyled mt-1">
+        <li class="px-0"><hr class="sidebar-divider hi "></li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Welcome to MYP 5 Mathematics</span></a>
+  </div>
+</li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true">
+ <span class="menu-text">Algebra</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../algebra/unit1-operations/01-operations.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Unit 1: Operations</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../algebra/unit2-Indices/Indices.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Unit 2: Indices</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../algebra/unit3-mensuration/Mensuration.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Unit 3: Mensuration</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../algebra/unit4-statistics/Statistics.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Unit 4: Statistics</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../algebra/unit5-equations/LinearEquations.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Unit 5: Linear Equations</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../algebra/unit6-quadratics/Quadratics.html" class="sidebar-item-text sidebar-link active">
+ <span class="menu-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Unit 6: Quadratic Equations</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../algebra/unit7-functions/Functions.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Unit 7: Linear &amp; Quadratic Functions</span></span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+    </ul>
+    </div>
+</nav>
+<div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">Table of contents</h2>
+   
+  <ul>
+  <li><a href="#learning-targets" id="toc-learning-targets" class="nav-link active" data-scroll-target="#learning-targets"><span class="header-section-number">6.1</span> 🎯 Learning Targets</a></li>
+  <li><a href="#formula-card" id="toc-formula-card" class="nav-link" data-scroll-target="#formula-card"><span class="header-section-number">6.2</span> 🗂️ Formula Card</a>
+  <ul class="collapse">
+  <li><a href="#quadratic-equations-formula-card" id="toc-quadratic-equations-formula-card" class="nav-link" data-scroll-target="#quadratic-equations-formula-card">Quadratic Equations — Formula Card</a></li>
+  </ul></li>
+  <li><a href="#practice-problems" id="toc-practice-problems" class="nav-link" data-scroll-target="#practice-problems"><span class="header-section-number">6.3</span> 📝 Practice Problems</a></li>
+  <li><a href="#test-your-knowledge" id="toc-test-your-knowledge" class="nav-link" data-scroll-target="#test-your-knowledge"><span class="header-section-number">6.4</span> ⚡ Test Your Knowledge</a></li>
+  </ul>
+</nav>
+    </div>
+<!-- main -->
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../algebra/unit1-operations/01-operations.html">Algebra</a></li><li class="breadcrumb-item"><a href="../../algebra/unit6-quadratics/Quadratics.html"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Unit 6: Quadratic Equations</span></a></li></ol></nav>
+<div class="quarto-title">
+<h1 class="title"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Unit 6: Quadratic Equations</span></h1>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    
+  
+    
+  </div>
+  
+
+
+</header>
+
+
+<section id="learning-targets" class="level2" data-number="6.1">
+<h2 data-number="6.1" class="anchored" data-anchor-id="learning-targets"><span class="header-section-number">6.1</span> 🎯 Learning Targets</h2>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 33%">
+<col style="width: 33%">
+<col style="width: 33%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>#</th>
+<th>Learning Target</th>
+<th>I can…</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><strong>LT1</strong></td>
+<td>Factorising — Simple</td>
+<td>Factorise <span class="math inline">\(x^2 + bx + c\)</span> using the sum-product method</td>
+</tr>
+<tr class="even">
+<td><strong>LT2</strong></td>
+<td>Factorising — Harder</td>
+<td>Factorise <span class="math inline">\(ax^2 + bx + c\)</span> (<span class="math inline">\(a \neq 1\)</span>) using the <span class="math inline">\(ac\)</span>-method</td>
+</tr>
+<tr class="odd">
+<td><strong>LT3</strong></td>
+<td>Special Forms</td>
+<td>Recognise and factorise difference of two squares and perfect squares</td>
+</tr>
+<tr class="even">
+<td><strong>LT4</strong></td>
+<td>Solve by Factorising</td>
+<td>Solve quadratic equations by factorising</td>
+</tr>
+<tr class="odd">
+<td><strong>LT5</strong></td>
+<td>Quadratic Formula &amp; Discriminant</td>
+<td>Apply <span class="math inline">\(x = \dfrac{-b \pm \sqrt{b^2-4ac}}{2a}\)</span>; use <span class="math inline">\(\Delta = b^2-4ac\)</span> to determine nature of roots and find unknown parameters</td>
+</tr>
+<tr class="even">
+<td><strong>LT6</strong></td>
+<td>Completing the Square</td>
+<td>Write <span class="math inline">\(ax^2+bx+c\)</span> in completed square form and use it to solve</td>
+</tr>
+<tr class="odd">
+<td><strong>LT7</strong></td>
+<td>Word Problems</td>
+<td>Form and solve quadratic equations from real-world contexts (area, integers: consecutive, even, odd)</td>
+</tr>
+<tr class="even">
+<td><strong>LT8</strong></td>
+<td>Geometry</td>
+<td>Apply quadratic equations to geometric problems (right triangles, rectangles, L-shapes, cuboids)</td>
+</tr>
+<tr class="odd">
+<td><strong>LT9</strong></td>
+<td>Roots &amp; Vieta’s Formulas</td>
+<td>Form equations from roots; use <span class="math inline">\(\alpha+\beta = -b/a\)</span> and <span class="math inline">\(\alpha\beta = c/a\)</span> to find symmetric expressions</td>
+</tr>
+<tr class="even">
+<td><strong>LT10</strong></td>
+<td>Algebraic Fraction Equations</td>
+<td>Solve equations with algebraic fractions by multiplying through to form a quadratic</td>
+</tr>
+<tr class="odd">
+<td><strong>LT11</strong></td>
+<td>Disguised Quadratics</td>
+<td>Recognise and solve <span class="math inline">\(x^4 + bx^2 + c = 0\)</span> and <span class="math inline">\((x+a)^2 + b(x+a) + c = 0\)</span> using substitution</td>
+</tr>
+<tr class="even">
+<td><strong>LT12</strong></td>
+<td>Surd Equations</td>
+<td>Solve equations involving square roots by squaring both sides; identify and reject extraneous roots</td>
+</tr>
+<tr class="odd">
+<td><strong>LT13</strong></td>
+<td>Indices → Quadratic</td>
+<td>Solve exponential equations like <span class="math inline">\((b^{x+p})^{x+q} = b^k\)</span> by equating exponents to form a quadratic</td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="formula-card" class="level2" data-number="6.2">
+<h2 data-number="6.2" class="anchored" data-anchor-id="formula-card"><span class="header-section-number">6.2</span> 🗂️ Formula Card</h2>
+<section id="quadratic-equations-formula-card" class="level3 unnumbered formula-card">
+<h3 class="unnumbered anchored" data-anchor-id="quadratic-equations-formula-card">Quadratic Equations — Formula Card</h3>
+<section id="factorising-a-1" class="level4 unnumbered">
+<h4 class="unnumbered anchored" data-anchor-id="factorising-a-1">Factorising (a = 1)</h4>
+<div class="sticky-note-yellow">
+<p><strong>💡 Sum-Product Method</strong> Find two numbers that <strong>multiply</strong> to <span class="math inline">\(c\)</span> and <strong>add</strong> to <span class="math inline">\(b\)</span>.</p>
+</div>
+<div class="rule-group">
+<p><strong>Standard form</strong>: <span class="math inline">\(x^2 + bx + c = (x + p)(x + q)\)</span></p>
+<p>where <span class="math inline">\(p \times q = c\)</span> and <span class="math inline">\(p + q = b\)</span></p>
+<p><strong>Examples</strong>: <span class="math display">\[x^2 + 5x + 6 = (x+2)(x+3) \quad [2\times3=6,\;2+3=5]\]</span> <span class="math display">\[x^2 - x - 12 = (x+3)(x-4) \quad [3\times(-4)=-12,\;3+(-4)=-1]\]</span></p>
+</div>
+</section>
+<section id="factorising-a-1-ac-method" class="level4 unnumbered">
+<h4 class="unnumbered anchored" data-anchor-id="factorising-a-1-ac-method">Factorising (a ≠ 1) — ac Method</h4>
+<div class="sticky-note-blue">
+<p><strong>🎯 ac Method</strong> Multiply <span class="math inline">\(a \times c\)</span>, then find two numbers that multiply to <span class="math inline">\(ac\)</span> and add to <span class="math inline">\(b\)</span>.</p>
+</div>
+<div class="rule-group">
+<p><strong>Steps</strong>: For <span class="math inline">\(ax^2 + bx + c\)</span>:</p>
+<ol type="1">
+<li>Find <span class="math inline">\(p \times q = ac\)</span> and <span class="math inline">\(p + q = b\)</span></li>
+<li>Split the middle term: <span class="math inline">\(ax^2 + px + qx + c\)</span></li>
+<li>Group and factorise</li>
+</ol>
+<p><strong>Example</strong>: <span class="math inline">\(2x^2 + 7x + 3\)</span>, <span class="math inline">\(\;ac = 6\)</span>, find <span class="math inline">\(p,q: p\times q=6,\; p+q=7 \Rightarrow 1,6\)</span> <span class="math display">\[2x^2 + x + 6x + 3 = x(2x+1) + 3(2x+1) = (x+3)(2x+1)\]</span></p>
+</div>
+</section>
+<section id="special-forms" class="level4 unnumbered">
+<h4 class="unnumbered anchored" data-anchor-id="special-forms">Special Forms</h4>
+<div class="sticky-note-pink">
+<p><strong>⚠️ Spot These First!</strong> Always check for special forms before using other methods.</p>
+</div>
+<div class="rule-group">
+<p><strong>Difference of Two Squares</strong>: <span class="math display">\[a^2 - b^2 = (a+b)(a-b)\]</span></p>
+<p><strong>Perfect Square</strong>: <span class="math display">\[a^2 + 2ab + b^2 = (a+b)^2 \qquad a^2 - 2ab + b^2 = (a-b)^2\]</span></p>
+<p><strong>Examples</strong>: <span class="math display">\[x^2 - 25 = (x+5)(x-5)\]</span> <span class="math display">\[x^2 + 8x + 16 = (x+4)^2\]</span></p>
+</div>
+</section>
+<section id="quadratic-formula" class="level4 unnumbered">
+<h4 class="unnumbered anchored" data-anchor-id="quadratic-formula">Quadratic Formula</h4>
+<div class="sticky-note-orange">
+<p><strong>📝 Always works!</strong> Use when factorising is not possible.</p>
+</div>
+<div class="rule-group">
+<p>For <span class="math inline">\(ax^2 + bx + c = 0\)</span>: <span class="math display">\[x = \dfrac{-b \pm \sqrt{b^2 - 4ac}}{2a}\]</span></p>
+<p><strong>The Discriminant</strong> <span class="math inline">\(\Delta = b^2 - 4ac\)</span>:</p>
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th><span class="math inline">\(\Delta &gt; 0\)</span></th>
+<th>Two distinct real roots</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><span class="math inline">\(\Delta = 0\)</span></td>
+<td>One repeated root</td>
+</tr>
+<tr class="even">
+<td><span class="math inline">\(\Delta &lt; 0\)</span></td>
+<td>No real roots</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Example</strong>: <span class="math inline">\(x^2 - 5x + 3 = 0\)</span> <span class="math display">\[x = \dfrac{5 \pm \sqrt{25-12}}{2} = \dfrac{5 \pm \sqrt{13}}{2}\]</span></p>
+</div>
+</section>
+<section id="completing-the-square" class="level4 unnumbered">
+<h4 class="unnumbered anchored" data-anchor-id="completing-the-square">Completing the Square</h4>
+<div class="rule-group">
+<p><strong>Monic</strong> (<span class="math inline">\(a = 1\)</span>): <span class="math inline">\(x^2 + bx + c = \left(x + \dfrac{b}{2}\right)^2 - \left(\dfrac{b}{2}\right)^2 + c\)</span></p>
+<p><strong>Non-monic</strong> (<span class="math inline">\(a \neq 1\)</span>): <span class="math inline">\(ax^2 + bx + c = a\left(x + \dfrac{b}{2a}\right)^2 - \dfrac{b^2}{4a} + c\)</span></p>
+<p><strong>To solve</strong>: Write in form <span class="math inline">\((x+p)^2 = q\)</span>, then <span class="math inline">\(x = -p \pm \sqrt{q}\)</span></p>
+<p><strong>Example</strong>: <span class="math inline">\(x^2 + 6x + 2 = 0\)</span> <span class="math display">\[( x+3)^2 - 9 + 2 = 0 \implies (x+3)^2 = 7 \implies x = -3 \pm \sqrt{7}\]</span></p>
+</div>
+</section>
+</section>
+</section>
+<section id="practice-problems" class="level2" data-number="6.3">
+<h2 data-number="6.3" class="anchored" data-anchor-id="practice-problems"><span class="header-section-number">6.3</span> 📝 Practice Problems</h2>
+<div class="tabset-margin-container"></div><div class="panel-tabset">
+<ul class="nav nav-tabs" role="tablist"><li class="nav-item" role="presentation"><a class="nav-link active" id="tabset-1-1-tab" data-bs-toggle="tab" data-bs-target="#tabset-1-1" role="tab" aria-controls="tabset-1-1" aria-selected="true" href="">🟢 Easy</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-1-2-tab" data-bs-toggle="tab" data-bs-target="#tabset-1-2" role="tab" aria-controls="tabset-1-2" aria-selected="false" href="">🟡 Medium</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-1-3-tab" data-bs-toggle="tab" data-bs-target="#tabset-1-3" role="tab" aria-controls="tabset-1-3" aria-selected="false" href="">🔴 Challenging</a></li></ul>
+<div class="tab-content">
+<div id="tabset-1-1" class="tab-pane active" role="tabpanel" aria-labelledby="tabset-1-1-tab">
+<div id="exr-u6-1" class="theorem exercise">
+<p><span class="theorem-title"><strong>Exercise 6.1</strong></span> <em>Factorise each expression.</em></p>
+<div class="grid">
+<div class="g-col-6">
+<p><strong>a)</strong> <span class="math inline">\(\displaystyle n^2 + 3n + 2\)</span></p>
+</div>
+<div class="g-col-6">
+<p><strong>b)</strong> <span class="math inline">\(\displaystyle y^2 + 8y + 16\)</span></p>
+</div>
+</div>
+<div class="grid">
+<div class="g-col-6">
+<p><strong>c)</strong> <span class="math inline">\(\displaystyle x^2 + 11x + 18\)</span></p>
+</div>
+<div class="g-col-6">
+<p><strong>d)</strong> <span class="math inline">\(\displaystyle x^2 + 17x + 70\)</span></p>
+</div>
+</div>
+<div class="grid">
+<div class="g-col-6">
+<p><strong>e)</strong> <span class="math inline">\(\displaystyle y^2 + 3y + 2\)</span></p>
+</div>
+<div class="g-col-6">
+<p><strong>f)</strong> <span class="math inline">\(\displaystyle x^2 + 13x + 36\)</span></p>
+</div>
+</div>
+<div class="grid">
+<div class="g-col-6">
+<p><strong>g)</strong> <span class="math inline">\(\displaystyle m^2 + 13m + 36\)</span></p>
+</div>
+<div class="g-col-6">
+<p><strong>h)</strong> <span class="math inline">\(\displaystyle n^2 + 12n + 32\)</span></p>
+</div>
+</div>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-1-contents" aria-controls="callout-1" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Tip</span>🔍 View Solutions
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-1" class="callout-1-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p><strong>a)</strong> <span class="math inline">\(\displaystyle n^2 + 3n + 2\)</span></p>
+<p><span class="math display">\[\begin{align*}
+\text{Find } p, q: p \times q = 2,\; p + q = 3 \\ p = 2,\; q = 1 \\ n^2 + 3n + 2 = (n + 2)(n + 1)
+\end{align*}\]</span></p>
+<p><strong>b)</strong> <span class="math inline">\(\displaystyle y^2 + 8y + 16\)</span></p>
+<p><span class="math display">\[\begin{align*}
+\text{Find } p, q: p \times q = 16,\; p + q = 8 \\ p = 4,\; q = 4 \\ y^2 + 8y + 16 = (y + 4)(y + 4)
+\end{align*}\]</span></p>
+<p><strong>c)</strong> <span class="math inline">\(\displaystyle x^2 + 11x + 18\)</span></p>
+<p><span class="math display">\[\begin{align*}
+\text{Find } p, q: p \times q = 18,\; p + q = 11 \\ p = 2,\; q = 9 \\ x^2 + 11x + 18 = (x + 2)(x + 9)
+\end{align*}\]</span></p>
+<p><strong>d)</strong> <span class="math inline">\(\displaystyle x^2 + 17x + 70\)</span></p>
+<p><span class="math display">\[\begin{align*}
+\text{Find } p, q: p \times q = 70,\; p + q = 17 \\ p = 10,\; q = 7 \\ x^2 + 17x + 70 = (x + 10)(x + 7)
+\end{align*}\]</span></p>
+<p><strong>e)</strong> <span class="math inline">\(\displaystyle y^2 + 3y + 2\)</span></p>
+<p><span class="math display">\[\begin{align*}
+\text{Find } p, q: p \times q = 2,\; p + q = 3 \\ p = 1,\; q = 2 \\ y^2 + 3y + 2 = (y + 1)(y + 2)
+\end{align*}\]</span></p>
+<p><strong>f)</strong> <span class="math inline">\(\displaystyle x^2 + 13x + 36\)</span></p>
+<p><span class="math display">\[\begin{align*}
+\text{Find } p, q: p \times q = 36,\; p + q = 13 \\ p = 4,\; q = 9 \\ x^2 + 13x + 36 = (x + 4)(x + 9)
+\end{align*}\]</span></p>
+<p><strong>g)</strong> <span class="math inline">\(\displaystyle m^2 + 13m + 36\)</span></p>
+<p><span class="math display">\[\begin{align*}
+\text{Find } p, q: p \times q = 36,\; p + q = 13 \\ p = 9,\; q = 4 \\ m^2 + 13m + 36 = (m + 9)(m + 4)
+\end{align*}\]</span></p>
+<p><strong>h)</strong> <span class="math inline">\(\displaystyle n^2 + 12n + 32\)</span></p>
+<p><span class="math display">\[\begin{align*}
+\text{Find } p, q: p \times q = 32,\; p + q = 12 \\ p = 4,\; q = 8 \\ n^2 + 12n + 32 = (n + 4)(n + 8)
+\end{align*}\]</span></p>
+</div>
+</div>
+</div>
+</div>
+<div id="exr-u6-2" class="theorem exercise">
+<p><span class="theorem-title"><strong>Exercise 6.2</strong></span> <em>Factorise each expression.</em></p>
+<div class="grid">
+<div class="g-col-6">
+<p><strong>a)</strong> <span class="math inline">\(\displaystyle m^2 - 2m - 3\)</span></p>
+</div>
+<div class="g-col-6">
+<p><strong>b)</strong> <span class="math inline">\(\displaystyle y^2 + y - 30\)</span></p>
+</div>
+</div>
+<div class="grid">
+<div class="g-col-6">
+<p><strong>c)</strong> <span class="math inline">\(\displaystyle x^2 - 2x - 24\)</span></p>
+</div>
+<div class="g-col-6">
+<p><strong>d)</strong> <span class="math inline">\(\displaystyle x^2 - 5x - 14\)</span></p>
+</div>
+</div>
+<div class="grid">
+<div class="g-col-6">
+<p><strong>e)</strong> <span class="math inline">\(\displaystyle x^2 + 5x - 50\)</span></p>
+</div>
+<div class="g-col-6">
+<p><strong>f)</strong> <span class="math inline">\(\displaystyle x^2 - x - 72\)</span></p>
+</div>
+</div>
+<div class="grid">
+<div class="g-col-6">
+<p><strong>g)</strong> <span class="math inline">\(\displaystyle n^2 + 5n - 14\)</span></p>
+</div>
+<div class="g-col-6">
+<p><strong>h)</strong> <span class="math inline">\(\displaystyle y^2 + 4y - 60\)</span></p>
+</div>
+</div>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-2-contents" aria-controls="callout-2" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Tip</span>🔍 View Solutions
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-2" class="callout-2-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p><strong>a)</strong> <span class="math inline">\(\displaystyle m^2 - 2m - 3\)</span></p>
+<p><span class="math display">\[\begin{align*}
+\text{Find } p, q: p \times q = -3,\; p + q = -2 \\ p = 1,\; q = -3 \\ m^2 - 2m - 3 = (m + 1)(m - 3)
+\end{align*}\]</span></p>
+<p><strong>b)</strong> <span class="math inline">\(\displaystyle y^2 + y - 30\)</span></p>
+<p><span class="math display">\[\begin{align*}
+\text{Find } p, q: p \times q = -30,\; p + q = 1 \\ p = 6,\; q = -5 \\ y^2 + y - 30 = (y + 6)(y - 5)
+\end{align*}\]</span></p>
+<p><strong>c)</strong> <span class="math inline">\(\displaystyle x^2 - 2x - 24\)</span></p>
+<p><span class="math display">\[\begin{align*}
+\text{Find } p, q: p \times q = -24,\; p + q = -2 \\ p = 4,\; q = -6 \\ x^2 - 2x - 24 = (x + 4)(x - 6)
+\end{align*}\]</span></p>
+<p><strong>d)</strong> <span class="math inline">\(\displaystyle x^2 - 5x - 14\)</span></p>
+<p><span class="math display">\[\begin{align*}
+\text{Find } p, q: p \times q = -14,\; p + q = -5 \\ p = 2,\; q = -7 \\ x^2 - 5x - 14 = (x + 2)(x - 7)
+\end{align*}\]</span></p>
+<p><strong>e)</strong> <span class="math inline">\(\displaystyle x^2 + 5x - 50\)</span></p>
+<p><span class="math display">\[\begin{align*}
+\text{Find } p, q: p \times q = -50,\; p + q = 5 \\ p = 10,\; q = -5 \\ x^2 + 5x - 50 = (x + 10)(x - 5)
+\end{align*}\]</span></p>
+<p><strong>f)</strong> <span class="math inline">\(\displaystyle x^2 - x - 72\)</span></p>
+<p><span class="math display">\[\begin{align*}
+\text{Find } p, q: p \times q = -72,\; p + q = -1 \\ p = 8,\; q = -9 \\ x^2 - x - 72 = (x + 8)(x - 9)
+\end{align*}\]</span></p>
+<p><strong>g)</strong> <span class="math inline">\(\displaystyle n^2 + 5n - 14\)</span></p>
+<p><span class="math display">\[\begin{align*}
+\text{Find } p, q: p \times q = -14,\; p + q = 5 \\ p = 7,\; q = -2 \\ n^2 + 5n - 14 = (n + 7)(n - 2)
+\end{align*}\]</span></p>
+<p><strong>h)</strong> <span class="math inline">\(\displaystyle y^2 + 4y - 60\)</span></p>
+<p><span class="math display">\[\begin{align*}
+\text{Find } p, q: p \times q = -60,\; p + q = 4 \\ p = 10,\; q = -6 \\ y^2 + 4y - 60 = (y + 10)(y - 6)
+\end{align*}\]</span></p>
+</div>
+</div>
+</div>
+</div>
+<div id="exr-u6-6" class="theorem exercise">
+<p><span class="theorem-title"><strong>Exercise 6.3</strong></span> <em>Factorise using the difference of two squares.</em></p>
+<div class="grid">
+<div class="g-col-4">
+<p><strong>a)</strong> <span class="math inline">\(\displaystyle x^2 - 1\)</span></p>
+</div>
+<div class="g-col-4">
+<p><strong>b)</strong> <span class="math inline">\(\displaystyle y^2 - 121\)</span></p>
+</div>
+<div class="g-col-4">
+<p><strong>c)</strong> <span class="math inline">\(\displaystyle 4x^2 - 100\)</span></p>
+</div>
+</div>
+<div class="grid">
+<div class="g-col-4">
+<p><strong>d)</strong> <span class="math inline">\(\displaystyle 4m^2 - 49\)</span></p>
+</div>
+<div class="g-col-4">
+<p><strong>e)</strong> <span class="math inline">\(\displaystyle 9x^2 - 25\)</span></p>
+</div>
+<div class="g-col-4">
+<p><strong>f)</strong> <span class="math inline">\(\displaystyle n^2 - 121\)</span></p>
+</div>
+</div>
+<div class="grid">
+<div class="g-col-4">
+<p><strong>g)</strong> <span class="math inline">\(\displaystyle n^2 - 4\)</span></p>
+</div>
+<div class="g-col-4">
+<p><strong>h)</strong> <span class="math inline">\(\displaystyle 4m^2 - 9\)</span></p>
+</div>
+</div>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-3-contents" aria-controls="callout-3" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Tip</span>🔍 View Solutions
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-3" class="callout-3-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p><strong>a)</strong> <span class="math inline">\(\displaystyle x^2 - 1\)</span></p>
+<p><span class="math display">\[\begin{align*}
+x^2 - 1^2 = (x + 1)(x - 1)
+\end{align*}\]</span></p>
+<p><strong>b)</strong> <span class="math inline">\(\displaystyle y^2 - 121\)</span></p>
+<p><span class="math display">\[\begin{align*}
+y^2 - 11^2 = (y + 11)(y - 11)
+\end{align*}\]</span></p>
+<p><strong>c)</strong> <span class="math inline">\(\displaystyle 4x^2 - 100\)</span></p>
+<p><span class="math display">\[\begin{align*}
+(2x)^2 - (10)^2 = (2x + 10)(2x - 10)
+\end{align*}\]</span></p>
+<p><strong>d)</strong> <span class="math inline">\(\displaystyle 4m^2 - 49\)</span></p>
+<p><span class="math display">\[\begin{align*}
+(2m)^2 - (7)^2 = (2m + 7)(2m - 7)
+\end{align*}\]</span></p>
+<p><strong>e)</strong> <span class="math inline">\(\displaystyle 9x^2 - 25\)</span></p>
+<p><span class="math display">\[\begin{align*}
+(3x)^2 - (5)^2 = (3x + 5)(3x - 5)
+\end{align*}\]</span></p>
+<p><strong>f)</strong> <span class="math inline">\(\displaystyle n^2 - 121\)</span></p>
+<p><span class="math display">\[\begin{align*}
+n^2 - 11^2 = (n + 11)(n - 11)
+\end{align*}\]</span></p>
+<p><strong>g)</strong> <span class="math inline">\(\displaystyle n^2 - 4\)</span></p>
+<p><span class="math display">\[\begin{align*}
+n^2 - 2^2 = (n + 2)(n - 2)
+\end{align*}\]</span></p>
+<p><strong>h)</strong> <span class="math inline">\(\displaystyle 4m^2 - 9\)</span></p>
+<p><span class="math display">\[\begin{align*}
+(2m)^2 - (3)^2 = (2m + 3)(2m - 3)
+\end{align*}\]</span></p>
+</div>
+</div>
+</div>
+</div>
+<div id="exr-u6-7" class="theorem exercise">
+<p><span class="theorem-title"><strong>Exercise 6.4</strong></span> <em>Recognise and factorise each perfect square.</em></p>
+<div class="grid">
+<div class="g-col-6">
+<p><strong>a)</strong> <span class="math inline">\(\displaystyle y^2 - 2y + 1\)</span></p>
+</div>
+<div class="g-col-6">
+<p><strong>b)</strong> <span class="math inline">\(\displaystyle n^2 + 18n + 81\)</span></p>
+</div>
+</div>
+<div class="grid">
+<div class="g-col-6">
+<p><strong>c)</strong> <span class="math inline">\(\displaystyle y^2 + 18y + 81\)</span></p>
+</div>
+<div class="g-col-6">
+<p><strong>d)</strong> <span class="math inline">\(\displaystyle x^2 + 12x + 36\)</span></p>
+</div>
+</div>
+<div class="grid">
+<div class="g-col-6">
+<p><strong>e)</strong> <span class="math inline">\(\displaystyle m^2 - 20m + 100\)</span></p>
+</div>
+<div class="g-col-6">
+<p><strong>f)</strong> <span class="math inline">\(\displaystyle n^2 + 2n + 1\)</span></p>
+</div>
+</div>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-4-contents" aria-controls="callout-4" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Tip</span>🔍 View Solutions
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-4" class="callout-4-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p><strong>a)</strong> <span class="math inline">\(\displaystyle y^2 - 2y + 1\)</span></p>
+<p><span class="math display">\[\begin{align*}
+(y - 1)^2 \quad \text{[perfect square]}
+\end{align*}\]</span></p>
+<p><strong>b)</strong> <span class="math inline">\(\displaystyle n^2 + 18n + 81\)</span></p>
+<p><span class="math display">\[\begin{align*}
+(n + 9)^2 \quad \text{[perfect square]}
+\end{align*}\]</span></p>
+<p><strong>c)</strong> <span class="math inline">\(\displaystyle y^2 + 18y + 81\)</span></p>
+<p><span class="math display">\[\begin{align*}
+(y + 9)^2 \quad \text{[perfect square]}
+\end{align*}\]</span></p>
+<p><strong>d)</strong> <span class="math inline">\(\displaystyle x^2 + 12x + 36\)</span></p>
+<p><span class="math display">\[\begin{align*}
+(x + 6)^2 \quad \text{[perfect square]}
+\end{align*}\]</span></p>
+<p><strong>e)</strong> <span class="math inline">\(\displaystyle m^2 - 20m + 100\)</span></p>
+<p><span class="math display">\[\begin{align*}
+(m - 10)^2 \quad \text{[perfect square]}
+\end{align*}\]</span></p>
+<p><strong>f)</strong> <span class="math inline">\(\displaystyle n^2 + 2n + 1\)</span></p>
+<p><span class="math display">\[\begin{align*}
+(n + 1)^2 \quad \text{[perfect square]}
+\end{align*}\]</span></p>
+</div>
+</div>
+</div>
+</div>
+<div id="exr-u6-8" class="theorem exercise">
+<p><span class="theorem-title"><strong>Exercise 6.5</strong></span> <em>Solve each quadratic equation.</em></p>
+<div class="grid">
+<div class="g-col-6">
+<p><strong>a)</strong> <span class="math inline">\(\displaystyle x^2 - 1 = 0\)</span></p>
+</div>
+<div class="g-col-6">
+<p><strong>b)</strong> <span class="math inline">\(\displaystyle x^2 - 7x + 6 = 0\)</span></p>
+</div>
+</div>
+<div class="grid">
+<div class="g-col-6">
+<p><strong>c)</strong> <span class="math inline">\(\displaystyle y^2 + y - 42 = 0\)</span></p>
+</div>
+<div class="g-col-6">
+<p><strong>d)</strong> <span class="math inline">\(\displaystyle y^2 + 3y - 28 = 0\)</span></p>
+</div>
+</div>
+<div class="grid">
+<div class="g-col-6">
+<p><strong>e)</strong> <span class="math inline">\(\displaystyle y^2 + 3y - 10 = 0\)</span></p>
+</div>
+<div class="g-col-6">
+<p><strong>f)</strong> <span class="math inline">\(\displaystyle n^2 + 5n + 4 = 0\)</span></p>
+</div>
+</div>
+<div class="grid">
+<div class="g-col-6">
+<p><strong>g)</strong> <span class="math inline">\(\displaystyle m^2 + 14m + 48 = 0\)</span></p>
+</div>
+<div class="g-col-6">
+<p><strong>h)</strong> <span class="math inline">\(\displaystyle y^2 - 6y + 5 = 0\)</span></p>
+</div>
+</div>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-5-contents" aria-controls="callout-5" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Tip</span>🔍 View Solutions
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-5" class="callout-5-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p><strong>a)</strong> <span class="math inline">\(\displaystyle x^2 - 1 = 0\)</span></p>
+<p><span class="math display">\[\begin{align*}
+\text{Find } p, q: p \times q = -1,\; p + q = 0 \\ p = 1,\; q = -1 \\ (x + 1)(x - 1) = 0 \\ x = -1 \text{ or } x = 1
+\end{align*}\]</span></p>
+<p><strong>b)</strong> <span class="math inline">\(\displaystyle x^2 - 7x + 6 = 0\)</span></p>
+<p><span class="math display">\[\begin{align*}
+\text{Find } p, q: p \times q = 6,\; p + q = -7 \\ p = -1,\; q = -6 \\ (x - 1)(x - 6) = 0 \\ x = 1 \text{ or } x = 6
+\end{align*}\]</span></p>
+<p><strong>c)</strong> <span class="math inline">\(\displaystyle y^2 + y - 42 = 0\)</span></p>
+<p><span class="math display">\[\begin{align*}
+\text{Find } p, q: p \times q = -42,\; p + q = 1 \\ p = 7,\; q = -6 \\ (y + 7)(y - 6) = 0 \\ y = -7 \text{ or } y = 6
+\end{align*}\]</span></p>
+<p><strong>d)</strong> <span class="math inline">\(\displaystyle y^2 + 3y - 28 = 0\)</span></p>
+<p><span class="math display">\[\begin{align*}
+\text{Find } p, q: p \times q = -28,\; p + q = 3 \\ p = -4,\; q = 7 \\ (y - 4)(y + 7) = 0 \\ y = 4 \text{ or } y = -7
+\end{align*}\]</span></p>
+<p><strong>e)</strong> <span class="math inline">\(\displaystyle y^2 + 3y - 10 = 0\)</span></p>
+<p><span class="math display">\[\begin{align*}
+\text{Find } p, q: p \times q = -10,\; p + q = 3 \\ p = 5,\; q = -2 \\ (y + 5)(y - 2) = 0 \\ y = -5 \text{ or } y = 2
+\end{align*}\]</span></p>
+<p><strong>f)</strong> <span class="math inline">\(\displaystyle n^2 + 5n + 4 = 0\)</span></p>
+<p><span class="math display">\[\begin{align*}
+\text{Find } p, q: p \times q = 4,\; p + q = 5 \\ p = 1,\; q = 4 \\ (n + 1)(n + 4) = 0 \\ n = -1 \text{ or } n = -4
+\end{align*}\]</span></p>
+<p><strong>g)</strong> <span class="math inline">\(\displaystyle m^2 + 14m + 48 = 0\)</span></p>
+<p><span class="math display">\[\begin{align*}
+\text{Find } p, q: p \times q = 48,\; p + q = 14 \\ p = 6,\; q = 8 \\ (m + 6)(m + 8) = 0 \\ m = -6 \text{ or } m = -8
+\end{align*}\]</span></p>
+<p><strong>h)</strong> <span class="math inline">\(\displaystyle y^2 - 6y + 5 = 0\)</span></p>
+<p><span class="math display">\[\begin{align*}
+\text{Find } p, q: p \times q = 5,\; p + q = -6 \\ p = -5,\; q = -1 \\ (y - 5)(y - 1) = 0 \\ y = 5 \text{ or } y = 1
+\end{align*}\]</span></p>
+</div>
+</div>
+</div>
+</div>
+<div class="math-sep">
+<p>∑ × π ÷ √ ◆ ∞ ± ∫ ≠ Δ</p>
+</div>
+</div>
+<div id="tabset-1-2" class="tab-pane" role="tabpanel" aria-labelledby="tabset-1-2-tab">
+<div id="exr-u6-3" class="theorem exercise">
+<p><span class="theorem-title"><strong>Exercise 6.6</strong></span> <em>Factorise each expression.</em></p>
+<div class="grid">
+<div class="g-col-6">
+<p><strong>a)</strong> <span class="math inline">\(\displaystyle y^2 - 3y + 2\)</span></p>
+</div>
+<div class="g-col-6">
+<p><strong>b)</strong> <span class="math inline">\(\displaystyle y^2 - 7y + 10\)</span></p>
+</div>
+</div>
+<div class="grid">
+<div class="g-col-6">
+<p><strong>c)</strong> <span class="math inline">\(\displaystyle n^2 - 9n + 14\)</span></p>
+</div>
+<div class="g-col-6">
+<p><strong>d)</strong> <span class="math inline">\(\displaystyle y^2 - 14y + 48\)</span></p>
+</div>
+</div>
+<div class="grid">
+<div class="g-col-6">
+<p><strong>e)</strong> <span class="math inline">\(\displaystyle y^2 - 12y + 36\)</span></p>
+</div>
+<div class="g-col-6">
+<p><strong>f)</strong> <span class="math inline">\(\displaystyle y^2 - 7y + 10\)</span></p>
+</div>
+</div>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-6-contents" aria-controls="callout-6" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Tip</span>🔍 View Solutions
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-6" class="callout-6-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p><strong>a)</strong> <span class="math inline">\(\displaystyle y^2 - 3y + 2\)</span></p>
+<p><span class="math display">\[\begin{align*}
+\text{Find } p, q: p \times q = 2,\; p + q = -3 \\ p = -2,\; q = -1 \\ y^2 - 3y + 2 = (y - 2)(y - 1)
+\end{align*}\]</span></p>
+<p><strong>b)</strong> <span class="math inline">\(\displaystyle y^2 - 7y + 10\)</span></p>
+<p><span class="math display">\[\begin{align*}
+\text{Find } p, q: p \times q = 10,\; p + q = -7 \\ p = -5,\; q = -2 \\ y^2 - 7y + 10 = (y - 5)(y - 2)
+\end{align*}\]</span></p>
+<p><strong>c)</strong> <span class="math inline">\(\displaystyle n^2 - 9n + 14\)</span></p>
+<p><span class="math display">\[\begin{align*}
+\text{Find } p, q: p \times q = 14,\; p + q = -9 \\ p = -2,\; q = -7 \\ n^2 - 9n + 14 = (n - 2)(n - 7)
+\end{align*}\]</span></p>
+<p><strong>d)</strong> <span class="math inline">\(\displaystyle y^2 - 14y + 48\)</span></p>
+<p><span class="math display">\[\begin{align*}
+\text{Find } p, q: p \times q = 48,\; p + q = -14 \\ p = -8,\; q = -6 \\ y^2 - 14y + 48 = (y - 8)(y - 6)
+\end{align*}\]</span></p>
+<p><strong>e)</strong> <span class="math inline">\(\displaystyle y^2 - 12y + 36\)</span></p>
+<p><span class="math display">\[\begin{align*}
+\text{Find } p, q: p \times q = 36,\; p + q = -12 \\ p = -6,\; q = -6 \\ y^2 - 12y + 36 = (y - 6)(y - 6)
+\end{align*}\]</span></p>
+<p><strong>f)</strong> <span class="math inline">\(\displaystyle y^2 - 7y + 10\)</span></p>
+<p><span class="math display">\[\begin{align*}
+\text{Find } p, q: p \times q = 10,\; p + q = -7 \\ p = -5,\; q = -2 \\ y^2 - 7y + 10 = (y - 5)(y - 2)
+\end{align*}\]</span></p>
+</div>
+</div>
+</div>
+</div>
+<div id="exr-u6-4" class="theorem exercise">
+<p><span class="theorem-title"><strong>Exercise 6.7</strong></span> <em>Factorise each expression.</em></p>
+<div class="grid">
+<div class="g-col-6">
+<p><strong>a)</strong> <span class="math inline">\(\displaystyle 3m^2 + 14m + 8\)</span></p>
+</div>
+<div class="g-col-6">
+<p><strong>b)</strong> <span class="math inline">\(\displaystyle 4y^2 + 30y + 36\)</span></p>
+</div>
+</div>
+<div class="grid">
+<div class="g-col-6">
+<p><strong>c)</strong> <span class="math inline">\(\displaystyle 4x^2 + 9x + 2\)</span></p>
+</div>
+<div class="g-col-6">
+<p><strong>d)</strong> <span class="math inline">\(\displaystyle 4x^2 + 16x + 12\)</span></p>
+</div>
+</div>
+<div class="grid">
+<div class="g-col-6">
+<p><strong>e)</strong> <span class="math inline">\(\displaystyle 3n^2 + 23n + 30\)</span></p>
+</div>
+<div class="g-col-6">
+<p><strong>f)</strong> <span class="math inline">\(\displaystyle 3m^2 + 18m + 24\)</span></p>
+</div>
+</div>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-7-contents" aria-controls="callout-7" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Tip</span>🔍 View Solutions
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-7" class="callout-7-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p><strong>a)</strong> <span class="math inline">\(\displaystyle 3m^2 + 14m + 8\)</span></p>
+<p><span class="math display">\[\begin{align*}
+ac = 3 \times 8 = 24 \\ \text{Find } p, q: p \times q = 24,\; p + q = 14 \\ p = 2,\; q = 12 \\ 3m^2 + 2m + 12m + 8 \\ m(3m + 2) + \text{group} \\ 3m^2 + 14m + 8 = (3m + 2)(m + 4)
+\end{align*}\]</span></p>
+<p><strong>b)</strong> <span class="math inline">\(\displaystyle 4y^2 + 30y + 36\)</span></p>
+<p><span class="math display">\[\begin{align*}
+ac = 4 \times 36 = 144 \\ \text{Find } p, q: p \times q = 144,\; p + q = 30 \\ p = 6,\; q = 24 \\ 4y^2 + 6y + 24y + 36 \\ y(4y + 3) + \text{group} \\ 4y^2 + 30y + 36 = (4y + 6)(y + 6)
+\end{align*}\]</span></p>
+<p><strong>c)</strong> <span class="math inline">\(\displaystyle 4x^2 + 9x + 2\)</span></p>
+<p><span class="math display">\[\begin{align*}
+ac = 4 \times 2 = 8 \\ \text{Find } p, q: p \times q = 8,\; p + q = 9 \\ p = 1,\; q = 8 \\ 4x^2 + x + 8x + 2 \\ x(4x + 1) + \text{group} \\ 4x^2 + 9x + 2 = (4x + 1)(x + 2)
+\end{align*}\]</span></p>
+<p><strong>d)</strong> <span class="math inline">\(\displaystyle 4x^2 + 16x + 12\)</span></p>
+<p><span class="math display">\[\begin{align*}
+ac = 4 \times 12 = 48 \\ \text{Find } p, q: p \times q = 48,\; p + q = 16 \\ p = 4,\; q = 12 \\ 4x^2 + 4x + 12x + 12 \\ x(4x + 1) + \text{group} \\ 4x^2 + 16x + 12 = (4x + 4)(x + 3)
+\end{align*}\]</span></p>
+<p><strong>e)</strong> <span class="math inline">\(\displaystyle 3n^2 + 23n + 30\)</span></p>
+<p><span class="math display">\[\begin{align*}
+ac = 3 \times 30 = 90 \\ \text{Find } p, q: p \times q = 90,\; p + q = 23 \\ p = 5,\; q = 18 \\ 3n^2 + 5n + 18n + 30 \\ n(3n + 5) + \text{group} \\ 3n^2 + 23n + 30 = (3n + 5)(n + 6)
+\end{align*}\]</span></p>
+<p><strong>f)</strong> <span class="math inline">\(\displaystyle 3m^2 + 18m + 24\)</span></p>
+<p><span class="math display">\[\begin{align*}
+ac = 3 \times 24 = 72 \\ \text{Find } p, q: p \times q = 72,\; p + q = 18 \\ p = 6,\; q = 12 \\ 3m^2 + 6m + 12m + 24 \\ m(3m + 2) + \text{group} \\ 3m^2 + 18m + 24 = (3m + 6)(m + 4)
+\end{align*}\]</span></p>
+</div>
+</div>
+</div>
+</div>
+<div id="exr-u6-9" class="theorem exercise">
+<p><span class="theorem-title"><strong>Exercise 6.8</strong></span> <em>Solve each quadratic equation.</em></p>
+<div class="grid">
+<div class="g-col-6">
+<p><strong>a)</strong> <span class="math inline">\(\displaystyle 2y^2 - 13y + 6 = 0\)</span></p>
+</div>
+<div class="g-col-6">
+<p><strong>b)</strong> <span class="math inline">\(\displaystyle 4x^2 - 27x + 18 = 0\)</span></p>
+</div>
+</div>
+<div class="grid">
+<div class="g-col-6">
+<p><strong>c)</strong> <span class="math inline">\(\displaystyle 4y^2 - 20y - 24 = 0\)</span></p>
+</div>
+<div class="g-col-6">
+<p><strong>d)</strong> <span class="math inline">\(\displaystyle 2x^2 - 8x + 6 = 0\)</span></p>
+</div>
+</div>
+<div class="grid">
+<div class="g-col-6">
+<p><strong>e)</strong> <span class="math inline">\(\displaystyle 4m^2 - 11m + 6 = 0\)</span></p>
+</div>
+<div class="g-col-6">
+<p><strong>f)</strong> <span class="math inline">\(\displaystyle 2m^2 - 6m - 8 = 0\)</span></p>
+</div>
+</div>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-8-contents" aria-controls="callout-8" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Tip</span>🔍 View Solutions
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-8" class="callout-8-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p><strong>a)</strong> <span class="math inline">\(\displaystyle 2y^2 - 13y + 6 = 0\)</span></p>
+<p><span class="math display">\[\begin{align*}
+ac = 2 \times 6 = 12 \\ p = -12,\; q = -1 \\ (2y - 1)(y - 6) = 0 \\ y = \dfrac{1}{2} \text{ or } y = 6
+\end{align*}\]</span></p>
+<p><strong>b)</strong> <span class="math inline">\(\displaystyle 4x^2 - 27x + 18 = 0\)</span></p>
+<p><span class="math display">\[\begin{align*}
+ac = 4 \times 18 = 72 \\ p = -24,\; q = -3 \\ (4x - 3)(x - 6) = 0 \\ x = \dfrac{3}{4} \text{ or } x = 6
+\end{align*}\]</span></p>
+<p><strong>c)</strong> <span class="math inline">\(\displaystyle 4y^2 - 20y - 24 = 0\)</span></p>
+<p><span class="math display">\[\begin{align*}
+ac = 4 \times -24 = -96 \\ p = -24,\; q = 4 \\ (4y + 4)(y - 6) = 0 \\ y = -1 \text{ or } y = 6
+\end{align*}\]</span></p>
+<p><strong>d)</strong> <span class="math inline">\(\displaystyle 2x^2 - 8x + 6 = 0\)</span></p>
+<p><span class="math display">\[\begin{align*}
+ac = 2 \times 6 = 12 \\ p = -6,\; q = -2 \\ (2x - 6)(x - 1) = 0 \\ x = 3 \text{ or } x = 1
+\end{align*}\]</span></p>
+<p><strong>e)</strong> <span class="math inline">\(\displaystyle 4m^2 - 11m + 6 = 0\)</span></p>
+<p><span class="math display">\[\begin{align*}
+ac = 4 \times 6 = 24 \\ p = -8,\; q = -3 \\ (4m - 3)(m - 2) = 0 \\ m = \dfrac{3}{4} \text{ or } m = 2
+\end{align*}\]</span></p>
+<p><strong>f)</strong> <span class="math inline">\(\displaystyle 2m^2 - 6m - 8 = 0\)</span></p>
+<p><span class="math display">\[\begin{align*}
+ac = 2 \times -8 = -16 \\ p = -8,\; q = 2 \\ (2m + 2)(m - 4) = 0 \\ m = -1 \text{ or } m = 4
+\end{align*}\]</span></p>
+</div>
+</div>
+</div>
+</div>
+<div id="exr-u6-10" class="theorem exercise">
+<p><span class="theorem-title"><strong>Exercise 6.9</strong></span> <em>Solve each equation.</em></p>
+<div class="grid">
+<div class="g-col-6">
+<p><strong>a)</strong> <span class="math inline">\(\displaystyle m^2 - 64 = 0\)</span></p>
+</div>
+<div class="g-col-6">
+<p><strong>b)</strong> <span class="math inline">\(\displaystyle 4x^2 - 64 = 0\)</span></p>
+</div>
+</div>
+<div class="grid">
+<div class="g-col-6">
+<p><strong>c)</strong> <span class="math inline">\(\displaystyle m^2 + 16m + 64 = 0\)</span></p>
+</div>
+<div class="g-col-6">
+<p><strong>d)</strong> <span class="math inline">\(\displaystyle 4x^2 - 64 = 0\)</span></p>
+</div>
+</div>
+<div class="grid">
+<div class="g-col-6">
+<p><strong>e)</strong> <span class="math inline">\(\displaystyle y^2 - 25 = 0\)</span></p>
+</div>
+<div class="g-col-6">
+<p><strong>f)</strong> <span class="math inline">\(\displaystyle y^2 + 14y + 49 = 0\)</span></p>
+</div>
+</div>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-9-contents" aria-controls="callout-9" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Tip</span>🔍 View Solutions
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-9" class="callout-9-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p><strong>a)</strong> <span class="math inline">\(\displaystyle m^2 - 64 = 0\)</span></p>
+<p><span class="math display">\[\begin{align*}
+(m + 8)(m - 8) = 0 \\ m = 8 \text{ or } m = -8
+\end{align*}\]</span></p>
+<p><strong>b)</strong> <span class="math inline">\(\displaystyle 4x^2 - 64 = 0\)</span></p>
+<p><span class="math display">\[\begin{align*}
+(2x + 8)(2x - 8) = 0 \\ x = 4 \text{ or } x = -4
+\end{align*}\]</span></p>
+<p><strong>c)</strong> <span class="math inline">\(\displaystyle m^2 + 16m + 64 = 0\)</span></p>
+<p><span class="math display">\[\begin{align*}
+(m + 8)^2 = 0 \\ m = -8 \text{ (repeated root)}
+\end{align*}\]</span></p>
+<p><strong>d)</strong> <span class="math inline">\(\displaystyle 4x^2 - 64 = 0\)</span></p>
+<p><span class="math display">\[\begin{align*}
+(2x + 8)(2x - 8) = 0 \\ x = 4 \text{ or } x = -4
+\end{align*}\]</span></p>
+<p><strong>e)</strong> <span class="math inline">\(\displaystyle y^2 - 25 = 0\)</span></p>
+<p><span class="math display">\[\begin{align*}
+(y + 5)(y - 5) = 0 \\ y = 5 \text{ or } y = -5
+\end{align*}\]</span></p>
+<p><strong>f)</strong> <span class="math inline">\(\displaystyle y^2 + 14y + 49 = 0\)</span></p>
+<p><span class="math display">\[\begin{align*}
+(y + 7)^2 = 0 \\ y = -7 \text{ (repeated root)}
+\end{align*}\]</span></p>
+</div>
+</div>
+</div>
+</div>
+<div id="exr-u6-11" class="theorem exercise">
+<p><span class="theorem-title"><strong>Exercise 6.10</strong></span> <em>Solve using the quadratic formula.</em></p>
+<div class="grid">
+<div class="g-col-6">
+<p><strong>a)</strong> <span class="math inline">\(\displaystyle x^2 + 7x + 6 = 0\)</span></p>
+</div>
+<div class="g-col-6">
+<p><strong>b)</strong> <span class="math inline">\(\displaystyle y^2 + 15y + 56 = 0\)</span></p>
+</div>
+</div>
+<div class="grid">
+<div class="g-col-6">
+<p><strong>c)</strong> <span class="math inline">\(\displaystyle m^2 - 2m - 15 = 0\)</span></p>
+</div>
+<div class="g-col-6">
+<p><strong>d)</strong> <span class="math inline">\(\displaystyle y^2 - 2y - 8 = 0\)</span></p>
+</div>
+</div>
+<div class="grid">
+<div class="g-col-6">
+<p><strong>e)</strong> <span class="math inline">\(\displaystyle n^2 + 4n - 32 = 0\)</span></p>
+</div>
+<div class="g-col-6">
+<p><strong>f)</strong> <span class="math inline">\(\displaystyle m^2 - 7m + 6 = 0\)</span></p>
+</div>
+</div>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-10-contents" aria-controls="callout-10" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Tip</span>🔍 View Solutions
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-10" class="callout-10-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p><strong>a)</strong> <span class="math inline">\(\displaystyle x^2 + 7x + 6 = 0\)</span></p>
+<p><span class="math display">\[\begin{align*}
+x = \dfrac{-(7) \pm \sqrt{(7)^2 - 4(1)(6)}}{2} \\ x = \dfrac{-7 \pm 5}{2} \\ x = -1 \text{ or } x = -6
+\end{align*}\]</span></p>
+<p><strong>b)</strong> <span class="math inline">\(\displaystyle y^2 + 15y + 56 = 0\)</span></p>
+<p><span class="math display">\[\begin{align*}
+y = \dfrac{-(15) \pm \sqrt{(15)^2 - 4(1)(56)}}{2} \\ y = \dfrac{-15 \pm 1}{2} \\ y = -7 \text{ or } y = -8
+\end{align*}\]</span></p>
+<p><strong>c)</strong> <span class="math inline">\(\displaystyle m^2 - 2m - 15 = 0\)</span></p>
+<p><span class="math display">\[\begin{align*}
+m = \dfrac{-(-2) \pm \sqrt{(-2)^2 - 4(1)(-15)}}{2} \\ m = \dfrac{2 \pm 8}{2} \\ m = 5 \text{ or } m = -3
+\end{align*}\]</span></p>
+<p><strong>d)</strong> <span class="math inline">\(\displaystyle y^2 - 2y - 8 = 0\)</span></p>
+<p><span class="math display">\[\begin{align*}
+y = \dfrac{-(-2) \pm \sqrt{(-2)^2 - 4(1)(-8)}}{2} \\ y = \dfrac{2 \pm 6}{2} \\ y = 4 \text{ or } y = -2
+\end{align*}\]</span></p>
+<p><strong>e)</strong> <span class="math inline">\(\displaystyle n^2 + 4n - 32 = 0\)</span></p>
+<p><span class="math display">\[\begin{align*}
+n = \dfrac{-(4) \pm \sqrt{(4)^2 - 4(1)(-32)}}{2} \\ n = \dfrac{-4 \pm 12}{2} \\ n = 4 \text{ or } n = -8
+\end{align*}\]</span></p>
+<p><strong>f)</strong> <span class="math inline">\(\displaystyle m^2 - 7m + 6 = 0\)</span></p>
+<p><span class="math display">\[\begin{align*}
+m = \dfrac{-(-7) \pm \sqrt{(-7)^2 - 4(1)(6)}}{2} \\ m = \dfrac{7 \pm 5}{2} \\ m = 6 \text{ or } m = 1
+\end{align*}\]</span></p>
+</div>
+</div>
+</div>
+</div>
+<div id="exr-u6-14" class="theorem exercise">
+<p><span class="theorem-title"><strong>Exercise 6.11</strong></span> <em>Write each expression in completed square form.</em></p>
+<div class="grid">
+<div class="g-col-6">
+<p><strong>a)</strong> <span class="math inline">\(\displaystyle n^2 + 2n - 6\)</span></p>
+</div>
+<div class="g-col-6">
+<p><strong>b)</strong> <span class="math inline">\(\displaystyle x^2 + 4x\)</span></p>
+</div>
+</div>
+<div class="grid">
+<div class="g-col-6">
+<p><strong>c)</strong> <span class="math inline">\(\displaystyle x^2 - 10x + 4\)</span></p>
+</div>
+<div class="g-col-6">
+<p><strong>d)</strong> <span class="math inline">\(\displaystyle y^2 - 8y + 7\)</span></p>
+</div>
+</div>
+<div class="grid">
+<div class="g-col-6">
+<p><strong>e)</strong> <span class="math inline">\(\displaystyle y^2 + 6y - 2\)</span></p>
+</div>
+<div class="g-col-6">
+<p><strong>f)</strong> <span class="math inline">\(\displaystyle y^2 + y - 8\)</span></p>
+</div>
+</div>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-11-contents" aria-controls="callout-11" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Tip</span>🔍 View Solutions
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-11" class="callout-11-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p><strong>a)</strong> <span class="math inline">\(\displaystyle n^2 + 2n - 6\)</span></p>
+<p><span class="math display">\[\begin{align*}
+(n + 1)^2 - 7
+\end{align*}\]</span></p>
+<p><strong>b)</strong> <span class="math inline">\(\displaystyle x^2 + 4x\)</span></p>
+<p><span class="math display">\[\begin{align*}
+(x + 2)^2 - 4
+\end{align*}\]</span></p>
+<p><strong>c)</strong> <span class="math inline">\(\displaystyle x^2 - 10x + 4\)</span></p>
+<p><span class="math display">\[\begin{align*}
+\left(x - \dfrac{10}{2}\right)^2 - \left(\dfrac{10}{2}\right)^2 + 4 \\ (x - 5)^2 - 25 + 4 \\ (x - 5)^2 - 21
+\end{align*}\]</span></p>
+<p><strong>d)</strong> <span class="math inline">\(\displaystyle y^2 - 8y + 7\)</span></p>
+<p><span class="math display">\[\begin{align*}
+\left(y - \dfrac{8}{2}\right)^2 - \left(\dfrac{8}{2}\right)^2 + 7 \\ (y - 4)^2 - 16 + 7 \\ (y - 4)^2 - 9
+\end{align*}\]</span></p>
+<p><strong>e)</strong> <span class="math inline">\(\displaystyle y^2 + 6y - 2\)</span></p>
+<p><span class="math display">\[\begin{align*}
+(y + 3)^2 - 11
+\end{align*}\]</span></p>
+<p><strong>f)</strong> <span class="math inline">\(\displaystyle y^2 + y - 8\)</span></p>
+<p><span class="math display">\[\begin{align*}
+(y + \dfrac{1}{2})^2 - \dfrac{33}{4}
+\end{align*}\]</span></p>
+</div>
+</div>
+</div>
+</div>
+<div id="exr-u6-18-1" class="theorem exercise">
+<p><span class="theorem-title"><strong>Exercise 6.12</strong></span> &nbsp;</p>
+<!-- ex-body -->
+<p>A rectangle has length <span class="math inline">\((x + 3)\)</span> cm and width <span class="math inline">\((x + 2)\)</span> cm. The area is 42 cm².</p>
+<p><strong>(i)</strong> Form a quadratic equation in <span class="math inline">\(x\)</span>.</p>
+<p><strong>(ii)</strong> Solve the equation, giving exact answers.</p>
+<p><strong>(iii)</strong> Find the dimensions of the rectangle.</p>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-12-contents" aria-controls="callout-12" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Tip</span>🔍 View Solution
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-12" class="callout-12-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p><span class="math display">\[\begin{align*}
+\text{(i) } (x + 3)(x + 2) = 42 \\ x^2 + 5x + 6 = 42 \\ x^2 +5x - 36 = 0 \\ \text{(ii) } x = \dfrac{-(5) \pm \sqrt{(5)^2 - 4(1)(-36)}}{2} \\ x = \dfrac{-5 \pm 13}{2} \\ x = 4 \text{ or } x = -9 \\ \text{(iii) Taking positive root: } x = 4 \\ \text{Length } = 4 + 3 = 7 \text{ cm, }\text{ Width } = 4 + 2 = 6 \text{ cm}
+\end{align*}\]</span></p>
+<p><strong>Answer:</strong> <span class="math inline">\(x = 4\)</span></p>
+</div>
+</div>
+</div>
+</div>
+<div id="exr-u6-18-2" class="theorem exercise">
+<p><span class="theorem-title"><strong>Exercise 6.13</strong></span> &nbsp;</p>
+<!-- ex-body -->
+<p>A rectangle has length <span class="math inline">\((x + 3)\)</span> cm and width <span class="math inline">\((x + 4)\)</span> cm. The area is 30 cm².</p>
+<p><strong>(i)</strong> Form a quadratic equation in <span class="math inline">\(x\)</span>.</p>
+<p><strong>(ii)</strong> Solve the equation, giving exact answers.</p>
+<p><strong>(iii)</strong> Find the dimensions of the rectangle.</p>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-13-contents" aria-controls="callout-13" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Tip</span>🔍 View Solution
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-13" class="callout-13-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p><span class="math display">\[\begin{align*}
+\text{(i) } (x + 3)(x + 4) = 30 \\ x^2 + 7x + 12 = 30 \\ x^2 +7x - 18 = 0 \\ \text{(ii) } x = \dfrac{-(7) \pm \sqrt{(7)^2 - 4(1)(-18)}}{2} \\ x = \dfrac{-7 \pm 11}{2} \\ x = 2 \text{ or } x = -9 \\ \text{(iii) Taking positive root: } x = 2 \\ \text{Length } = 2 + 3 = 5 \text{ cm, }\text{ Width } = 2 + 4 = 6 \text{ cm}
+\end{align*}\]</span></p>
+<p><strong>Answer:</strong> <span class="math inline">\(x = 2\)</span></p>
+</div>
+</div>
+</div>
+</div>
+<div id="exr-u6-18-3" class="theorem exercise">
+<p><span class="theorem-title"><strong>Exercise 6.14</strong></span> &nbsp;</p>
+<!-- ex-body -->
+<p>A rectangle has length <span class="math inline">\((x + 3)\)</span> cm and width <span class="math inline">\((x + 6)\)</span> cm. The area is 130 cm².</p>
+<p><strong>(i)</strong> Form a quadratic equation in <span class="math inline">\(x\)</span>.</p>
+<p><strong>(ii)</strong> Solve the equation, giving exact answers.</p>
+<p><strong>(iii)</strong> Find the dimensions of the rectangle.</p>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-14-contents" aria-controls="callout-14" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Tip</span>🔍 View Solution
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-14" class="callout-14-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p><span class="math display">\[\begin{align*}
+\text{(i) } (x + 3)(x + 6) = 130 \\ x^2 + 9x + 18 = 130 \\ x^2 +9x - 112 = 0 \\ \text{(ii) } x = \dfrac{-(9) \pm \sqrt{(9)^2 - 4(1)(-112)}}{2} \\ x = \dfrac{-9 \pm 23}{2} \\ x = 7 \text{ or } x = -16 \\ \text{(iii) Taking positive root: } x = 7 \\ \text{Length } = 7 + 3 = 10 \text{ cm, }\text{ Width } = 7 + 6 = 13 \text{ cm}
+\end{align*}\]</span></p>
+<p><strong>Answer:</strong> <span class="math inline">\(x = 7\)</span></p>
+</div>
+</div>
+</div>
+</div>
+<div id="exr-u6-19-1" class="theorem exercise">
+<p><span class="theorem-title"><strong>Exercise 6.15</strong></span> &nbsp;</p>
+<!-- ex-body -->
+<p>The product of two consecutive positive integers is 240.</p>
+<p><strong>(i)</strong> Form a quadratic equation in <span class="math inline">\(n\)</span>.</p>
+<p><strong>(ii)</strong> Solve the equation exactly.</p>
+<p><strong>(iii)</strong> Find the two integers.</p>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-15-contents" aria-controls="callout-15" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Tip</span>🔍 View Solution
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-15" class="callout-15-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p><span class="math display">\[\begin{align*}
+\text{(i) } n(n+1) = 240 \\ n^2 + n - 240 = 0 \\ \text{(ii) } n = \dfrac{-(1) \pm \sqrt{(1)^2 - 4(1)(-240)}}{2} \\ n = \dfrac{-1 \pm 31}{2} \\ n = 15 \text{ or } n = -16 \\ \text{(iii) Since integers are positive, } n = 15 \\ \text{Integers: } 15 \text{ and } 16
+\end{align*}\]</span></p>
+<p><strong>Answer:</strong> <span class="math inline">\(Integers: 15 and 16\)</span></p>
+</div>
+</div>
+</div>
+</div>
+<div id="exr-u6-19-2" class="theorem exercise">
+<p><span class="theorem-title"><strong>Exercise 6.16</strong></span> &nbsp;</p>
+<!-- ex-body -->
+<p>The product of two consecutive positive integers is 90.</p>
+<p><strong>(i)</strong> Form a quadratic equation in <span class="math inline">\(n\)</span>.</p>
+<p><strong>(ii)</strong> Solve the equation exactly.</p>
+<p><strong>(iii)</strong> Find the two integers.</p>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-16-contents" aria-controls="callout-16" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Tip</span>🔍 View Solution
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-16" class="callout-16-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p><span class="math display">\[\begin{align*}
+\text{(i) } n(n+1) = 90 \\ n^2 + n - 90 = 0 \\ \text{(ii) } n = \dfrac{-(1) \pm \sqrt{(1)^2 - 4(1)(-90)}}{2} \\ n = \dfrac{-1 \pm 19}{2} \\ n = 9 \text{ or } n = -10 \\ \text{(iii) Since integers are positive, } n = 9 \\ \text{Integers: } 9 \text{ and } 10
+\end{align*}\]</span></p>
+<p><strong>Answer:</strong> <span class="math inline">\(Integers: 9 and 10\)</span></p>
+</div>
+</div>
+</div>
+</div>
+<div id="exr-u6-19-3" class="theorem exercise">
+<p><span class="theorem-title"><strong>Exercise 6.17</strong></span> &nbsp;</p>
+<!-- ex-body -->
+<p>The product of two consecutive positive integers is 240.</p>
+<p><strong>(i)</strong> Form a quadratic equation in <span class="math inline">\(n\)</span>.</p>
+<p><strong>(ii)</strong> Solve the equation exactly.</p>
+<p><strong>(iii)</strong> Find the two integers.</p>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-17-contents" aria-controls="callout-17" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Tip</span>🔍 View Solution
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-17" class="callout-17-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p><span class="math display">\[\begin{align*}
+\text{(i) } n(n+1) = 240 \\ n^2 + n - 240 = 0 \\ \text{(ii) } n = \dfrac{-(1) \pm \sqrt{(1)^2 - 4(1)(-240)}}{2} \\ n = \dfrac{-1 \pm 31}{2} \\ n = 15 \text{ or } n = -16 \\ \text{(iii) Since integers are positive, } n = 15 \\ \text{Integers: } 15 \text{ and } 16
+\end{align*}\]</span></p>
+<p><strong>Answer:</strong> <span class="math inline">\(Integers: 15 and 16\)</span></p>
+</div>
+</div>
+</div>
+</div>
+<div id="exr-u6-21-1" class="theorem exercise">
+<p><span class="theorem-title"><strong>Exercise 6.18</strong></span> &nbsp;</p>
+<!-- ex-body -->
+<p>A rectangle has perimeter 32 cm and area 28 cm². Let the length be <span class="math inline">\(x\)</span> cm, so the width is <span class="math inline">\((16 - x)\)</span> cm.</p>
+<p><strong>(i)</strong> Show that <span class="math inline">\(x^2 - 16x + 28 = 0\)</span>.</p>
+<p><strong>(ii)</strong> Solve the equation exactly.</p>
+<p><strong>(iii)</strong> Find the dimensions of the rectangle.</p>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-18-contents" aria-controls="callout-18" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Tip</span>🔍 View Solution
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-18" class="callout-18-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p><span class="math display">\[\begin{align*}
+\text{(i) } x(16 - x) = 28 \\ x^2 - 16x + 28 = 0 \\ \text{(ii) } x = \dfrac{-(-16) \pm \sqrt{(-16)^2 - 4(1)(28)}}{2} \\ x = \dfrac{16 \pm 12}{2} \\ x = 14 \text{ or } x = 2 \\ \text{(iii) } x = 14 \text{ or } x = 2 \\ \text{Length } = 14 \text{ cm, Width } = 2 \text{ cm}
+\end{align*}\]</span></p>
+<p><strong>Answer:</strong> <span class="math inline">\(Length = 14 cm, Width = 2 cm\)</span></p>
+</div>
+</div>
+</div>
+</div>
+<div id="exr-u6-21-2" class="theorem exercise">
+<p><span class="theorem-title"><strong>Exercise 6.19</strong></span> &nbsp;</p>
+<!-- ex-body -->
+<p>A rectangle has perimeter 32 cm and area 55 cm². Let the length be <span class="math inline">\(x\)</span> cm, so the width is <span class="math inline">\((16 - x)\)</span> cm.</p>
+<p><strong>(i)</strong> Show that <span class="math inline">\(x^2 - 16x + 55 = 0\)</span>.</p>
+<p><strong>(ii)</strong> Solve the equation exactly.</p>
+<p><strong>(iii)</strong> Find the dimensions of the rectangle.</p>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-19-contents" aria-controls="callout-19" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Tip</span>🔍 View Solution
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-19" class="callout-19-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p><span class="math display">\[\begin{align*}
+\text{(i) } x(16 - x) = 55 \\ x^2 - 16x + 55 = 0 \\ \text{(ii) } x = \dfrac{-(-16) \pm \sqrt{(-16)^2 - 4(1)(55)}}{2} \\ x = \dfrac{16 \pm 6}{2} \\ x = 11 \text{ or } x = 5 \\ \text{(iii) } x = 11 \text{ or } x = 5 \\ \text{Length } = 11 \text{ cm, Width } = 5 \text{ cm}
+\end{align*}\]</span></p>
+<p><strong>Answer:</strong> <span class="math inline">\(Length = 11 cm, Width = 5 cm\)</span></p>
+</div>
+</div>
+</div>
+</div>
+<div id="exr-u6-23" class="theorem exercise">
+<p><span class="theorem-title"><strong>Exercise 6.20</strong></span> <em>Find the discriminant and state the nature of the roots.</em></p>
+<div class="grid">
+<div class="g-col-6">
+<p><strong>a)</strong> <span class="math inline">\(\displaystyle 3y^2 - 5y = 0\)</span></p>
+</div>
+<div class="g-col-6">
+<p><strong>b)</strong> <span class="math inline">\(\displaystyle m^2 - 7m + 5 = 0\)</span></p>
+</div>
+</div>
+<div class="grid">
+<div class="g-col-6">
+<p><strong>c)</strong> <span class="math inline">\(\displaystyle y^2 + 8y + 6 = 0\)</span></p>
+</div>
+<div class="g-col-6">
+<p><strong>d)</strong> <span class="math inline">\(\displaystyle n^2 + 5n - 5 = 0\)</span></p>
+</div>
+</div>
+<div class="grid">
+<div class="g-col-6">
+<p><strong>e)</strong> <span class="math inline">\(\displaystyle 3x^2 + 2x + 4 = 0\)</span></p>
+</div>
+<div class="g-col-6">
+<p><strong>f)</strong> <span class="math inline">\(\displaystyle m^2 + 8m - 2 = 0\)</span></p>
+</div>
+</div>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-20-contents" aria-controls="callout-20" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Tip</span>🔍 View Solutions
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-20" class="callout-20-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p><strong>a)</strong> <span class="math inline">\(\displaystyle 3y^2 - 5y = 0\)</span></p>
+<p><span class="math display">\[\begin{align*}
+\Delta = b^2 - 4ac = (-5)^2 - 4(3)(0) \\ \Delta = 25 - 0 = 25 \\ \Delta &gt; 0 \Rightarrow \text{Two distinct real roots}
+\end{align*}\]</span></p>
+<p><strong>b)</strong> <span class="math inline">\(\displaystyle m^2 - 7m + 5 = 0\)</span></p>
+<p><span class="math display">\[\begin{align*}
+\Delta = b^2 - 4ac = (-7)^2 - 4(1)(5) \\ \Delta = 49 - 20 = 29 \\ \Delta &gt; 0 \Rightarrow \text{Two distinct real roots}
+\end{align*}\]</span></p>
+<p><strong>c)</strong> <span class="math inline">\(\displaystyle y^2 + 8y + 6 = 0\)</span></p>
+<p><span class="math display">\[\begin{align*}
+\Delta = b^2 - 4ac = (8)^2 - 4(1)(6) \\ \Delta = 64 - 24 = 40 \\ \Delta &gt; 0 \Rightarrow \text{Two distinct real roots}
+\end{align*}\]</span></p>
+<p><strong>d)</strong> <span class="math inline">\(\displaystyle n^2 + 5n - 5 = 0\)</span></p>
+<p><span class="math display">\[\begin{align*}
+\Delta = b^2 - 4ac = (5)^2 - 4(1)(-5) \\ \Delta = 25 + 20 = 45 \\ \Delta &gt; 0 \Rightarrow \text{Two distinct real roots}
+\end{align*}\]</span></p>
+<p><strong>e)</strong> <span class="math inline">\(\displaystyle 3x^2 + 2x + 4 = 0\)</span></p>
+<p><span class="math display">\[\begin{align*}
+\Delta = b^2 - 4ac = (2)^2 - 4(3)(4) \\ \Delta = 4 - 48 = -44 \\ \Delta &lt; 0 \Rightarrow \text{No real roots}
+\end{align*}\]</span></p>
+<p><strong>f)</strong> <span class="math inline">\(\displaystyle m^2 + 8m - 2 = 0\)</span></p>
+<p><span class="math display">\[\begin{align*}
+\Delta = b^2 - 4ac = (8)^2 - 4(1)(-2) \\ \Delta = 64 + 8 = 72 \\ \Delta &gt; 0 \Rightarrow \text{Two distinct real roots}
+\end{align*}\]</span></p>
+</div>
+</div>
+</div>
+</div>
+<div id="exr-u6-25-1" class="theorem exercise">
+<p><span class="theorem-title"><strong>Exercise 6.21</strong></span> &nbsp;</p>
+<!-- ex-body -->
+<p>The product of two consecutive positive even integers is 624.</p>
+<p><strong>(i)</strong> Form a quadratic equation in <span class="math inline">\(n\)</span>.</p>
+<p><strong>(ii)</strong> Solve the equation exactly.</p>
+<p><strong>(iii)</strong> Find the two integers.</p>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-21-contents" aria-controls="callout-21" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Tip</span>🔍 View Solution
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-21" class="callout-21-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p><span class="math display">\[\begin{align*}
+\text{(i) } n(n+2) = 624 \\ n^2 + 2n - 624 = 0 \\ \text{(ii) } n = \dfrac{-(2) \pm \sqrt{(2)^2 - 4(1)(-624)}}{2} \\ n = \dfrac{-2 \pm 50}{2} \\ n = 24 \text{ or } n = -26 \\ \text{Since integers are positive even, } n = 24 \\ \text{Integers: } 24 \text{ and } 26
+\end{align*}\]</span></p>
+<p><strong>Answer:</strong> <span class="math inline">\(Integers: 24 and 26\)</span></p>
+</div>
+</div>
+</div>
+</div>
+<div id="exr-u6-25-2" class="theorem exercise">
+<p><span class="theorem-title"><strong>Exercise 6.22</strong></span> &nbsp;</p>
+<!-- ex-body -->
+<p>The product of two consecutive positive even integers is 48.</p>
+<p><strong>(i)</strong> Form a quadratic equation in <span class="math inline">\(n\)</span>.</p>
+<p><strong>(ii)</strong> Solve the equation exactly.</p>
+<p><strong>(iii)</strong> Find the two integers.</p>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-22-contents" aria-controls="callout-22" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Tip</span>🔍 View Solution
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-22" class="callout-22-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p><span class="math display">\[\begin{align*}
+\text{(i) } n(n+2) = 48 \\ n^2 + 2n - 48 = 0 \\ \text{(ii) } n = \dfrac{-(2) \pm \sqrt{(2)^2 - 4(1)(-48)}}{2} \\ n = \dfrac{-2 \pm 14}{2} \\ n = 6 \text{ or } n = -8 \\ \text{Since integers are positive even, } n = 6 \\ \text{Integers: } 6 \text{ and } 8
+\end{align*}\]</span></p>
+<p><strong>Answer:</strong> <span class="math inline">\(Integers: 6 and 8\)</span></p>
+</div>
+</div>
+</div>
+</div>
+<div id="exr-u6-25-3" class="theorem exercise">
+<p><span class="theorem-title"><strong>Exercise 6.23</strong></span> &nbsp;</p>
+<!-- ex-body -->
+<p>The product of two consecutive positive even integers is 528.</p>
+<p><strong>(i)</strong> Form a quadratic equation in <span class="math inline">\(n\)</span>.</p>
+<p><strong>(ii)</strong> Solve the equation exactly.</p>
+<p><strong>(iii)</strong> Find the two integers.</p>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-23-contents" aria-controls="callout-23" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Tip</span>🔍 View Solution
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-23" class="callout-23-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p><span class="math display">\[\begin{align*}
+\text{(i) } n(n+2) = 528 \\ n^2 + 2n - 528 = 0 \\ \text{(ii) } n = \dfrac{-(2) \pm \sqrt{(2)^2 - 4(1)(-528)}}{2} \\ n = \dfrac{-2 \pm 46}{2} \\ n = 22 \text{ or } n = -24 \\ \text{Since integers are positive even, } n = 22 \\ \text{Integers: } 22 \text{ and } 24
+\end{align*}\]</span></p>
+<p><strong>Answer:</strong> <span class="math inline">\(Integers: 22 and 24\)</span></p>
+</div>
+</div>
+</div>
+</div>
+<div id="exr-u6-27" class="theorem exercise">
+<p><span class="theorem-title"><strong>Exercise 6.24</strong></span> <em>Form a quadratic equation with roots <span class="math inline">\(\alpha\)</span> and <span class="math inline">\(\beta\)</span>. Give your answer in the form <span class="math inline">\(y^2 + py + q = 0\)</span>.</em></p>
+<div class="grid">
+<div class="g-col-12">
+<p><strong>a)</strong> <span class="math inline">\(\displaystyle \alpha = -1,\; \beta = -2\)</span></p>
+</div>
+</div>
+<div class="grid">
+<div class="g-col-12">
+<p><strong>b)</strong> <span class="math inline">\(\displaystyle \alpha = -2,\; \beta = 5\)</span></p>
+</div>
+</div>
+<div class="grid">
+<div class="g-col-12">
+<p><strong>c)</strong> <span class="math inline">\(\displaystyle \alpha = 2,\; \beta = 3\)</span></p>
+</div>
+</div>
+<div class="grid">
+<div class="g-col-12">
+<p><strong>d)</strong> <span class="math inline">\(\displaystyle \alpha = 1,\; \beta = -4\)</span></p>
+</div>
+</div>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-24-contents" aria-controls="callout-24" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Tip</span>🔍 View Solutions
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-24" class="callout-24-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p><strong>a)</strong> <span class="math inline">\(\displaystyle \alpha = -1,\; \beta = -2\)</span></p>
+<p><span class="math display">\[\begin{align*}
+\text{Sum of roots: } \alpha + \beta = -1 + (-2) = -3 \\ \text{Product of roots: } \alpha\beta = (-1) \times (-2) = 2 \\ \text{Equation: } y^2 - (\alpha+\beta)y + \alpha\beta = 0 \\ y^2 + 3y + 2 = 0
+\end{align*}\]</span></p>
+<p><strong>b)</strong> <span class="math inline">\(\displaystyle \alpha = -2,\; \beta = 5\)</span></p>
+<p><span class="math display">\[\begin{align*}
+\text{Sum of roots: } \alpha + \beta = -2 + (5) = 3 \\ \text{Product of roots: } \alpha\beta = (-2) \times (5) = -10 \\ \text{Equation: } y^2 - (\alpha+\beta)y + \alpha\beta = 0 \\ y^2 - 3y - 10 = 0
+\end{align*}\]</span></p>
+<p><strong>c)</strong> <span class="math inline">\(\displaystyle \alpha = 2,\; \beta = 3\)</span></p>
+<p><span class="math display">\[\begin{align*}
+\text{Sum of roots: } \alpha + \beta = 2 + (3) = 5 \\ \text{Product of roots: } \alpha\beta = (2) \times (3) = 6 \\ \text{Equation: } x^2 - (\alpha+\beta)x + \alpha\beta = 0 \\ x^2 - 5x + 6 = 0
+\end{align*}\]</span></p>
+<p><strong>d)</strong> <span class="math inline">\(\displaystyle \alpha = 1,\; \beta = -4\)</span></p>
+<p><span class="math display">\[\begin{align*}
+\text{Sum of roots: } \alpha + \beta = 1 + (-4) = -3 \\ \text{Product of roots: } \alpha\beta = (1) \times (-4) = -4 \\ \text{Equation: } m^2 - (\alpha+\beta)m + \alpha\beta = 0 \\ m^2 + 3m - 4 = 0
+\end{align*}\]</span></p>
+</div>
+</div>
+</div>
+</div>
+<div class="math-sep">
+<p>∑ × π ÷ √ ◆ ∞ ± ∫ ≠ Δ</p>
+</div>
+</div>
+<div id="tabset-1-3" class="tab-pane" role="tabpanel" aria-labelledby="tabset-1-3-tab">
+<div id="exr-u6-5" class="theorem exercise">
+<p><span class="theorem-title"><strong>Exercise 6.25</strong></span> <em>Factorise each expression.</em></p>
+<div class="grid">
+<div class="g-col-12">
+<p><strong>a)</strong> <span class="math inline">\(\displaystyle 4n^2 - 12n + 8\)</span></p>
+</div>
+</div>
+<div class="grid">
+<div class="g-col-12">
+<p><strong>b)</strong> <span class="math inline">\(\displaystyle 2n^2 - 12n + 10\)</span></p>
+</div>
+</div>
+<div class="grid">
+<div class="g-col-12">
+<p><strong>c)</strong> <span class="math inline">\(\displaystyle 4m^2 - 21m + 20\)</span></p>
+</div>
+</div>
+<div class="grid">
+<div class="g-col-12">
+<p><strong>d)</strong> <span class="math inline">\(\displaystyle 3m^2 - 8m + 4\)</span></p>
+</div>
+</div>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-25-contents" aria-controls="callout-25" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Tip</span>🔍 View Solutions
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-25" class="callout-25-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p><strong>a)</strong> <span class="math inline">\(\displaystyle 4n^2 - 12n + 8\)</span></p>
+<p><span class="math display">\[\begin{align*}
+ac = 4 \times 8 = 32 \\ \text{Find } p, q: p \times q = 32,\; p + q = -12 \\ p = -8,\; q = -4 \\ 4n^2 - 12n + 8 = (4n - 4)(n - 2)
+\end{align*}\]</span></p>
+<p><strong>b)</strong> <span class="math inline">\(\displaystyle 2n^2 - 12n + 10\)</span></p>
+<p><span class="math display">\[\begin{align*}
+ac = 2 \times 10 = 20 \\ \text{Find } p, q: p \times q = 20,\; p + q = -12 \\ p = -10,\; q = -2 \\ 2n^2 - 12n + 10 = (2n - 2)(n - 5)
+\end{align*}\]</span></p>
+<p><strong>c)</strong> <span class="math inline">\(\displaystyle 4m^2 - 21m + 20\)</span></p>
+<p><span class="math display">\[\begin{align*}
+ac = 4 \times 20 = 80 \\ \text{Find } p, q: p \times q = 80,\; p + q = -21 \\ p = -16,\; q = -5 \\ 4m^2 - 21m + 20 = (4m - 5)(m - 4)
+\end{align*}\]</span></p>
+<p><strong>d)</strong> <span class="math inline">\(\displaystyle 3m^2 - 8m + 4\)</span></p>
+<p><span class="math display">\[\begin{align*}
+ac = 3 \times 4 = 12 \\ \text{Find } p, q: p \times q = 12,\; p + q = -8 \\ p = -6,\; q = -2 \\ 3m^2 - 8m + 4 = (3m - 2)(m - 2)
+\end{align*}\]</span></p>
+</div>
+</div>
+</div>
+</div>
+<div id="exr-u6-12" class="theorem exercise">
+<p><span class="theorem-title"><strong>Exercise 6.26</strong></span> <em>Solve using the quadratic formula. Leave answers in surd form.</em></p>
+<div class="grid">
+<div class="g-col-12">
+<p><strong>a)</strong> <span class="math inline">\(\displaystyle y^2 - 2y - 2 = 0\)</span></p>
+</div>
+</div>
+<div class="grid">
+<div class="g-col-12">
+<p><strong>b)</strong> <span class="math inline">\(\displaystyle n^2 - 7n + 5 = 0\)</span></p>
+</div>
+</div>
+<div class="grid">
+<div class="g-col-12">
+<p><strong>c)</strong> <span class="math inline">\(\displaystyle m^2 - 7m + 3 = 0\)</span></p>
+</div>
+</div>
+<div class="grid">
+<div class="g-col-12">
+<p><strong>d)</strong> <span class="math inline">\(\displaystyle x^2 - 7x + 2 = 0\)</span></p>
+</div>
+</div>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-26-contents" aria-controls="callout-26" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Tip</span>🔍 View Solutions
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-26" class="callout-26-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p><strong>a)</strong> <span class="math inline">\(\displaystyle y^2 - 2y - 2 = 0\)</span></p>
+<p><span class="math display">\[\begin{align*}
+y = \dfrac{-(-2) \pm \sqrt{(-2)^2 - 4(1)(-2)}}{2} \\ y = \dfrac{2 \pm \sqrt{12}}{2} \\ y = \dfrac{2 \pm 2\sqrt{3}}{2} \\ y = 1 \pm \sqrt{3}
+\end{align*}\]</span></p>
+<p><strong>b)</strong> <span class="math inline">\(\displaystyle n^2 - 7n + 5 = 0\)</span></p>
+<p><span class="math display">\[\begin{align*}
+n = \dfrac{-(-7) \pm \sqrt{(-7)^2 - 4(1)(5)}}{2} \\ n = \dfrac{7 \pm \sqrt{29}}{2}
+\end{align*}\]</span></p>
+<p><strong>c)</strong> <span class="math inline">\(\displaystyle m^2 - 7m + 3 = 0\)</span></p>
+<p><span class="math display">\[\begin{align*}
+m = \dfrac{-(-7) \pm \sqrt{(-7)^2 - 4(1)(3)}}{2} \\ m = \dfrac{7 \pm \sqrt{37}}{2}
+\end{align*}\]</span></p>
+<p><strong>d)</strong> <span class="math inline">\(\displaystyle x^2 - 7x + 2 = 0\)</span></p>
+<p><span class="math display">\[\begin{align*}
+x = \dfrac{-(-7) \pm \sqrt{(-7)^2 - 4(1)(2)}}{2} \\ x = \dfrac{7 \pm \sqrt{41}}{2}
+\end{align*}\]</span></p>
+</div>
+</div>
+</div>
+</div>
+<div id="exr-u6-13" class="theorem exercise">
+<p><span class="theorem-title"><strong>Exercise 6.27</strong></span> <em>Use the discriminant to determine the nature of roots.</em></p>
+<div class="grid">
+<div class="g-col-6">
+<p><strong>a)</strong> <span class="math inline">\(\displaystyle 3x^2 - x + 7 = 0\)</span></p>
+</div>
+<div class="g-col-6">
+<p><strong>b)</strong> <span class="math inline">\(\displaystyle 3x^2 - x + 1 = 0\)</span></p>
+</div>
+</div>
+<div class="grid">
+<div class="g-col-6">
+<p><strong>c)</strong> <span class="math inline">\(\displaystyle 2n^2 + 4n + 6 = 0\)</span></p>
+</div>
+<div class="g-col-6">
+<p><strong>d)</strong> <span class="math inline">\(\displaystyle n^2 + n + 4 = 0\)</span></p>
+</div>
+</div>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-27-contents" aria-controls="callout-27" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Tip</span>🔍 View Solutions
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-27" class="callout-27-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p><strong>a)</strong> <span class="math inline">\(\displaystyle 3x^2 - x + 7 = 0\)</span></p>
+<p><span class="math display">\[\begin{align*}
+x = \dfrac{-(-1) \pm \sqrt{(-1)^2 - 4(3)(7)}}{6} \\ x = \dfrac{1 \pm 0}{6} \\ \text{Discriminant } = -83 &lt; 0 \\ \text{No real solutions}
+\end{align*}\]</span></p>
+<p><strong>b)</strong> <span class="math inline">\(\displaystyle 3x^2 - x + 1 = 0\)</span></p>
+<p><span class="math display">\[\begin{align*}
+x = \dfrac{-(-1) \pm \sqrt{(-1)^2 - 4(3)(1)}}{6} \\ x = \dfrac{1 \pm 0}{6} \\ \text{Discriminant } = -11 &lt; 0 \\ \text{No real solutions}
+\end{align*}\]</span></p>
+<p><strong>c)</strong> <span class="math inline">\(\displaystyle 2n^2 + 4n + 6 = 0\)</span></p>
+<p><span class="math display">\[\begin{align*}
+n = \dfrac{-(4) \pm \sqrt{(4)^2 - 4(2)(6)}}{4} \\ n = \dfrac{-4 \pm 0}{4} \\ \text{Discriminant } = -32 &lt; 0 \\ \text{No real solutions}
+\end{align*}\]</span></p>
+<p><strong>d)</strong> <span class="math inline">\(\displaystyle n^2 + n + 4 = 0\)</span></p>
+<p><span class="math display">\[\begin{align*}
+n = \dfrac{-(1) \pm \sqrt{(1)^2 - 4(1)(4)}}{2} \\ n = \dfrac{-1 \pm 0}{2} \\ \text{Discriminant } = -15 &lt; 0 \\ \text{No real solutions}
+\end{align*}\]</span></p>
+</div>
+</div>
+</div>
+</div>
+<div id="exr-u6-15" class="theorem exercise">
+<p><span class="theorem-title"><strong>Exercise 6.28</strong></span> <em>Write in the form <span class="math inline">\(a(x+p)^2 + q\)</span>.</em></p>
+<div class="grid">
+<div class="g-col-12">
+<p><strong>a)</strong> <span class="math inline">\(\displaystyle 3m^2 + m - 4\)</span></p>
+</div>
+</div>
+<div class="grid">
+<div class="g-col-12">
+<p><strong>b)</strong> <span class="math inline">\(\displaystyle -2x^2 + x + 3\)</span></p>
+</div>
+</div>
+<div class="grid">
+<div class="g-col-12">
+<p><strong>c)</strong> <span class="math inline">\(\displaystyle -2x^2 + x + 4\)</span></p>
+</div>
+</div>
+<div class="grid">
+<div class="g-col-12">
+<p><strong>d)</strong> <span class="math inline">\(\displaystyle 2y^2 - 5y + 5\)</span></p>
+</div>
+</div>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-28-contents" aria-controls="callout-28" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Tip</span>🔍 View Solutions
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-28" class="callout-28-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p><strong>a)</strong> <span class="math inline">\(\displaystyle 3m^2 + m - 4\)</span></p>
+<p><span class="math display">\[\begin{align*}
+3\left[m^2 + \dfrac{1}{3}m\right] - 4 \\ 3\left(m + \dfrac{1}{6}\right)^2 - \dfrac{1}{12} - 4 \\ 3(m + \dfrac{1}{6})^2 - \dfrac{49}{12}
+\end{align*}\]</span></p>
+<p><strong>b)</strong> <span class="math inline">\(\displaystyle -2x^2 + x + 3\)</span></p>
+<p><span class="math display">\[\begin{align*}
+-2\left[x^2 + \dfrac{1}{-2}x\right] + 3 \\ -2\left(x + \dfrac{1}{-4}\right)^2 + \dfrac{1}{8} + 3 \\ -2(x - \dfrac{1}{4})^2 + \dfrac{25}{8}
+\end{align*}\]</span></p>
+<p><strong>c)</strong> <span class="math inline">\(\displaystyle -2x^2 + x + 4\)</span></p>
+<p><span class="math display">\[\begin{align*}
+-2\left[x^2 + \dfrac{1}{-2}x\right] + 4 \\ -2\left(x + \dfrac{1}{-4}\right)^2 + \dfrac{1}{8} + 4 \\ -2(x - \dfrac{1}{4})^2 + \dfrac{33}{8}
+\end{align*}\]</span></p>
+<p><strong>d)</strong> <span class="math inline">\(\displaystyle 2y^2 - 5y + 5\)</span></p>
+<p><span class="math display">\[\begin{align*}
+2\left[y^2 + \dfrac{-5}{2}y\right] + 5 \\ 2\left(y + \dfrac{-5}{4}\right)^2 - \dfrac{25}{8} + 5 \\ 2(y - \dfrac{5}{4})^2 + \dfrac{15}{8}
+\end{align*}\]</span></p>
+</div>
+</div>
+</div>
+</div>
+<div id="exr-u6-16" class="theorem exercise">
+<p><span class="theorem-title"><strong>Exercise 6.29</strong></span> <em>Solve by completing the square.</em></p>
+<div class="grid">
+<div class="g-col-12">
+<p><strong>a)</strong> <span class="math inline">\(\displaystyle n^2 + 2n - 2 = 0\)</span></p>
+</div>
+</div>
+<div class="grid">
+<div class="g-col-12">
+<p><strong>b)</strong> <span class="math inline">\(\displaystyle n^2 + 8n + 7 = 0\)</span></p>
+</div>
+</div>
+<div class="grid">
+<div class="g-col-12">
+<p><strong>c)</strong> <span class="math inline">\(\displaystyle n^2 + 2n - 4 = 0\)</span></p>
+</div>
+</div>
+<div class="grid">
+<div class="g-col-12">
+<p><strong>d)</strong> <span class="math inline">\(\displaystyle n^2 - 4n - 7 = 0\)</span></p>
+</div>
+</div>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-29-contents" aria-controls="callout-29" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Tip</span>🔍 View Solutions
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-29" class="callout-29-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p><strong>a)</strong> <span class="math inline">\(\displaystyle n^2 + 2n - 2 = 0\)</span></p>
+<p><span class="math display">\[\begin{align*}
+n^2 + 2n - 2 = 0 \\ (n + 1)^2 - 3 = 0 \\ (n + 1)^2 = 3 \\ n + 1 = \pm \sqrt{3} \\ n = -1 + \sqrt{3} \text{ or } n = -1 - \sqrt{3}
+\end{align*}\]</span></p>
+<p><strong>b)</strong> <span class="math inline">\(\displaystyle n^2 + 8n + 7 = 0\)</span></p>
+<p><span class="math display">\[\begin{align*}
+n^2 + 8n + 7 = 0 \\ (n + 4)^2 - 9 = 0 \\ (n + 4)^2 = 9 \\ n + 4 = \pm 3 \\ n = -1 \text{ or } n = -7
+\end{align*}\]</span></p>
+<p><strong>c)</strong> <span class="math inline">\(\displaystyle n^2 + 2n - 4 = 0\)</span></p>
+<p><span class="math display">\[\begin{align*}
+n^2 + 2n - 4 = 0 \\ (n + 1)^2 - 5 = 0 \\ (n + 1)^2 = 5 \\ n + 1 = \pm \sqrt{5} \\ n = -1 + \sqrt{5} \text{ or } n = -1 - \sqrt{5}
+\end{align*}\]</span></p>
+<p><strong>d)</strong> <span class="math inline">\(\displaystyle n^2 - 4n - 7 = 0\)</span></p>
+<p><span class="math display">\[\begin{align*}
+n^2 - 4n - 7 = 0 \\ (n - 2)^2 - 11 = 0 \\ (n - 2)^2 = 11 \\ n - 2 = \pm \sqrt{11} \\ n = 2 + \sqrt{11} \text{ or } n = 2 - \sqrt{11}
+\end{align*}\]</span></p>
+</div>
+</div>
+</div>
+</div>
+<div id="exr-u6-17" class="theorem exercise">
+<p><span class="theorem-title"><strong>Exercise 6.30</strong></span> <em>Solve by completing the square.</em></p>
+<div class="grid">
+<div class="g-col-12">
+<p><strong>a)</strong> <span class="math inline">\(\displaystyle 2y^2 - 4y = 0\)</span></p>
+</div>
+</div>
+<div class="grid">
+<div class="g-col-12">
+<p><strong>b)</strong> <span class="math inline">\(\displaystyle 2x^2 + x - 1 = 0\)</span></p>
+</div>
+</div>
+<div class="grid">
+<div class="g-col-12">
+<p><strong>c)</strong> <span class="math inline">\(\displaystyle 2m^2 - 5m - 1 = 0\)</span></p>
+</div>
+</div>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-30-contents" aria-controls="callout-30" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Tip</span>🔍 View Solutions
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-30" class="callout-30-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p><strong>a)</strong> <span class="math inline">\(\displaystyle 2y^2 - 4y = 0\)</span></p>
+<p><span class="math display">\[\begin{align*}
+\text{Divide by } 2: y^2 -2y +0 = 0 \\ \text{Complete the square:} \\ \left(y - 1\right)^2 = 1 \\ y - 1 = \pm 1 \\ y = 2 \text{ or } y = 0
+\end{align*}\]</span></p>
+<p><strong>b)</strong> <span class="math inline">\(\displaystyle 2x^2 + x - 1 = 0\)</span></p>
+<p><span class="math display">\[\begin{align*}
+\text{Divide by } 2: x^2 +\dfrac{1}{2}x -\dfrac{1}{2} = 0 \\ \text{Complete the square:} \\ \left(x + \dfrac{1}{4}\right)^2 = \dfrac{9}{16} \\ x + \dfrac{1}{4} = \pm \dfrac{3}{4} \\ x = \dfrac{1}{2} \text{ or } x = -1
+\end{align*}\]</span></p>
+<p><strong>c)</strong> <span class="math inline">\(\displaystyle 2m^2 - 5m - 1 = 0\)</span></p>
+<p><span class="math display">\[\begin{align*}
+\text{Divide by } 2: m^2 -\dfrac{5}{2}m -\dfrac{1}{2} = 0 \\ \text{Complete the square:} \\ \left(m - \dfrac{5}{4}\right)^2 = \dfrac{33}{16} \\ m - \dfrac{5}{4} = \pm \dfrac{\sqrt{33}}{4} \\ m = \dfrac{5}{4} + \dfrac{\sqrt{33}}{4} \text{ or } m = \dfrac{5}{4} - \dfrac{\sqrt{33}}{4}
+\end{align*}\]</span></p>
+</div>
+</div>
+</div>
+</div>
+<div id="exr-u6-20-1" class="theorem exercise">
+<p><span class="theorem-title"><strong>Exercise 6.31</strong></span> &nbsp;</p>
+<!-- ex-body -->
+<p>A ball is thrown upward with initial velocity 15 m/s. Its height (m) after <span class="math inline">\(t\)</span> seconds is <span class="math inline">\(h = -5t^2 + 15t + 15\)</span>.</p>
+<p><strong>(i)</strong> What does the constant 15 represent in this context?</p>
+<p><strong>(ii)</strong> Find when the ball hits the ground. Give exact answers in surd form.</p>
+<p><strong>(iii)</strong> Find the time to 2 d.p. and interpret your answer.</p>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-31-contents" aria-controls="callout-31" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Tip</span>🔍 View Solution
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-31" class="callout-31-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p><span class="math display">\[\begin{align*}
+\text{(i) The constant term 15 is the initial height (height at } t=0\text{).} \\ \text{(ii) Set } h=0: \\ -5t^2 + 15t + 15 = 0 \\ 5t^2 - 15t - 15 = 0 \\ t = \dfrac{-(-15) \pm \sqrt{(-15)^2 - 4(5)(-15)}}{10} \\ t = \dfrac{15 \pm \sqrt{525}}{10} \\ t = \dfrac{15 \pm 5\sqrt{21}}{10} \\ t = \dfrac{3 \pm \sqrt{21}}{2} \\ \text{(iii) Taking positive root: } t \approx 3.79 \text{ s} \\ \text{This is the time when the ball hits the ground.}
+\end{align*}\]</span></p>
+<p><strong>Answer:</strong> <span class="math inline">\(t \approx 3.79 \text{ s (time to hit ground)}\)</span></p>
+</div>
+</div>
+</div>
+</div>
+<div id="exr-u6-20-2" class="theorem exercise">
+<p><span class="theorem-title"><strong>Exercise 6.32</strong></span> &nbsp;</p>
+<!-- ex-body -->
+<p>A ball is thrown upward with initial velocity 15 m/s. Its height (m) after <span class="math inline">\(t\)</span> seconds is <span class="math inline">\(h = -5t^2 + 15t + 5\)</span>.</p>
+<p><strong>(i)</strong> What does the constant 5 represent in this context?</p>
+<p><strong>(ii)</strong> Find when the ball hits the ground. Give exact answers in surd form.</p>
+<p><strong>(iii)</strong> Find the time to 2 d.p. and interpret your answer.</p>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-32-contents" aria-controls="callout-32" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Tip</span>🔍 View Solution
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-32" class="callout-32-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p><span class="math display">\[\begin{align*}
+\text{(i) The constant term 5 is the initial height (height at } t=0\text{).} \\ \text{(ii) Set } h=0: \\ -5t^2 + 15t + 5 = 0 \\ 5t^2 - 15t - 5 = 0 \\ t = \dfrac{-(-15) \pm \sqrt{(-15)^2 - 4(5)(-5)}}{10} \\ t = \dfrac{15 \pm \sqrt{325}}{10} \\ t = \dfrac{15 \pm 5\sqrt{13}}{10} \\ t = \dfrac{3 \pm \sqrt{13}}{2} \\ \text{(iii) Taking positive root: } t \approx 3.30 \text{ s} \\ \text{This is the time when the ball hits the ground.}
+\end{align*}\]</span></p>
+<p><strong>Answer:</strong> <span class="math inline">\(t \approx 3.30 \text{ s (time to hit ground)}\)</span></p>
+</div>
+</div>
+</div>
+</div>
+<div id="exr-u6-22-1" class="theorem exercise">
+<p><span class="theorem-title"><strong>Exercise 6.33</strong></span> &nbsp;</p>
+<!-- ex-body -->
+<p>A right-angled triangle has legs <span class="math inline">\(x\)</span> cm and <span class="math inline">\((x + 2)\)</span> cm. The hypotenuse is 10 cm.</p>
+<p><strong>(i)</strong> Use Pythagoras’ theorem to form a quadratic equation.</p>
+<p><strong>(ii)</strong> Solve the equation exactly.</p>
+<p><strong>(iii)</strong> Find the lengths of the two legs.</p>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-33-contents" aria-controls="callout-33" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Tip</span>🔍 View Solution
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-33" class="callout-33-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p><span class="math display">\[\begin{align*}
+\text{(i) Pythagoras: } x^2 + (x+2)^2 = 10^2 \\ x^2 + x^2 + 4x + 4 = 100 \\ 2x^2 + 4x - 96 = 0 \\ \text{(ii) } x = \dfrac{-(4) \pm \sqrt{(4)^2 - 4(2)(-96)}}{4} \\ x = \dfrac{-4 \pm 28}{4} \\ x = 6 \text{ or } x = -8 \\ \text{(iii) } x = 6 \text{ cm}
+\end{align*}\]</span></p>
+<p><strong>Answer:</strong> <span class="math inline">\(x = 6 \text{ cm, legs: } 6 \text{ and } 8 \text{ cm}\)</span></p>
+</div>
+</div>
+</div>
+</div>
+<div id="exr-u6-22-2" class="theorem exercise">
+<p><span class="theorem-title"><strong>Exercise 6.34</strong></span> &nbsp;</p>
+<!-- ex-body -->
+<p>A right-angled triangle has legs <span class="math inline">\(x\)</span> cm and <span class="math inline">\((x + 4)\)</span> cm. The hypotenuse is 20 cm.</p>
+<p><strong>(i)</strong> Use Pythagoras’ theorem to form a quadratic equation.</p>
+<p><strong>(ii)</strong> Solve the equation exactly.</p>
+<p><strong>(iii)</strong> Find the lengths of the two legs.</p>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-34-contents" aria-controls="callout-34" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Tip</span>🔍 View Solution
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-34" class="callout-34-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p><span class="math display">\[\begin{align*}
+\text{(i) Pythagoras: } x^2 + (x+4)^2 = 20^2 \\ x^2 + x^2 + 8x + 16 = 400 \\ 2x^2 + 8x - 384 = 0 \\ \text{(ii) } x = \dfrac{-(8) \pm \sqrt{(8)^2 - 4(2)(-384)}}{4} \\ x = \dfrac{-8 \pm 56}{4} \\ x = 12 \text{ or } x = -16 \\ \text{(iii) } x = 12 \text{ cm}
+\end{align*}\]</span></p>
+<p><strong>Answer:</strong> <span class="math inline">\(x = 12 \text{ cm, legs: } 12 \text{ and } 16 \text{ cm}\)</span></p>
+</div>
+</div>
+</div>
+</div>
+<div id="exr-u6-24" class="theorem exercise">
+<p><span class="theorem-title"><strong>Exercise 6.35</strong></span> <em>Find the value(s) of <span class="math inline">\(k\)</span> for which the equation has real roots.</em></p>
+<div class="grid">
+<div class="g-col-12">
+<p><strong>a)</strong> <span class="math inline">\(\displaystyle n^2 - 6n + k = 0\)</span></p>
+</div>
+</div>
+<div class="grid">
+<div class="g-col-12">
+<p><strong>b)</strong> <span class="math inline">\(\displaystyle m^2 + km + 9 = 0\)</span></p>
+</div>
+</div>
+<div class="grid">
+<div class="g-col-12">
+<p><strong>c)</strong> <span class="math inline">\(\displaystyle x^2 + 4x + k = 0\)</span></p>
+</div>
+</div>
+<div class="grid">
+<div class="g-col-12">
+<p><strong>d)</strong> <span class="math inline">\(\displaystyle y^2 + 6y + k = 0\)</span></p>
+</div>
+</div>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-35-contents" aria-controls="callout-35" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Tip</span>🔍 View Solutions
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-35" class="callout-35-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p><strong>a)</strong> <span class="math inline">\(\displaystyle n^2 - 6n + k = 0\)</span></p>
+<p><span class="math display">\[\begin{align*}
+\text{Given: } n^2 - 6n + k = 0 \\ \text{For real roots: } \Delta \geq 0 \\ (-6)^2 - 4k \geq 0 \\ 36 \geq 4k \\ k \leq 9
+\end{align*}\]</span></p>
+<p><strong>b)</strong> <span class="math inline">\(\displaystyle m^2 + km + 9 = 0\)</span></p>
+<p><span class="math display">\[\begin{align*}
+\text{Given: } m^2 + km + 9 = 0 \\ \text{For real roots: } \Delta \geq 0 \\ k^2 - 4(9) \geq 0 \\ k^2 \geq 36 \\ k \leq -6 \text{ or } k \geq 6
+\end{align*}\]</span></p>
+<p><strong>c)</strong> <span class="math inline">\(\displaystyle x^2 + 4x + k = 0\)</span></p>
+<p><span class="math display">\[\begin{align*}
+\text{Given: } x^2 + 4x + k = 0 \\ \text{For real roots: } \Delta \geq 0 \\ (4)^2 - 4k \geq 0 \\ 16 \geq 4k \\ k \leq 4
+\end{align*}\]</span></p>
+<p><strong>d)</strong> <span class="math inline">\(\displaystyle y^2 + 6y + k = 0\)</span></p>
+<p><span class="math display">\[\begin{align*}
+\text{Given: } y^2 + 6y + k = 0 \\ \text{For real roots: } \Delta \geq 0 \\ (6)^2 - 4k \geq 0 \\ 36 \geq 4k \\ k \leq 9
+\end{align*}\]</span></p>
+</div>
+</div>
+</div>
+</div>
+<div id="exr-u6-26-1" class="theorem exercise">
+<p><span class="theorem-title"><strong>Exercise 6.36</strong></span> &nbsp;</p>
+<!-- ex-body -->
+<p>Two consecutive positive odd integers: the product of the larger and twice the smaller is 30.</p>
+<p><strong>(i)</strong> Form a quadratic equation in <span class="math inline">\(n\)</span>.</p>
+<p><strong>(ii)</strong> Solve the equation exactly.</p>
+<p><strong>(iii)</strong> Find the two integers.</p>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-36-contents" aria-controls="callout-36" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Tip</span>🔍 View Solution
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-36" class="callout-36-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p><span class="math display">\[\begin{align*}
+text{(i) } (n+2)(2n) = 30 \\ 2n^2 + 4n - 30 = 0 \\ text{(ii) } n = \dfrac{-(4) \pm \sqrt{(4)^2 - 4(2)(-30)}}{4} \\ n = \dfrac{-4 \pm 16}{4} \\ n = 3 \text{ or } n = -5 \\ text{Since integers are positive odd, } n = 3 \\ text{Integers: } 3 \\ text{ and } 5
+\end{align*}\]</span></p>
+<p><strong>Answer:</strong> <span class="math inline">\(Integers: 3 and 5\)</span></p>
+</div>
+</div>
+</div>
+</div>
+<div id="exr-u6-26-2" class="theorem exercise">
+<p><span class="theorem-title"><strong>Exercise 6.37</strong></span> &nbsp;</p>
+<!-- ex-body -->
+<p>Two consecutive positive odd integers: the product of the larger and twice the smaller is 646.</p>
+<p><strong>(i)</strong> Form a quadratic equation in <span class="math inline">\(n\)</span>.</p>
+<p><strong>(ii)</strong> Solve the equation exactly.</p>
+<p><strong>(iii)</strong> Find the two integers.</p>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-37-contents" aria-controls="callout-37" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Tip</span>🔍 View Solution
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-37" class="callout-37-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p><span class="math display">\[\begin{align*}
+text{(i) } (n+2)(2n) = 646 \\ 2n^2 + 4n - 646 = 0 \\ text{(ii) } n = \dfrac{-(4) \pm \sqrt{(4)^2 - 4(2)(-646)}}{4} \\ n = \dfrac{-4 \pm 72}{4} \\ n = 17 \text{ or } n = -19 \\ text{Since integers are positive odd, } n = 17 \\ text{Integers: } 17 \\ text{ and } 19
+\end{align*}\]</span></p>
+<p><strong>Answer:</strong> <span class="math inline">\(Integers: 17 and 19\)</span></p>
+</div>
+</div>
+</div>
+</div>
+<div id="exr-u6-26-3" class="theorem exercise">
+<p><span class="theorem-title"><strong>Exercise 6.38</strong></span> &nbsp;</p>
+<!-- ex-body -->
+<p>The product of two consecutive positive odd integers is 15.</p>
+<p><strong>(i)</strong> Form a quadratic equation in <span class="math inline">\(n\)</span>.</p>
+<p><strong>(ii)</strong> Solve the equation exactly.</p>
+<p><strong>(iii)</strong> Find the two integers.</p>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-38-contents" aria-controls="callout-38" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Tip</span>🔍 View Solution
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-38" class="callout-38-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p><span class="math display">\[\begin{align*}
+text{(i) } n(n+2) = 15 \\ n^2 + 2n - 15 = 0 \\ text{(ii) } n = \dfrac{-(2) \pm \sqrt{(2)^2 - 4(1)(-15)}}{2} \\ n = \dfrac{-2 \pm 8}{2} \\ n = 3 \text{ or } n = -5 \\ text{Since integers are positive odd, } n = 3 \\ text{Integers: } 3 \\ text{ and } 5
+\end{align*}\]</span></p>
+<p><strong>Answer:</strong> <span class="math inline">\(Integers: 3 and 5\)</span></p>
+</div>
+</div>
+</div>
+</div>
+<div id="exr-u6-28" class="theorem exercise">
+<p><span class="theorem-title"><strong>Exercise 6.39</strong></span> <em>The equations below have roots <span class="math inline">\(\alpha\)</span> and <span class="math inline">\(\beta\)</span>. Use Vieta’s formulas to find the given expression.</em></p>
+<div class="grid">
+<div class="g-col-12">
+<p><strong>a)</strong> <span class="math inline">\(\displaystyle 2m^2 + 6m - 5 = 0\)</span></p>
+</div>
+</div>
+<div class="grid">
+<div class="g-col-12">
+<p><strong>b)</strong> <span class="math inline">\(\displaystyle x^2 + 6x + 6 = 0\)</span></p>
+</div>
+</div>
+<div class="grid">
+<div class="g-col-12">
+<p><strong>c)</strong> <span class="math inline">\(\displaystyle x^2 + 2x - 3 = 0\)</span></p>
+</div>
+</div>
+<div class="grid">
+<div class="g-col-12">
+<p><strong>d)</strong> <span class="math inline">\(\displaystyle y^2 + y - 2 = 0\)</span></p>
+</div>
+</div>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-39-contents" aria-controls="callout-39" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Tip</span>🔍 View Solutions
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-39" class="callout-39-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p><strong>a)</strong> <span class="math inline">\(\displaystyle 2m^2 + 6m - 5 = 0\)</span></p>
+<p><span class="math display">\[\begin{align*}
+\text{From } 2m^2 + 6m - 5 = 0: \\ \alpha + \beta = \dfrac{-b}{a} = \dfrac{-6}{2} = -3 \\ \alpha\beta = \dfrac{c}{a} = \dfrac{-5}{2} = -\dfrac{5}{2} \\ \dfrac{1}{\alpha} + \dfrac{1}{\beta} = \dfrac{\alpha+\beta}{\alpha\beta} = \dfrac{-3}{-\dfrac{5}{2}} = \dfrac{6}{5}
+\end{align*}\]</span></p>
+<p><strong>b)</strong> <span class="math inline">\(\displaystyle x^2 + 6x + 6 = 0\)</span></p>
+<p><span class="math display">\[\begin{align*}
+\text{From } x^2 + 6x + 6 = 0: \\ \alpha + \beta = \dfrac{-b}{a} = \dfrac{-6}{1} = -6 \\ \alpha\beta = \dfrac{c}{a} = \dfrac{6}{1} = 6 \\ \dfrac{1}{\alpha} + \dfrac{1}{\beta} = \dfrac{\alpha+\beta}{\alpha\beta} = \dfrac{-6}{6} = -1
+\end{align*}\]</span></p>
+<p><strong>c)</strong> <span class="math inline">\(\displaystyle x^2 + 2x - 3 = 0\)</span></p>
+<p><span class="math display">\[\begin{align*}
+\text{From } x^2 + 2x - 3 = 0: \\ \alpha + \beta = \dfrac{-b}{a} = \dfrac{-2}{1} = -2 \\ \alpha\beta = \dfrac{c}{a} = \dfrac{-3}{1} = -3 \\ (\alpha - \beta)^2 = (\alpha+\beta)^2 - 4\alpha\beta = (-2)^2 - 4(-3) = 16
+\end{align*}\]</span></p>
+<p><strong>d)</strong> <span class="math inline">\(\displaystyle y^2 + y - 2 = 0\)</span></p>
+<p><span class="math display">\[\begin{align*}
+\text{From } y^2 + y - 2 = 0: \\ \alpha + \beta = \dfrac{-b}{a} = \dfrac{-1}{1} = -1 \\ \alpha\beta = \dfrac{c}{a} = \dfrac{-2}{1} = -2 \\ \alpha^2 + \beta^2 = (\alpha+\beta)^2 - 2\alpha\beta = (-1)^2 - 2(-2) = 5
+\end{align*}\]</span></p>
+</div>
+</div>
+</div>
+</div>
+<div id="exr-u6-29-1" class="theorem exercise">
+<p><span class="theorem-title"><strong>Exercise 6.40</strong></span> &nbsp;</p>
+<!-- ex-body -->
+<svg viewbox="-10 0 260 180" xmlns="http://www.w3.org/2000/svg" style="max-width:260px;margin:8px auto;display:block">
+<polygon points="40,150 40,20 180,150" fill="#e8f4fd" stroke="#2c7bb6" stroke-width="2"></polygon><rect x="40" y="134" width="16" height="16" fill="none" stroke="#2c7bb6" stroke-width="1.5"></rect><text x="30" y="92" font-size="13" fill="#2c7bb6" font-family="serif" font-style="italic" text-anchor="end">x + 5</text><text x="110" y="172" font-size="13" fill="#2c7bb6" font-family="serif" font-style="italic" text-anchor="middle">x - 2</text><text x="128" y="72" font-size="13" fill="#2c7bb6" font-family="serif" font-style="italic" text-anchor="start">2x - 1</text>
+</svg>
+<p>Shown is a right-angled triangle. All sides are in cm.</p>
+<p><strong>(a)</strong> Show that <span class="math inline">\(x^2 - 5x - 14 = 0\)</span>.</p>
+<p><strong>(b)</strong> Find <span class="math inline">\(x\)</span>.</p>
+<p><strong>(c)</strong> Find the area of the triangle.</p>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-40-contents" aria-controls="callout-40" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Tip</span>🔍 View Solution
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-40" class="callout-40-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p><span class="math display">\[\begin{align*}
+\text{(a) Pythagoras: } (x + 5)^2 + (x - 2)^2 = (2x - 1)^2 \\ x^2 -5x -14 = 0 \\ x^2 - 5x - 14 = 0 \\ \text{(b) } x = \dfrac{-(-5) \pm \sqrt{(-5)^2 - 4(1)(-14)}}{2} \\ x = \dfrac{5 \pm 9}{2} \\ x = 7 \text{ or } x = -2 \\ \text{Taking positive root: } x = 7 \\ \text{(c) Legs: } 12 \text{ cm and } 5 \text{ cm} \\ \text{Area } = \tfrac{1}{2} \times 12 \times 5 = 30 \text{ cm}^2
+\end{align*}\]</span></p>
+<p><strong>Answer:</strong> <span class="math inline">\(x = 7,\; \text{Area} = 30 \text{ cm}^2\)</span></p>
+</div>
+</div>
+</div>
+</div>
+<div id="exr-u6-29-2" class="theorem exercise">
+<p><span class="theorem-title"><strong>Exercise 6.41</strong></span> &nbsp;</p>
+<!-- ex-body -->
+<svg viewbox="-10 0 260 180" xmlns="http://www.w3.org/2000/svg" style="max-width:260px;margin:8px auto;display:block">
+<polygon points="40,150 40,20 180,150" fill="#e8f4fd" stroke="#2c7bb6" stroke-width="2"></polygon><rect x="40" y="134" width="16" height="16" fill="none" stroke="#2c7bb6" stroke-width="1.5"></rect><text x="30" y="92" font-size="13" fill="#2c7bb6" font-family="serif" font-style="italic" text-anchor="end">x + 5</text><text x="110" y="172" font-size="13" fill="#2c7bb6" font-family="serif" font-style="italic" text-anchor="middle">x - 2</text><text x="128" y="72" font-size="13" fill="#2c7bb6" font-family="serif" font-style="italic" text-anchor="start">2x - 1</text>
+</svg>
+<p>Shown is a right-angled triangle. All sides are in cm.</p>
+<p><strong>(a)</strong> Show that <span class="math inline">\(x^2 - 5x - 14 = 0\)</span>.</p>
+<p><strong>(b)</strong> Find <span class="math inline">\(x\)</span>.</p>
+<p><strong>(c)</strong> Find the area of the triangle.</p>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-41-contents" aria-controls="callout-41" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Tip</span>🔍 View Solution
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-41" class="callout-41-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p><span class="math display">\[\begin{align*}
+\text{(a) Pythagoras: } (x + 5)^2 + (x - 2)^2 = (2x - 1)^2 \\ x^2 -5x -14 = 0 \\ x^2 - 5x - 14 = 0 \\ \text{(b) } x = \dfrac{-(-5) \pm \sqrt{(-5)^2 - 4(1)(-14)}}{2} \\ x = \dfrac{5 \pm 9}{2} \\ x = 7 \text{ or } x = -2 \\ \text{Taking positive root: } x = 7 \\ \text{(c) Legs: } 12 \text{ cm and } 5 \text{ cm} \\ \text{Area } = \tfrac{1}{2} \times 12 \times 5 = 30 \text{ cm}^2
+\end{align*}\]</span></p>
+<p><strong>Answer:</strong> <span class="math inline">\(x = 7,\; \text{Area} = 30 \text{ cm}^2\)</span></p>
+</div>
+</div>
+</div>
+</div>
+<div id="exr-u6-30-1" class="theorem exercise">
+<p><span class="theorem-title"><strong>Exercise 6.42</strong></span> &nbsp;</p>
+<!-- ex-body -->
+<svg viewbox="0 0 310 215" xmlns="http://www.w3.org/2000/svg" style="max-width:300px;margin:8px auto;display:block">
+<polygon points="20,185 20,90 120,90 120,20 240,20 240,185" fill="#e8f5e9" stroke="#2e7d32" stroke-width="2"></polygon><rect x="120" y="20" width="120" height="70" fill="none" stroke="#999" stroke-width="1.5" stroke-dasharray="5,4"></rect><text x="2" y="142" font-size="12" fill="#2e7d32" font-family="serif" font-style="italic">x+3</text><text x="130" y="202" font-size="12" fill="#2e7d32" font-family="serif" font-style="italic" text-anchor="middle">3x−2</text><text x="180" y="12" font-size="11" fill="#777" font-family="serif" font-style="italic" text-anchor="middle">2</text><text x="246" y="60" font-size="11" fill="#777" font-family="serif" font-style="italic">4</text>
+</svg>
+<p>The area of the L-shaped region is 234 cm². The big rectangle is <span class="math inline">\((3x-2)\)</span> cm by <span class="math inline">\((x+3)\)</span> cm with a <span class="math inline">\(2\)</span> cm <span class="math inline">\(\times\)</span> <span class="math inline">\(4\)</span> cm rectangle removed.</p>
+<p><strong>(a)</strong> Show that <span class="math inline">\(3x^2 + 7x - 248 = 0\)</span>.</p>
+<p><strong>(b)</strong> Solve to find <span class="math inline">\(x\)</span>.</p>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-42-contents" aria-controls="callout-42" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Tip</span>🔍 View Solution
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-42" class="callout-42-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p><span class="math display">\[\begin{align*}
+\text{(a) Area: } (3x-2)(x+3) - 8 = 234 \\ 3x^2 +7x - 6 - 8 = 234 \\ 3x^2 +7x - 248 = 0 \\ 3x^2 + 7x - 248 = 0 \\ \text{(b) } x = \dfrac{-(7) \pm \sqrt{(7)^2 - 4(3)(-248)}}{6} \\ x = \dfrac{-7 \pm 55}{6} \\ x = 8 \text{ or } x = -\dfrac{31}{3} \\ \text{Taking positive root: } x = 8
+\end{align*}\]</span></p>
+<p><strong>Answer:</strong> <span class="math inline">\(x = 8\)</span></p>
+</div>
+</div>
+</div>
+</div>
+<div id="exr-u6-30-2" class="theorem exercise">
+<p><span class="theorem-title"><strong>Exercise 6.43</strong></span> &nbsp;</p>
+<!-- ex-body -->
+<svg viewbox="0 0 310 215" xmlns="http://www.w3.org/2000/svg" style="max-width:300px;margin:8px auto;display:block">
+<polygon points="20,185 20,90 120,90 120,20 240,20 240,185" fill="#e8f5e9" stroke="#2e7d32" stroke-width="2"></polygon><rect x="120" y="20" width="120" height="70" fill="none" stroke="#999" stroke-width="1.5" stroke-dasharray="5,4"></rect><text x="2" y="142" font-size="12" fill="#2e7d32" font-family="serif" font-style="italic">x+7</text><text x="130" y="202" font-size="12" fill="#2e7d32" font-family="serif" font-style="italic" text-anchor="middle">3x−2</text><text x="180" y="12" font-size="11" fill="#777" font-family="serif" font-style="italic" text-anchor="middle">2</text><text x="246" y="60" font-size="11" fill="#777" font-family="serif" font-style="italic">1</text>
+</svg>
+<p>The area of the L-shaped region is 206 cm². The big rectangle is <span class="math inline">\((3x-2)\)</span> cm by <span class="math inline">\((x+7)\)</span> cm with a <span class="math inline">\(2\)</span> cm <span class="math inline">\(\times\)</span> <span class="math inline">\(1\)</span> cm rectangle removed.</p>
+<p><strong>(a)</strong> Show that <span class="math inline">\(3x^2 + 19x - 222 = 0\)</span>.</p>
+<p><strong>(b)</strong> Solve to find <span class="math inline">\(x\)</span>.</p>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-43-contents" aria-controls="callout-43" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Tip</span>🔍 View Solution
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-43" class="callout-43-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p><span class="math display">\[\begin{align*}
+\text{(a) Area: } (3x-2)(x+7) - 2 = 206 \\ 3x^2 +19x - 14 - 2 = 206 \\ 3x^2 +19x - 222 = 0 \\ 3x^2 + 19x - 222 = 0 \\ \text{(b) } x = \dfrac{-(19) \pm \sqrt{(19)^2 - 4(3)(-222)}}{6} \\ x = \dfrac{-19 \pm 55}{6} \\ x = 6 \text{ or } x = -\dfrac{37}{3} \\ \text{Taking positive root: } x = 6
+\end{align*}\]</span></p>
+<p><strong>Answer:</strong> <span class="math inline">\(x = 6\)</span></p>
+</div>
+</div>
+</div>
+</div>
+<div id="exr-u6-31-1" class="theorem exercise">
+<p><span class="theorem-title"><strong>Exercise 6.44</strong></span> &nbsp;</p>
+<!-- ex-body -->
+<p>A cuboid has dimensions <span class="math inline">\(x\)</span> cm, <span class="math inline">\(x\)</span> cm and <span class="math inline">\((x+5)\)</span> cm. Its surface area is 544 cm².</p>
+<p><strong>(a)</strong> Show that <span class="math inline">\(3x^2 + 10x - 272 = 0\)</span>.</p>
+<p><strong>(b)</strong> Find <span class="math inline">\(x\)</span>.</p>
+<p><strong>(c)</strong> Find the volume of the cuboid.</p>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-44-contents" aria-controls="callout-44" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Tip</span>🔍 View Solution
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-44" class="callout-44-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p><span class="math display">\[\begin{align*}
+\text{(a) Surface area: } 2x^2 + 4x(x+5) = 544 \\ 6x^2 + 20x - 544 = 0 \\ 3x^2 + 10x - 272 = 0 \\ \text{(b) } x = \dfrac{-(10) \pm \sqrt{(10)^2 - 4(3)(-272)}}{6} \\ x = \dfrac{-10 \pm 58}{6} \\ x = 8 \text{ or } x = -\dfrac{34}{3} \\ x = 8 \text{ cm} \\ \text{(c) Volume } = 8^2 \cdot (13) = 832 \text{ cm}^3
+\end{align*}\]</span></p>
+<p><strong>Answer:</strong> <span class="math inline">\(x = 8,\; V = 832 \text{ cm}^3\)</span></p>
+</div>
+</div>
+</div>
+</div>
+<div id="exr-u6-31-2" class="theorem exercise">
+<p><span class="theorem-title"><strong>Exercise 6.45</strong></span> &nbsp;</p>
+<!-- ex-body -->
+<p>A cuboid has dimensions <span class="math inline">\(x\)</span> cm, <span class="math inline">\(x\)</span> cm and <span class="math inline">\((x+6)\)</span> cm. Its surface area is 840 cm².</p>
+<p><strong>(a)</strong> Show that <span class="math inline">\(x^2 + 4x - 140 = 0\)</span>.</p>
+<p><strong>(b)</strong> Find <span class="math inline">\(x\)</span>.</p>
+<p><strong>(c)</strong> Find the volume of the cuboid.</p>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-45-contents" aria-controls="callout-45" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Tip</span>🔍 View Solution
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-45" class="callout-45-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p><span class="math display">\[\begin{align*}
+\text{(a) Surface area: } 2x^2 + 4x(x+6) = 840 \\ 6x^2 + 24x - 840 = 0 \\ x^2 + 4x - 140 = 0 \\ \text{(b) } x = \dfrac{-(4) \pm \sqrt{(4)^2 - 4(1)(-140)}}{2} \\ x = \dfrac{-4 \pm 24}{2} \\ x = 10 \text{ or } x = -14 \\ x = 10 \text{ cm} \\ \text{(c) Volume } = 10^2 \cdot (16) = 1600 \text{ cm}^3
+\end{align*}\]</span></p>
+<p><strong>Answer:</strong> <span class="math inline">\(x = 10,\; V = 1600 \text{ cm}^3\)</span></p>
+</div>
+</div>
+</div>
+</div>
+<div id="exr-u6-32-1" class="theorem exercise">
+<p><span class="theorem-title"><strong>Exercise 6.46</strong></span> &nbsp;</p>
+<!-- ex-body -->
+<svg viewbox="-30 0 310 195" xmlns="http://www.w3.org/2000/svg" style="max-width:300px;margin:8px auto;display:block">
+<polygon points="50,55 50,165 190,165 190,55" fill="#dbeafe" stroke="#1d4ed8" stroke-width="2"></polygon><polygon points="50,55 90,25 230,25 190,55" fill="#bfdbfe" stroke="#1d4ed8" stroke-width="2"></polygon><polygon points="190,55 230,25 230,135 190,165" fill="#93c5fd" stroke="#1d4ed8" stroke-width="2"></polygon><text x="120" y="183" font-size="12" fill="#1d4ed8" font-family="serif" font-style="italic" text-anchor="middle">x</text><text x="42" y="115" font-size="12" fill="#1d4ed8" font-family="serif" font-style="italic" text-anchor="end">2x−22</text><text x="234" y="88" font-size="12" fill="#1d4ed8" font-family="serif" font-style="italic">8</text>
+</svg>
+<p>A cuboid has dimensions <span class="math inline">\(x\)</span> cm, <span class="math inline">\((2x - 22)\)</span> cm and <span class="math inline">\(8\)</span> cm. Its volume is 416 cm³.</p>
+<p><strong>(a)</strong> Show that <span class="math inline">\(2x^2 - 22x - 52 = 0\)</span>.</p>
+<p><strong>(b)</strong> Find <span class="math inline">\(x\)</span>.</p>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-46-contents" aria-controls="callout-46" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Tip</span>🔍 View Solution
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-46" class="callout-46-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p><span class="math display">\[\begin{align*}
+\text{(a) Volume: } 8 \times x \times (2x-22) = 416 \\ 8x(2x-22) = 416 \\ 2x^2 - 22x - 52 = 0 \\ \text{(b) } x = \dfrac{-(-22) \pm \sqrt{(-22)^2 - 4(2)(-52)}}{4} \\ x = \dfrac{22 \pm 30}{4} \\ x = 13 \text{ or } x = -2 \\ \text{Taking positive root: } x = 13 \text{ cm}
+\end{align*}\]</span></p>
+<p><strong>Answer:</strong> <span class="math inline">\(x = 13\)</span></p>
+</div>
+</div>
+</div>
+</div>
+<div id="exr-u6-32-2" class="theorem exercise">
+<p><span class="theorem-title"><strong>Exercise 6.47</strong></span> &nbsp;</p>
+<!-- ex-body -->
+<svg viewbox="-30 0 310 195" xmlns="http://www.w3.org/2000/svg" style="max-width:300px;margin:8px auto;display:block">
+<polygon points="50,55 50,165 190,165 190,55" fill="#dbeafe" stroke="#1d4ed8" stroke-width="2"></polygon><polygon points="50,55 90,25 230,25 190,55" fill="#bfdbfe" stroke="#1d4ed8" stroke-width="2"></polygon><polygon points="190,55 230,25 230,135 190,165" fill="#93c5fd" stroke="#1d4ed8" stroke-width="2"></polygon><text x="120" y="183" font-size="12" fill="#1d4ed8" font-family="serif" font-style="italic" text-anchor="middle">x</text><text x="42" y="115" font-size="12" fill="#1d4ed8" font-family="serif" font-style="italic" text-anchor="end">2x−22</text><text x="234" y="88" font-size="12" fill="#1d4ed8" font-family="serif" font-style="italic">15</text>
+</svg>
+<p>A cuboid has dimensions <span class="math inline">\(x\)</span> cm, <span class="math inline">\((2x - 22)\)</span> cm and <span class="math inline">\(15\)</span> cm. Its volume is 3780 cm³.</p>
+<p><strong>(a)</strong> Show that <span class="math inline">\(2x^2 - 22x - 252 = 0\)</span>.</p>
+<p><strong>(b)</strong> Find <span class="math inline">\(x\)</span>.</p>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-47-contents" aria-controls="callout-47" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Tip</span>🔍 View Solution
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-47" class="callout-47-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p><span class="math display">\[\begin{align*}
+\text{(a) Volume: } 15 \times x \times (2x-22) = 3780 \\ 15x(2x-22) = 3780 \\ 2x^2 - 22x - 252 = 0 \\ \text{(b) } x = \dfrac{-(-22) \pm \sqrt{(-22)^2 - 4(2)(-252)}}{4} \\ x = \dfrac{22 \pm 50}{4} \\ x = 18 \text{ or } x = -7 \\ \text{Taking positive root: } x = 18 \text{ cm}
+\end{align*}\]</span></p>
+<p><strong>Answer:</strong> <span class="math inline">\(x = 18\)</span></p>
+</div>
+</div>
+</div>
+</div>
+<div id="exr-u6-33" class="theorem exercise">
+<p><span class="theorem-title"><strong>Exercise 6.48</strong></span> <em>Solve. State any values of <span class="math inline">\(x\)</span> that must be excluded.</em></p>
+<div class="grid">
+<div class="g-col-12">
+<p><strong>a)</strong> <span class="math inline">\(\displaystyle \dfrac{4}{x} + \dfrac{4}{x - 3} = 2\)</span></p>
+</div>
+</div>
+<div class="grid">
+<div class="g-col-12">
+<p><strong>b)</strong> <span class="math inline">\(\displaystyle \dfrac{5}{x} + \dfrac{10}{x - 6} = 3\)</span></p>
+</div>
+</div>
+<div class="grid">
+<div class="g-col-12">
+<p><strong>c)</strong> <span class="math inline">\(\displaystyle \dfrac{6}{x} + \dfrac{12}{x - 5} = 3\)</span></p>
+</div>
+</div>
+<div class="grid">
+<div class="g-col-12">
+<p><strong>d)</strong> <span class="math inline">\(\displaystyle \dfrac{6}{x} + \dfrac{12}{x - 5} = 3\)</span></p>
+</div>
+</div>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-48-contents" aria-controls="callout-48" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Tip</span>🔍 View Solutions
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-48" class="callout-48-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p><strong>a)</strong> <span class="math inline">\(\displaystyle \dfrac{4}{x} + \dfrac{4}{x - 3} = 2\)</span></p>
+<p><span class="math display">\[\begin{align*}
+\text{Multiply through by } x(x - 3): \\ 4(x - 3) + 4x = 2x(x - 3) \\ 2x^2 - 14x + 12 = 0 \\ (x - 6)(x - 1) = 0 \\ x = 6 \text{ or } x = 1
+\end{align*}\]</span></p>
+<p><strong>b)</strong> <span class="math inline">\(\displaystyle \dfrac{5}{x} + \dfrac{10}{x - 6} = 3\)</span></p>
+<p><span class="math display">\[\begin{align*}
+\text{Multiply through by } x(x - 6): \\ 5(x - 6) + 10x = 3x(x - 6) \\ 3x^2 - 33x + 30 = 0 \\ (x - 10)(x - 1) = 0 \\ x = 10 \text{ or } x = 1
+\end{align*}\]</span></p>
+<p><strong>c)</strong> <span class="math inline">\(\displaystyle \dfrac{6}{x} + \dfrac{12}{x - 5} = 3\)</span></p>
+<p><span class="math display">\[\begin{align*}
+\text{Multiply through by } x(x - 5): \\ 6(x - 5) + 12x = 3x(x - 5) \\ 3x^2 - 33x + 30 = 0 \\ (x - 10)(x - 1) = 0 \\ x = 10 \text{ or } x = 1
+\end{align*}\]</span></p>
+<p><strong>d)</strong> <span class="math inline">\(\displaystyle \dfrac{6}{x} + \dfrac{12}{x - 5} = 3\)</span></p>
+<p><span class="math display">\[\begin{align*}
+\text{Multiply through by } x(x - 5): \\ 6(x - 5) + 12x = 3x(x - 5) \\ 3x^2 - 33x + 30 = 0 \\ (x - 10)(x - 1) = 0 \\ x = 10 \text{ or } x = 1
+\end{align*}\]</span></p>
+</div>
+</div>
+</div>
+</div>
+<div id="exr-u6-34" class="theorem exercise">
+<p><span class="theorem-title"><strong>Exercise 6.49</strong></span> <em>Solve. State any values of <span class="math inline">\(x\)</span> that must be excluded.</em></p>
+<div class="grid">
+<div class="g-col-12">
+<p><strong>a)</strong> <span class="math inline">\(\displaystyle \dfrac{-4}{x + 5} + \dfrac{2}{x - 1} = -2\)</span></p>
+</div>
+</div>
+<div class="grid">
+<div class="g-col-12">
+<p><strong>b)</strong> <span class="math inline">\(\displaystyle \dfrac{-3}{x + 1} - \dfrac{7}{x - 3} = 2\)</span></p>
+</div>
+</div>
+<div class="grid">
+<div class="g-col-12">
+<p><strong>c)</strong> <span class="math inline">\(\displaystyle \dfrac{6}{x + 1} - \dfrac{1}{x - 1} = 1\)</span></p>
+</div>
+</div>
+<div class="grid">
+<div class="g-col-12">
+<p><strong>d)</strong> <span class="math inline">\(\displaystyle \dfrac{8}{x + 4} + \dfrac{8}{x - 2} = 2\)</span></p>
+</div>
+</div>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-49-contents" aria-controls="callout-49" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Tip</span>🔍 View Solutions
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-49" class="callout-49-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p><strong>a)</strong> <span class="math inline">\(\displaystyle \dfrac{-4}{x + 5} + \dfrac{2}{x - 1} = -2\)</span></p>
+<p><span class="math display">\[\begin{align*}
+\text{Multiply by } (x + 5)(x - 1): \\ -4(x - 1) + 2(x + 5) = -2(x + 5)(x - 1) \\ -2x^2 - 6x - 4 = 0 \\ (x + 2)(x + 1) = 0 \\ x = -2 \text{ or } x = -1
+\end{align*}\]</span></p>
+<p><strong>b)</strong> <span class="math inline">\(\displaystyle \dfrac{-3}{x + 1} - \dfrac{7}{x - 3} = 2\)</span></p>
+<p><span class="math display">\[\begin{align*}
+\text{Multiply by } (x + 1)(x - 3): \\ -3(x - 3) - 7(x + 1) = 2(x + 1)(x - 3) \\ 2x^2 + 6x - 8 = 0 \\ (x + 4)(x -1) = 0 \\ x = -4 \text{ or } x = 1
+\end{align*}\]</span></p>
+<p><strong>c)</strong> <span class="math inline">\(\displaystyle \dfrac{6}{x + 1} - \dfrac{1}{x - 1} = 1\)</span></p>
+<p><span class="math display">\[\begin{align*}
+\text{Multiply by } (x + 1)(x - 1): \\ 6(x - 1) - 1(x + 1) = 1(x + 1)(x - 1) \\ x^2 - 5x + 6 = 0 \\ (x -2)(x -3) = 0 \\ x = 2 \text{ or } x = 3
+\end{align*}\]</span></p>
+<p><strong>d)</strong> <span class="math inline">\(\displaystyle \dfrac{8}{x + 4} + \dfrac{8}{x - 2} = 2\)</span></p>
+<p><span class="math display">\[\begin{align*}
+\text{Multiply by } (x + 4)(x - 2): \\ 8(x - 2) + 8(x + 4) = 2(x + 4)(x - 2) \\ 2x^2 - 12x - 32 = 0 \\ (x -8)(x + 2) = 0 \\ x = 8 \text{ or } x = -2
+\end{align*}\]</span></p>
+</div>
+</div>
+</div>
+</div>
+<div id="exr-u6-35" class="theorem exercise">
+<p><span class="theorem-title"><strong>Exercise 6.50</strong></span> <em>Solve using the substitution <span class="math inline">\(u = x^2\)</span>.</em></p>
+<div class="grid">
+<div class="g-col-12">
+<p><strong>a)</strong> <span class="math inline">\(\displaystyle x^4 -10x^2 + 16 = 0\)</span></p>
+</div>
+</div>
+<div class="grid">
+<div class="g-col-12">
+<p><strong>b)</strong> <span class="math inline">\(\displaystyle x^4 -6x^2 + 5 = 0\)</span></p>
+</div>
+</div>
+<div class="grid">
+<div class="g-col-12">
+<p><strong>c)</strong> <span class="math inline">\(\displaystyle x^4 -5x^2 + 4 = 0\)</span></p>
+</div>
+</div>
+<div class="grid">
+<div class="g-col-12">
+<p><strong>d)</strong> <span class="math inline">\(\displaystyle x^4 -5x^2 + 4 = 0\)</span></p>
+</div>
+</div>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-50-contents" aria-controls="callout-50" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Tip</span>🔍 View Solutions
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-50" class="callout-50-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p><strong>a)</strong> <span class="math inline">\(\displaystyle x^4 -10x^2 + 16 = 0\)</span></p>
+<p><span class="math display">\[\begin{align*}
+\text{Let } u = x^2: \quad u^2 -10u + 16 = 0 \\ (u -2)(u -8) = 0 \\ u = 2 \text{ or } u = 8 \\ x^2 = 2 \Rightarrow x = \pm\sqrt{2} \\ x^2 = 8 \Rightarrow x = \pm\sqrt{8}
+\end{align*}\]</span></p>
+<p><strong>b)</strong> <span class="math inline">\(\displaystyle x^4 -6x^2 + 5 = 0\)</span></p>
+<p><span class="math display">\[\begin{align*}
+\text{Let } u = x^2: \quad u^2 -6u + 5 = 0 \\ (u -1)(u -5) = 0 \\ u = 1 \text{ or } u = 5 \\ x^2 = 1 \Rightarrow x = \pm1 \\ x^2 = 5 \Rightarrow x = \pm\sqrt{5}
+\end{align*}\]</span></p>
+<p><strong>c)</strong> <span class="math inline">\(\displaystyle x^4 -5x^2 + 4 = 0\)</span></p>
+<p><span class="math display">\[\begin{align*}
+\text{Let } u = x^2: \quad u^2 -5u + 4 = 0 \\ (u -4)(u -1) = 0 \\ u = 4 \text{ or } u = 1 \\ x^2 = 4 \Rightarrow x = \pm 2 \\ x^2 = 1 \Rightarrow x = \pm 1
+\end{align*}\]</span></p>
+<p><strong>d)</strong> <span class="math inline">\(\displaystyle x^4 -5x^2 + 4 = 0\)</span></p>
+<p><span class="math display">\[\begin{align*}
+\text{Let } u = x^2: \quad u^2 -5u + 4 = 0 \\ (u -4)(u -1) = 0 \\ u = 4 \text{ or } u = 1 \\ x^2 = 4 \Rightarrow x = \pm 2 \\ x^2 = 1 \Rightarrow x = \pm 1
+\end{align*}\]</span></p>
+</div>
+</div>
+</div>
+</div>
+<div id="exr-u6-36" class="theorem exercise">
+<p><span class="theorem-title"><strong>Exercise 6.51</strong></span> <em>Solve using an appropriate substitution.</em></p>
+<div class="grid">
+<div class="g-col-12">
+<p><strong>a)</strong> <span class="math inline">\(\displaystyle (x + 5)^2 + 8(x + 5) + 12 = 0\)</span></p>
+</div>
+</div>
+<div class="grid">
+<div class="g-col-12">
+<p><strong>b)</strong> <span class="math inline">\(\displaystyle (x + 2)^2 - 5(x + 2) - 6 = 0\)</span></p>
+</div>
+</div>
+<div class="grid">
+<div class="g-col-12">
+<p><strong>c)</strong> <span class="math inline">\(\displaystyle (x + 1)^2 + 7(x + 1) + 10 = 0\)</span></p>
+</div>
+</div>
+<div class="grid">
+<div class="g-col-12">
+<p><strong>d)</strong> <span class="math inline">\(\displaystyle (x + 4)^2 + 5(x + 4) + 4 = 0\)</span></p>
+</div>
+</div>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-51-contents" aria-controls="callout-51" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Tip</span>🔍 View Solutions
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-51" class="callout-51-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p><strong>a)</strong> <span class="math inline">\(\displaystyle (x + 5)^2 + 8(x + 5) + 12 = 0\)</span></p>
+<p><span class="math display">\[\begin{align*}
+\text{Let } u = (x + 5): \quad u^2 + 8u + 12 = 0 \\ (u + 2)(u + 6) = 0 \\ u = -2 \Rightarrow x + 5 = -2 \Rightarrow x = -7 \\ u = -6 \Rightarrow x + 5 = -6 \Rightarrow x = -11
+\end{align*}\]</span></p>
+<p><strong>b)</strong> <span class="math inline">\(\displaystyle (x + 2)^2 - 5(x + 2) - 6 = 0\)</span></p>
+<p><span class="math display">\[\begin{align*}
+\text{Let } u = (x + 2): \quad u^2 - 5u - 6 = 0 \\ (u + 1)(u -6) = 0 \\ u = -1 \Rightarrow x + 2 = -1 \Rightarrow x = -3 \\ u = 6 \Rightarrow x + 2 = 6 \Rightarrow x = 4
+\end{align*}\]</span></p>
+<p><strong>c)</strong> <span class="math inline">\(\displaystyle (x + 1)^2 + 7(x + 1) + 10 = 0\)</span></p>
+<p><span class="math display">\[\begin{align*}
+\text{Let } u = (x + 1): \quad u^2 + 7u + 10 = 0 \\ (u + 2)(u + 5) = 0 \\ u = -2 \Rightarrow x + 1 = -2 \Rightarrow x = -3 \\ u = -5 \Rightarrow x + 1 = -5 \Rightarrow x = -6
+\end{align*}\]</span></p>
+<p><strong>d)</strong> <span class="math inline">\(\displaystyle (x + 4)^2 + 5(x + 4) + 4 = 0\)</span></p>
+<p><span class="math display">\[\begin{align*}
+\text{Let } u = (x + 4): \quad u^2 + 5u + 4 = 0 \\ (u + 1)(u + 4) = 0 \\ u = -1 \Rightarrow x + 4 = -1 \Rightarrow x = -5 \\ u = -4 \Rightarrow x + 4 = -4 \Rightarrow x = -8
+\end{align*}\]</span></p>
+</div>
+</div>
+</div>
+</div>
+<div id="exr-u6-37" class="theorem exercise">
+<p><span class="theorem-title"><strong>Exercise 6.52</strong></span> <em>Solve. Check for extraneous roots.</em></p>
+<div class="grid">
+<div class="g-col-12">
+<p><strong>a)</strong> <span class="math inline">\(\displaystyle \sqrt{x + 74} = x + 2\)</span></p>
+</div>
+</div>
+<div class="grid">
+<div class="g-col-12">
+<p><strong>b)</strong> <span class="math inline">\(\displaystyle \sqrt{x + 29} = x - 1\)</span></p>
+</div>
+</div>
+<div class="grid">
+<div class="g-col-12">
+<p><strong>c)</strong> <span class="math inline">\(\displaystyle \sqrt{x + 41} = x - 1\)</span></p>
+</div>
+</div>
+<div class="grid">
+<div class="g-col-12">
+<p><strong>d)</strong> <span class="math inline">\(\displaystyle \sqrt{x + 8} = x + 2\)</span></p>
+</div>
+</div>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-52-contents" aria-controls="callout-52" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Tip</span>🔍 View Solutions
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-52" class="callout-52-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p><strong>a)</strong> <span class="math inline">\(\displaystyle \sqrt{x + 74} = x + 2\)</span></p>
+<p><span class="math display">\[\begin{align*}
+\text{Square both sides: } x + 74 = (x + 2)^2 \\ x^2 + 3x - 70 = 0 \\ (x -7)(x + 10) = 0 \\ x = 7 \text{ or } x = -10 \\ \text{Check both in original equation:} \\ \text{Check } x=-10: 8 = 8 \neq -8 \text{ (extraneous)} \\ \text{Valid: } x = 7
+\end{align*}\]</span></p>
+<p><strong>b)</strong> <span class="math inline">\(\displaystyle \sqrt{x + 29} = x - 1\)</span></p>
+<p><span class="math display">\[\begin{align*}
+\text{Square both sides: } x + 29 = (x - 1)^2 \\ x^2 - 3x - 28 = 0 \\ (x -7)(x + 4) = 0 \\ x = 7 \text{ or } x = -4 \\ \text{Check both in original equation:} \\ \text{Check } x=-4: 5 = 5 \neq -5 \text{ (extraneous)} \\ \text{Valid: } x = 7
+\end{align*}\]</span></p>
+<p><strong>c)</strong> <span class="math inline">\(\displaystyle \sqrt{x + 41} = x - 1\)</span></p>
+<p><span class="math display">\[\begin{align*}
+\text{Square both sides: } x + 41 = (x - 1)^2 \\ x^2 - 3x - 40 = 0 \\ (x -8)(x + 5) = 0 \\ x = 8 \text{ or } x = -5 \\ \text{Check both in original equation:} \\ \text{Check } x=-5: 6 = 6 \neq -6 \text{ (extraneous)} \\ \text{Valid: } x = 8
+\end{align*}\]</span></p>
+<p><strong>d)</strong> <span class="math inline">\(\displaystyle \sqrt{x + 8} = x + 2\)</span></p>
+<p><span class="math display">\[\begin{align*}
+\text{Square both sides: } x + 8 = (x + 2)^2 \\ x^2 + 3x - 4 = 0 \\ (x -1)(x + 4) = 0 \\ x = 1 \text{ or } x = -4 \\ \text{Check both in original equation:} \\ \text{Check } x=-4: 2 = 2 \neq -2 \text{ (extraneous)} \\ \text{Valid: } x = 1
+\end{align*}\]</span></p>
+</div>
+</div>
+</div>
+</div>
+<div id="exr-u6-38" class="theorem exercise">
+<p><span class="theorem-title"><strong>Exercise 6.53</strong></span> <em>Solve. Check for extraneous roots.</em></p>
+<div class="grid">
+<div class="g-col-12">
+<p><strong>a)</strong> <span class="math inline">\(\displaystyle \sqrt{x + 3} - \sqrt{7 - x} = 2\)</span></p>
+</div>
+</div>
+<div class="grid">
+<div class="g-col-12">
+<p><strong>b)</strong> <span class="math inline">\(\displaystyle \sqrt{x + 5} - \sqrt{8 - x} = 1\)</span></p>
+</div>
+</div>
+<div class="grid">
+<div class="g-col-12">
+<p><strong>c)</strong> <span class="math inline">\(\displaystyle \sqrt{x + 1} - \sqrt{4 - x} = 1\)</span></p>
+</div>
+</div>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-53-contents" aria-controls="callout-53" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Tip</span>🔍 View Solutions
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-53" class="callout-53-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p><strong>a)</strong> <span class="math inline">\(\displaystyle \sqrt{x + 3} - \sqrt{7 - x} = 2\)</span></p>
+<p><span class="math display">\[\begin{align*}
+\text{Isolate: } \sqrt{x + 3} = 2 + \sqrt{7-x} \\ \text{Square: } x + 3 = 2^2 + 2(2)\sqrt{7-x} + (7-x) \\ 2(2)\sqrt{7-x} = 2x - 8 \\ \text{Square again: } 4(4)(7-x) = (2x -8)^2 \\ 4x^2 -16x -48 = 0 \\ x = 6 \\ \text{(check both roots in original)}
+\end{align*}\]</span></p>
+<p><strong>b)</strong> <span class="math inline">\(\displaystyle \sqrt{x + 5} - \sqrt{8 - x} = 1\)</span></p>
+<p><span class="math display">\[\begin{align*}
+\text{Isolate: } \sqrt{x + 5} = 1 + \sqrt{8-x} \\ \text{Square: } x + 5 = 1^2 + 2(1)\sqrt{8-x} + (8-x) \\ 2(1)\sqrt{8-x} = 2x - 4 \\ \text{Square again: } 4(1)(8-x) = (2x -4)^2 \\ 4x^2 -12x -16 = 0 \\ x = 4 \\ \text{(check both roots in original)}
+\end{align*}\]</span></p>
+<p><strong>c)</strong> <span class="math inline">\(\displaystyle \sqrt{x + 1} - \sqrt{4 - x} = 1\)</span></p>
+<p><span class="math display">\[\begin{align*}
+\text{Isolate: } \sqrt{x + 1} = 1 + \sqrt{4-x} \\ \text{Square: } x + 1 = 1^2 + 2(1)\sqrt{4-x} + (4-x) \\ 2(1)\sqrt{4-x} = 2x - 4 \\ \text{Square again: } 4(1)(4-x) = (2x -4)^2 \\ 4x^2 -12x +0 = 0 \\ x = 3 \\ \text{(check both roots in original)}
+\end{align*}\]</span></p>
+</div>
+</div>
+</div>
+</div>
+<div id="exr-u6-39" class="theorem exercise">
+<p><span class="theorem-title"><strong>Exercise 6.54</strong></span> <em>Solve. (Hint: use the index law <span class="math inline">\((a^m)^n = a^{mn}\)</span>, equate exponents, then solve the resulting quadratic.)</em></p>
+<div class="grid">
+<div class="g-col-12">
+<p><strong>a)</strong> <span class="math inline">\(\displaystyle \left(2^{x - 2}\right)^{x - 2} = 16\)</span></p>
+</div>
+</div>
+<div class="grid">
+<div class="g-col-12">
+<p><strong>b)</strong> <span class="math inline">\(\displaystyle \left(2^{x}\right)^{x - 4} = 32\)</span></p>
+</div>
+</div>
+<div class="grid">
+<div class="g-col-12">
+<p><strong>c)</strong> <span class="math inline">\(\displaystyle \left(2^{x - 3}\right)^{x - 3} = 16\)</span></p>
+</div>
+</div>
+<div class="grid">
+<div class="g-col-12">
+<p><strong>d)</strong> <span class="math inline">\(\displaystyle \left(2^{x - 4}\right)^{x} = 32\)</span></p>
+</div>
+</div>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-54-contents" aria-controls="callout-54" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Tip</span>🔍 View Solutions
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-54" class="callout-54-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p><strong>a)</strong> <span class="math inline">\(\displaystyle \left(2^{x - 2}\right)^{x - 2} = 16\)</span></p>
+<p><span class="math display">\[\begin{align*}
+\text{Use index law: } (a^m)^n = a^{mn} \\ 2^{(x - 2)(x - 2)} = 2^{4} \\ \text{Equate exponents: } (x - 2)(x - 2) = 4 \\ x^2 -4x + 4 = 4 \\ x^2 -4x  = 0 \\ x = \dfrac{-(-4) \pm \sqrt{(-4)^2 - 4(1)(0)}}{2} \\ x = \dfrac{4 \pm 4}{2} \\ x = 4 \text{ or } x = 0
+\end{align*}\]</span></p>
+<p><strong>b)</strong> <span class="math inline">\(\displaystyle \left(2^{x}\right)^{x - 4} = 32\)</span></p>
+<p><span class="math display">\[\begin{align*}
+\text{Use index law: } (a^m)^n = a^{mn} \\ 2^{(x)(x - 4)} = 2^{5} \\ \text{Equate exponents: } (x)(x - 4) = 5 \\ x^2 -4x  = 5 \\ x^2 -4x -5 = 0 \\ x = \dfrac{-(-4) \pm \sqrt{(-4)^2 - 4(1)(-5)}}{2} \\ x = \dfrac{4 \pm 6}{2} \\ x = 5 \text{ or } x = -1
+\end{align*}\]</span></p>
+<p><strong>c)</strong> <span class="math inline">\(\displaystyle \left(2^{x - 3}\right)^{x - 3} = 16\)</span></p>
+<p><span class="math display">\[\begin{align*}
+\text{Use index law: } (a^m)^n = a^{mn} \\ 2^{(x - 3)(x - 3)} = 2^{4} \\ \text{Equate exponents: } (x - 3)(x - 3) = 4 \\ x^2 -6x + 9 = 4 \\ x^2 -6x + 5 = 0 \\ x = \dfrac{-(-6) \pm \sqrt{(-6)^2 - 4(1)(5)}}{2} \\ x = \dfrac{6 \pm 4}{2} \\ x = 5 \text{ or } x = 1
+\end{align*}\]</span></p>
+<p><strong>d)</strong> <span class="math inline">\(\displaystyle \left(2^{x - 4}\right)^{x} = 32\)</span></p>
+<p><span class="math display">\[\begin{align*}
+\text{Use index law: } (a^m)^n = a^{mn} \\ 2^{(x - 4)(x)} = 2^{5} \\ \text{Equate exponents: } (x - 4)(x) = 5 \\ x^2 -4x  = 5 \\ x^2 -4x -5 = 0 \\ x = \dfrac{-(-4) \pm \sqrt{(-4)^2 - 4(1)(-5)}}{2} \\ x = \dfrac{4 \pm 6}{2} \\ x = 5 \text{ or } x = -1
+\end{align*}\]</span></p>
+</div>
+</div>
+</div>
+</div>
+<div class="math-sep">
+<p>∑ × π ÷ √ ◆ ∞ ± ∫ ≠ Δ</p>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section id="test-your-knowledge" class="level2" data-number="6.4">
+<h2 data-number="6.4" class="anchored" data-anchor-id="test-your-knowledge"><span class="header-section-number">6.4</span> ⚡ Test Your Knowledge</h2>
+
+
+<link rel="stylesheet" href="../../assets/worksheet.css">
+<script src="https://cdn.jsdelivr.net/pyodide/v0.25.0/full/pyodide.js"></script>
+<script src="../../assets/worksheet.js"></script>
+
+<div class="ws-toolbar no-print">
+  <div class="ws-controls">
+    <button class="ws-btn primary" id="btn-ws-new" onclick="wsGenerate()" disabled="">🔄 New Session</button>
+    <button class="ws-btn outline" onclick="wsOpenPreview()">👁️ Preview &amp; Print</button>
+    <a href="https://app.flintk12.com/activities/quadratic-equat-55a860/sessions/new" target="_blank" class="ws-btn flint">🤖 Get Help</a>
+  </div>
+  <div id="ws-loading" class="ws-status">⏳ Loading Python...</div>
+</div>
+
+<div id="ws-container"></div>
+
+<div id="ws-preview-overlay" class="ws-modal no-print">
+  <div class="ws-modal-header">
+    <span id="ws-preview-title-text">Worksheet Preview</span>
+    <div class="ws-modal-btns">
+      <button class="ws-btn-small print" onclick="wsPrint()">🖨️ Print PDF</button>
+      <button class="ws-btn-small close" onclick="wsClosePreview()">✕ Close</button>
+    </div>
+  </div>
+  <div id="ws-preview-scroll" class="ws-modal-body"></div>
+</div>
+
+<script>
+window.WS_CONFIG = {
+  title:    "Quadratic Equations",
+  unit:     "Unit 6 · Quadratic Equations",
+  pyPath:   "Quadratics.py",
+  template: "word",
+  // Equation types only — no word/geo in worksheet
+  types: [
+    "factorise_simple",
+    "factorise_negative_c",
+    "factorise_hard",
+    "diff_two_squares",
+    "solve_simple",
+    "solve_hard",
+    "formula_integer",
+    "formula_surd",
+    "complete_square_form",
+    "complete_square_solve"
+  ]
+};
+</script>
+
+
+</section>
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+  window.document.addEventListener("DOMContentLoaded", function (event) {
+    const icon = "";
+    const anchorJS = new window.AnchorJS();
+    anchorJS.options = {
+      placement: 'right',
+      icon: icon
+    };
+    anchorJS.add('.anchored');
+    const isCodeAnnotation = (el) => {
+      for (const clz of el.classList) {
+        if (clz.startsWith('code-annotation-')) {                     
+          return true;
+        }
+      }
+      return false;
+    }
+    const onCopySuccess = function(e) {
+      // button target
+      const button = e.trigger;
+      // don't keep focus
+      button.blur();
+      // flash "checked"
+      button.classList.add('code-copy-button-checked');
+      var currentTitle = button.getAttribute("title");
+      button.setAttribute("title", "Copied!");
+      let tooltip;
+      if (window.bootstrap) {
+        button.setAttribute("data-bs-toggle", "tooltip");
+        button.setAttribute("data-bs-placement", "left");
+        button.setAttribute("data-bs-title", "Copied!");
+        tooltip = new bootstrap.Tooltip(button, 
+          { trigger: "manual", 
+            customClass: "code-copy-button-tooltip",
+            offset: [0, -8]});
+        tooltip.show();    
+      }
+      setTimeout(function() {
+        if (tooltip) {
+          tooltip.hide();
+          button.removeAttribute("data-bs-title");
+          button.removeAttribute("data-bs-toggle");
+          button.removeAttribute("data-bs-placement");
+        }
+        button.setAttribute("title", currentTitle);
+        button.classList.remove('code-copy-button-checked');
+      }, 1000);
+      // clear code selection
+      e.clearSelection();
+    }
+    const getTextToCopy = function(trigger) {
+      const outerScaffold = trigger.parentElement.cloneNode(true);
+      const codeEl = outerScaffold.querySelector('code');
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+    }
+    const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+      text: getTextToCopy
+    });
+    clipboard.on('success', onCopySuccess);
+    if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+      const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+        text: getTextToCopy,
+        container: window.document.getElementById('quarto-embedded-source-code-modal')
+      });
+      clipboardModal.on('success', onCopySuccess);
+    }
+      var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+      var mailtoRegex = new RegExp(/^mailto:/);
+        var filterRegex = new RegExp("https:\/\/daoud-youssef\.github\.io\/mathsbooklet\/");
+      var isInternal = (href) => {
+          return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+      }
+      // Inspect non-navigation links and adorn them if external
+     var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+      for (var i=0; i<links.length; i++) {
+        const link = links[i];
+        if (!isInternal(link.href)) {
+          // undo the damage that might have been done by quarto-nav.js in the case of
+          // links that we want to consider external
+          if (link.dataset.originalHref !== undefined) {
+            link.href = link.dataset.originalHref;
+          }
+        }
+      }
+    function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+      const config = {
+        allowHTML: true,
+        maxWidth: 500,
+        delay: 100,
+        arrow: false,
+        appendTo: function(el) {
+            return el.parentElement;
+        },
+        interactive: true,
+        interactiveBorder: 10,
+        theme: 'quarto',
+        placement: 'bottom-start',
+      };
+      if (contentFn) {
+        config.content = contentFn;
+      }
+      if (onTriggerFn) {
+        config.onTrigger = onTriggerFn;
+      }
+      if (onUntriggerFn) {
+        config.onUntrigger = onUntriggerFn;
+      }
+      window.tippy(el, config); 
+    }
+    const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+    for (var i=0; i<noterefs.length; i++) {
+      const ref = noterefs[i];
+      tippyHover(ref, function() {
+        // use id or data attribute instead here
+        let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+        try { href = new URL(href).hash; } catch {}
+        const id = href.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note) {
+          return note.innerHTML;
+        } else {
+          return "";
+        }
+      });
+    }
+    const xrefs = window.document.querySelectorAll('a.quarto-xref');
+    const processXRef = (id, note) => {
+      // Strip column container classes
+      const stripColumnClz = (el) => {
+        el.classList.remove("page-full", "page-columns");
+        if (el.children) {
+          for (const child of el.children) {
+            stripColumnClz(child);
+          }
+        }
+      }
+      stripColumnClz(note)
+      if (id === null || id.startsWith('sec-')) {
+        // Special case sections, only their first couple elements
+        const container = document.createElement("div");
+        if (note.children && note.children.length > 2) {
+          container.appendChild(note.children[0].cloneNode(true));
+          for (let i = 1; i < note.children.length; i++) {
+            const child = note.children[i];
+            if (child.tagName === "P" && child.innerText === "") {
+              continue;
+            } else {
+              container.appendChild(child.cloneNode(true));
+              break;
+            }
+          }
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(container);
+          }
+          return container.innerHTML
+        } else {
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(note);
+          }
+          return note.innerHTML;
+        }
+      } else {
+        // Remove any anchor links if they are present
+        const anchorLink = note.querySelector('a.anchorjs-link');
+        if (anchorLink) {
+          anchorLink.remove();
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        if (note.classList.contains("callout")) {
+          return note.outerHTML;
+        } else {
+          return note.innerHTML;
+        }
+      }
+    }
+    for (var i=0; i<xrefs.length; i++) {
+      const xref = xrefs[i];
+      tippyHover(xref, undefined, function(instance) {
+        instance.disable();
+        let url = xref.getAttribute('href');
+        let hash = undefined; 
+        if (url.startsWith('#')) {
+          hash = url;
+        } else {
+          try { hash = new URL(url).hash; } catch {}
+        }
+        if (hash) {
+          const id = hash.replace(/^#\/?/, "");
+          const note = window.document.getElementById(id);
+          if (note !== null) {
+            try {
+              const html = processXRef(id, note.cloneNode(true));
+              instance.setContent(html);
+            } finally {
+              instance.enable();
+              instance.show();
+            }
+          } else {
+            // See if we can fetch this
+            fetch(url.split('#')[0])
+            .then(res => res.text())
+            .then(html => {
+              const parser = new DOMParser();
+              const htmlDoc = parser.parseFromString(html, "text/html");
+              const note = htmlDoc.getElementById(id);
+              if (note !== null) {
+                const html = processXRef(id, note);
+                instance.setContent(html);
+              } 
+            }).finally(() => {
+              instance.enable();
+              instance.show();
+            });
+          }
+        } else {
+          // See if we can fetch a full url (with no hash to target)
+          // This is a special case and we should probably do some content thinning / targeting
+          fetch(url)
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.querySelector('main.content');
+            if (note !== null) {
+              // This should only happen for chapter cross references
+              // (since there is no id in the URL)
+              // remove the first header
+              if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+                note.children[0].remove();
+              }
+              const html = processXRef(null, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      }, function(instance) {
+      });
+    }
+        let selectedAnnoteEl;
+        const selectorForAnnotation = ( cell, annotation) => {
+          let cellAttr = 'data-code-cell="' + cell + '"';
+          let lineAttr = 'data-code-annotation="' +  annotation + '"';
+          const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+          return selector;
+        }
+        const selectCodeLines = (annoteEl) => {
+          const doc = window.document;
+          const targetCell = annoteEl.getAttribute("data-target-cell");
+          const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+          const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+          const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+          const lineIds = lines.map((line) => {
+            return targetCell + "-" + line;
+          })
+          let top = null;
+          let height = null;
+          let parent = null;
+          if (lineIds.length > 0) {
+              //compute the position of the single el (top and bottom and make a div)
+              const el = window.document.getElementById(lineIds[0]);
+              top = el.offsetTop;
+              height = el.offsetHeight;
+              parent = el.parentElement.parentElement;
+            if (lineIds.length > 1) {
+              const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+              const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+              height = bottom - top;
+            }
+            if (top !== null && height !== null && parent !== null) {
+              // cook up a div (if necessary) and position it 
+              let div = window.document.getElementById("code-annotation-line-highlight");
+              if (div === null) {
+                div = window.document.createElement("div");
+                div.setAttribute("id", "code-annotation-line-highlight");
+                div.style.position = 'absolute';
+                parent.appendChild(div);
+              }
+              div.style.top = top - 2 + "px";
+              div.style.height = height + 4 + "px";
+              div.style.left = 0;
+              let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+              if (gutterDiv === null) {
+                gutterDiv = window.document.createElement("div");
+                gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+                gutterDiv.style.position = 'absolute';
+                const codeCell = window.document.getElementById(targetCell);
+                const gutter = codeCell.querySelector('.code-annotation-gutter');
+                gutter.appendChild(gutterDiv);
+              }
+              gutterDiv.style.top = top - 2 + "px";
+              gutterDiv.style.height = height + 4 + "px";
+            }
+            selectedAnnoteEl = annoteEl;
+          }
+        };
+        const unselectCodeLines = () => {
+          const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+          elementsIds.forEach((elId) => {
+            const div = window.document.getElementById(elId);
+            if (div) {
+              div.remove();
+            }
+          });
+          selectedAnnoteEl = undefined;
+        };
+          // Handle positioning of the toggle
+      window.addEventListener(
+        "resize",
+        throttle(() => {
+          elRect = undefined;
+          if (selectedAnnoteEl) {
+            selectCodeLines(selectedAnnoteEl);
+          }
+        }, 10)
+      );
+      function throttle(fn, ms) {
+      let throttle = false;
+      let timer;
+        return (...args) => {
+          if(!throttle) { // first call gets through
+              fn.apply(this, args);
+              throttle = true;
+          } else { // all the others get throttled
+              if(timer) clearTimeout(timer); // cancel #2
+              timer = setTimeout(() => {
+                fn.apply(this, args);
+                timer = throttle = false;
+              }, ms);
+          }
+        };
+      }
+        // Attach click handler to the DT
+        const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+        for (const annoteDlNode of annoteDls) {
+          annoteDlNode.addEventListener('click', (event) => {
+            const clickedEl = event.target;
+            if (clickedEl !== selectedAnnoteEl) {
+              unselectCodeLines();
+              const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+              if (activeEl) {
+                activeEl.classList.remove('code-annotation-active');
+              }
+              selectCodeLines(clickedEl);
+              clickedEl.classList.add('code-annotation-active');
+            } else {
+              // Unselect the line
+              unselectCodeLines();
+              clickedEl.classList.remove('code-annotation-active');
+            }
+          });
+        }
+    const findCites = (el) => {
+      const parentEl = el.parentElement;
+      if (parentEl) {
+        const cites = parentEl.dataset.cites;
+        if (cites) {
+          return {
+            el,
+            cites: cites.split(' ')
+          };
+        } else {
+          return findCites(el.parentElement)
+        }
+      } else {
+        return undefined;
+      }
+    };
+    var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+    for (var i=0; i<bibliorefs.length; i++) {
+      const ref = bibliorefs[i];
+      const citeInfo = findCites(ref);
+      if (citeInfo) {
+        tippyHover(citeInfo.el, function() {
+          var popup = window.document.createElement('div');
+          citeInfo.cites.forEach(function(cite) {
+            var citeDiv = window.document.createElement('div');
+            citeDiv.classList.add('hanging-indent');
+            citeDiv.classList.add('csl-entry');
+            var biblioDiv = window.document.getElementById('ref-' + cite);
+            if (biblioDiv) {
+              citeDiv.innerHTML = biblioDiv.innerHTML;
+            }
+            popup.appendChild(citeDiv);
+          });
+          return popup.innerHTML;
+        });
+      }
+    }
+  });
+  </script>
+<nav class="page-navigation">
+  <div class="nav-page nav-page-previous">
+      <a href="../../algebra/unit5-equations/LinearEquations.html" class="pagination-link" aria-label="Unit 5: Linear Equations">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Unit 5: Linear Equations</span></span>
+      </a>          
+  </div>
+  <div class="nav-page nav-page-next">
+      <a href="../../algebra/unit7-functions/Functions.html" class="pagination-link" aria-label="Unit 7: Linear &amp; Quadratic Functions">
+        <span class="nav-page-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Unit 7: Linear &amp; Quadratic Functions</span></span> <i class="bi bi-arrow-right-short"></i>
+      </a>
+  </div>
+</nav>
+</div> <!-- /content -->
+
+
+
+
+</body></html>

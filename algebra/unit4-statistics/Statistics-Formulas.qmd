@@ -1,0 +1,106 @@
+:::::::::::: formula-card
+### Statistics — Key Formulas & Rules {.unnumbered}
+
+#### Averages and Range {.unnumbered}
+
+::: sticky-note-yellow
+**💡 Pro Tip** Always **sort your data first** before finding the median or quartiles.
+:::
+
+::: rule-group
+**Mean**: $$\bar{x} = \frac{\sum x}{n} = \frac{\text{sum of all values}}{\text{number of values}}$$
+
+**Median**: Middle value when data is ordered.\
+If $n$ is even: mean of the two middle values.
+
+**Mode**: Most frequently occurring value.
+
+**Range**: $$\text{Range} = \text{maximum} - \text{minimum}$$
+
+**Example**: Data: $3, 7, 7, 9, 14$
+$$\bar{x} = \frac{3+7+7+9+14}{5} = 8 \qquad \text{Median} = 7 \qquad \text{Mode} = 7 \qquad \text{Range} = 11$$
+:::
+
+#### Mean from a Frequency Table {.unnumbered}
+
+::: sticky-note-blue
+**🎯 Memory Trick** Multiply each value by its frequency first — then divide by the **total frequency**, not the number of rows!
+:::
+
+::: rule-group
+$$\bar{x} = \frac{\sum fx}{\sum f}$$
+
+| $x$ | $f$ | $fx$ |
+|:---:|:---:|:---:|
+| 2 | 3 | 6 |
+| 4 | 7 | 28 |
+| 6 | 5 | 30 |
+| **Total** | **15** | **64** |
+
+$$\bar{x} = \frac{64}{15} \approx 4.3$$
+:::
+
+#### Grouped Frequency Tables {.unnumbered}
+
+::: sticky-note-pink
+**⚠️ Common Mistake** Use the **midpoint** of each class — not the lower or upper boundary!
+:::
+
+::: rule-group
+**Estimated mean**: $$\bar{x} \approx \frac{\sum fx}{\sum f} \quad \text{where } x = \text{midpoint of class}$$
+
+**Modal class**: Class with the **highest frequency**.
+
+**Median class**: Class containing the $\dfrac{n}{2}$th value (use cumulative frequency).
+
+**Example**: Class $10 \leq x < 20$, frequency $= 8$ → midpoint $x = 15$, so $fx = 120$
+:::
+
+#### Cumulative Frequency {.unnumbered}
+
+::: sticky-note-orange
+**📝 Quick Method** Read across from the CF axis to the curve, then **down** to the $x$-axis.
+:::
+
+::: rule-group
+**Building CF table**: Each row = previous cumulative total $+$ current frequency.
+
+**Reading quartiles from a CF graph** (total = $n$):
+
+| Measure | Read at CF value |
+|:--------|:----------------:|
+| Lower quartile $Q_1$ | $\dfrac{n}{4}$ |
+| Median $Q_2$ | $\dfrac{n}{2}$ |
+| Upper quartile $Q_3$ | $\dfrac{3n}{4}$ |
+
+$$\text{IQR} = Q_3 - Q_1$$
+:::
+
+#### Box Plots and Outliers {.unnumbered}
+
+::: rule-group
+**Five-number summary**: Min, $Q_1$, Median, $Q_3$, Max
+
+**Box plot**: Box spans $Q_1$ to $Q_3$. Median line inside. Whiskers extend to min and max.
+
+**Outlier rule**:
+$$\text{Outlier if: } x > Q_3 + 1.5 \times \text{IQR} \quad \text{or} \quad x < Q_1 - 1.5 \times \text{IQR}$$
+
+**Example**: $Q_1 = 35,\ Q_3 = 55,\ \text{IQR} = 20$\
+Upper fence $= 55 + 1.5 \times 20 = 85$\
+Any value $> 85$ is an outlier.
+:::
+
+#### Combined Mean {.unnumbered}
+
+::: sticky-note-yellow
+**💡 Pro Tip** You **cannot** just average two means — you must use the totals!
+:::
+
+::: rule-group
+$$\bar{x}_{\text{combined}} = \frac{n_1 \bar{x}_1 + n_2 \bar{x}_2}{n_1 + n_2}$$
+
+**Example**: Group 1: $n=100$, mean $= 18.2$. Group 2: $n=50$, mean $= 17.3$
+$$\bar{x} = \frac{100 \times 18.2 + 50 \times 17.3}{150} = \frac{1820 + 865}{150} = \frac{2685}{150} = 17.9$$
+:::
+::::::::::::

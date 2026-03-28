@@ -1,0 +1,233 @@
+---
+title: "Unit 2: Indices"
+number-sections: true
+number-depth: 2
+execute:
+  echo: false
+---
+
+```{python}
+#| output: false
+import sys
+sys.path.insert(0, '../unit2-Indices')
+from Indices import generate
+from collections import defaultdict
+
+data = generate(
+    types=[
+        "multiply_simple",
+        "multiply_three_terms",
+        "multiply_coefficients",
+        "fractional_nonunit",
+        "combine_same_power",
+        "multiply_multivariable",
+            "divide_simple",
+    "divide_coefficients",
+    "divide_multivariable",
+       "power_simple",
+    "power_coefficient",
+    "power_multivariable",
+    "power_negative_outer",
+    "negative_evaluate",
+    "negative_fraction_base",
+    "negative_simplify",
+    "negative_divide",
+    "fractional_unit",
+    "fractional_negative",
+    "fractional_of_fraction",
+    "zero_index",
+    "fraction_simple",
+    "fraction_complex",
+    "fraction_multivariable",
+    "fraction_nested_power",
+    "numeric_multiply",
+    "numeric_divide",
+    "numeric_mixed",
+    "write_as_power",
+    "find_missing_index",
+    "find_missing_divide",
+    "find_missing_power",
+    "identify_error",
+    ],
+    seed           = 42,
+    count          = 6,
+    show_solutions = False,
+)
+
+exercises = data["exercises"]
+ws        = data["worksheet"]
+
+# Group by difficulty
+grouped = defaultdict(list)
+for ex in exercises:
+    grouped[ex["meta"]["difficulty"]].append(ex)
+```
+
+## 🎯 Learning Targets
+
+{{< include Indices-Learning-Targets.qmd >}}
+
+
+## 🗂️ Formula Card
+
+{{< include Alg-Indices-formulas.qmd >}}
+
+
+
+## 📝 Practice Problems
+
+:::::::::: panel-tabset
+
+### 🟢 Easy
+
+```{python}
+#| output: asis
+for ex in grouped.get("easy", []):
+    print(f"::::: {{#exr-u2-{ex['number']}}}\n")
+    print(f"### {ex['title']}\n")
+    print(f"{ex['instruction']}\n")
+
+    # Question parts
+    for p in ex["parts"]:
+        print(f"{p['label']})  ${p['question_latex']}$  ")
+
+    # Solution callout — no blank line before
+    print('\n::: {.callout-tip collapse="true"}')
+    print("## 🔍 View Solution\n")
+    for p in ex["parts"]:
+        print(f"{p['label']})  ${p['answer_latex']}$  ")
+    print(":::")
+
+    # Metadata footer — no blank line before
+    print("::: exercise-meta")
+    
+    print('<div class="skill-container">')
+    for skill in ex["meta"]["skills"]:
+        print(f'  <span class="skill-badge">{skill}</span>')
+    print('</div>')
+    print(":::")
+
+    print(":::::\n")
+
+```
+
+::: math-sep
+∑ × π ÷ √ ◆ ∞ ± ∫ ≠ Δ
+:::
+
+### 🟡 Medium
+
+```{python}
+#| output: asis
+for ex in grouped.get("medium", []):
+    print(f"::::: {{#exr-u2-{ex['number']}}}\n")
+    print(f"### {ex['title']}\n")
+    print(f"{ex['instruction']}\n")
+
+    # Question parts
+    for p in ex["parts"]:
+        print(f"{p['label']})  ${p['question_latex']}$  ")
+
+    # Solution callout — no blank line before
+    print('\n::: {.callout-tip collapse="true"}')
+    print("## 🔍 View Solution\n")
+    for p in ex["parts"]:
+        print(f"{p['label']})  ${p['answer_latex']}$  ")
+    print(":::")
+
+    # Metadata footer — no blank line before
+    print("::: exercise-meta")
+    
+    print('<div class="skill-container">')
+    for skill in ex["meta"]["skills"]:
+        print(f'  <span class="skill-badge">{skill}</span>')
+    print('</div>')
+    print(":::")
+
+    print(":::::\n")
+```
+
+::: math-sep
+∑ × π ÷ √ ◆ ∞ ± ∫ ≠ Δ
+:::
+
+### 🔴 Challenging
+
+```{python}
+#| output: asis
+for ex in grouped.get("hard", []):
+    print(f"::::: {{#exr-u2-{ex['number']}}}\n")
+    print(f"### {ex['title']}\n")
+    print(f"{ex['instruction']}\n")
+
+    # Question parts
+    for p in ex["parts"]:
+        print(f"{p['label']})  ${p['question_latex']}$  ")
+
+    # Solution callout — no blank line before
+    print('\n::: {.callout-tip collapse="true"}')
+    print("## 🔍 View Solution\n")
+    for p in ex["parts"]:
+        print(f"{p['label']})  ${p['answer_latex']}$  ")
+    print(":::")
+
+    # Metadata footer — no blank line before
+    print("::: exercise-meta")
+    
+    print('<div class="skill-container">')
+    for skill in ex["meta"]["skills"]:
+        print(f'  <span class="skill-badge">{skill}</span>')
+    print('</div>')
+    print(":::")
+
+    print(":::::\n")
+```
+
+::: math-sep
+∑ × π ÷ √ ◆ ∞ ± ∫ ≠ Δ
+:::
+
+::::::::::
+
+## ⚡ Test Your Knowledge {#sec-indices-worksheet}
+
+```{=html}
+<link rel="stylesheet" href="../../assets/worksheet.css">
+<script src="https://cdn.jsdelivr.net/pyodide/v0.25.0/full/pyodide.js"></script>
+<script src="../../assets/worksheet.js"></script>
+
+<div class="ws-toolbar no-print">
+  <div class="ws-controls">
+    <button class="ws-btn primary" id="btn-ws-new" onclick="wsGenerate()" disabled>🔄 New Session</button>
+    <button class="ws-btn outline" onclick="wsOpenPreview()">👁️ Preview & Print</button>
+    <a href="https://app.flintk12.com/activities/index-laws-tuto-cd16e0/sessions/new" target="_blank" class="ws-btn flint">🤖 Get Help</a>
+  </div>
+  <div id="ws-loading" class="ws-status">⏳ Loading Python...</div>
+</div>
+
+<div id="ws-container"></div>
+
+<div id="ws-preview-overlay" class="ws-modal no-print">
+  <div class="ws-modal-header">
+    <span id="ws-preview-title-text">Worksheet Preview</span>
+    <div class="ws-modal-btns">
+      <button class="ws-btn-small print" onclick="wsPrint()">🖨️ Print PDF</button>
+      <button class="ws-btn-small close" onclick="wsClosePreview()">✕ Close</button>
+    </div>
+  </div>
+  <div id="ws-preview-scroll" class="ws-modal-body"></div>
+</div>
+<script>
+
+
+window.WS_CONFIG = {
+  title: "Laws of Indices",
+  unit: "Unit 2 · Indices",
+  pyPath: "Indices.py", 
+  template:"word",//standard | compact | exam | word
+  count: 6,
+  types: ["multiply_coefficients", "divide_coefficients",    "find_missing_divide",
+    "find_missing_power","identify_error"] 
+};
+</script>
+```

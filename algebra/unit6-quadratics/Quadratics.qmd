@@ -1,0 +1,189 @@
+---
+title: "Unit 6: Quadratic Equations"
+number-sections: true
+number-depth: 2
+execute:
+  echo: false
+---
+
+```{python}
+#| output: false
+import sys
+sys.path.insert(0, '../unit6-quadratics')
+from Quadratics import generate
+from collections import defaultdict
+
+# ── CONFIGURATION ─────────────────────────────────────────────
+# QMD controls: which types, seed, show_solutions
+# Python controls: count per type, layout, cols
+# ──────────────────────────────────────────────────────────────
+data = generate(
+    types=[
+        # LT1 — Factorising simple (a=1)
+        "factorise_simple",
+        "factorise_negative_c",
+        "factorise_both_negative",
+        # LT2 — Factorising harder (a≠1)
+        "factorise_hard",
+        "factorise_hard_negative",
+        # LT3 — Special forms
+        "diff_two_squares",
+        "perfect_square",
+        # LT4 — Solve by factorising
+        "solve_simple",
+        "solve_hard",
+        "solve_special",
+        # LT5 — Quadratic formula
+        "formula_integer",
+        "formula_surd",
+        "formula_non_real",
+        # LT6 — Completing the square
+        "complete_square_form",
+        "complete_square_nonmonic",
+        "complete_square_solve",
+        "complete_square_nonmonic_solve",
+        # LT7 — Word problems
+        "word_area",
+        "word_consecutive",
+        "word_projectile",
+        # LT8 — Geometry
+        "geo_rectangle",
+        "geo_right_triangle",
+        # LT5 ext — Discriminant
+        "discriminant_nature",
+        "discriminant_find_k",
+        # LT7 ext — more integer problems
+        "word_even_integers",
+        "word_odd_integers",
+        # LT9 — Forming equations from roots
+        "roots_to_equation",
+        "roots_symmetric",
+        # LT8 ext — more geometry
+        "geo_right_triangle_area",
+        "geo_L_shape",
+        "geo_cuboid_surface",
+        "geo_cuboid_volume",
+        # LT10 — Algebraic fraction equations
+        "frac_equation_simple",
+        "frac_equation_diff",
+        # LT11 — Disguised quadratics
+        "disguised_biquadratic",
+        "disguised_linear_sub",
+        # LT12 — Surd equations
+        "surd_simple",
+        "surd_difference",
+        # LT13 — Indices → quadratic
+        "indices_quadratic",
+    ],
+    seed           = 42,
+    show_solutions = True,
+)
+
+grouped = defaultdict(list)
+for ex in data["_exercises_qmd"]:
+    grouped[ex["difficulty"]].append(ex)
+```
+
+## 🎯 Learning Targets
+
+{{< include Quadratics-Learning-Targets.qmd >}}
+
+## 🗂️ Formula Card
+
+{{< include Quadratics-Formulas.qmd >}}
+
+## 📝 Practice Problems
+
+:::::::::: panel-tabset
+
+### 🟢 Easy
+
+```{python}
+#| output: asis
+for ex in grouped.get("easy", []):
+    print(ex["rendered"])
+```
+
+::: math-sep
+∑ × π ÷ √ ◆ ∞ ± ∫ ≠ Δ
+:::
+
+### 🟡 Medium
+
+```{python}
+#| output: asis
+for ex in grouped.get("medium", []):
+    print(ex["rendered"])
+```
+
+::: math-sep
+∑ × π ÷ √ ◆ ∞ ± ∫ ≠ Δ
+:::
+
+### 🔴 Challenging
+
+```{python}
+#| output: asis
+for ex in grouped.get("hard", []):
+    print(ex["rendered"])
+```
+
+::: math-sep
+∑ × π ÷ √ ◆ ∞ ± ∫ ≠ Δ
+:::
+
+::::::::::
+
+## ⚡ Test Your Knowledge
+
+```{=html}
+
+
+<link rel="stylesheet" href="../../assets/worksheet.css">
+<script src="https://cdn.jsdelivr.net/pyodide/v0.25.0/full/pyodide.js"></script>
+<script src="../../assets/worksheet.js"></script>
+
+<div class="ws-toolbar no-print">
+  <div class="ws-controls">
+    <button class="ws-btn primary" id="btn-ws-new" onclick="wsGenerate()" disabled>🔄 New Session</button>
+    <button class="ws-btn outline" onclick="wsOpenPreview()">👁️ Preview & Print</button>
+    <a href="https://app.flintk12.com/activities/quadratic-equat-55a860/sessions/new" target="_blank" class="ws-btn flint">🤖 Get Help</a>
+  </div>
+  <div id="ws-loading" class="ws-status">⏳ Loading Python...</div>
+</div>
+
+<div id="ws-container"></div>
+
+<div id="ws-preview-overlay" class="ws-modal no-print">
+  <div class="ws-modal-header">
+    <span id="ws-preview-title-text">Worksheet Preview</span>
+    <div class="ws-modal-btns">
+      <button class="ws-btn-small print" onclick="wsPrint()">🖨️ Print PDF</button>
+      <button class="ws-btn-small close" onclick="wsClosePreview()">✕ Close</button>
+    </div>
+  </div>
+  <div id="ws-preview-scroll" class="ws-modal-body"></div>
+</div>
+
+<script>
+window.WS_CONFIG = {
+  title:    "Quadratic Equations",
+  unit:     "Unit 6 · Quadratic Equations",
+  pyPath:   "Quadratics.py",
+  template: "word",
+  // Equation types only — no word/geo in worksheet
+  types: [
+    "factorise_simple",
+    "factorise_negative_c",
+    "factorise_hard",
+    "diff_two_squares",
+    "solve_simple",
+    "solve_hard",
+    "formula_integer",
+    "formula_surd",
+    "complete_square_form",
+    "complete_square_solve"
+  ]
+};
+</script>
+```

@@ -1,0 +1,293 @@
+/* ============================================================
+   INTERACTIVE UI (Buttons & Toolbar)
+   ============================================================ */
+.ws-toolbar {
+  display: flex !important;
+  align-items: center !important;
+  justify-content: space-between !important;
+  background: #f1f5f9 !important;
+  padding: 15px !important;
+  border-radius: 8px !important;
+  margin: 20px 0 !important;
+  border: 1px solid #cbd5e1 !important;
+}
+
+.ws-controls { display: flex; gap: 10px; }
+
+.ws-status {
+  font-size: 0.85rem;
+  color: #4338ca;
+  font-style: italic;
+}
+
+.ws-btn {
+  padding: 8px 16px !important;
+  border-radius: 5px !important;
+  font-weight: 600 !important;
+  cursor: pointer !important;
+  border: none !important;
+  transition: opacity 0.2s;
+}
+
+.ws-btn.primary { background: #4338ca !important; color: white !important; }
+.ws-btn.outline { background: white !important; border: 1px solid #4338ca !important; color: #4338ca !important; }
+.ws-btn:disabled { opacity: 0.5; cursor: not-allowed; }
+
+/* ============================================================
+   WORKSHEET CONTENT (The "Paper" look)
+   ============================================================ */
+.ws-paper {
+  background: white;
+  border: 1px solid #e2e8f0;
+  padding: 40px;
+  margin: 0 auto;
+  max-width: 800px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+  font-family: "DejaVu Sans", sans-serif;
+}
+
+.ws-header {
+  border-bottom: 2px solid #1e293b;
+  margin-bottom: 20px;
+  padding-bottom: 10px;
+}
+.ws-header-top,
+.ws-header-bottom {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+
+.ws-date,
+.ws-grade {
+  text-align: left;   /* align text inside block from left */
+}
+
+.ws-header {
+  margin-bottom: 20px;
+}
+.ws-header-row {
+  display: grid;
+  grid-template-columns: 1fr 250px; /* left flexible, right fixed */
+  align-items: start;
+  margin-bottom: 6px;
+}
+
+.ws-right {
+  text-align: left;  /* align text from left inside right column */
+}
+
+.ws-title { font-size: 1.5rem; font-weight: bold; }
+.ws-unit { font-size: 0.9rem; color: #64748b; }
+
+.ws-exercise { 
+  margin-bottom: 10px; 
+  break-inside:avoid;
+  page-break-inside: avoid; 
+  
+}
+.ws-exercise-header {
+  background: #f8fafc;
+  padding: 5px 10px;
+  border-left: 4px solid #4338ca;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+/* Parts Grid */
+.parts-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 10px;
+}
+
+.part-card {
+  break-inside: avoid;
+  page-break-inside: avoid;
+}
+.parts-row {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);  /* default: 2 col */
+  gap: 10px;
+  break-inside: avoid;
+  page-break-inside: avoid;
+  grid-column: 1 / -1;
+}
+
+.part-card-wide { grid-column: 1 / -1; }
+
+.part-header { background: #f1f5f9; padding: 2px 8px; font-size: 0.7rem; border-bottom: 1px solid #e2e8f0; }
+
+.part-question {
+  padding: 15px;
+  text-align: center;
+  font-size: 1.1rem;
+  min-height: 60px;
+}
+
+.part-work {
+  flex: 1;
+  min-height: 80px;
+  /* Use a more robust line style for printers */
+  background-image: linear-gradient(#e2e8f0 1px, transparent 1px) !important;
+  background-size: 100% 30px !important;
+  background-color: #ffffff !important; /* Force white background */
+  
+  print-color-adjust: exact !important;
+  -webkit-print-color-adjust: exact !important;
+}
+
+/* Ensure cards aren't filled with dark colors by mistake */
+.part-card {
+  background-color: #ffffff !important;
+  border: 1px solid #e2e8f0 !important;
+}
+
+.part-ans-line {
+  padding: 5px 10px;
+  border-top: 1px solid #e2e8f0;
+  font-size: 0.8rem;
+  color: #94a3b8;
+}
+
+/* Answer Key */
+.ws-answer-key {
+  margin-top: 40px;
+  border-top: 2px dashed #cbd5e1;
+  padding-top: 20px;
+}
+
+.ws-answer-key-grid { 
+  display: grid; 
+  grid-template-columns: repeat(3, 1fr);
+  gap: 12px 20px; 
+  align-items: start;  /* ✅ cells align to top, not stretch */
+}
+
+.ws-ans-item {
+  word-break: break-word;
+  overflow-wrap: break-word;
+  min-width: 0;          /* ✅ critical for grid overflow */
+  padding: 4px 0;
+}
+
+/* ✅ Long answers span full row */
+.ws-ans-wide {
+  grid-column: 1 / -1;
+  border-top: 1px dashed #e2e8f0;
+  padding-top: 6px;
+}
+
+.ws-ans-val {
+  display: inline-block;
+  max-width: 100%;
+}
+
+
+/* ============================================================
+   PREVIEW MODAL UI
+   ============================================================ */
+.ws-modal {
+  display: none;
+  position: fixed;
+  inset: 0;
+  background: rgba(15, 23, 42, 0.9);
+  z-index: 999999 !important;
+  flex-direction: column;
+}
+
+.ws-modal.open { display: flex; }
+
+.ws-modal-header {
+  display: flex !important;
+  justify-content: space-between !important;
+  align-items: center !important;
+  background: #1e293b !important;
+  padding: 12px 24px !important;
+  color: white !important;
+}
+
+.ws-modal-btns { display: flex; gap: 10px; }
+
+.ws-btn-small {
+  padding: 6px 14px;
+  border-radius: 4px;
+  border: none;
+  cursor: pointer;
+  font-weight: bold;
+}
+.ws-btn-small.print { background: #22c55e; color: white; }
+.ws-btn-small.close { background: #ef4444; color: white; }
+
+.ws-modal-body {
+  flex: 1;
+  overflow-y: auto;
+  padding: 40px 20px;
+  background: #64748b;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.ws-page-wrap { margin-bottom: 30px; }
+.ws-page-number {
+  position: absolute;
+  bottom: 10mm;
+  right: 20mm;
+  font-size: 0.8rem;
+  color: #94a3b8;
+}
+
+.ws-preview-page {
+  width: 210mm;
+  padding: 20mm;
+  box-sizing: border-box;
+  background: white;
+  margin: 0;
+  height:auto;
+  position: relative;
+}
+
+.ws-preview-page.template-exam .part-work {
+  min-height: 120px;
+}
+
+.ws-preview-page.template-compact .part-work {
+  min-height: 50px;
+}
+
+/* 1-col templates */
+.template-word .parts-row,
+.template-exam .parts-row {
+  grid-template-columns: 1fr;
+}
+
+/* noWork stays 2-col but no work/ans lines */
+.template-noWork .parts-row {
+  grid-template-columns: repeat(2, 1fr);
+}
+/* ── Flint Get Help button (toolbar) ── */
+.ws-btn.flint {
+  background: #7c3aed;
+  color: white !important;
+  text-decoration: none !important;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  border: none;
+  padding: 0.45rem 1rem;
+  border-radius: 6px;
+  font-size: 0.82rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s;
+  white-space: nowrap;
+}
+.ws-btn.flint:hover {
+  background: #6d28d9;
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(124, 58, 237, 0.3);
+}
+@media print {
+  .ws-btn.flint { display: none !important; }
+}

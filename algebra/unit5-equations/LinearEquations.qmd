@@ -1,0 +1,165 @@
+---
+title: "Unit 5: Linear Equations"
+number-sections: true
+number-depth: 2
+execute:
+  echo: false
+---
+
+```{python}
+#| output: false
+import sys
+sys.path.insert(0, '../unit5-linear')
+from LinearEquations import generate
+from collections import defaultdict
+
+# ── CONFIGURATION ─────────────────────────────────────────────
+# QMD controls: which types, seed, show_solutions
+# Python controls: count per type, layout per type
+# ──────────────────────────────────────────────────────────────
+data = generate(
+    types=[
+        # LT1 — One-step
+        "one_step_add",
+        "one_step_mult",
+        "one_step_div",
+        # LT2 — Two-step
+        "two_step",
+        "two_step_div",
+        "two_step_bracket",
+        # LT3 — Both sides
+        "both_sides",
+        "both_sides_bracket",
+        # LT4 — Expand
+        "expand_single",
+        "expand_double",
+        "expand_cancel",
+        "bracket_neg",
+        # LT5 — Fractions
+        "frac_simple",
+        "frac_both_sides",
+        "frac_add",
+        "frac_four_terms",
+        # LT6 — Word problems
+        "word_problem",
+        # LT7 — Geometry
+        "geo_triangle_perimeter",
+        "geo_triangle_angles",
+        "geo_trapezium",
+        "geo_rectangle",
+        "geo_isosceles",
+    ],
+    seed           = 42,
+    show_solutions = True,
+)
+
+# Group by difficulty for tabs
+grouped = defaultdict(list)
+for ex in data["_exercises_qmd"]:
+    grouped[ex["difficulty"]].append(ex)
+```
+
+## 🎯 Learning Targets
+
+{{< include Linear-Learning-Targets.qmd >}}
+
+## 🗂️ Formula Card
+
+{{< include Linear-Formulas.qmd >}}
+
+## 📝 Practice Problems
+
+:::::::::: panel-tabset
+
+### 🟢 Easy
+
+```{python}
+#| output: asis
+for ex in grouped.get("easy", []):
+    print(ex["rendered"])
+```
+
+::: math-sep
+∑ × π ÷ √ ◆ ∞ ± ∫ ≠ Δ
+:::
+
+### 🟡 Medium
+
+```{python}
+#| output: asis
+for ex in grouped.get("medium", []):
+    print(ex["rendered"])
+```
+
+::: math-sep
+∑ × π ÷ √ ◆ ∞ ± ∫ ≠ Δ
+:::
+
+### 🔴 Challenging
+
+```{python}
+#| output: asis
+for ex in grouped.get("hard", []):
+    print(ex["rendered"])
+```
+
+::: math-sep
+∑ × π ÷ √ ◆ ∞ ± ∫ ≠ Δ
+:::
+
+::::::::::
+
+## ⚡ Test Your Knowledge
+
+```{=html}
+<link rel="stylesheet" href="../../assets/worksheet.css">
+<script src="https://cdn.jsdelivr.net/pyodide/v0.25.0/full/pyodide.js"></script>
+<script src="../../assets/worksheet.js"></script>
+
+<div class="ws-toolbar no-print">
+  <div class="ws-controls">
+    <button class="ws-btn primary" id="btn-ws-new" onclick="wsGenerate()" disabled>🔄 New Session</button>
+    <button class="ws-btn outline" onclick="wsOpenPreview()">👁️ Preview & Print</button>
+    <a href="https://app.flintk12.com/activities/equation-solvin-77c61a/sessions/new" target="_blank" class="ws-btn flint">🤖 Get Help</a>
+  </div>
+  <div id="ws-loading" class="ws-status">⏳ Loading Python...</div>
+</div>
+
+<div id="ws-container"></div>
+
+<div id="ws-preview-overlay" class="ws-modal no-print">
+  <div class="ws-modal-header">
+    <span id="ws-preview-title-text">Worksheet Preview</span>
+    <div class="ws-modal-btns">
+      <button class="ws-btn-small print" onclick="wsPrint()">🖨️ Print PDF</button>
+      <button class="ws-btn-small close" onclick="wsClosePreview()">✕ Close</button>
+    </div>
+  </div>
+  <div id="ws-preview-scroll" class="ws-modal-body"></div>
+</div>
+
+<script>
+window.WS_CONFIG = {
+  title:    "Linear Equations",
+  unit:     "Unit 5 · Linear Equations",
+  pyPath:   "LinearEquations.py",
+  template: "word",
+  // Worksheet uses equation types only (grid layout)
+  // count and layout controlled by Python REGISTRY
+  types: [
+    "one_step_add",
+    "one_step_mult",
+    "two_step",
+    "two_step_bracket",
+    "both_sides",
+    "both_sides_bracket",
+    "expand_single",
+    "expand_double",
+    "frac_simple",
+    "frac_both_sides",
+    "expand_cancel",
+    "bracket_neg"
+  ]
+};
+</script>
+```

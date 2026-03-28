@@ -1,0 +1,61 @@
+:::::::::::::::::: lt-card
+::::: lt-item
+::: lt-number
+1
+:::
+
+::: lt-content
+**Apply Multiplication Rules** – Simplify expressions by adding powers when multiplying terms with the same base.
+:::
+:::::
+
+::::: lt-item
+::: lt-number
+2
+:::
+
+::: lt-content
+**Apply Division Rules** – Simplify expressions by subtracting powers when dividing terms with the same base.
+:::
+:::::
+
+::::: lt-item
+::: lt-number
+3
+:::
+
+::: lt-content
+**Master Power of a Power** – Use the rule  to simplify expressions where a power is raised to another power.
+:::
+:::::
+
+::::: lt-item
+::: lt-number
+4
+:::
+
+::: lt-content
+**Manage Coefficients** – Accurately multiply or divide numerical coefficients separately from the algebraic index laws.
+:::
+:::::
+
+::::: lt-item
+::: lt-number
+5
+:::
+
+::: lt-content
+**Handle Negative Indices** – Correctly perform addition and subtraction of exponents when calculations involve negative numbers.
+:::
+:::::
+
+::::: lt-item
+::: lt-number
+6
+:::
+
+::: lt-content
+**Simplify Complex Fractions** – Combine multiple index laws to simplify multi-step algebraic fractions involving multiplication and division.
+:::
+:::::
+::::::::::::::::::

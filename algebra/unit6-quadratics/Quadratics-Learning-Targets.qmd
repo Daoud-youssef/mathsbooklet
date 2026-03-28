@@ -1,0 +1,15 @@
+| # | Learning Target | I can... |
+|---|---|---|
+| **LT1** | Factorising — Simple | Factorise $x^2 + bx + c$ using the sum-product method |
+| **LT2** | Factorising — Harder | Factorise $ax^2 + bx + c$ ($a \neq 1$) using the $ac$-method |
+| **LT3** | Special Forms | Recognise and factorise difference of two squares and perfect squares |
+| **LT4** | Solve by Factorising | Solve quadratic equations by factorising |
+| **LT5** | Quadratic Formula & Discriminant | Apply $x = \dfrac{-b \pm \sqrt{b^2-4ac}}{2a}$; use $\Delta = b^2-4ac$ to determine nature of roots and find unknown parameters |
+| **LT6** | Completing the Square | Write $ax^2+bx+c$ in completed square form and use it to solve |
+| **LT7** | Word Problems | Form and solve quadratic equations from real-world contexts (area, integers: consecutive, even, odd) |
+| **LT8** | Geometry | Apply quadratic equations to geometric problems (right triangles, rectangles, L-shapes, cuboids) |
+| **LT9** | Roots & Vieta's Formulas | Form equations from roots; use $\alpha+\beta = -b/a$ and $\alpha\beta = c/a$ to find symmetric expressions |
+| **LT10** | Algebraic Fraction Equations | Solve equations with algebraic fractions by multiplying through to form a quadratic |
+| **LT11** | Disguised Quadratics | Recognise and solve $x^4 + bx^2 + c = 0$ and $(x+a)^2 + b(x+a) + c = 0$ using substitution |
+| **LT12** | Surd Equations | Solve equations involving square roots by squaring both sides; identify and reject extraneous roots |
+| **LT13** | Indices → Quadratic | Solve exponential equations like $(b^{x+p})^{x+q} = b^k$ by equating exponents to form a quadratic |
