@@ -1,40 +1,93 @@
-By the end of this unit, you should be able to:
+::: lt-grid
 
-**LT1 — Averages and Range from a List**
+::: lt-card
+::: {.lt-badge .c1}
+LT1
+:::
+::: lt-title
+Averages and Range from a List
+:::
+::: lt-desc
+Calculate mean, median, mode and range from a list. Find missing values given the mean, interpret stem-and-leaf diagrams, and work with unknown values given their ratio and overall mean.
+:::
+::: lt-skills
+[Mean, median, mode]{.lt-skill .c1}
+[Missing value]{.lt-skill .c1}
+[Stem & leaf]{.lt-skill .c1}
+[Ratio problems]{.lt-skill .c1}
+:::
+:::
 
-- Calculate the **mean**, **median**, **mode** and **range** from a list of values
-- Find a **missing value** given the mean of a dataset
-- Find the **new mean** when a value is added to a dataset
-- Find two unknown values given their **ratio** and the overall mean
-- Read and interpret a **stem and leaf diagram** to find averages and range
+::: lt-card
+::: {.lt-badge .c2}
+LT2
+:::
+::: lt-title
+Frequency Tables — Ungrouped
+:::
+::: lt-desc
+Calculate mean using $\bar{x} = \dfrac{\sum fx}{\sum f}$, find the median using cumulative frequencies, identify the mode, and determine the range of an unknown frequency $x$ that produces a target median.
+:::
+::: lt-skills
+[Mean from table]{.lt-skill .c2}
+[Cumulative frequency]{.lt-skill .c2}
+[Mode]{.lt-skill .c2}
+[Unknown frequency]{.lt-skill .c2}
+:::
+:::
 
-**LT2 — Frequency Tables (Ungrouped)**
+::: lt-card
+::: {.lt-badge .c3}
+LT3
+:::
+::: lt-title
+Grouped Frequency Tables
+:::
+::: lt-desc
+Identify modal and median class, estimate the mean using midpoints $\bar{x} \approx \dfrac{\sum fx}{\sum f}$, calculate combined means, and find missing frequencies $a$ and $b$ given total frequency and estimated mean.
+:::
+::: lt-skills
+[Modal class]{.lt-skill .c3}
+[Midpoint estimate]{.lt-skill .c3}
+[Combined mean]{.lt-skill .c3}
+[Missing frequencies]{.lt-skill .c3}
+:::
+:::
 
-- Calculate the **mean** from a frequency table using $\bar{x} = \dfrac{\sum fx}{\sum f}$
-- Find the **median** from a frequency table using cumulative frequencies
-- Identify the **mode** from a frequency table
-- Find the largest and smallest possible value of an unknown frequency $x$ given a target **median**
+::: lt-card
+::: {.lt-badge .c4}
+LT4
+:::
+::: lt-title
+Cumulative Frequency
+:::
+::: lt-desc
+Build cumulative frequency tables, read values above or below a threshold, use cumulative frequency graphs to estimate $Q_1$, $Q_2$, $Q_3$ and IQR, and find missing values in a cumulative frequency table.
+:::
+::: lt-skills
+[CF table]{.lt-skill .c4}
+[CF graph]{.lt-skill .c4}
+[$Q_1$, $Q_2$, $Q_3$]{.lt-skill .c4}
+[IQR]{.lt-skill .c4}
+:::
+:::
 
-**LT3 — Grouped Frequency Tables**
+::: lt-card
+::: {.lt-badge .c5}
+LT5
+:::
+::: lt-title
+Box Plots and IQR
+:::
+::: lt-desc
+Calculate IQR from raw data, draw box-and-whisker plots from a five-number summary, identify outliers using $Q_3 + 1.5 \times \text{IQR}$ and $Q_1 - 1.5 \times \text{IQR}$, and find unknowns in ordered lists given conditions on median, mode and range.
+:::
+::: lt-skills
+[IQR]{.lt-skill .c5}
+[Box plot]{.lt-skill .c5}
+[Outliers]{.lt-skill .c5}
+[Five-number summary]{.lt-skill .c5}
+:::
+:::
 
-- Identify the **modal class** from a grouped frequency table
-- Identify the **median class** from a grouped frequency table
-- **Estimate the mean** using midpoints: $\bar{x} \approx \dfrac{\sum fx}{\sum f}$
-- Calculate a **combined mean** when two groups with different sizes are merged
-- Find **missing frequencies** $a$ and $b$ given total frequency and estimated mean
-
-**LT4 — Cumulative Frequency**
-
-- Build a **cumulative frequency table** from a frequency table
-- Read values from a cumulative frequency table (how many below / above a value)
-- Use a **cumulative frequency graph** to estimate $Q_1$, $Q_2$ (median) and $Q_3$
-- Estimate the **IQR** from a cumulative frequency graph
-- Estimate the number of items **above a given value**
-- Find missing values **A** and **B** in a cumulative frequency table
-
-**LT5 — Box Plots and IQR**
-
-- Calculate the **IQR** from raw data: $\text{IQR} = Q_3 - Q_1$
-- Draw a **box-and-whisker plot** from a five-number summary
-- Identify **outliers** using the rule: value $> Q_3 + 1.5 \times \text{IQR}$ or $< Q_1 - 1.5 \times \text{IQR}$
-- Find unknown values in an ordered list given conditions on median, mode and range
+:::

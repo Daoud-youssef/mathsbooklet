@@ -1,15 +1,224 @@
-| # | Learning Target | I can... |
-|---|---|---|
-| **LT1** | Factorising — Simple | Factorise $x^2 + bx + c$ using the sum-product method |
-| **LT2** | Factorising — Harder | Factorise $ax^2 + bx + c$ ($a \neq 1$) using the $ac$-method |
-| **LT3** | Special Forms | Recognise and factorise difference of two squares and perfect squares |
-| **LT4** | Solve by Factorising | Solve quadratic equations by factorising |
-| **LT5** | Quadratic Formula & Discriminant | Apply $x = \dfrac{-b \pm \sqrt{b^2-4ac}}{2a}$; use $\Delta = b^2-4ac$ to determine nature of roots and find unknown parameters |
-| **LT6** | Completing the Square | Write $ax^2+bx+c$ in completed square form and use it to solve |
-| **LT7** | Word Problems | Form and solve quadratic equations from real-world contexts (area, integers: consecutive, even, odd) |
-| **LT8** | Geometry | Apply quadratic equations to geometric problems (right triangles, rectangles, L-shapes, cuboids) |
-| **LT9** | Roots & Vieta's Formulas | Form equations from roots; use $\alpha+\beta = -b/a$ and $\alpha\beta = c/a$ to find symmetric expressions |
-| **LT10** | Algebraic Fraction Equations | Solve equations with algebraic fractions by multiplying through to form a quadratic |
-| **LT11** | Disguised Quadratics | Recognise and solve $x^4 + bx^2 + c = 0$ and $(x+a)^2 + b(x+a) + c = 0$ using substitution |
-| **LT12** | Surd Equations | Solve equations involving square roots by squaring both sides; identify and reject extraneous roots |
-| **LT13** | Indices → Quadratic | Solve exponential equations like $(b^{x+p})^{x+q} = b^k$ by equating exponents to form a quadratic |
+::: lt-grid
+
+::: lt-card
+::: {.lt-badge .c1}
+LT1
+:::
+::: lt-title
+Factorising — Simple
+:::
+::: lt-desc
+Factorise $x^2 + bx + c$ using the sum-product method.
+:::
+::: lt-skills
+[Sum-product]{.lt-skill .c1}
+[Factor pairs]{.lt-skill .c1}
+[Monic quadratic]{.lt-skill .c1}
+:::
+:::
+
+::: lt-card
+::: {.lt-badge .c2}
+LT2
+:::
+::: lt-title
+Factorising — Harder
+:::
+::: lt-desc
+Factorise $ax^2 + bx + c$ where $a \neq 1$ using the $ac$-method.
+:::
+::: lt-skills
+[ac-method]{.lt-skill .c2}
+[Split middle term]{.lt-skill .c2}
+[Factor by grouping]{.lt-skill .c2}
+:::
+:::
+
+::: lt-card
+::: {.lt-badge .c3}
+LT3
+:::
+::: lt-title
+Special Forms
+:::
+::: lt-desc
+Recognise and factorise difference of two squares and perfect square trinomials.
+:::
+::: lt-skills
+[Difference of squares]{.lt-skill .c3}
+[Perfect square]{.lt-skill .c3}
+[Pattern recognition]{.lt-skill .c3}
+:::
+:::
+
+::: lt-card
+::: {.lt-badge .c4}
+LT4
+:::
+::: lt-title
+Solve by Factorising
+:::
+::: lt-desc
+Solve quadratic equations by factorising and applying the zero-product property.
+:::
+::: lt-skills
+[Zero-product]{.lt-skill .c4}
+[Set factors to zero]{.lt-skill .c4}
+[Two solutions]{.lt-skill .c4}
+:::
+:::
+
+::: lt-card
+::: {.lt-badge .c5}
+LT5
+:::
+::: lt-title
+Quadratic Formula & Discriminant
+:::
+::: lt-desc
+Apply $x = \dfrac{-b \pm \sqrt{b^2-4ac}}{2a}$ and use $\Delta = b^2 - 4ac$ to determine the nature of roots and find unknown parameters.
+:::
+::: lt-skills
+[Quadratic formula]{.lt-skill .c5}
+[Discriminant]{.lt-skill .c5}
+[Nature of roots]{.lt-skill .c5}
+:::
+:::
+
+::: lt-card
+::: {.lt-badge .c1}
+LT6
+:::
+::: lt-title
+Completing the Square
+:::
+::: lt-desc
+Write $ax^2 + bx + c$ in completed square form and use it to solve equations and identify the vertex.
+:::
+::: lt-skills
+[Completed square form]{.lt-skill .c1}
+[Vertex form]{.lt-skill .c1}
+[Solve from CTS]{.lt-skill .c1}
+:::
+:::
+
+::: lt-card
+::: {.lt-badge .c2}
+LT7
+:::
+::: lt-title
+Word Problems
+:::
+::: lt-desc
+Form and solve quadratic equations from real-world contexts including area, consecutive integers, and even/odd number problems.
+:::
+::: lt-skills
+[Area problems]{.lt-skill .c2}
+[Consecutive integers]{.lt-skill .c2}
+[Form the equation]{.lt-skill .c2}
+:::
+:::
+
+::: lt-card
+::: {.lt-badge .c3}
+LT8
+:::
+::: lt-title
+Geometry Problems
+:::
+::: lt-desc
+Apply quadratic equations to geometric problems involving right triangles, rectangles, L-shapes, and cuboids.
+:::
+::: lt-skills
+[Right triangles]{.lt-skill .c3}
+[Rectangles]{.lt-skill .c3}
+[Composite shapes]{.lt-skill .c3}
+:::
+:::
+
+::: lt-card
+::: {.lt-badge .c4}
+LT9
+:::
+::: lt-title
+Roots & Vieta's Formulas
+:::
+::: lt-desc
+Form equations from given roots and use $\alpha+\beta = -b/a$ and $\alpha\beta = c/a$ to find symmetric expressions.
+:::
+::: lt-skills
+[Vieta's formulas]{.lt-skill .c4}
+[Sum & product of roots]{.lt-skill .c4}
+[Symmetric expressions]{.lt-skill .c4}
+:::
+:::
+
+::: lt-card
+::: {.lt-badge .c5}
+LT10
+:::
+::: lt-title
+Algebraic Fraction Equations
+:::
+::: lt-desc
+Solve equations with algebraic fractions by multiplying through to clear denominators and form a quadratic.
+:::
+::: lt-skills
+[Clear denominators]{.lt-skill .c5}
+[Form quadratic]{.lt-skill .c5}
+[Check solutions]{.lt-skill .c5}
+:::
+:::
+
+::: lt-card
+::: {.lt-badge .c1}
+LT11
+:::
+::: lt-title
+Disguised Quadratics
+:::
+::: lt-desc
+Recognise and solve $x^4 + bx^2 + c = 0$ and $(x+a)^2 + b(x+a) + c = 0$ using substitution.
+:::
+::: lt-skills
+[Substitution]{.lt-skill .c1}
+[Biquadratic]{.lt-skill .c1}
+[Nested form]{.lt-skill .c1}
+:::
+:::
+
+::: lt-card
+::: {.lt-badge .c2}
+LT12
+:::
+::: lt-title
+Surd Equations
+:::
+::: lt-desc
+Solve equations involving square roots by squaring both sides; identify and reject extraneous roots.
+:::
+::: lt-skills
+[Square both sides]{.lt-skill .c2}
+[Extraneous roots]{.lt-skill .c2}
+[Check solutions]{.lt-skill .c2}
+:::
+:::
+
+::: lt-card
+::: {.lt-badge .c3}
+LT13
+:::
+::: lt-title
+Indices → Quadratic
+:::
+::: lt-desc
+Solve exponential equations like $(b^{x+p})^{x+q} = b^k$ by equating exponents to form and solve a quadratic.
+:::
+::: lt-skills
+[Equate exponents]{.lt-skill .c3}
+[Form quadratic]{.lt-skill .c3}
+[Exponential form]{.lt-skill .c3}
+:::
+:::
+
+:::

@@ -1,0 +1,195 @@
+---
+title: "Unit 1: Trigonometry"
+number-sections: true
+number-depth: 2
+execute:
+  echo: false
+---
+
+```{python}
+#| output: false
+import sys, os
+sys.path.insert(0, os.path.abspath('../../assets'))
+sys.path.insert(0, os.path.abspath('../unit1-trigonometry'))
+from Trigonometry import generate
+from collections import defaultdict
+
+data = generate(
+    types=[
+        # LT1 — Labelling
+        "label_sides",
+        # LT2 — Ratios
+        "write_ratio",
+        "identify_ratio",
+        # LT3 — Find a side
+        "find_side_sin",
+        "find_side_cos",
+        "find_side_tan",
+        "find_side_hyp_sin",
+        "find_side_hyp_cos",
+        "find_side_hyp_tan",
+        # LT4 — Find an angle
+        "find_angle_sin",
+        "find_angle_cos",
+        "find_angle_tan",
+        # LT5 — Elevation & depression
+        "elevation_basic",
+        "depression_basic",
+        "elevation_word",
+        "depression_word",
+        "shadow_flagpole",
+        "hill_gradient",
+        "train_gradient",
+        "elevation_depression_pair",
+        "kite_height",
+        # LT6 — Multi-step
+        "multi_step_two_triangles",
+        "multi_step_bearing",
+        "ladder_safety",
+        "ramp_angle",
+        "two_triangles_vertex",
+        "ratio_split_angle",
+        "isosceles_split",
+        "bearing_triangle",
+        "cliff_lighthouse",
+        "circle_chord_radius",
+        "flagpole_two_elevations",
+        "cliff_boat_closer",
+        "helicopter_overhead",
+    ],
+    seed           = 42,
+    show_solutions = True,
+)
+exercises = data["_exercises_qmd"]
+
+grouped = defaultdict(list)
+for ex in exercises:
+    grouped[ex["difficulty"]].append(ex)
+```
+
+## 🎯 Learning Targets
+
+{{< include Trigonometry-Learning-Targets.qmd >}}
+
+
+## 🗂️ Formula Card
+
+{{< include Geo-Trig-formulas.qmd >}}
+
+
+## 📝 Practice Problems
+
+:::::::::: panel-tabset
+
+### 🟢 Easy
+
+```{python}
+#| output: asis
+for ex in grouped.get("easy", []):
+    print(ex["rendered"])
+```
+
+::: math-sep
+∑ × π ÷ √ ◆ ∞ ± ∫ ≠ Δ
+:::
+
+### 🟡 Medium
+
+```{python}
+#| output: asis
+for ex in grouped.get("medium", []):
+    print(ex["rendered"])
+```
+
+::: math-sep
+∑ × π ÷ √ ◆ ∞ ± ∫ ≠ Δ
+:::
+
+### 🔴 Challenging
+
+```{python}
+#| output: asis
+for ex in grouped.get("hard", []):
+    print(ex["rendered"])
+```
+
+::: math-sep
+∑ × π ÷ √ ◆ ∞ ± ∫ ≠ Δ
+:::
+
+::::::::::
+
+## ⚡ Test Your Knowledge {#sec-trig-worksheet}
+
+```{=html}
+<link rel="stylesheet" href="../../assets/worksheet.css">
+<script src="https://cdn.jsdelivr.net/pyodide/v0.25.0/full/pyodide.js"></script>
+<script src="../../assets/worksheet.js"></script>
+
+<div class="ws-toolbar no-print">
+  <div class="ws-controls">
+    <button class="ws-btn primary" id="btn-ws-new" onclick="wsGenerate()" disabled>🔄 New Session</button>
+    <button class="ws-btn outline" onclick="wsOpenPreview()">👁️ Preview & Print</button>
+  </div>
+  <div id="ws-loading" class="ws-status">⏳ Loading Python...</div>
+</div>
+
+<div id="ws-container"></div>
+
+<div id="ws-preview-overlay" class="ws-modal no-print">
+  <div class="ws-modal-header">
+    <span id="ws-preview-title-text">Worksheet Preview</span>
+    <div class="ws-modal-btns">
+      <button class="ws-btn-small print" onclick="wsPrint()">🖨️ Print PDF</button>
+      <button class="ws-btn-small close" onclick="wsClosePreview()">✕ Close</button>
+    </div>
+  </div>
+  <div id="ws-preview-scroll" class="ws-modal-body"></div>
+</div>
+
+<script>
+window.WS_CONFIG = {
+  title: "Trigonometry",
+  unit: "Unit 1 · Trigonometry",
+  pyPath: "Trigonometry.py",
+  template: "word",
+  count: 3,
+  types: [
+    // 🟢 Easy
+    "find_side_sin",
+    "find_side_cos",
+    "find_side_tan",
+    "find_angle_sin",
+    "find_angle_cos",
+    "find_angle_tan",
+    // 🟡 Medium
+    "find_side_hyp_sin",
+    "find_side_hyp_cos",
+    "find_side_hyp_tan",
+    "elevation_basic",
+    "depression_basic",
+    "shadow_flagpole",
+    "hill_gradient",
+    "train_gradient",
+    "elevation_depression_pair",
+    "kite_height",
+    "ladder_safety",
+    "ramp_angle",
+    // 🔴 Challenging
+    "elevation_word",
+    "depression_word",
+    "multi_step_two_triangles",
+    "multi_step_bearing",
+    "two_triangles_vertex",
+    "ratio_split_angle",
+    "isosceles_split",
+    "bearing_triangle",
+    "cliff_lighthouse",
+    "circle_chord_radius",
+    "flagpole_two_elevations",
+    "cliff_boat_closer",
+    "helicopter_overhead"
+  ]
+};
+</script>
+```

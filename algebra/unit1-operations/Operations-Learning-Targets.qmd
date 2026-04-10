@@ -1,0 +1,88 @@
+::: lt-grid
+
+::: lt-card
+::: {.lt-badge .c1}
+LT1
+:::
+::: lt-title
+Calculate with Integers
+:::
+::: lt-desc
+Add, subtract, multiply, and divide positive and negative numbers accurately.
+:::
+::: lt-skills
+[Positive & negative]{.lt-skill .c1}
+[Four operations]{.lt-skill .c1}
+[Number line]{.lt-skill .c1}
+:::
+:::
+
+::: lt-card
+::: {.lt-badge .c2}
+LT2
+:::
+::: lt-title
+Apply Order of Operations
+:::
+::: lt-desc
+Evaluate numerical expressions using BODMAS, including brackets and exponents.
+:::
+::: lt-skills
+[BODMAS]{.lt-skill .c2}
+[Brackets]{.lt-skill .c2}
+[Exponents]{.lt-skill .c2}
+:::
+:::
+
+::: lt-card
+::: {.lt-badge .c3}
+LT3
+:::
+::: lt-title
+Operate with Fractions
+:::
+::: lt-desc
+Add, subtract, multiply, and divide fractions and mixed numbers fluently.
+:::
+::: lt-skills
+[LCD]{.lt-skill .c3}
+[Mixed numbers]{.lt-skill .c3}
+[Simplify]{.lt-skill .c3}
+:::
+:::
+
+::: lt-card
+::: {.lt-badge .c4}
+LT4
+:::
+::: lt-title
+Work with Decimals
+:::
+::: lt-desc
+Perform calculations with decimals and convert between fractions, decimals, and percentages.
+:::
+::: lt-skills
+[Decimal operations]{.lt-skill .c4}
+[FDP conversion]{.lt-skill .c4}
+[Rounding]{.lt-skill .c4}
+:::
+:::
+
+::: lt-card
+::: {.lt-badge .c5}
+LT5
+:::
+::: lt-title
+Simplify Complex Calculations
+:::
+::: lt-desc
+Combine integers, fractions, and decimals in multi-step numerical problems.
+:::
+::: lt-skills
+[Multi-step]{.lt-skill .c5}
+[Mixed types]{.lt-skill .c5}
+[Problem solving]{.lt-skill .c5}
+:::
+:::
+
+:::

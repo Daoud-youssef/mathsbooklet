@@ -1,12 +1,105 @@
-::: {.learning-targets}
+::: lt-grid
 
-| # | I can… | Key Skill |
-|---|--------|-----------|
-| LT1 | Solve one-step equations using inverse operations | Addition, subtraction, multiplication, division |
-| LT2 | Solve two-step equations, including brackets and fractions | Two inverse operations in sequence |
-| LT3 | Solve equations with unknowns on both sides | Collecting like terms |
-| LT4 | Expand brackets and solve the resulting equation | Single and double brackets |
-| LT5 | Solve equations involving algebraic fractions | Clearing fractions, cross-multiplication |
-| LT6 | Form and solve equations from word problems | Number riddles, ages, geometry, formulas |
+::: lt-card
+::: {.lt-badge .c1}
+LT1
+:::
+::: lt-title
+One-Step Equations
+:::
+::: lt-desc
+Solve one-step equations using inverse operations — addition, subtraction, multiplication, and division.
+:::
+::: lt-skills
+[Inverse operations]{.lt-skill .c1}
+[Add & subtract]{.lt-skill .c1}
+[Multiply & divide]{.lt-skill .c1}
+:::
+:::
+
+::: lt-card
+::: {.lt-badge .c2}
+LT2
+:::
+::: lt-title
+Two-Step Equations
+:::
+::: lt-desc
+Solve two-step equations including those with brackets and fractions by applying two inverse operations in sequence.
+:::
+::: lt-skills
+[Two inverse steps]{.lt-skill .c2}
+[Brackets]{.lt-skill .c2}
+[Fractions]{.lt-skill .c2}
+:::
+:::
+
+::: lt-card
+::: {.lt-badge .c3}
+LT3
+:::
+::: lt-title
+Unknowns on Both Sides
+:::
+::: lt-desc
+Solve equations where the unknown appears on both sides by collecting like terms first.
+:::
+::: lt-skills
+[Collect like terms]{.lt-skill .c3}
+[Rearrange]{.lt-skill .c3}
+[Balance method]{.lt-skill .c3}
+:::
+:::
+
+::: lt-card
+::: {.lt-badge .c4}
+LT4
+:::
+::: lt-title
+Expand and Solve
+:::
+::: lt-desc
+Expand single and double brackets then solve the resulting linear equation.
+:::
+::: lt-skills
+[Single brackets]{.lt-skill .c4}
+[Double brackets]{.lt-skill .c4}
+[Simplify then solve]{.lt-skill .c4}
+:::
+:::
+
+::: lt-card
+::: {.lt-badge .c5}
+LT5
+:::
+::: lt-title
+Algebraic Fractions
+:::
+::: lt-desc
+Solve equations involving algebraic fractions by clearing denominators or using cross-multiplication.
+:::
+::: lt-skills
+[Clear fractions]{.lt-skill .c5}
+[Cross-multiply]{.lt-skill .c5}
+[LCD method]{.lt-skill .c5}
+:::
+:::
+
+::: lt-card
+::: {.lt-badge .c1}
+LT6
+:::
+::: lt-title
+Form and Solve from Context
+:::
+::: lt-desc
+Translate word problems into equations and solve them — including number riddles, ages, geometry, and formula problems.
+:::
+::: lt-skills
+[Number problems]{.lt-skill .c1}
+[Age problems]{.lt-skill .c1}
+[Geometry & formulas]{.lt-skill .c1}
+:::
+:::
 
 :::

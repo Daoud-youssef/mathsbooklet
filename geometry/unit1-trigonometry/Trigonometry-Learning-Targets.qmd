@@ -1,0 +1,103 @@
+::: lt-grid
+::: lt-card
+::: {.lt-badge .c1}
+LT1
+:::
+::: lt-title
+Label Right-Angled Triangles
+:::
+::: lt-desc
+Identify and correctly label the hypotenuse, opposite side, and adjacent side relative to a given angle in a right-angled triangle.
+:::
+::: lt-skills
+[Hypotenuse]{.lt-skill .c1}
+[Opposite & adjacent]{.lt-skill .c1}
+[Angle reference]{.lt-skill .c1}
+:::
+:::
+
+::: lt-card
+::: {.lt-badge .c2}
+LT2
+:::
+::: lt-title
+Recall the Trigonometric Ratios
+:::
+::: lt-desc
+Define and recall sin θ, cos θ, and tan θ as ratios of sides using SOH-CAH-TOA, and identify the correct ratio for a given problem.
+:::
+::: lt-skills
+[SOH-CAH-TOA]{.lt-skill .c2}
+[Ratio selection]{.lt-skill .c2}
+[Fraction form]{.lt-skill .c2}
+:::
+:::
+
+::: lt-card
+::: {.lt-badge .c3}
+LT3
+:::
+::: lt-title
+Find a Missing Side Length
+:::
+::: lt-desc
+Use a trigonometric ratio to set up and solve an equation to find an unknown side length, given one side and one acute angle.
+:::
+::: lt-skills
+[Equation set-up]{.lt-skill .c3}
+[Multiply & divide]{.lt-skill .c3}
+[Calculator use]{.lt-skill .c3}
+:::
+:::
+
+::: lt-card
+::: {.lt-badge .c4}
+LT4
+:::
+::: lt-title
+Find a Missing Angle
+:::
+::: lt-desc
+Use inverse trigonometric functions (sin⁻¹, cos⁻¹, tan⁻¹) to find an unknown angle when two sides of a right-angled triangle are known.
+:::
+::: lt-skills
+[Inverse trig]{.lt-skill .c4}
+[Two-side ratio]{.lt-skill .c4}
+[Degree rounding]{.lt-skill .c4}
+:::
+:::
+
+::: lt-card
+::: {.lt-badge .c5}
+LT5
+:::
+::: lt-title
+Solve Elevation & Depression Problems
+:::
+::: lt-desc
+Interpret diagrams and written descriptions involving angles of elevation and depression, and apply trigonometry to find distances and heights.
+:::
+::: lt-skills
+[Elevation & depression]{.lt-skill .c5}
+[Diagram reading]{.lt-skill .c5}
+[Real-world modelling]{.lt-skill .c5}
+:::
+:::
+
+::: lt-card
+::: {.lt-badge .c1}
+LT6
+:::
+::: lt-title
+Solve Multi-step Problems
+:::
+::: lt-desc
+Combine two or more trigonometric steps, or integrate trigonometry with other geometric knowledge, to solve complex problems.
+:::
+::: lt-skills
+[Multi-step reasoning]{.lt-skill .c1}
+[Combined geometry]{.lt-skill .c1}
+[Exact & rounded answers]{.lt-skill .c1}
+:::
+:::
+:::

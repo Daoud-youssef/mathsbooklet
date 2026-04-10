@@ -30,6 +30,7 @@ ul.task-list li input[type="checkbox"] {
 <script src="../../site_libs/quarto-search/fuse.min.js"></script>
 <script src="../../site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="../../">
+<link href="../../geometry/unit1-trigonometry/Trigonometry.html" rel="next">
 <link href="../../algebra/unit6-quadratics/Quadratics.html" rel="prev">
 <script src="../../site_libs/quarto-html/quarto.js" type="module"></script>
 <script src="../../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
@@ -69,12 +70,22 @@ ul.task-list li input[type="checkbox"] {
     "search-label": "Search"
   }
 }</script>
+<script src="https://cdn.jsdelivr.net/pyodide/v0.25.0/full/pyodide.js"></script>
 <script>
 MathJax = {
   tex: {
     inlineMath: [['\\(', '\\)']],
     displayMath: [['\\[', '\\]']],
     packages: {'[+]': ['cancel', 'color']}
+  },
+  options: {
+    skipHtmlTags: []
+  },
+  startup: {
+    ready() {
+      MathJax.startup.defaultReady();
+      MathJax.startup.promise.then(() => MathJax.typesetPromise());
+    }
   }
 };
 </script>
@@ -211,6 +222,23 @@ window.Quarto = {
 </li>
       </ul>
   </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="true">
+ <span class="menu-text">Geometry</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../geometry/unit1-trigonometry/Trigonometry.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Unit 1: Trigonometry</span></span></a>
+  </div>
+</li>
+      </ul>
+  </li>
     </ul>
     </div>
 </nav>
@@ -255,87 +283,162 @@ window.Quarto = {
 
 <section id="learning-targets" class="level2" data-number="7.1">
 <h2 data-number="7.1" class="anchored" data-anchor-id="learning-targets"><span class="header-section-number">7.1</span> 🎯 Learning Targets</h2>
-<table class="caption-top table">
-<colgroup>
-<col style="width: 33%">
-<col style="width: 33%">
-<col style="width: 33%">
-</colgroup>
-<thead>
-<tr class="header">
-<th><strong>#</strong></th>
-<th><strong>Learning Target</strong></th>
-<th><strong>I can…</strong></th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td><strong>LT1</strong></td>
-<td>Relations &amp; Functions</td>
-<td>Represent relations as sets, tables, and arrow diagrams, and determine whether a relation is a function</td>
-</tr>
-<tr class="even">
-<td><strong>LT2</strong></td>
-<td>Representations</td>
-<td>Move fluently between tables, graphs, and equations for linear functions</td>
-</tr>
-<tr class="odd">
-<td><strong>LT3</strong></td>
-<td>Domain &amp; Range</td>
-<td>Identify the domain and range of a relation from a set, table, or graph</td>
-</tr>
-<tr class="even">
-<td><strong>LT4</strong></td>
-<td>Linear Functions</td>
-<td>Identify, evaluate, and interpret linear functions in context</td>
-</tr>
-<tr class="odd">
-<td><strong>LT5</strong></td>
-<td>Slope &amp; Rate of Change</td>
-<td>Calculate slope from two points or a table and interpret it as a rate of change</td>
-</tr>
-<tr class="even">
-<td><strong>LT6</strong></td>
-<td>Linear Equations &amp; Graphs</td>
-<td>Write and graph linear equations; find equations of parallel and perpendicular lines</td>
-</tr>
-<tr class="odd">
-<td><strong>LT7</strong></td>
-<td>Linear Modeling</td>
-<td>Form, solve, and interpret linear models for real-world situations</td>
-</tr>
-<tr class="even">
-<td><strong>LT8</strong></td>
-<td>Quadratic Functions</td>
-<td>Identify quadratic functions; evaluate them; convert between vertex, standard, and factored forms</td>
-</tr>
-<tr class="odd">
-<td><strong>LT9</strong></td>
-<td>Key Features of Graphs</td>
-<td>Determine the vertex, roots, and axis of symmetry of a parabola from its equation or graph</td>
-</tr>
-<tr class="even">
-<td><strong>LT10</strong></td>
-<td>Algebraic Manipulation</td>
-<td><em>(Covered in Unit 6 — Quadratic Equations)</em></td>
-</tr>
-<tr class="odd">
-<td><strong>LT11</strong></td>
-<td>Solving Quadratics</td>
-<td><em>(Covered in Unit 6 — Quadratic Equations)</em></td>
-</tr>
-<tr class="even">
-<td><strong>LT12</strong></td>
-<td>Domain &amp; Range (Quadratic)</td>
-<td>Determine and interpret the domain and range of a quadratic function from its equation or graph</td>
-</tr>
-<tr class="odd">
-<td><strong>LT13</strong></td>
-<td>Quadratic Modeling</td>
-<td>Model and interpret real-world situations using quadratic functions (projectile motion, revenue)</td>
-</tr>
-</tbody>
-</table>
+<div class="lt-grid">
+<div class="lt-card">
+<div class="lt-badge c1">
+<p>LT1</p>
+</div>
+<div class="lt-title">
+<p>Relations &amp; Functions</p>
+</div>
+<div class="lt-desc">
+<p>Represent relations as sets, tables, and arrow diagrams, and determine whether a relation is a function using the vertical line test.</p>
+</div>
+<div class="lt-skills">
+<p><span class="lt-skill c1">Sets &amp; tables</span> <span class="lt-skill c1">Arrow diagrams</span> <span class="lt-skill c1">Vertical line test</span></p>
+</div>
+</div>
+<div class="lt-card">
+<div class="lt-badge c2">
+<p>LT2</p>
+</div>
+<div class="lt-title">
+<p>Representations</p>
+</div>
+<div class="lt-desc">
+<p>Move fluently between tables, graphs, and equations for linear functions.</p>
+</div>
+<div class="lt-skills">
+<p><span class="lt-skill c2">Table to graph</span> <span class="lt-skill c2">Graph to equation</span> <span class="lt-skill c2">Multiple representations</span></p>
+</div>
+</div>
+<div class="lt-card">
+<div class="lt-badge c3">
+<p>LT3</p>
+</div>
+<div class="lt-title">
+<p>Domain &amp; Range</p>
+</div>
+<div class="lt-desc">
+<p>Identify the domain and range of a relation from a set, table, or graph.</p>
+</div>
+<div class="lt-skills">
+<p><span class="lt-skill c3">Input &amp; output</span> <span class="lt-skill c3">Set notation</span> <span class="lt-skill c3">From graph</span></p>
+</div>
+</div>
+<div class="lt-card">
+<div class="lt-badge c4">
+<p>LT4</p>
+</div>
+<div class="lt-title">
+<p>Linear Functions</p>
+</div>
+<div class="lt-desc">
+<p>Identify, evaluate, and interpret linear functions in real-world contexts.</p>
+</div>
+<div class="lt-skills">
+<p><span class="lt-skill c4">Evaluate <span class="math inline">\(f(x)\)</span></span> <span class="lt-skill c4">Identify linear</span> <span class="lt-skill c4">Interpret context</span></p>
+</div>
+</div>
+<div class="lt-card">
+<div class="lt-badge c5">
+<p>LT5</p>
+</div>
+<div class="lt-title">
+<p>Slope &amp; Rate of Change</p>
+</div>
+<div class="lt-desc">
+<p>Calculate slope from two points or a table and interpret it as a rate of change in context.</p>
+</div>
+<div class="lt-skills">
+<p><span class="lt-skill c5">Slope formula</span> <span class="lt-skill c5">From a table</span> <span class="lt-skill c5">Rate of change</span></p>
+</div>
+</div>
+<div class="lt-card">
+<div class="lt-badge c1">
+<p>LT6</p>
+</div>
+<div class="lt-title">
+<p>Linear Equations &amp; Graphs</p>
+</div>
+<div class="lt-desc">
+<p>Write and graph linear equations; find equations of parallel and perpendicular lines.</p>
+</div>
+<div class="lt-skills">
+<p><span class="lt-skill c1">Slope-intercept</span> <span class="lt-skill c1">Parallel lines</span> <span class="lt-skill c1">Perpendicular lines</span></p>
+</div>
+</div>
+<div class="lt-card">
+<div class="lt-badge c2">
+<p>LT7</p>
+</div>
+<div class="lt-title">
+<p>Linear Modelling</p>
+</div>
+<div class="lt-desc">
+<p>Form, solve, and interpret linear models for real-world situations.</p>
+</div>
+<div class="lt-skills">
+<p><span class="lt-skill c2">Form the model</span> <span class="lt-skill c2">Solve &amp; predict</span> <span class="lt-skill c2">Interpret results</span></p>
+</div>
+</div>
+<div class="lt-card">
+<div class="lt-badge c3">
+<p>LT8</p>
+</div>
+<div class="lt-title">
+<p>Quadratic Functions</p>
+</div>
+<div class="lt-desc">
+<p>Identify quadratic functions, evaluate them, and convert between vertex, standard, and factored forms.</p>
+</div>
+<div class="lt-skills">
+<p><span class="lt-skill c3">Vertex form</span> <span class="lt-skill c3">Standard form</span> <span class="lt-skill c3">Factored form</span></p>
+</div>
+</div>
+<div class="lt-card">
+<div class="lt-badge c4">
+<p>LT9</p>
+</div>
+<div class="lt-title">
+<p>Key Features of Graphs</p>
+</div>
+<div class="lt-desc">
+<p>Determine the vertex, roots, and axis of symmetry of a parabola from its equation or graph.</p>
+</div>
+<div class="lt-skills">
+<p><span class="lt-skill c4">Vertex</span> <span class="lt-skill c4">Roots / x-intercepts</span> <span class="lt-skill c4">Axis of symmetry</span></p>
+</div>
+</div>
+<div class="lt-card">
+<div class="lt-badge c5">
+<p>LT12</p>
+</div>
+<div class="lt-title">
+<p>Domain &amp; Range — Quadratic</p>
+</div>
+<div class="lt-desc">
+<p>Determine and interpret the domain and range of a quadratic function from its equation or graph.</p>
+</div>
+<div class="lt-skills">
+<p><span class="lt-skill c5">Domain: all reals</span> <span class="lt-skill c5">Range from vertex</span> <span class="lt-skill c5">Opens up or down</span></p>
+</div>
+</div>
+<div class="lt-card">
+<div class="lt-badge c1">
+<p>LT13</p>
+</div>
+<div class="lt-title">
+<p>Quadratic Modelling</p>
+</div>
+<div class="lt-desc">
+<p>Model and interpret real-world situations using quadratic functions, including projectile motion and revenue problems.</p>
+</div>
+<div class="lt-skills">
+<p><span class="lt-skill c1">Projectile motion</span> <span class="lt-skill c1">Revenue problems</span> <span class="lt-skill c1">Interpret vertex</span></p>
+</div>
+</div>
+</div>
 </section>
 <section id="formula-card" class="level2" data-number="7.2">
 <h2 data-number="7.2" class="anchored" data-anchor-id="formula-card"><span class="header-section-number">7.2</span> 🗂️ Formula Card</h2>
@@ -2141,7 +2244,7 @@ x_{\text{vertex}} = \dfrac{-b}{2a} = \dfrac{-(0)}{2(2)} = 0 \\[4pt] y = 2(0)^2  
 <section id="test-your-knowledge" class="level2" data-number="7.4">
 <h2 data-number="7.4" class="anchored" data-anchor-id="test-your-knowledge"><span class="header-section-number">7.4</span> ⚡ Test Your Knowledge</h2>
 <link rel="stylesheet" href="../../assets/worksheet.css">
-<script src="https://cdn.jsdelivr.net/pyodide/v0.25.0/full/pyodide.js"></script>
+
 <script src="../../assets/worksheet.js"></script>
 
 <div class="ws-toolbar no-print">
@@ -2603,6 +2706,9 @@ window.WS_CONFIG = {
       </a>          
   </div>
   <div class="nav-page nav-page-next">
+      <a href="../../geometry/unit1-trigonometry/Trigonometry.html" class="pagination-link" aria-label="Unit 1: Trigonometry">
+        <span class="nav-page-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Unit 1: Trigonometry</span></span> <i class="bi bi-arrow-right-short"></i>
+      </a>
   </div>
 </nav>
 </div> <!-- /content -->

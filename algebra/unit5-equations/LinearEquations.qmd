@@ -113,7 +113,7 @@ for ex in grouped.get("hard", []):
 
 ```{=html}
 <link rel="stylesheet" href="../../assets/worksheet.css">
-<script src="https://cdn.jsdelivr.net/pyodide/v0.25.0/full/pyodide.js"></script>
+
 <script src="../../assets/worksheet.js"></script>
 
 <div class="ws-toolbar no-print">

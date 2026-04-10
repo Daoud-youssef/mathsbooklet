@@ -4,7 +4,6 @@ Welcome to your comprehensive revision hub. This isn't just a textbook; it's a *
 
 ::: {.callout-note icon="false"}
 ## 🚀 A Growing Resource {.unnumbered}
-
 This booklet is updated **ongoingly**. New chapters and advanced units will appear as we cover them in class, ensuring your revision material is always synchronized with your learning.
 :::
 
@@ -12,19 +11,15 @@ This booklet is updated **ongoingly**. New chapters and advanced units will appe
 
 ::: {layout="[[1,1], [1,1]]"}
 ### 🎯 Mastery Tracking {.unnumbered}
-
 Every unit starts with clear **Learning Targets**. Use these as your personal checklist. If you can't tick it off, you aren't ready for the test!
 
 ### 🗂️ Formula Cards {.unnumbered}
-
 No more hunting through notebooks. Quick-access digital cards provide the identities and rules you need at a glance.
 
 ### ⚡ Dynamic Practice {.unnumbered}
-
 Our **"Test Your Knowledge"** sections feature a "Try Again" button that generates new numbers for the same problem type. Practice the *method*, not the memory.
 
 ### 🔍 Instant Feedback {.unnumbered}
-
 Every exercise includes a hidden solution. Toggle it only after you've put pen to paper.
 :::
 
@@ -38,8 +33,38 @@ We use a color-coded system to help you scale your skills from foundational to e
 |  🟡   | **Medium**      | Multi-step processing and application.        |
 |  🔴   | **Challenging** | Exam-style logic and complex problem solving. |
 
+## 🤖 Get AI Help {.unnumbered}
+
+Stuck on a problem? Each unit's worksheet includes a **Get Help** button that connects you to an AI tutor trained on your exact exercises. It won't give you the answer — it asks the right questions to guide you to it.
+
+```{=html}
+<div style="margin: 1rem 0 1.5rem;">
+  <a href="https://app.flintk12.com"
+     target="_blank"
+     style="
+       display: inline-flex;
+       align-items: center;
+       gap: 0.5rem;
+       background: #7c3aed;
+       color: white;
+       text-decoration: none;
+       padding: 0.55rem 1.25rem;
+       border-radius: 8px;
+       font-size: 0.92rem;
+       font-weight: 600;
+       transition: background 0.2s;
+     "
+     onmouseover="this.style.background='#6d28d9'"
+     onmouseout="this.style.background='#7c3aed'">
+    🤖 Get Help with AI
+  </a>
+  <span style="margin-left:1rem;font-size:0.82rem;color:#64748b;">
+    Opens your AI tutor — available on every worksheet.
+  </span>
+</div>
+```
+
 ::: callout-tip
 ## Pro Tip for Success {.unnumbered}
-
 Don't just read the solutions. Mathematics is a "doing" subject. Use the **Interactive Testing** feature until you can solve the 🔴 Challenging problems without looking at the hints!
 :::

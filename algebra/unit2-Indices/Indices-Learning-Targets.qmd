@@ -1,61 +1,156 @@
-:::::::::::::::::: lt-card
-::::: lt-item
-::: lt-number
-1
+::: lt-grid
+
+::: lt-card
+::: {.lt-badge .c1}
+LT1
+:::
+::: lt-title
+Apply Multiplication Rules
+:::
+::: lt-desc
+Simplify expressions by adding powers when multiplying terms with the same base.
+:::
+::: lt-skills
+[Same base]{.lt-skill .c1}
+[Add exponents]{.lt-skill .c1}
+[Index notation]{.lt-skill .c1}
+:::
 :::
 
-::: lt-content
-**Apply Multiplication Rules** – Simplify expressions by adding powers when multiplying terms with the same base.
+::: lt-card
+::: {.lt-badge .c2}
+LT2
 :::
-:::::
-
-::::: lt-item
-::: lt-number
-2
+::: lt-title
+Apply Division Rules
 :::
-
-::: lt-content
-**Apply Division Rules** – Simplify expressions by subtracting powers when dividing terms with the same base.
+::: lt-desc
+Simplify expressions by subtracting powers when dividing terms with the same base.
 :::
-:::::
-
-::::: lt-item
-::: lt-number
-3
+::: lt-skills
+[Same base]{.lt-skill .c2}
+[Subtract exponents]{.lt-skill .c2}
+[Fraction form]{.lt-skill .c2}
+:::
 :::
 
-::: lt-content
-**Master Power of a Power** – Use the rule  to simplify expressions where a power is raised to another power.
+::: lt-card
+::: {.lt-badge .c3}
+LT3
 :::
-:::::
-
-::::: lt-item
-::: lt-number
-4
+::: lt-title
+Master Power of a Power
 :::
-
-::: lt-content
-**Manage Coefficients** – Accurately multiply or divide numerical coefficients separately from the algebraic index laws.
+::: lt-desc
+Simplify expressions where a power is raised to another power by multiplying the exponents.
 :::
-:::::
-
-::::: lt-item
-::: lt-number
-5
+::: lt-skills
+[Brackets]{.lt-skill .c3}
+[Multiply exponents]{.lt-skill .c3}
+[Coefficients]{.lt-skill .c3}
+:::
 :::
 
-::: lt-content
-**Handle Negative Indices** – Correctly perform addition and subtraction of exponents when calculations involve negative numbers.
+::: lt-card
+::: {.lt-badge .c4}
+LT4
 :::
-:::::
+::: lt-title
+Manage Coefficients
+:::
+::: lt-desc
+Multiply or divide numerical coefficients separately from the algebraic index laws.
+:::
+::: lt-skills
+[Separate coefficients]{.lt-skill .c4}
+[Multiply & divide]{.lt-skill .c4}
+[Combined terms]{.lt-skill .c4}
+:::
+:::
 
-::::: lt-item
-::: lt-number
-6
+::: lt-card
+::: {.lt-badge .c5}
+LT5
+:::
+::: lt-title
+Handle Negative Indices
+:::
+::: lt-desc
+Correctly work with exponents when calculations produce or involve negative indices.
+:::
+::: lt-skills
+[Negative exponents]{.lt-skill .c5}
+[Reciprocal]{.lt-skill .c5}
+[Sign rules]{.lt-skill .c5}
+:::
 :::
 
-::: lt-content
-**Simplify Complex Fractions** – Combine multiple index laws to simplify multi-step algebraic fractions involving multiplication and division.
+::: lt-card
+::: {.lt-badge .c1}
+LT6
 :::
-:::::
-::::::::::::::::::
+::: lt-title
+Simplify Complex Fractions
+:::
+::: lt-desc
+Combine multiple index laws to simplify multi-step algebraic fractions involving multiplication and division.
+:::
+::: lt-skills
+[Multi-step]{.lt-skill .c1}
+[Mixed laws]{.lt-skill .c1}
+[Algebraic fractions]{.lt-skill .c1}
+:::
+:::
+
+::: lt-card
+::: {.lt-badge .c2}
+LT7
+:::
+::: lt-title
+Operate with Surds
+:::
+::: lt-desc
+Add, subtract, multiply, and divide surd expressions, including those with coefficients.
+:::
+::: lt-skills
+[Add & subtract]{.lt-skill .c2}
+[Multiply & divide]{.lt-skill .c2}
+[Like surds]{.lt-skill .c2}
+:::
+:::
+
+::: lt-card
+::: {.lt-badge .c3}
+LT8
+:::
+::: lt-title
+Simplify Surds
+:::
+::: lt-desc
+Express surds in simplest form by identifying and extracting perfect square factors.
+:::
+::: lt-skills
+[Perfect squares]{.lt-skill .c3}
+[Simplest form]{.lt-skill .c3}
+[Prime factors]{.lt-skill .c3}
+:::
+:::
+
+::: lt-card
+::: {.lt-badge .c4}
+LT9
+:::
+::: lt-title
+Apply Surds
+:::
+::: lt-desc
+Rationalise denominators and solve problems that require exact surd answers.
+:::
+::: lt-skills
+[Rationalise]{.lt-skill .c4}
+[Exact values]{.lt-skill .c4}
+[Problem solving]{.lt-skill .c4}
+:::
+:::
+
+:::

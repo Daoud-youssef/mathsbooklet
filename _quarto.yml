@@ -9,6 +9,11 @@ project:
     - algebra/unit5-equations/LinearEquations.py
     - algebra/unit6-quadratics/Quadratics.py
     - algebra/unit7-functions/Functions.py
+    - geometry/unit1-trigonometry/Trigonometry.py
+    - assets/svg_helpers.py
+    - assets/components.py
+    - assets/exercise_schema.py
+    - assets/renderer.py
     - assets/
 
 book:
@@ -29,6 +34,9 @@ book:
         - algebra/unit5-equations/LinearEquations.qmd
         - algebra/unit6-quadratics/Quadratics.qmd
         - algebra/unit7-functions/Functions.qmd
+    - part: "Geometry"
+      chapters: 
+        - geometry/unit1-trigonometry/Trigonometry.qmd
   page-navigation: true
 
 bibliography: references.bib
@@ -44,18 +52,27 @@ params:
 format:
   html:
     theme: cosmo
-    css: 
+    css:
       - assets/custom.css
-    
     mathjax: true
     include-in-header:
       - text: |
+          <script src="https://cdn.jsdelivr.net/pyodide/v0.25.0/full/pyodide.js"></script>
           <script>
           MathJax = {
             tex: {
               inlineMath: [['\\(', '\\)']],
               displayMath: [['\\[', '\\]']],
               packages: {'[+]': ['cancel', 'color']}
+            },
+            options: {
+              skipHtmlTags: []
+            },
+            startup: {
+              ready() {
+                MathJax.startup.defaultReady();
+                MathJax.startup.promise.then(() => MathJax.typesetPromise());
+              }
             }
           };
           </script>
@@ -68,9 +85,12 @@ format:
       - text: |
           \usepackage{cancel}
           \usepackage{fontspec}
+          % Silence missing-glyph warnings for emoji (HTML-only decorations)
+          \tracinglostchars=0\relax
 
 execute:
   echo: true
   warning: false
   error: false
   freeze: auto
+  python-path: ["assets"]

@@ -71,12 +71,22 @@ ul.task-list li input[type="checkbox"] {
     "search-label": "Search"
   }
 }</script>
+<script src="https://cdn.jsdelivr.net/pyodide/v0.25.0/full/pyodide.js"></script>
 <script>
 MathJax = {
   tex: {
     inlineMath: [['\\(', '\\)']],
     displayMath: [['\\[', '\\]']],
     packages: {'[+]': ['cancel', 'color']}
+  },
+  options: {
+    skipHtmlTags: []
+  },
+  startup: {
+    ready() {
+      MathJax.startup.defaultReady();
+      MathJax.startup.promise.then(() => MathJax.typesetPromise());
+    }
   }
 };
 </script>
@@ -184,6 +194,23 @@ MathJax = {
 </li>
       </ul>
   </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="true">
+ <span class="menu-text">Geometry</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./geometry/unit1-trigonometry/Trigonometry.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Unit 1: Trigonometry</span></span></a>
+  </div>
+</li>
+      </ul>
+  </li>
     </ul>
     </div>
 </nav>
@@ -198,6 +225,7 @@ MathJax = {
   <ul class="collapse">
   <li><a href="#how-to-use-this-booklet" id="toc-how-to-use-this-booklet" class="nav-link" data-scroll-target="#how-to-use-this-booklet">How to use this Booklet</a></li>
   <li><a href="#the-journey-tiered-practice" id="toc-the-journey-tiered-practice" class="nav-link" data-scroll-target="#the-journey-tiered-practice">📈 The Journey: Tiered Practice</a></li>
+  <li><a href="#get-ai-help" id="toc-get-ai-help" class="nav-link" data-scroll-target="#get-ai-help">🤖 Get AI Help</a></li>
   </ul></li>
   </ul>
 </nav>
@@ -311,6 +339,30 @@ MathJax = {
 </tr>
 </tbody>
 </table>
+</section>
+<section id="get-ai-help" class="level2 unnumbered">
+<h2 class="unnumbered anchored" data-anchor-id="get-ai-help">🤖 Get AI Help</h2>
+<p>Stuck on a problem? Each unit’s worksheet includes a <strong>Get Help</strong> button that connects you to an AI tutor trained on your exact exercises. It won’t give you the answer — it asks the right questions to guide you to it.</p>
+<div style="margin: 1rem 0 1.5rem;">
+  <a href="https://app.flintk12.com" target="_blank" style="
+       display: inline-flex;
+       align-items: center;
+       gap: 0.5rem;
+       background: #7c3aed;
+       color: white;
+       text-decoration: none;
+       padding: 0.55rem 1.25rem;
+       border-radius: 8px;
+       font-size: 0.92rem;
+       font-weight: 600;
+       transition: background 0.2s;
+     " onmouseover="this.style.background='#6d28d9'" onmouseout="this.style.background='#7c3aed'">
+    🤖 Get Help with AI
+  </a>
+  <span style="margin-left:1rem;font-size:0.82rem;color:#64748b;">
+    Opens your AI tutor — available on every worksheet.
+  </span>
+</div>
 <div class="callout callout-style-default callout-tip callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">

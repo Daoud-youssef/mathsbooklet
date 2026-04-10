@@ -25,9 +25,7 @@ function wsShowError(msg) {
   if (loading) loading.textContent = "❌ Error";
 }
 
-/* ====================== RENDERERS ====================== 
-/*<div class="ws-unit">${ws.unit}</div>*/
-//<div>Total: ${ws.total_parts} marks</div>*/
+/* ====================== RENDERERS ====================== */
 function wsRenderPartsGrid(parts) {
   const cols = (window.WS_CONFIG?.template === "word" || window.WS_CONFIG?.template === "exam") ? 1 : 2;
   const rows = [];
@@ -58,7 +56,6 @@ function wsRenderHeader(ws) {
       Date: ____________________
     </div>
   </div>
-
   <div class="ws-header-row">
     <div class="ws-left">
       Name: _________________
@@ -67,10 +64,8 @@ function wsRenderHeader(ws) {
       Grade: ___________________
     </div>
   </div>
-</div>
-
-    `;
-    }
+</div>`;
+}
 
 function wsRender(data) {
   const { worksheet: ws, exercises: exs } = data;
@@ -88,15 +83,21 @@ function wsRender(data) {
 }
 
 function wsRenderExercises(exercises, ws) {
-  return exercises.map(ex => `
+  return exercises.map(ex => {
+    const diagram = ex.diagram_svg
+      ? `<div class="ws-diagram">${ex.diagram_svg}</div>`
+      : "";
+    return `
     <div class="ws-exercise">
       <div class="ws-exercise-header">
         <span class="ws-exercise-num">Ex ${ex.number}.</span>
         <span class="ws-exercise-title">${ex.title}</span>
       </div>
       <div class="ws-instruction">${ex.instruction}</div>
+      ${diagram}
       ${wsRenderPartsGrid(ex.parts)}
-    </div>`).join("");
+    </div>`;
+  }).join("");
 }
 
 function wsRenderAnswerKey(exercises) {
@@ -115,46 +116,75 @@ function wsRenderAnswerKey(exercises) {
   </div>`;
 }
 
-/* ====================== PYODIDE LOGIC ====================== */
+/* ====================== PYODIDE BOOT ====================== */
 let _pyodide = null;
+
 async function wsBoot() {
   const cfg = window.WS_CONFIG;
   if (!cfg) return;
   const loadingEl = document.getElementById("ws-loading");
 
   try {
+    // 1. Load Pyodide
     if (!_pyodide) {
       loadingEl.textContent = "⏳ Loading Python...";
       _pyodide = await loadPyodide({ indexURL: "https://cdn.jsdelivr.net/pyodide/v0.25.0/full/" });
     }
-    loadingEl.textContent = "⏳ Loading Logic...";
+
+    // 2. Fetch all shared assets from assets/ into Pyodide's
+    //    virtual filesystem — makes imports work in any generator
+    //    Load order matters: components first, then schema, renderer, svg
+    loadingEl.textContent = "⏳ Loading helpers...";
+    const _assetFiles = [
+      "components.py",
+      "exercise_schema.py",
+      "renderer.py",
+      "svg_helpers.py",
+    ];
+    for (const fname of _assetFiles) {
+      try {
+        const resp = await fetch(`../../assets/${fname}`);
+        if (resp.ok) {
+          _pyodide.FS.writeFile(fname, await resp.text());
+        }
+      } catch (e) {
+        // Non-fatal — generators degrade gracefully if asset missing
+        console.warn(`${fname} not loaded:`, e);
+      }
+    }
+
+    // 3. Fetch and run the unit generator (e.g. Indices.py)
+    loadingEl.textContent = "⏳ Loading generator...";
     const resp = await fetch(cfg.pyPath);
-    const src = await resp.text();
+    const src  = await resp.text();
     await _pyodide.runPythonAsync(src);
 
+    // 4. Generate first session
     await wsGenerate();
     document.getElementById("btn-ws-new").disabled = false;
     loadingEl.textContent = "✅ Ready";
+
   } catch (e) {
     wsShowError(`Boot failed: ${e.message}`);
   }
 }
 
-async function wsGenerate() {
+async function wsGenerate(seed = null) {
   const cfg = window.WS_CONFIG;
   const container = document.getElementById("ws-container");
   container.innerHTML = `<p style="text-align:center;padding:3rem;color:#94a3b8">Generating...</p>`;
   try {
+    const seedArg = seed !== null ? `, seed=${seed}` : '';
     const raw = await _pyodide.runPythonAsync(`
 import json
-json.dumps(generate(types=${JSON.stringify(cfg.types)}, count=${cfg.count || 6}))
+json.dumps(generate(types=${JSON.stringify(cfg.types)}, count=${cfg.count || 6}${seedArg}))
 `);
     wsRender(JSON.parse(raw));
+    await wsTypeset(container);   
   } catch (e) {
     wsShowError(`Generation Error: ${e.message}`);
   }
 }
-
 /* ====================== LAYOUT ENGINE ====================== */
 class WorksheetLayoutEngine {
   constructor(config = {}) {
@@ -187,7 +217,6 @@ class WorksheetLayoutEngine {
 
   _newPage() {
     if (this.currentPage) {
-      // ✅ Add page number to completed page before archiving
       this._addPageNumber(this.currentPage);
       const wrap = document.createElement("div");
       wrap.className = "ws-page-wrap";
@@ -200,7 +229,7 @@ class WorksheetLayoutEngine {
     this.usedHeight = 0;
     this._pageCount = (this._pageCount || 0) + 1;
   }
-  
+
   _addPageNumber(page) {
     const num = document.createElement("div");
     num.className = "ws-page-number";
@@ -246,22 +275,22 @@ class WorksheetLayoutEngine {
   }
 
   _placeExercise(ex) {
-    const header = ex.querySelector(".ws-exercise-header");
+    const header      = ex.querySelector(".ws-exercise-header");
     const instruction = ex.querySelector(".ws-instruction");
-    const cards = [...ex.querySelectorAll(".part-card")];
+    const cards       = [...ex.querySelectorAll(".part-card")];
     if (!cards.length) return;
 
     const rows = this._chunk(cards, this.template.columns);
 
-    // Place header + instruction + first row together so they never split
+    // Header + instruction + first row — never split
     const firstBlock = document.createElement("div");
     firstBlock.className = "ws-exercise";
-    if (header) firstBlock.appendChild(header.cloneNode(true));
+    if (header)      firstBlock.appendChild(header.cloneNode(true));
     if (instruction) firstBlock.appendChild(instruction.cloneNode(true));
     firstBlock.appendChild(this._buildRow(rows[0]));
     this._place(firstBlock);
 
-    // Place remaining rows individually
+    // Remaining rows
     for (let i = 1; i < rows.length; i++) {
       const rowBlock = document.createElement("div");
       rowBlock.className = "ws-exercise ws-exercise-continuation";
@@ -277,12 +306,12 @@ class WorksheetLayoutEngine {
   }
 
   build(sourceEl) {
-    const paper = sourceEl.querySelector(".ws-paper");
+    const paper      = sourceEl.querySelector(".ws-paper");
     if (!paper) return this.wrapper;
 
-    const header = paper.querySelector(".ws-header");
-    const exercises = [...paper.querySelectorAll(".ws-exercise")];
-    const answerKey = paper.querySelector(".ws-answer-key");
+    const header     = paper.querySelector(".ws-header");
+    const exercises  = [...paper.querySelectorAll(".ws-exercise")];
+    const answerKey  = paper.querySelector(".ws-answer-key");
 
     if (header) this._place(header);
     exercises.forEach(ex => this._placeExercise(ex));
@@ -323,14 +352,13 @@ document.addEventListener("DOMContentLoaded", wsBoot);
    ============================================================ */
 async function wsOpenPreview() {
   const overlay = document.getElementById("ws-preview-overlay");
-  const scroll = document.getElementById("ws-preview-scroll");
-  const source = document.getElementById("ws-container");
+  const scroll  = document.getElementById("ws-preview-scroll");
+  const source  = document.getElementById("ws-container");
 
   document.body.appendChild(overlay);
   overlay.classList.add("open");
   scroll.innerHTML = `<p style="color:white;text-align:center;padding:3rem">⏳ Formatting for A4...</p>`;
 
-  // Ensure MathJax is fully rendered before measuring
   await wsTypeset(source);
   if (window.MathJax?.startup?.promise) await MathJax.startup.promise;
   await new Promise(r => setTimeout(r, 300));
@@ -351,42 +379,32 @@ function wsClosePreview() {
 }
 
 /* ============================================================
-   PRINT — copies already-rendered MathJax HTML + its CSS
+   PRINT
    ============================================================ */
 async function wsPrint() {
   const scroll = document.getElementById("ws-preview-scroll");
 
-  // Build preview if not already open
   if (!scroll.querySelector(".ws-page-wrap")) {
     await wsOpenPreview();
   }
 
-  // Ensure fully typeset
   await wsTypeset(scroll);
   if (window.MathJax?.startup?.promise) await MathJax.startup.promise;
   await new Promise(r => setTimeout(r, 500));
 
-  // Capture already-rendered HTML (math is already CHTML/SVG — no re-processing needed)
   const pagesHTML = scroll.innerHTML;
+  const wsCSS     = await fetch("../../assets/worksheet.css").then(r => r.text());
 
-  // Load worksheet CSS
-  const wsCSS = await fetch("../../assets/worksheet.css").then(r => r.text());
-
-  // Extract MathJax's own CHTML stylesheet from the parent page
-  // so rendered math displays correctly in the iframe without re-running MathJax
   let mjCSS = "";
   for (const sheet of document.styleSheets) {
     try {
-      const id = sheet.ownerNode?.id || "";
+      const id   = sheet.ownerNode?.id   || "";
       const href = sheet.ownerNode?.href || "";
       if (id.includes("MathJax") || href.includes("mathjax") || href.includes("MathJax")) {
         mjCSS += [...sheet.cssRules].map(r => r.cssText).join("\n");
       }
-    } catch (e) {
-      // cross-origin sheet — skip
-    }
+    } catch (e) { /* cross-origin — skip */ }
   }
-  // Fallback: grab inline MathJax style tags
   if (!mjCSS) {
     document.querySelectorAll("style").forEach(s => {
       if (s.textContent.includes("mjx-") || s.id?.includes("MathJax")) {
@@ -403,32 +421,19 @@ async function wsPrint() {
   <style>
     * { box-sizing: border-box; }
     body { margin: 0; padding: 0; background: white; font-family: "DejaVu Sans", sans-serif; }
-
     @page { size: A4; margin: 0; }
-
     .ws-page-wrap {
-      width: 210mm;
-      height: 297mm;
-      page-break-after: always;
-      break-after: page;
-      display: block;
+      width: 210mm; height: 297mm;
+      page-break-after: always; break-after: page; display: block;
     }
     .ws-page-wrap:last-child {
-      page-break-after: avoid !important;
-      break-after: avoid !important;
-      height: auto;
+      page-break-after: avoid !important; break-after: avoid !important; height: auto;
     }
     .ws-preview-page {
-      width: 210mm;
-      padding: 20mm;
-      box-sizing: border-box;
-      background: white;
-      display: block;
+      width: 210mm; padding: 20mm; box-sizing: border-box;
+      background: white; display: block;
     }
-
     ${wsCSS}
-
-    /* MathJax CHTML styles — math already rendered, just needs its CSS */
     ${mjCSS}
   </style>
 </head>
@@ -441,7 +446,6 @@ async function wsPrint() {
     document.body.appendChild(iframe);
 
     iframe.onload = () => {
-      // No MathJax processing needed — just wait for layout/fonts
       setTimeout(() => {
         iframe.contentWindow.focus();
         iframe.contentWindow.print();

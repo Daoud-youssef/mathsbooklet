@@ -70,12 +70,22 @@ ul.task-list li input[type="checkbox"] {
     "search-label": "Search"
   }
 }</script>
+<script src="https://cdn.jsdelivr.net/pyodide/v0.25.0/full/pyodide.js"></script>
 <script>
 MathJax = {
   tex: {
     inlineMath: [['\\(', '\\)']],
     displayMath: [['\\[', '\\]']],
     packages: {'[+]': ['cancel', 'color']}
+  },
+  options: {
+    skipHtmlTags: []
+  },
+  startup: {
+    ready() {
+      MathJax.startup.defaultReady();
+      MathJax.startup.promise.then(() => MathJax.typesetPromise());
+    }
   }
 };
 </script>
@@ -212,6 +222,23 @@ window.Quarto = {
 </li>
       </ul>
   </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="true">
+ <span class="menu-text">Geometry</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../geometry/unit1-trigonometry/Trigonometry.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Unit 1: Trigonometry</span></span></a>
+  </div>
+</li>
+      </ul>
+  </li>
     </ul>
     </div>
 </nav>
@@ -256,87 +283,190 @@ window.Quarto = {
 
 <section id="learning-targets" class="level2" data-number="6.1">
 <h2 data-number="6.1" class="anchored" data-anchor-id="learning-targets"><span class="header-section-number">6.1</span> 🎯 Learning Targets</h2>
-<table class="caption-top table">
-<colgroup>
-<col style="width: 33%">
-<col style="width: 33%">
-<col style="width: 33%">
-</colgroup>
-<thead>
-<tr class="header">
-<th>#</th>
-<th>Learning Target</th>
-<th>I can…</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td><strong>LT1</strong></td>
-<td>Factorising — Simple</td>
-<td>Factorise <span class="math inline">\(x^2 + bx + c\)</span> using the sum-product method</td>
-</tr>
-<tr class="even">
-<td><strong>LT2</strong></td>
-<td>Factorising — Harder</td>
-<td>Factorise <span class="math inline">\(ax^2 + bx + c\)</span> (<span class="math inline">\(a \neq 1\)</span>) using the <span class="math inline">\(ac\)</span>-method</td>
-</tr>
-<tr class="odd">
-<td><strong>LT3</strong></td>
-<td>Special Forms</td>
-<td>Recognise and factorise difference of two squares and perfect squares</td>
-</tr>
-<tr class="even">
-<td><strong>LT4</strong></td>
-<td>Solve by Factorising</td>
-<td>Solve quadratic equations by factorising</td>
-</tr>
-<tr class="odd">
-<td><strong>LT5</strong></td>
-<td>Quadratic Formula &amp; Discriminant</td>
-<td>Apply <span class="math inline">\(x = \dfrac{-b \pm \sqrt{b^2-4ac}}{2a}\)</span>; use <span class="math inline">\(\Delta = b^2-4ac\)</span> to determine nature of roots and find unknown parameters</td>
-</tr>
-<tr class="even">
-<td><strong>LT6</strong></td>
-<td>Completing the Square</td>
-<td>Write <span class="math inline">\(ax^2+bx+c\)</span> in completed square form and use it to solve</td>
-</tr>
-<tr class="odd">
-<td><strong>LT7</strong></td>
-<td>Word Problems</td>
-<td>Form and solve quadratic equations from real-world contexts (area, integers: consecutive, even, odd)</td>
-</tr>
-<tr class="even">
-<td><strong>LT8</strong></td>
-<td>Geometry</td>
-<td>Apply quadratic equations to geometric problems (right triangles, rectangles, L-shapes, cuboids)</td>
-</tr>
-<tr class="odd">
-<td><strong>LT9</strong></td>
-<td>Roots &amp; Vieta’s Formulas</td>
-<td>Form equations from roots; use <span class="math inline">\(\alpha+\beta = -b/a\)</span> and <span class="math inline">\(\alpha\beta = c/a\)</span> to find symmetric expressions</td>
-</tr>
-<tr class="even">
-<td><strong>LT10</strong></td>
-<td>Algebraic Fraction Equations</td>
-<td>Solve equations with algebraic fractions by multiplying through to form a quadratic</td>
-</tr>
-<tr class="odd">
-<td><strong>LT11</strong></td>
-<td>Disguised Quadratics</td>
-<td>Recognise and solve <span class="math inline">\(x^4 + bx^2 + c = 0\)</span> and <span class="math inline">\((x+a)^2 + b(x+a) + c = 0\)</span> using substitution</td>
-</tr>
-<tr class="even">
-<td><strong>LT12</strong></td>
-<td>Surd Equations</td>
-<td>Solve equations involving square roots by squaring both sides; identify and reject extraneous roots</td>
-</tr>
-<tr class="odd">
-<td><strong>LT13</strong></td>
-<td>Indices → Quadratic</td>
-<td>Solve exponential equations like <span class="math inline">\((b^{x+p})^{x+q} = b^k\)</span> by equating exponents to form a quadratic</td>
-</tr>
-</tbody>
-</table>
+<div class="lt-grid">
+<div class="lt-card">
+<div class="lt-badge c1">
+<p>LT1</p>
+</div>
+<div class="lt-title">
+<p>Factorising — Simple</p>
+</div>
+<div class="lt-desc">
+<p>Factorise <span class="math inline">\(x^2 + bx + c\)</span> using the sum-product method.</p>
+</div>
+<div class="lt-skills">
+<p><span class="lt-skill c1">Sum-product</span> <span class="lt-skill c1">Factor pairs</span> <span class="lt-skill c1">Monic quadratic</span></p>
+</div>
+</div>
+<div class="lt-card">
+<div class="lt-badge c2">
+<p>LT2</p>
+</div>
+<div class="lt-title">
+<p>Factorising — Harder</p>
+</div>
+<div class="lt-desc">
+<p>Factorise <span class="math inline">\(ax^2 + bx + c\)</span> where <span class="math inline">\(a \neq 1\)</span> using the <span class="math inline">\(ac\)</span>-method.</p>
+</div>
+<div class="lt-skills">
+<p><span class="lt-skill c2">ac-method</span> <span class="lt-skill c2">Split middle term</span> <span class="lt-skill c2">Factor by grouping</span></p>
+</div>
+</div>
+<div class="lt-card">
+<div class="lt-badge c3">
+<p>LT3</p>
+</div>
+<div class="lt-title">
+<p>Special Forms</p>
+</div>
+<div class="lt-desc">
+<p>Recognise and factorise difference of two squares and perfect square trinomials.</p>
+</div>
+<div class="lt-skills">
+<p><span class="lt-skill c3">Difference of squares</span> <span class="lt-skill c3">Perfect square</span> <span class="lt-skill c3">Pattern recognition</span></p>
+</div>
+</div>
+<div class="lt-card">
+<div class="lt-badge c4">
+<p>LT4</p>
+</div>
+<div class="lt-title">
+<p>Solve by Factorising</p>
+</div>
+<div class="lt-desc">
+<p>Solve quadratic equations by factorising and applying the zero-product property.</p>
+</div>
+<div class="lt-skills">
+<p><span class="lt-skill c4">Zero-product</span> <span class="lt-skill c4">Set factors to zero</span> <span class="lt-skill c4">Two solutions</span></p>
+</div>
+</div>
+<div class="lt-card">
+<div class="lt-badge c5">
+<p>LT5</p>
+</div>
+<div class="lt-title">
+<p>Quadratic Formula &amp; Discriminant</p>
+</div>
+<div class="lt-desc">
+<p>Apply <span class="math inline">\(x = \dfrac{-b \pm \sqrt{b^2-4ac}}{2a}\)</span> and use <span class="math inline">\(\Delta = b^2 - 4ac\)</span> to determine the nature of roots and find unknown parameters.</p>
+</div>
+<div class="lt-skills">
+<p><span class="lt-skill c5">Quadratic formula</span> <span class="lt-skill c5">Discriminant</span> <span class="lt-skill c5">Nature of roots</span></p>
+</div>
+</div>
+<div class="lt-card">
+<div class="lt-badge c1">
+<p>LT6</p>
+</div>
+<div class="lt-title">
+<p>Completing the Square</p>
+</div>
+<div class="lt-desc">
+<p>Write <span class="math inline">\(ax^2 + bx + c\)</span> in completed square form and use it to solve equations and identify the vertex.</p>
+</div>
+<div class="lt-skills">
+<p><span class="lt-skill c1">Completed square form</span> <span class="lt-skill c1">Vertex form</span> <span class="lt-skill c1">Solve from CTS</span></p>
+</div>
+</div>
+<div class="lt-card">
+<div class="lt-badge c2">
+<p>LT7</p>
+</div>
+<div class="lt-title">
+<p>Word Problems</p>
+</div>
+<div class="lt-desc">
+<p>Form and solve quadratic equations from real-world contexts including area, consecutive integers, and even/odd number problems.</p>
+</div>
+<div class="lt-skills">
+<p><span class="lt-skill c2">Area problems</span> <span class="lt-skill c2">Consecutive integers</span> <span class="lt-skill c2">Form the equation</span></p>
+</div>
+</div>
+<div class="lt-card">
+<div class="lt-badge c3">
+<p>LT8</p>
+</div>
+<div class="lt-title">
+<p>Geometry Problems</p>
+</div>
+<div class="lt-desc">
+<p>Apply quadratic equations to geometric problems involving right triangles, rectangles, L-shapes, and cuboids.</p>
+</div>
+<div class="lt-skills">
+<p><span class="lt-skill c3">Right triangles</span> <span class="lt-skill c3">Rectangles</span> <span class="lt-skill c3">Composite shapes</span></p>
+</div>
+</div>
+<div class="lt-card">
+<div class="lt-badge c4">
+<p>LT9</p>
+</div>
+<div class="lt-title">
+<p>Roots &amp; Vieta’s Formulas</p>
+</div>
+<div class="lt-desc">
+<p>Form equations from given roots and use <span class="math inline">\(\alpha+\beta = -b/a\)</span> and <span class="math inline">\(\alpha\beta = c/a\)</span> to find symmetric expressions.</p>
+</div>
+<div class="lt-skills">
+<p><span class="lt-skill c4">Vieta’s formulas</span> <span class="lt-skill c4">Sum &amp; product of roots</span> <span class="lt-skill c4">Symmetric expressions</span></p>
+</div>
+</div>
+<div class="lt-card">
+<div class="lt-badge c5">
+<p>LT10</p>
+</div>
+<div class="lt-title">
+<p>Algebraic Fraction Equations</p>
+</div>
+<div class="lt-desc">
+<p>Solve equations with algebraic fractions by multiplying through to clear denominators and form a quadratic.</p>
+</div>
+<div class="lt-skills">
+<p><span class="lt-skill c5">Clear denominators</span> <span class="lt-skill c5">Form quadratic</span> <span class="lt-skill c5">Check solutions</span></p>
+</div>
+</div>
+<div class="lt-card">
+<div class="lt-badge c1">
+<p>LT11</p>
+</div>
+<div class="lt-title">
+<p>Disguised Quadratics</p>
+</div>
+<div class="lt-desc">
+<p>Recognise and solve <span class="math inline">\(x^4 + bx^2 + c = 0\)</span> and <span class="math inline">\((x+a)^2 + b(x+a) + c = 0\)</span> using substitution.</p>
+</div>
+<div class="lt-skills">
+<p><span class="lt-skill c1">Substitution</span> <span class="lt-skill c1">Biquadratic</span> <span class="lt-skill c1">Nested form</span></p>
+</div>
+</div>
+<div class="lt-card">
+<div class="lt-badge c2">
+<p>LT12</p>
+</div>
+<div class="lt-title">
+<p>Surd Equations</p>
+</div>
+<div class="lt-desc">
+<p>Solve equations involving square roots by squaring both sides; identify and reject extraneous roots.</p>
+</div>
+<div class="lt-skills">
+<p><span class="lt-skill c2">Square both sides</span> <span class="lt-skill c2">Extraneous roots</span> <span class="lt-skill c2">Check solutions</span></p>
+</div>
+</div>
+<div class="lt-card">
+<div class="lt-badge c3">
+<p>LT13</p>
+</div>
+<div class="lt-title">
+<p>Indices → Quadratic</p>
+</div>
+<div class="lt-desc">
+<p>Solve exponential equations like <span class="math inline">\((b^{x+p})^{x+q} = b^k\)</span> by equating exponents to form and solve a quadratic.</p>
+</div>
+<div class="lt-skills">
+<p><span class="lt-skill c3">Equate exponents</span> <span class="lt-skill c3">Form quadratic</span> <span class="lt-skill c3">Exponential form</span></p>
+</div>
+</div>
+</div>
 </section>
 <section id="formula-card" class="level2" data-number="6.2">
 <h2 data-number="6.2" class="anchored" data-anchor-id="formula-card"><span class="header-section-number">6.2</span> 🗂️ Formula Card</h2>
@@ -2859,7 +2989,7 @@ text{(i) } n(n+2) = 15 \\ n^2 + 2n - 15 = 0 \\ text{(ii) } n = \dfrac{-(2) \pm \
 
 
 <link rel="stylesheet" href="../../assets/worksheet.css">
-<script src="https://cdn.jsdelivr.net/pyodide/v0.25.0/full/pyodide.js"></script>
+
 <script src="../../assets/worksheet.js"></script>
 
 <div class="ws-toolbar no-print">

@@ -1,12 +1,12 @@
 ---
 number-sections: false
 ---
-```{=html}
-<script src="https://cdn.jsdelivr.net/pyodide/v0.25.0/full/pyodide.js"></script>
 
+```{=html}
 <style>
 /* ══════════════════════════════════════════
-   WORKSHEET PAPER
+   WORKSHEET PAPER — Unit 1 custom styles
+   Buttons/toolbar/modal use shared worksheet.css classes
 ══════════════════════════════════════════ */
 .ws-paper {
   background: white;
@@ -187,14 +187,15 @@ number-sections: false
   .ws-parts-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
   .ws-answer-key-grid { grid-template-columns: repeat(3, 1fr); }
 }
-@media (max-width: 420px) { .ws-parts-grid { grid-template-columns: 1fr; } }
+@media (max-width: 420px) { .ws-parts-grid { grid-column: 1fr; } }
 </style>
 
-<!-- ══ TOOLBAR ══ -->
+<!-- ══ TOOLBAR — uses shared worksheet.css classes & function names ══ -->
+<link rel="stylesheet" href="../../assets/worksheet.css">
 <div class="ws-toolbar no-print">
   <div class="ws-controls">
-    <button class="ws-btn primary" id="btn-ws-new" onclick="newSession()" disabled>🔄 New Session</button>
-    <button class="ws-btn outline" onclick="openPreview()">👁️ Preview & Print</button>
+    <button class="ws-btn primary" id="btn-ws-new" onclick="wsGenerate()" disabled>🔄 New Session</button>
+    <button class="ws-btn outline" onclick="wsOpenPreview()">👁️ Preview & Print</button>
     <a href="https://app.flintk12.com/activities/arithmetic-mast-9558eb/sessions/new"
        target="_blank" class="ws-btn flint">🤖 Get Help</a>
   </div>
@@ -206,7 +207,7 @@ number-sections: false
   <p style="color:#94a3b8;text-align:center;padding:3rem 0">Generating worksheet...</p>
 </div>
 
-<!-- ══ PREVIEW MODAL ══ -->
+<!-- ══ PREVIEW MODAL — uses shared worksheet.css classes ══ -->
 <div id="ws-preview-overlay" class="ws-modal no-print">
   <div class="ws-modal-header">
     <span id="ws-preview-title-text">Worksheet Preview</span>
@@ -219,7 +220,7 @@ number-sections: false
 </div>
 
 <script>
-// ══ Python code ══
+// ══ Python code (runs in Pyodide) ══
 const PYTHON_CODE = `
 import random, math, json
 from datetime import date
@@ -299,7 +300,7 @@ def generate_session():
 generate_session()
 `;
 
-// ══ Render ══
+// ══ Render worksheet HTML ══
 function render(data) {
   const ws  = data.worksheet;
   const exs = data.exercises;
@@ -365,7 +366,7 @@ function render(data) {
   if (window.MathJax) MathJax.typesetPromise([document.getElementById("ws-container")]);
 }
 
-// ══ Pyodide ══
+// ══ Pyodide init — called once on page load ══
 let pyodide = null;
 
 async function init() {
@@ -378,15 +379,15 @@ async function init() {
   setTimeout(() => loading.style.display = "none", 2000);
 }
 
-async function newSession() {
+// ══ Shared function names — match all other units ══
+async function wsGenerate() {
   document.getElementById("ws-container").innerHTML =
     '<p style="color:#94a3b8;text-align:center;padding:3rem 0">Generating...</p>';
   const raw = await pyodide.runPythonAsync("generate_session()");
   render(JSON.parse(raw));
 }
 
-// ══ Preview & Print ══
-function openPreview() {
+function wsOpenPreview() {
   const src = document.getElementById("ws-container");
   if (!src || !src.innerHTML.trim()) { alert("Please wait for the worksheet to load."); return; }
   const preview = document.getElementById("ws-preview-scroll");
@@ -403,6 +404,7 @@ function wsClosePreview() {
 
 function wsPrint() { window.print(); }
 
+// Close modal on backdrop click or Escape
 document.getElementById("ws-preview-overlay")?.addEventListener("click", e => {
   if (e.target === e.currentTarget) wsClosePreview();
 });

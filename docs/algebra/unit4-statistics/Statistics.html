@@ -70,12 +70,22 @@ ul.task-list li input[type="checkbox"] {
     "search-label": "Search"
   }
 }</script>
+<script src="https://cdn.jsdelivr.net/pyodide/v0.25.0/full/pyodide.js"></script>
 <script>
 MathJax = {
   tex: {
     inlineMath: [['\\(', '\\)']],
     displayMath: [['\\[', '\\]']],
     packages: {'[+]': ['cancel', 'color']}
+  },
+  options: {
+    skipHtmlTags: []
+  },
+  startup: {
+    ready() {
+      MathJax.startup.defaultReady();
+      MathJax.startup.promise.then(() => MathJax.typesetPromise());
+    }
   }
 };
 </script>
@@ -212,6 +222,23 @@ window.Quarto = {
 </li>
       </ul>
   </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="true">
+ <span class="menu-text">Geometry</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../geometry/unit1-trigonometry/Trigonometry.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Unit 1: Trigonometry</span></span></a>
+  </div>
+</li>
+      </ul>
+  </li>
     </ul>
     </div>
 </nav>
@@ -260,46 +287,78 @@ window.Quarto = {
 
 <section id="learning-targets" class="level2" data-number="4.1">
 <h2 data-number="4.1" class="anchored" data-anchor-id="learning-targets"><span class="header-section-number">4.1</span> 🎯 Learning Targets</h2>
-<p>By the end of this unit, you should be able to:</p>
-<p><strong>LT1 — Averages and Range from a List</strong></p>
-<ul>
-<li>Calculate the <strong>mean</strong>, <strong>median</strong>, <strong>mode</strong> and <strong>range</strong> from a list of values</li>
-<li>Find a <strong>missing value</strong> given the mean of a dataset</li>
-<li>Find the <strong>new mean</strong> when a value is added to a dataset</li>
-<li>Find two unknown values given their <strong>ratio</strong> and the overall mean</li>
-<li>Read and interpret a <strong>stem and leaf diagram</strong> to find averages and range</li>
-</ul>
-<p><strong>LT2 — Frequency Tables (Ungrouped)</strong></p>
-<ul>
-<li>Calculate the <strong>mean</strong> from a frequency table using <span class="math inline">\(\bar{x} = \dfrac{\sum fx}{\sum f}\)</span></li>
-<li>Find the <strong>median</strong> from a frequency table using cumulative frequencies</li>
-<li>Identify the <strong>mode</strong> from a frequency table</li>
-<li>Find the largest and smallest possible value of an unknown frequency <span class="math inline">\(x\)</span> given a target <strong>median</strong></li>
-</ul>
-<p><strong>LT3 — Grouped Frequency Tables</strong></p>
-<ul>
-<li>Identify the <strong>modal class</strong> from a grouped frequency table</li>
-<li>Identify the <strong>median class</strong> from a grouped frequency table</li>
-<li><strong>Estimate the mean</strong> using midpoints: <span class="math inline">\(\bar{x} \approx \dfrac{\sum fx}{\sum f}\)</span></li>
-<li>Calculate a <strong>combined mean</strong> when two groups with different sizes are merged</li>
-<li>Find <strong>missing frequencies</strong> <span class="math inline">\(a\)</span> and <span class="math inline">\(b\)</span> given total frequency and estimated mean</li>
-</ul>
-<p><strong>LT4 — Cumulative Frequency</strong></p>
-<ul>
-<li>Build a <strong>cumulative frequency table</strong> from a frequency table</li>
-<li>Read values from a cumulative frequency table (how many below / above a value)</li>
-<li>Use a <strong>cumulative frequency graph</strong> to estimate <span class="math inline">\(Q_1\)</span>, <span class="math inline">\(Q_2\)</span> (median) and <span class="math inline">\(Q_3\)</span></li>
-<li>Estimate the <strong>IQR</strong> from a cumulative frequency graph</li>
-<li>Estimate the number of items <strong>above a given value</strong></li>
-<li>Find missing values <strong>A</strong> and <strong>B</strong> in a cumulative frequency table</li>
-</ul>
-<p><strong>LT5 — Box Plots and IQR</strong></p>
-<ul>
-<li>Calculate the <strong>IQR</strong> from raw data: <span class="math inline">\(\text{IQR} = Q_3 - Q_1\)</span></li>
-<li>Draw a <strong>box-and-whisker plot</strong> from a five-number summary</li>
-<li>Identify <strong>outliers</strong> using the rule: value <span class="math inline">\(&gt; Q_3 + 1.5 \times \text{IQR}\)</span> or <span class="math inline">\(&lt; Q_1 - 1.5 \times \text{IQR}\)</span></li>
-<li>Find unknown values in an ordered list given conditions on median, mode and range</li>
-</ul>
+<div class="lt-grid">
+<div class="lt-card">
+<div class="lt-badge c1">
+<p>LT1</p>
+</div>
+<div class="lt-title">
+<p>Averages and Range from a List</p>
+</div>
+<div class="lt-desc">
+<p>Calculate mean, median, mode and range from a list. Find missing values given the mean, interpret stem-and-leaf diagrams, and work with unknown values given their ratio and overall mean.</p>
+</div>
+<div class="lt-skills">
+<p><span class="lt-skill c1">Mean, median, mode</span> <span class="lt-skill c1">Missing value</span> <span class="lt-skill c1">Stem &amp; leaf</span> <span class="lt-skill c1">Ratio problems</span></p>
+</div>
+</div>
+<div class="lt-card">
+<div class="lt-badge c2">
+<p>LT2</p>
+</div>
+<div class="lt-title">
+<p>Frequency Tables — Ungrouped</p>
+</div>
+<div class="lt-desc">
+<p>Calculate mean using <span class="math inline">\(\bar{x} = \dfrac{\sum fx}{\sum f}\)</span>, find the median using cumulative frequencies, identify the mode, and determine the range of an unknown frequency <span class="math inline">\(x\)</span> that produces a target median.</p>
+</div>
+<div class="lt-skills">
+<p><span class="lt-skill c2">Mean from table</span> <span class="lt-skill c2">Cumulative frequency</span> <span class="lt-skill c2">Mode</span> <span class="lt-skill c2">Unknown frequency</span></p>
+</div>
+</div>
+<div class="lt-card">
+<div class="lt-badge c3">
+<p>LT3</p>
+</div>
+<div class="lt-title">
+<p>Grouped Frequency Tables</p>
+</div>
+<div class="lt-desc">
+<p>Identify modal and median class, estimate the mean using midpoints <span class="math inline">\(\bar{x} \approx \dfrac{\sum fx}{\sum f}\)</span>, calculate combined means, and find missing frequencies <span class="math inline">\(a\)</span> and <span class="math inline">\(b\)</span> given total frequency and estimated mean.</p>
+</div>
+<div class="lt-skills">
+<p><span class="lt-skill c3">Modal class</span> <span class="lt-skill c3">Midpoint estimate</span> <span class="lt-skill c3">Combined mean</span> <span class="lt-skill c3">Missing frequencies</span></p>
+</div>
+</div>
+<div class="lt-card">
+<div class="lt-badge c4">
+<p>LT4</p>
+</div>
+<div class="lt-title">
+<p>Cumulative Frequency</p>
+</div>
+<div class="lt-desc">
+<p>Build cumulative frequency tables, read values above or below a threshold, use cumulative frequency graphs to estimate <span class="math inline">\(Q_1\)</span>, <span class="math inline">\(Q_2\)</span>, <span class="math inline">\(Q_3\)</span> and IQR, and find missing values in a cumulative frequency table.</p>
+</div>
+<div class="lt-skills">
+<p><span class="lt-skill c4">CF table</span> <span class="lt-skill c4">CF graph</span> <span class="lt-skill c4"><span class="math inline">\(Q_1\)</span>, <span class="math inline">\(Q_2\)</span>, <span class="math inline">\(Q_3\)</span></span> <span class="lt-skill c4">IQR</span></p>
+</div>
+</div>
+<div class="lt-card">
+<div class="lt-badge c5">
+<p>LT5</p>
+</div>
+<div class="lt-title">
+<p>Box Plots and IQR</p>
+</div>
+<div class="lt-desc">
+<p>Calculate IQR from raw data, draw box-and-whisker plots from a five-number summary, identify outliers using <span class="math inline">\(Q_3 + 1.5 \times \text{IQR}\)</span> and <span class="math inline">\(Q_1 - 1.5 \times \text{IQR}\)</span>, and find unknowns in ordered lists given conditions on median, mode and range.</p>
+</div>
+<div class="lt-skills">
+<p><span class="lt-skill c5">IQR</span> <span class="lt-skill c5">Box plot</span> <span class="lt-skill c5">Outliers</span> <span class="lt-skill c5">Five-number summary</span></p>
+</div>
+</div>
+</div>
 <hr>
 </section>
 <section id="formula-cards" class="level2" data-number="4.2">
@@ -2205,7 +2264,7 @@ Any value <span class="math inline">\(&gt; 85\)</span> is an outlier.</p>
 <section id="sec-worksheet" class="level2" data-number="4.8">
 <h2 data-number="4.8" class="anchored" data-anchor-id="sec-worksheet"><span class="header-section-number">4.8</span> ⚡ Test Your Knowledge</h2>
 <link rel="stylesheet" href="../../assets/worksheet.css">
-<script src="https://cdn.jsdelivr.net/pyodide/v0.25.0/full/pyodide.js"></script>
+
 <script src="../../assets/worksheet.js"></script>
 
 <div class="ws-toolbar no-print">

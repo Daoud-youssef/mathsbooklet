@@ -5,7 +5,7 @@ number-depth: 2
 ---
 
 ## 🎯 Learning Targets
-{{< include alg-u1-ope-learning-targets.qmd >}}
+{{< include Operations-Learning-Targets.qmd >}}
 
 ## 🗂️ Recall: Formula Card
 {{< include Alg-u1-ope-formulas.qmd >}}

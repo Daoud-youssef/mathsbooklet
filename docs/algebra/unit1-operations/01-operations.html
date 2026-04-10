@@ -70,12 +70,22 @@ ul.task-list li input[type="checkbox"] {
     "search-label": "Search"
   }
 }</script>
+<script src="https://cdn.jsdelivr.net/pyodide/v0.25.0/full/pyodide.js"></script>
 <script>
 MathJax = {
   tex: {
     inlineMath: [['\\(', '\\)']],
     displayMath: [['\\[', '\\]']],
     packages: {'[+]': ['cancel', 'color']}
+  },
+  options: {
+    skipHtmlTags: []
+  },
+  startup: {
+    ready() {
+      MathJax.startup.defaultReady();
+      MathJax.startup.promise.then(() => MathJax.typesetPromise());
+    }
   }
 };
 </script>
@@ -212,6 +222,23 @@ window.Quarto = {
 </li>
       </ul>
   </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="true">
+ <span class="menu-text">Geometry</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../geometry/unit1-trigonometry/Trigonometry.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Unit 1: Trigonometry</span></span></a>
+  </div>
+</li>
+      </ul>
+  </li>
     </ul>
     </div>
 </nav>
@@ -256,45 +283,75 @@ window.Quarto = {
 
 <section id="learning-targets" class="level2">
 <h2 class="anchored" data-anchor-id="learning-targets">🎯 Learning Targets</h2>
+<div class="lt-grid">
 <div class="lt-card">
-<div class="lt-item">
-<div class="lt-number">
-<p>1</p>
+<div class="lt-badge c1">
+<p>LT1</p>
 </div>
-<div class="lt-content">
-<p><strong>Calculate with Integers</strong> – Add, subtract, multiply, and divide positive and negative numbers accurately.</p>
+<div class="lt-title">
+<p>Calculate with Integers</p>
 </div>
+<div class="lt-desc">
+<p>Add, subtract, multiply, and divide positive and negative numbers accurately.</p>
 </div>
-<div class="lt-item">
-<div class="lt-number">
-<p>2</p>
-</div>
-<div class="lt-content">
-<p><strong>Apply Order of Operations</strong> – Evaluate numerical expressions using PEMDAS/BODMAS, including brackets and exponents.</p>
+<div class="lt-skills">
+<p><span class="lt-skill c1">Positive &amp; negative</span> <span class="lt-skill c1">Four operations</span> <span class="lt-skill c1">Number line</span></p>
 </div>
 </div>
-<div class="lt-item">
-<div class="lt-number">
-<p>3</p>
+<div class="lt-card">
+<div class="lt-badge c2">
+<p>LT2</p>
 </div>
-<div class="lt-content">
-<p><strong>Operate with Fractions</strong> – Add, subtract, multiply, and divide fractions and mixed numbers fluently.</p>
+<div class="lt-title">
+<p>Apply Order of Operations</p>
 </div>
+<div class="lt-desc">
+<p>Evaluate numerical expressions using BODMAS, including brackets and exponents.</p>
 </div>
-<div class="lt-item">
-<div class="lt-number">
-<p>4</p>
-</div>
-<div class="lt-content">
-<p><strong>Work with Decimals</strong> – Perform calculations involving decimals and convert between fractions, decimals, and percentages.</p>
+<div class="lt-skills">
+<p><span class="lt-skill c2">BODMAS</span> <span class="lt-skill c2">Brackets</span> <span class="lt-skill c2">Exponents</span></p>
 </div>
 </div>
-<div class="lt-item">
-<div class="lt-number">
-<p>5</p>
+<div class="lt-card">
+<div class="lt-badge c3">
+<p>LT3</p>
 </div>
-<div class="lt-content">
-<p><strong>Simplify Complex Calculations</strong> – Combine integers, fractions, and decimals in multi-step numerical problems.</p>
+<div class="lt-title">
+<p>Operate with Fractions</p>
+</div>
+<div class="lt-desc">
+<p>Add, subtract, multiply, and divide fractions and mixed numbers fluently.</p>
+</div>
+<div class="lt-skills">
+<p><span class="lt-skill c3">LCD</span> <span class="lt-skill c3">Mixed numbers</span> <span class="lt-skill c3">Simplify</span></p>
+</div>
+</div>
+<div class="lt-card">
+<div class="lt-badge c4">
+<p>LT4</p>
+</div>
+<div class="lt-title">
+<p>Work with Decimals</p>
+</div>
+<div class="lt-desc">
+<p>Perform calculations with decimals and convert between fractions, decimals, and percentages.</p>
+</div>
+<div class="lt-skills">
+<p><span class="lt-skill c4">Decimal operations</span> <span class="lt-skill c4">FDP conversion</span> <span class="lt-skill c4">Rounding</span></p>
+</div>
+</div>
+<div class="lt-card">
+<div class="lt-badge c5">
+<p>LT5</p>
+</div>
+<div class="lt-title">
+<p>Simplify Complex Calculations</p>
+</div>
+<div class="lt-desc">
+<p>Combine integers, fractions, and decimals in multi-step numerical problems.</p>
+</div>
+<div class="lt-skills">
+<p><span class="lt-skill c5">Multi-step</span> <span class="lt-skill c5">Mixed types</span> <span class="lt-skill c5">Problem solving</span></p>
 </div>
 </div>
 </div>
@@ -700,11 +757,10 @@ Girls with glasses: <span class="math inline">\((24 \div 4) \times 1 = 6\)</span
 </section>
 <section id="sec-ope-worksheet" class="level2">
 <h2 class="anchored" data-anchor-id="sec-ope-worksheet">⚡ Test Your Knowledge</h2>
-<script src="https://cdn.jsdelivr.net/pyodide/v0.25.0/full/pyodide.js"></script>
-
 <style>
 /* ══════════════════════════════════════════
-   WORKSHEET PAPER
+   WORKSHEET PAPER — Unit 1 custom styles
+   Buttons/toolbar/modal use shared worksheet.css classes
 ══════════════════════════════════════════ */
 .ws-paper {
   background: white;
@@ -885,14 +941,15 @@ Girls with glasses: <span class="math inline">\((24 \div 4) \times 1 = 6\)</span
   .ws-parts-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
   .ws-answer-key-grid { grid-template-columns: repeat(3, 1fr); }
 }
-@media (max-width: 420px) { .ws-parts-grid { grid-template-columns: 1fr; } }
+@media (max-width: 420px) { .ws-parts-grid { grid-column: 1fr; } }
 </style>
 
-<!-- ══ TOOLBAR ══ -->
+<!-- ══ TOOLBAR — uses shared worksheet.css classes & function names ══ -->
+<link rel="stylesheet" href="../../assets/worksheet.css">
 <div class="ws-toolbar no-print">
   <div class="ws-controls">
-    <button class="ws-btn primary" id="btn-ws-new" onclick="newSession()" disabled="">🔄 New Session</button>
-    <button class="ws-btn outline" onclick="openPreview()">👁️ Preview &amp; Print</button>
+    <button class="ws-btn primary" id="btn-ws-new" onclick="wsGenerate()" disabled="">🔄 New Session</button>
+    <button class="ws-btn outline" onclick="wsOpenPreview()">👁️ Preview &amp; Print</button>
     <a href="https://app.flintk12.com/activities/arithmetic-mast-9558eb/sessions/new" target="_blank" class="ws-btn flint">🤖 Get Help</a>
   </div>
   <div id="ws-loading" class="ws-status">⏳ Loading Python...</div>
@@ -903,7 +960,7 @@ Girls with glasses: <span class="math inline">\((24 \div 4) \times 1 = 6\)</span
   <p style="color:#94a3b8;text-align:center;padding:3rem 0">Generating worksheet...</p>
 </div>
 
-<!-- ══ PREVIEW MODAL ══ -->
+<!-- ══ PREVIEW MODAL — uses shared worksheet.css classes ══ -->
 <div id="ws-preview-overlay" class="ws-modal no-print">
   <div class="ws-modal-header">
     <span id="ws-preview-title-text">Worksheet Preview</span>
@@ -916,7 +973,7 @@ Girls with glasses: <span class="math inline">\((24 \div 4) \times 1 = 6\)</span
 </div>
 
 <script>
-// ══ Python code ══
+// ══ Python code (runs in Pyodide) ══
 const PYTHON_CODE = `
 import random, math, json
 from datetime import date
@@ -996,7 +1053,7 @@ def generate_session():
 generate_session()
 `;
 
-// ══ Render ══
+// ══ Render worksheet HTML ══
 function render(data) {
   const ws  = data.worksheet;
   const exs = data.exercises;
@@ -1062,7 +1119,7 @@ function render(data) {
   if (window.MathJax) MathJax.typesetPromise([document.getElementById("ws-container")]);
 }
 
-// ══ Pyodide ══
+// ══ Pyodide init — called once on page load ══
 let pyodide = null;
 
 async function init() {
@@ -1075,15 +1132,15 @@ async function init() {
   setTimeout(() => loading.style.display = "none", 2000);
 }
 
-async function newSession() {
+// ══ Shared function names — match all other units ══
+async function wsGenerate() {
   document.getElementById("ws-container").innerHTML =
     '<p style="color:#94a3b8;text-align:center;padding:3rem 0">Generating...</p>';
   const raw = await pyodide.runPythonAsync("generate_session()");
   render(JSON.parse(raw));
 }
 
-// ══ Preview & Print ══
-function openPreview() {
+function wsOpenPreview() {
   const src = document.getElementById("ws-container");
   if (!src || !src.innerHTML.trim()) { alert("Please wait for the worksheet to load."); return; }
   const preview = document.getElementById("ws-preview-scroll");
@@ -1100,6 +1157,7 @@ function wsClosePreview() {
 
 function wsPrint() { window.print(); }
 
+// Close modal on backdrop click or Escape
 document.getElementById("ws-preview-overlay")?.addEventListener("click", e => {
   if (e.target === e.currentTarget) wsClosePreview();
 });

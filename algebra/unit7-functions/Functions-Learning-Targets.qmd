@@ -1,15 +1,190 @@
-| **#** | **Learning Target** | **I can…** |
-|---|---|---|
-| **LT1** | Relations & Functions | Represent relations as sets, tables, and arrow diagrams, and determine whether a relation is a function |
-| **LT2** | Representations | Move fluently between tables, graphs, and equations for linear functions |
-| **LT3** | Domain & Range | Identify the domain and range of a relation from a set, table, or graph |
-| **LT4** | Linear Functions | Identify, evaluate, and interpret linear functions in context |
-| **LT5** | Slope & Rate of Change | Calculate slope from two points or a table and interpret it as a rate of change |
-| **LT6** | Linear Equations & Graphs | Write and graph linear equations; find equations of parallel and perpendicular lines |
-| **LT7** | Linear Modeling | Form, solve, and interpret linear models for real-world situations |
-| **LT8** | Quadratic Functions | Identify quadratic functions; evaluate them; convert between vertex, standard, and factored forms |
-| **LT9** | Key Features of Graphs | Determine the vertex, roots, and axis of symmetry of a parabola from its equation or graph |
-| **LT10** | Algebraic Manipulation | *(Covered in Unit 6 — Quadratic Equations)* |
-| **LT11** | Solving Quadratics | *(Covered in Unit 6 — Quadratic Equations)* |
-| **LT12** | Domain & Range (Quadratic) | Determine and interpret the domain and range of a quadratic function from its equation or graph |
-| **LT13** | Quadratic Modeling | Model and interpret real-world situations using quadratic functions (projectile motion, revenue) |
+::: lt-grid
+
+::: lt-card
+::: {.lt-badge .c1}
+LT1
+:::
+::: lt-title
+Relations & Functions
+:::
+::: lt-desc
+Represent relations as sets, tables, and arrow diagrams, and determine whether a relation is a function using the vertical line test.
+:::
+::: lt-skills
+[Sets & tables]{.lt-skill .c1}
+[Arrow diagrams]{.lt-skill .c1}
+[Vertical line test]{.lt-skill .c1}
+:::
+:::
+
+::: lt-card
+::: {.lt-badge .c2}
+LT2
+:::
+::: lt-title
+Representations
+:::
+::: lt-desc
+Move fluently between tables, graphs, and equations for linear functions.
+:::
+::: lt-skills
+[Table to graph]{.lt-skill .c2}
+[Graph to equation]{.lt-skill .c2}
+[Multiple representations]{.lt-skill .c2}
+:::
+:::
+
+::: lt-card
+::: {.lt-badge .c3}
+LT3
+:::
+::: lt-title
+Domain & Range
+:::
+::: lt-desc
+Identify the domain and range of a relation from a set, table, or graph.
+:::
+::: lt-skills
+[Input & output]{.lt-skill .c3}
+[Set notation]{.lt-skill .c3}
+[From graph]{.lt-skill .c3}
+:::
+:::
+
+::: lt-card
+::: {.lt-badge .c4}
+LT4
+:::
+::: lt-title
+Linear Functions
+:::
+::: lt-desc
+Identify, evaluate, and interpret linear functions in real-world contexts.
+:::
+::: lt-skills
+[Evaluate $f(x)$]{.lt-skill .c4}
+[Identify linear]{.lt-skill .c4}
+[Interpret context]{.lt-skill .c4}
+:::
+:::
+
+::: lt-card
+::: {.lt-badge .c5}
+LT5
+:::
+::: lt-title
+Slope & Rate of Change
+:::
+::: lt-desc
+Calculate slope from two points or a table and interpret it as a rate of change in context.
+:::
+::: lt-skills
+[Slope formula]{.lt-skill .c5}
+[From a table]{.lt-skill .c5}
+[Rate of change]{.lt-skill .c5}
+:::
+:::
+
+::: lt-card
+::: {.lt-badge .c1}
+LT6
+:::
+::: lt-title
+Linear Equations & Graphs
+:::
+::: lt-desc
+Write and graph linear equations; find equations of parallel and perpendicular lines.
+:::
+::: lt-skills
+[Slope-intercept]{.lt-skill .c1}
+[Parallel lines]{.lt-skill .c1}
+[Perpendicular lines]{.lt-skill .c1}
+:::
+:::
+
+::: lt-card
+::: {.lt-badge .c2}
+LT7
+:::
+::: lt-title
+Linear Modelling
+:::
+::: lt-desc
+Form, solve, and interpret linear models for real-world situations.
+:::
+::: lt-skills
+[Form the model]{.lt-skill .c2}
+[Solve & predict]{.lt-skill .c2}
+[Interpret results]{.lt-skill .c2}
+:::
+:::
+
+::: lt-card
+::: {.lt-badge .c3}
+LT8
+:::
+::: lt-title
+Quadratic Functions
+:::
+::: lt-desc
+Identify quadratic functions, evaluate them, and convert between vertex, standard, and factored forms.
+:::
+::: lt-skills
+[Vertex form]{.lt-skill .c3}
+[Standard form]{.lt-skill .c3}
+[Factored form]{.lt-skill .c3}
+:::
+:::
+
+::: lt-card
+::: {.lt-badge .c4}
+LT9
+:::
+::: lt-title
+Key Features of Graphs
+:::
+::: lt-desc
+Determine the vertex, roots, and axis of symmetry of a parabola from its equation or graph.
+:::
+::: lt-skills
+[Vertex]{.lt-skill .c4}
+[Roots / x-intercepts]{.lt-skill .c4}
+[Axis of symmetry]{.lt-skill .c4}
+:::
+:::
+
+::: lt-card
+::: {.lt-badge .c5}
+LT12
+:::
+::: lt-title
+Domain & Range — Quadratic
+:::
+::: lt-desc
+Determine and interpret the domain and range of a quadratic function from its equation or graph.
+:::
+::: lt-skills
+[Domain: all reals]{.lt-skill .c5}
+[Range from vertex]{.lt-skill .c5}
+[Opens up or down]{.lt-skill .c5}
+:::
+:::
+
+::: lt-card
+::: {.lt-badge .c1}
+LT13
+:::
+::: lt-title
+Quadratic Modelling
+:::
+::: lt-desc
+Model and interpret real-world situations using quadratic functions, including projectile motion and revenue problems.
+:::
+::: lt-skills
+[Projectile motion]{.lt-skill .c1}
+[Revenue problems]{.lt-skill .c1}
+[Interpret vertex]{.lt-skill .c1}
+:::
+:::
+
+:::

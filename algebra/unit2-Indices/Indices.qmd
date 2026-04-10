@@ -8,59 +8,96 @@ execute:
 
 ```{python}
 #| output: false
-import sys
-sys.path.insert(0, '../unit2-Indices')
+import sys,os
+sys.path.insert(0, os.path.abspath('../../assets'))
+sys.path.insert(0, os.path.abspath('../unit2-Indices'))
 from Indices import generate
 from collections import defaultdict
 
 data = generate(
     types=[
+        # LT1 — Multiplication
         "multiply_simple",
         "multiply_three_terms",
         "multiply_coefficients",
-        "fractional_nonunit",
-        "combine_same_power",
         "multiply_multivariable",
-            "divide_simple",
-    "divide_coefficients",
-    "divide_multivariable",
-       "power_simple",
-    "power_coefficient",
-    "power_multivariable",
-    "power_negative_outer",
-    "negative_evaluate",
-    "negative_fraction_base",
-    "negative_simplify",
-    "negative_divide",
-    "fractional_unit",
-    "fractional_negative",
-    "fractional_of_fraction",
-    "zero_index",
-    "fraction_simple",
-    "fraction_complex",
-    "fraction_multivariable",
-    "fraction_nested_power",
-    "numeric_multiply",
-    "numeric_divide",
-    "numeric_mixed",
-    "write_as_power",
-    "find_missing_index",
-    "find_missing_divide",
-    "find_missing_power",
-    "identify_error",
+        # LT2 — Division
+        "divide_simple",
+        "divide_coefficients",
+        "divide_multivariable",
+        # LT3 — Power of a Power
+        "power_simple",
+        "power_coefficient",
+        "power_multivariable",
+        "power_negative_outer",
+        "combine_same_power",
+        # LT5 — Negative Indices
+        "negative_evaluate",
+        "negative_fraction_base",
+        "negative_simplify",
+        "negative_divide",
+        # LT6 — Fractional Indices
+        "fractional_unit",
+        "fractional_nonunit",
+        "fractional_negative",
+        "fractional_of_fraction",
+        # LT7 — Zero Index
+        "zero_index",
+        # LT8 — Complex Fractions
+        "fraction_simple",
+        "fraction_complex",
+        "fraction_multivariable",
+        "fraction_nested_power",
+        # LT10 — Write as Power
+        "write_as_power",
+        # LT11 — Find Missing / Identify Error
+        "find_missing_index",
+        "find_missing_divide",
+        "find_missing_power",
+        "identify_error",
+        # LT7s — Surds: Operate
+        "surd_add_simple",
+        "surd_subtract_simple",
+        "surd_add_mixed",
+        "surd_subtract_mixed",
+        "surd_multiply_simple",
+        "surd_multiply_coeff",
+        "surd_multiply_chain",
+        "surd_divide_simple",
+        "surd_divide_coeff",
+        # LT8s — Surds: Simplify
+        "surd_simplify_basic",
+        "surd_simplify_coeff",
+        "surd_simplify_fraction",
+        "surd_simplify_product",
+        "surd_simplify_mixed_ops",
+        "surd_simplify_chain",
+        # LT9s — Surds: Expand & Rationalise
+        "surd_expand_single",
+        "surd_expand_double_simple",
+        "surd_expand_double_mixed",
+        "surd_expand_conjugate",
+        "surd_expand_square",
+        "surd_rationalise_simple",
+        "surd_rationalise_coeff",
+        "surd_rationalise_binomial",
+        "surd_rationalise_full",
+        "surd_rationalise_sum",
+        "surd_rationalise_frac_sum",
+        "surd_find_xy",
+        "surd_pythagoras",
+        "surd_trapezium_area",
     ],
     seed           = 42,
-    count          = 6,
-    show_solutions = False,
+    show_solutions = True,
 )
-
-exercises = data["exercises"]
-ws        = data["worksheet"]
+exercises = data["_exercises_qmd"]
 
 # Group by difficulty
 grouped = defaultdict(list)
 for ex in exercises:
-    grouped[ex["meta"]["difficulty"]].append(ex)
+    grouped[ex["difficulty"]].append(ex)
+
 ```
 
 ## 🎯 Learning Targets
@@ -73,7 +110,6 @@ for ex in exercises:
 {{< include Alg-Indices-formulas.qmd >}}
 
 
-
 ## 📝 Practice Problems
 
 :::::::::: panel-tabset
@@ -83,32 +119,7 @@ for ex in exercises:
 ```{python}
 #| output: asis
 for ex in grouped.get("easy", []):
-    print(f"::::: {{#exr-u2-{ex['number']}}}\n")
-    print(f"### {ex['title']}\n")
-    print(f"{ex['instruction']}\n")
-
-    # Question parts
-    for p in ex["parts"]:
-        print(f"{p['label']})  ${p['question_latex']}$  ")
-
-    # Solution callout — no blank line before
-    print('\n::: {.callout-tip collapse="true"}')
-    print("## 🔍 View Solution\n")
-    for p in ex["parts"]:
-        print(f"{p['label']})  ${p['answer_latex']}$  ")
-    print(":::")
-
-    # Metadata footer — no blank line before
-    print("::: exercise-meta")
-    
-    print('<div class="skill-container">')
-    for skill in ex["meta"]["skills"]:
-        print(f'  <span class="skill-badge">{skill}</span>')
-    print('</div>')
-    print(":::")
-
-    print(":::::\n")
-
+    print(ex["rendered"])
 ```
 
 ::: math-sep
@@ -120,31 +131,7 @@ for ex in grouped.get("easy", []):
 ```{python}
 #| output: asis
 for ex in grouped.get("medium", []):
-    print(f"::::: {{#exr-u2-{ex['number']}}}\n")
-    print(f"### {ex['title']}\n")
-    print(f"{ex['instruction']}\n")
-
-    # Question parts
-    for p in ex["parts"]:
-        print(f"{p['label']})  ${p['question_latex']}$  ")
-
-    # Solution callout — no blank line before
-    print('\n::: {.callout-tip collapse="true"}')
-    print("## 🔍 View Solution\n")
-    for p in ex["parts"]:
-        print(f"{p['label']})  ${p['answer_latex']}$  ")
-    print(":::")
-
-    # Metadata footer — no blank line before
-    print("::: exercise-meta")
-    
-    print('<div class="skill-container">')
-    for skill in ex["meta"]["skills"]:
-        print(f'  <span class="skill-badge">{skill}</span>')
-    print('</div>')
-    print(":::")
-
-    print(":::::\n")
+    print(ex["rendered"])
 ```
 
 ::: math-sep
@@ -156,31 +143,7 @@ for ex in grouped.get("medium", []):
 ```{python}
 #| output: asis
 for ex in grouped.get("hard", []):
-    print(f"::::: {{#exr-u2-{ex['number']}}}\n")
-    print(f"### {ex['title']}\n")
-    print(f"{ex['instruction']}\n")
-
-    # Question parts
-    for p in ex["parts"]:
-        print(f"{p['label']})  ${p['question_latex']}$  ")
-
-    # Solution callout — no blank line before
-    print('\n::: {.callout-tip collapse="true"}')
-    print("## 🔍 View Solution\n")
-    for p in ex["parts"]:
-        print(f"{p['label']})  ${p['answer_latex']}$  ")
-    print(":::")
-
-    # Metadata footer — no blank line before
-    print("::: exercise-meta")
-    
-    print('<div class="skill-container">')
-    for skill in ex["meta"]["skills"]:
-        print(f'  <span class="skill-badge">{skill}</span>')
-    print('</div>')
-    print(":::")
-
-    print(":::::\n")
+    print(ex["rendered"])
 ```
 
 ::: math-sep
@@ -193,7 +156,6 @@ for ex in grouped.get("hard", []):
 
 ```{=html}
 <link rel="stylesheet" href="../../assets/worksheet.css">
-<script src="https://cdn.jsdelivr.net/pyodide/v0.25.0/full/pyodide.js"></script>
 <script src="../../assets/worksheet.js"></script>
 
 <div class="ws-toolbar no-print">
@@ -217,17 +179,65 @@ for ex in grouped.get("hard", []):
   </div>
   <div id="ws-preview-scroll" class="ws-modal-body"></div>
 </div>
+
 <script>
-
-
 window.WS_CONFIG = {
-  title: "Laws of Indices",
-  unit: "Unit 2 · Indices",
-  pyPath: "Indices.py", 
-  template:"word",//standard | compact | exam | word
-  count: 6,
-  types: ["multiply_coefficients", "divide_coefficients",    "find_missing_divide",
-    "find_missing_power","identify_error"] 
+  title: "Laws of Indices & Surds",
+  unit: "Unit 2 · Indices & Surds",
+  pyPath: "Indices.py",
+  template: "word",
+  count: 3,
+  types: [
+    // 🟡 Medium — Indices
+    "multiply_coefficients",
+    "multiply_multivariable",
+    "divide_coefficients",
+    "divide_multivariable",
+    "power_coefficient",
+    "power_multivariable",
+    "negative_evaluate",
+    "negative_fraction_base",
+    "negative_simplify",
+    "negative_divide",
+    "fractional_unit",
+    "fraction_simple",
+    "find_missing_index",
+    "find_missing_divide",
+    "numeric_multiply",
+    "numeric_divide",
+    "write_as_power",
+    "combine_same_power",
+    // 🔴 Hard — Indices
+    "power_negative_outer",
+    "fractional_nonunit",
+    "fractional_negative",
+    "fractional_of_fraction",
+    "fraction_complex",
+    "fraction_multivariable",
+    "fraction_nested_power",
+    "find_missing_power",
+    "numeric_mixed",
+    // 🟡 Medium — Surds
+    "surd_add_mixed",
+    "surd_subtract_mixed",
+    "surd_multiply_chain",
+    "surd_divide_coeff",
+    "surd_simplify_fraction",
+    "surd_simplify_product",
+    "surd_expand_double_simple",
+    "surd_expand_conjugate",
+    "surd_expand_square",
+    "surd_rationalise_coeff",
+    // 🔴 Hard — Surds
+    "surd_simplify_mixed_ops",
+    "surd_simplify_chain",
+    "surd_expand_double_mixed",
+    "surd_rationalise_binomial",
+    "surd_rationalise_frac_sum",
+    "surd_find_xy",
+    "surd_pythagoras",
+    "surd_trapezium_area"
+  ]
 };
 </script>
 ```

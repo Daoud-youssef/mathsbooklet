@@ -70,12 +70,22 @@ ul.task-list li input[type="checkbox"] {
     "search-label": "Search"
   }
 }</script>
+<script src="https://cdn.jsdelivr.net/pyodide/v0.25.0/full/pyodide.js"></script>
 <script>
 MathJax = {
   tex: {
     inlineMath: [['\\(', '\\)']],
     displayMath: [['\\[', '\\]']],
     packages: {'[+]': ['cancel', 'color']}
+  },
+  options: {
+    skipHtmlTags: []
+  },
+  startup: {
+    ready() {
+      MathJax.startup.defaultReady();
+      MathJax.startup.promise.then(() => MathJax.typesetPromise());
+    }
   }
 };
 </script>
@@ -212,6 +222,23 @@ window.Quarto = {
 </li>
       </ul>
   </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="true">
+ <span class="menu-text">Geometry</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../geometry/unit1-trigonometry/Trigonometry.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Unit 1: Trigonometry</span></span></a>
+  </div>
+</li>
+      </ul>
+  </li>
     </ul>
     </div>
 </nav>
@@ -256,53 +283,91 @@ window.Quarto = {
 
 <section id="learning-targets" class="level2" data-number="5.1">
 <h2 data-number="5.1" class="anchored" data-anchor-id="learning-targets"><span class="header-section-number">5.1</span> 🎯 Learning Targets</h2>
-<div class="learning-targets">
-<table class="caption-top table">
-<colgroup>
-<col style="width: 13%">
-<col style="width: 36%">
-<col style="width: 50%">
-</colgroup>
-<thead>
-<tr class="header">
-<th>#</th>
-<th>I can…</th>
-<th>Key Skill</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td>LT1</td>
-<td>Solve one-step equations using inverse operations</td>
-<td>Addition, subtraction, multiplication, division</td>
-</tr>
-<tr class="even">
-<td>LT2</td>
-<td>Solve two-step equations, including brackets and fractions</td>
-<td>Two inverse operations in sequence</td>
-</tr>
-<tr class="odd">
-<td>LT3</td>
-<td>Solve equations with unknowns on both sides</td>
-<td>Collecting like terms</td>
-</tr>
-<tr class="even">
-<td>LT4</td>
-<td>Expand brackets and solve the resulting equation</td>
-<td>Single and double brackets</td>
-</tr>
-<tr class="odd">
-<td>LT5</td>
-<td>Solve equations involving algebraic fractions</td>
-<td>Clearing fractions, cross-multiplication</td>
-</tr>
-<tr class="even">
-<td>LT6</td>
-<td>Form and solve equations from word problems</td>
-<td>Number riddles, ages, geometry, formulas</td>
-</tr>
-</tbody>
-</table>
+<div class="lt-grid">
+<div class="lt-card">
+<div class="lt-badge c1">
+<p>LT1</p>
+</div>
+<div class="lt-title">
+<p>One-Step Equations</p>
+</div>
+<div class="lt-desc">
+<p>Solve one-step equations using inverse operations — addition, subtraction, multiplication, and division.</p>
+</div>
+<div class="lt-skills">
+<p><span class="lt-skill c1">Inverse operations</span> <span class="lt-skill c1">Add &amp; subtract</span> <span class="lt-skill c1">Multiply &amp; divide</span></p>
+</div>
+</div>
+<div class="lt-card">
+<div class="lt-badge c2">
+<p>LT2</p>
+</div>
+<div class="lt-title">
+<p>Two-Step Equations</p>
+</div>
+<div class="lt-desc">
+<p>Solve two-step equations including those with brackets and fractions by applying two inverse operations in sequence.</p>
+</div>
+<div class="lt-skills">
+<p><span class="lt-skill c2">Two inverse steps</span> <span class="lt-skill c2">Brackets</span> <span class="lt-skill c2">Fractions</span></p>
+</div>
+</div>
+<div class="lt-card">
+<div class="lt-badge c3">
+<p>LT3</p>
+</div>
+<div class="lt-title">
+<p>Unknowns on Both Sides</p>
+</div>
+<div class="lt-desc">
+<p>Solve equations where the unknown appears on both sides by collecting like terms first.</p>
+</div>
+<div class="lt-skills">
+<p><span class="lt-skill c3">Collect like terms</span> <span class="lt-skill c3">Rearrange</span> <span class="lt-skill c3">Balance method</span></p>
+</div>
+</div>
+<div class="lt-card">
+<div class="lt-badge c4">
+<p>LT4</p>
+</div>
+<div class="lt-title">
+<p>Expand and Solve</p>
+</div>
+<div class="lt-desc">
+<p>Expand single and double brackets then solve the resulting linear equation.</p>
+</div>
+<div class="lt-skills">
+<p><span class="lt-skill c4">Single brackets</span> <span class="lt-skill c4">Double brackets</span> <span class="lt-skill c4">Simplify then solve</span></p>
+</div>
+</div>
+<div class="lt-card">
+<div class="lt-badge c5">
+<p>LT5</p>
+</div>
+<div class="lt-title">
+<p>Algebraic Fractions</p>
+</div>
+<div class="lt-desc">
+<p>Solve equations involving algebraic fractions by clearing denominators or using cross-multiplication.</p>
+</div>
+<div class="lt-skills">
+<p><span class="lt-skill c5">Clear fractions</span> <span class="lt-skill c5">Cross-multiply</span> <span class="lt-skill c5">LCD method</span></p>
+</div>
+</div>
+<div class="lt-card">
+<div class="lt-badge c1">
+<p>LT6</p>
+</div>
+<div class="lt-title">
+<p>Form and Solve from Context</p>
+</div>
+<div class="lt-desc">
+<p>Translate word problems into equations and solve them — including number riddles, ages, geometry, and formula problems.</p>
+</div>
+<div class="lt-skills">
+<p><span class="lt-skill c1">Number problems</span> <span class="lt-skill c1">Age problems</span> <span class="lt-skill c1">Geometry &amp; formulas</span></p>
+</div>
+</div>
 </div>
 </section>
 <section id="formula-card" class="level2" data-number="5.2">
@@ -1846,7 +1911,7 @@ m - 48 = -49 \\ m = -1
 <section id="test-your-knowledge" class="level2" data-number="5.4">
 <h2 data-number="5.4" class="anchored" data-anchor-id="test-your-knowledge"><span class="header-section-number">5.4</span> ⚡ Test Your Knowledge</h2>
 <link rel="stylesheet" href="../../assets/worksheet.css">
-<script src="https://cdn.jsdelivr.net/pyodide/v0.25.0/full/pyodide.js"></script>
+
 <script src="../../assets/worksheet.js"></script>
 
 <div class="ws-toolbar no-print">
